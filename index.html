@@ -200,12 +200,82 @@ button.primary,button.secondary,button.dark,button.table-pick{border-radius:14px
   .verify-contract-card-v2 .verify-contract-value{font-size:20px}
 }
 
+
+/* verify environment preview */
+.verify-env-preview{
+  margin-top:14px;
+  padding:16px;
+  border-radius:20px;
+  background:linear-gradient(180deg, rgba(9,20,37,.9), rgba(6,15,29,.95));
+  border:1px solid rgba(255,255,255,.07);
+}
+.verify-env-preview-head{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:center;
+  margin-bottom:12px;
+}
+.verify-env-preview-head strong{
+  font-size:15px;
+  color:#f3f7ff;
+}
+.verify-env-preview-head span{
+  font-size:12px;
+  color:#8ea5c7;
+  font-weight:700;
+}
+.verify-env-axis-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.verify-env-axis-card{
+  padding:14px;
+  border-radius:16px;
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+  border:1px solid rgba(255,255,255,.08);
+}
+.verify-env-axis-card .k{
+  font-size:11px;
+  color:var(--muted);
+  letter-spacing:1.3px;
+  text-transform:uppercase;
+}
+.verify-env-axis-card .v{
+  margin-top:8px;
+  font-size:22px;
+  font-family:Orbitron,sans-serif;
+  color:#f4f8ff;
+  line-height:1.1;
+}
+.verify-env-axis-card .sub{
+  margin-top:8px;
+  font-size:12px;
+  color:var(--cyan2);
+}
+@media (max-width: 900px){
+  .verify-env-preview-head{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .verify-env-axis-grid{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js">
 document.getElementById('applyVerifyPrevBlockBtn')?.addEventListener('click',()=>{
   const v=document.getElementById('verifyPrevBlockInput')?.value?.replace('#','')||'';
   if(window.pushLog) pushLog('환경설정 블록번호 UI 적용: #' + v);
 });
+
+renderVerifyEnvironmentPreview(deriveVerifyEnvironmentByInputs());
+['verifyPrevTxInput','verifyPrevOutputInput'].forEach(id=>{
+  document.getElementById(id)?.addEventListener('input', ()=>renderVerifyEnvironmentPreview(deriveVerifyEnvironmentByInputs()));
+});
+
 document.getElementById('applyVerifyBattleBlockBtn')?.addEventListener('click',()=>{
   const v=document.getElementById('verifyBattleBlockInput')?.value?.replace('#','')||'';
   if(window.pushLog) pushLog('전투설정 블록번호 UI 적용: #' + v);
@@ -530,6 +600,29 @@ document.getElementById('applyVerifyBattleBlockBtn')?.addEventListener('click',(
 
       <div class="terminal mono" id="verifyLogArea" style="margin-top:14px;min-height:84px">준비됨. 컨트랙트 검증 실행을 누르면 Sepolia에서 12마리 점수를 조회합니다.</div>
       <div class="verify-summary" id="verifySummaryTiles"></div>
+      <div class="verify-env-preview" id="verifyEnvPreview">
+        <div class="verify-env-preview-head">
+          <strong>환경 프리뷰</strong>
+          <span>환경설정 TxCount / OutputBTC 기준</span>
+        </div>
+        <div class="verify-env-axis-grid">
+          <div class="verify-env-axis-card">
+            <div class="k">SKY</div>
+            <div class="v" id="verifyEnvSky">-</div>
+            <div class="sub" id="verifyEnvSkySeed">TxCount 기반</div>
+          </div>
+          <div class="verify-env-axis-card">
+            <div class="k">GROUND</div>
+            <div class="v" id="verifyEnvGround">-</div>
+            <div class="sub" id="verifyEnvGroundSeed">OutputBTC 기반</div>
+          </div>
+          <div class="verify-env-axis-card">
+            <div class="k">TEMPO</div>
+            <div class="v" id="verifyEnvTempo">-</div>
+            <div class="sub" id="verifyEnvTempoSeed">TxCount + OutputBTC 기반</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="section-box verify-result-pane-v2">
@@ -818,11 +911,44 @@ async function connectVerifyContract(){
     btn.disabled=false;
   }
 }
+
+function deriveVerifyEnvironmentByInputs(){
+  const tx=Number(document.getElementById('verifyPrevTxInput')?.value||0);
+  const output=Math.floor(Number(document.getElementById('verifyPrevOutputInput')?.value||0));
+  const skyKeys=["Sunfire","Mistwood","Stormmire"];
+  const groundKeys=["Stone Ridge","Wildfield","Black Bog"];
+  const tempoKeys=["Ambush","Skirmish","Siege"];
+  return {
+    tx,
+    output,
+    sky:skyKeys[Math.abs(tx)%3],
+    ground:groundKeys[Math.abs(output)%3],
+    tempo:tempoKeys[Math.abs(tx+output)%3]
+  };
+}
+function renderVerifyEnvironmentPreview(env){
+  if(!env) return;
+  const skyEl=document.getElementById('verifyEnvSky');
+  const groundEl=document.getElementById('verifyEnvGround');
+  const tempoEl=document.getElementById('verifyEnvTempo');
+  const skySeedEl=document.getElementById('verifyEnvSkySeed');
+  const groundSeedEl=document.getElementById('verifyEnvGroundSeed');
+  const tempoSeedEl=document.getElementById('verifyEnvTempoSeed');
+  if(skyEl) skyEl.textContent=env.sky;
+  if(groundEl) groundEl.textContent=env.ground;
+  if(tempoEl) tempoEl.textContent=env.tempo;
+  if(skySeedEl) skySeedEl.textContent=`TxCount ${env.tx} 기준`;
+  if(groundSeedEl) groundSeedEl.textContent=`OutputBTC ${env.output} 기준`;
+  if(tempoSeedEl) tempoSeedEl.textContent=`Tx+Output ${(env.tx+env.output)} 기준`;
+}
+
 function renderVerificationResult(payload){
   if(!payload||!payload.ranking||!payload.ranking.length) return;
   const tiles=document.getElementById('verifySummaryTiles');
   const top=payload.ranking[0];
-  tiles.innerHTML=`<div class="verify-tile"><div class="k">컨트랙트</div><div class="v">${payload.address.slice(0,10)}...${payload.address.slice(-6)}</div></div><div class="verify-tile"><div class="k">룰셋 해시</div><div class="v">${payload.ruleset.slice(0,10)}...${payload.ruleset.slice(-6)}</div></div><div class="verify-tile"><div class="k">입력 매핑</div><div class="v">ENV ${payload.input.prevSeedA.toString()} / BATTLE ${payload.input.nextSeedA.toString()}</div></div><div class="verify-tile"><div class="k">1위</div><div class="v">${top.emoji} ${top.name}</div></div>`;
+  const env=deriveVerifyEnvironmentByInputs();
+  tiles.innerHTML=`<div class="verify-tile"><div class="k">컨트랙트</div><div class="v">${payload.address.slice(0,10)}...${payload.address.slice(-6)}</div></div><div class="verify-tile"><div class="k">룰셋 해시</div><div class="v">${payload.ruleset.slice(0,10)}...${payload.ruleset.slice(-6)}</div></div><div class="verify-tile"><div class="k">입력 매핑</div><div class="v">ENV ${payload.input.prevSeedA.toString()} / BATTLE ${payload.input.nextSeedA.toString()}</div></div><div class="verify-tile"><div class="k">환경값</div><div class="v">${env.sky} · ${env.ground} · ${env.tempo}</div></div><div class="verify-tile"><div class="k">1위</div><div class="v">${top.emoji} ${top.name}</div></div>`;
+  renderVerifyEnvironmentPreview(env);
   renderVerifyPartialRows(payload.ranking);
 }
 async function runContractVerification(){
