@@ -347,7 +347,8 @@ button.primary,button.secondary,button.dark,button.table-pick{border-radius:14px
       </div>
       <div class="verify-input-hint strong">매핑 기준: prevSeedA=환경 TxCount, prevSeedB=환경 OutputBTC, nextSeedA=전투 TxCount, nextSeedB=전투 OutputBTC, pulse=전투맥박. 지갑 연결 없이도 Sepolia 읽기 전용 RPC로 검증됩니다.</div>
       <div class="verify-actions">
-        <button class="secondary" id="runVerifyBtn">컨트랙트 검증 실행</button>
+        <button class="secondary" id="connectVerifyBtn">컨트랙트 연결 확인</button>
+        <button class="primary" id="runVerifyBtn">검증결과 조회</button>
         <button class="dark" id="loadLatestBlockVerifyBtn">최신 블록 불러오기</button>
       </div>
       <div class="verify-summary" id="verifySummaryTiles"></div>
@@ -537,6 +538,7 @@ const VERIFY_BEAST_ORDER=[
 ];
 let verifyProvider=null;
 let verifyContract=null;
+let verifyContractMeta=null;
 function appendVerifyLog(message,type='info'){const area=document.getElementById('verifyLogArea'); if(!area) return; const time=new Date().toLocaleTimeString('ko-KR',{hour12:false}); const prefix=type==='error'?'[ERROR]':type==='ok'?'[OK]':'[INFO]'; area.textContent=`[${time}] ${prefix} ${message}
 `+area.textContent;}
 function getVerifyInputObject(beastId){return {
@@ -547,9 +549,47 @@ function getVerifyInputObject(beastId){return {
   nextSeedB:BigInt(document.getElementById('verifyOutputInput').value||0),
   pulse:Number(document.getElementById('verifyPulseInput').value||0)
 };}
-async function ensureVerifyContract(){const address=document.getElementById('verifyContractAddress').value.trim(); if(!window.ethers) throw new Error('ethers 로드 실패'); if(!verifyProvider){ if(window.ethereum){ try{verifyProvider=new ethers.BrowserProvider(window.ethereum);}catch(e){} } if(!verifyProvider){ verifyProvider=new ethers.JsonRpcProvider('https://ethereum-sepolia-rpc.publicnode.com'); } } verifyContract=new ethers.Contract(address,VERIFY_ABI,verifyProvider); const ruleset=await verifyContract.rulesetHash(); return {address,ruleset:String(ruleset)};}
+async function buildVerifyProvider(){
+  if(!window.ethers) throw new Error('ethers 로드 실패');
+  if(verifyProvider) return verifyProvider;
+  if(window.ethereum){
+    try{
+      verifyProvider=new ethers.BrowserProvider(window.ethereum);
+      return verifyProvider;
+    }catch(e){}
+  }
+  verifyProvider=new ethers.JsonRpcProvider('https://ethereum-sepolia-rpc.publicnode.com');
+  return verifyProvider;
+}
+function renderVerifyConnectionSummary(meta,statusLabel='연결완료'){const tiles=document.getElementById('verifySummaryTiles'); if(!tiles||!meta) return; tiles.innerHTML=`<div class="verify-tile"><div class="k">연결상태</div><div class="v">${statusLabel}</div></div><div class="verify-tile"><div class="k">컨트랙트</div><div class="v">${meta.address.slice(0,10)}...${meta.address.slice(-6)}</div></div><div class="verify-tile"><div class="k">룰셋 해시</div><div class="v">${meta.ruleset.slice(0,10)}...${meta.ruleset.slice(-6)}</div></div><div class="verify-tile"><div class="k">RPC</div><div class="v">${meta.providerLabel}</div></div>`;}
+async function ensureVerifyContract(forceReload=false){
+  const address=document.getElementById('verifyContractAddress').value.trim();
+  if(!address) throw new Error('컨트랙트 주소가 비어 있습니다.');
+  if(!forceReload && verifyContract && verifyContractMeta && verifyContractMeta.address.toLowerCase()===address.toLowerCase()) return verifyContractMeta;
+  const provider=await buildVerifyProvider();
+  const providerLabel=provider instanceof ethers.BrowserProvider?'BrowserProvider':'Sepolia RPC';
+  verifyContract=new ethers.Contract(address,VERIFY_ABI,provider);
+  const ruleset=await verifyContract.rulesetHash();
+  verifyContractMeta={address,ruleset:String(ruleset),providerLabel};
+  return verifyContractMeta;
+}
+async function connectVerifyContract(){
+  const btn=document.getElementById('connectVerifyBtn');
+  try{
+    btn.disabled=true;
+    appendVerifyLog('컨트랙트 연결 확인 중...');
+    const meta=await ensureVerifyContract(true);
+    renderVerifyConnectionSummary(meta,'연결완료');
+    appendVerifyLog(`연결 확인 완료 · ${meta.address} · ${meta.providerLabel}`,'ok');
+  }catch(err){
+    appendVerifyLog(`연결 실패: ${err.message||err}`,'error');
+    document.getElementById('verifySummaryTiles').innerHTML=`<div class="verify-tile"><div class="k">오류</div><div class="v">컨트랙트 연결 실패</div></div>`;
+  }finally{
+    btn.disabled=false;
+  }
+}
 function renderVerificationResult(payload){if(!payload||!payload.ranking) return; const tiles=document.getElementById('verifySummaryTiles'); const top=payload.ranking[0]; tiles.innerHTML=`<div class="verify-tile"><div class="k">컨트랙트</div><div class="v">${payload.address.slice(0,10)}...${payload.address.slice(-6)}</div></div><div class="verify-tile"><div class="k">룰셋 해시</div><div class="v">${payload.ruleset.slice(0,10)}...${payload.ruleset.slice(-6)}</div></div><div class="verify-tile"><div class="k">입력 매핑</div><div class="v">ENV ${Number(payload.input.prevSeedA).toLocaleString()} / BATTLE ${Number(payload.input.nextSeedA).toLocaleString()}</div></div><div class="verify-tile"><div class="k">1위</div><div class="v">${top.emoji} ${top.name}</div></div>`; document.getElementById('verifyResultList').innerHTML=payload.ranking.map((r,idx)=>`<div class="verify-row"><div class="verify-main"><div class="verify-rank">${r.id}</div><div><strong>${idx+1}위 · ${r.emoji} ${r.name}</strong><div class="small-note">Scaled ${r.scaled} · Human ${r.human}</div></div></div><div class="verify-score">${r.human}</div></div>`).join('');}
-async function runContractVerification(){const btn=document.getElementById('runVerifyBtn'); try{btn.disabled=true; appendVerifyLog('컨트랙트 연결 확인 중...'); const meta=await ensureVerifyContract(); const ranking=[]; for(const beast of VERIFY_BEAST_ORDER){const input=getVerifyInputObject(beast.id); const [humanParts,scaled]=await Promise.all([verifyContract.scoreHuman(input),verifyContract.score(input)]); const integerPart=(humanParts.integerPart??humanParts[0]).toString(); const decimalPart=(humanParts.decimalPart4??humanParts[1]).toString().padStart(4,'0'); const human=`${integerPart}.${decimalPart}`; ranking.push({...beast,human,scaled:scaled.toString(),sortValue:Number(human)}); appendVerifyLog(`${beast.id}. ${beast.name} 조회 완료 · ${human}`,'ok'); } ranking.sort((a,b)=>b.sortValue-a.sortValue); renderVerificationResult({address:meta.address,ruleset:meta.ruleset,input:getVerifyInputObject(1),ranking}); appendVerifyLog(`검증 완료 · 1위 ${ranking[0].name}`,'ok'); }catch(err){appendVerifyLog(`검증 실패: ${err.message||err}`,'error'); document.getElementById('verifySummaryTiles').innerHTML=`<div class="verify-tile"><div class="k">오류</div><div class="v">컨트랙트 조회 실패</div></div>`;} finally{btn.disabled=false;}}
+async function runContractVerification(){const btn=document.getElementById('runVerifyBtn'); try{btn.disabled=true; if(!verifyContract||!verifyContractMeta){appendVerifyLog('먼저 컨트랙트 연결 확인을 실행합니다.'); await connectVerifyContract(); if(!verifyContract||!verifyContractMeta) throw new Error('컨트랙트 연결이 완료되지 않았습니다.');} appendVerifyLog('검증결과 조회 시작...'); const meta=await ensureVerifyContract(); const ranking=[]; for(const beast of VERIFY_BEAST_ORDER){const input=getVerifyInputObject(beast.id); const [humanParts,scaled]=await Promise.all([verifyContract.scoreHuman(input),verifyContract.score(input)]); const integerPart=(humanParts.integerPart??humanParts[0]).toString(); const decimalPart=(humanParts.decimalPart4??humanParts[1]).toString().padStart(4,'0'); const human=`${integerPart}.${decimalPart}`; ranking.push({...beast,human,scaled:scaled.toString(),sortValue:Number(human)}); appendVerifyLog(`${beast.id}. ${beast.name} 조회 완료 · ${human}`,'ok'); } ranking.sort((a,b)=>b.sortValue-a.sortValue); renderVerificationResult({address:meta.address,ruleset:meta.ruleset,input:getVerifyInputObject(1),ranking}); appendVerifyLog(`검증 완료 · 1위 ${ranking[0].name}`,'ok'); }catch(err){appendVerifyLog(`검증 실패: ${err.message||err}`,'error'); document.getElementById('verifySummaryTiles').innerHTML=`<div class="verify-tile"><div class="k">오류</div><div class="v">컨트랙트 조회 실패</div></div>`; document.getElementById('verifyResultList').innerHTML='';} finally{btn.disabled=false;}}
 function applyVerificationInputs(pulse,txCount,output){document.getElementById('verifyPrevTxInput').value=Number(txCount||0); document.getElementById('verifyPrevOutputInput').value=Number(output||0); document.getElementById('verifyPulseInput').value=Number(pulse||0); document.getElementById('verifyTxInput').value=Number(txCount||0); document.getElementById('verifyOutputInput').value=Number(output||0);}
 function pseudoSeed(v){let h=0; const s=String(v); for(let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))%1000003; return h}
 function buildWinnerMetric(res,bet){const seed=pseudoSeed(`${res.round}-${bet.id}-${res.prizeSpl}`); const participationWeight={alpha:1.22,twin:1.08,chain:0.88,podium:0.82,trinity:0.58}[bet.id]||1; const baseHit={alpha:0.118,twin:0.074,chain:0.041,podium:0.052,trinity:0.019}[bet.id]||0.05; const participants=Math.max(18,Math.round(((res.prizeSpl/1800)*participationWeight)+22+(seed%37))); const winners=Math.max(0,Math.round(participants*(baseHit+((seed%9)-4)*0.003))); const prizePool=Math.round((res.prizeSpl*(0.72+((seed%11)*0.035)))*participationWeight/10)*10; const avgStake=90+(seed%130); const payoutPerWinner=winners>0?prizePool/winners:0; const maxMultiple=winners>0?Number((payoutPerWinner/avgStake*(1.08+(seed%7)*0.04)).toFixed(1)):0; const hitRate=Number((winners/participants*100).toFixed(1)); const wow=maxMultiple>=18?'초고배당 터짐':maxMultiple>=12?'대박 회차':winners===0?'당첨자 없음':winners<=2?'소수 적중':'다수 적중'; return {round:res.round,betId:bet.id,betName:bet.name,prizePool,participants,winners,hitRate,maxMultiple,wow}}
@@ -593,7 +633,7 @@ function bindActions(){
   document.getElementById('enterRoundBtn').addEventListener('click',()=>enterRound(false));
   document.getElementById('clearSelectionBtn').addEventListener('click',()=>{selection.picks=[]; renderSelectionPills(); renderAnimals(); renderComboPreview(); updateSlipGuide(); renderAll()});
   document.getElementById('stakeInput').addEventListener('input',()=>{renderComboPreview(); renderAutoEntryPanel()});
-  document.getElementById('runVerifyBtn').addEventListener('click',runContractVerification);
+  document.getElementById('connectVerifyBtn').addEventListener('click',connectVerifyContract); document.getElementById('runVerifyBtn').addEventListener('click',runContractVerification);
   document.getElementById('loadLatestBlockVerifyBtn').addEventListener('click',()=>{
     const b=state.blockFeed[0];
     applyVerificationInputs(new Date(b.time).getSeconds(),b.txCount,Math.floor(b.output))
