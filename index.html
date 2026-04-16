@@ -9,11 +9,66 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@500;600;700&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#030813;--bg2:#08111f;--panel:#081427;--panel2:#0c1b31;--panel3:#101f38;--line:rgba(51,181,255,.22);--line2:rgba(255,255,255,.08);--cyan:#17b8ff;--cyan2:#62ddff;--gold:#ffd400;--gold2:#ffb100;--green:#00ff9d;--red:#ff4f7b;--purple:#8c68ff;--white:#edf4ff;--muted:#8ca3c7;--muted2:#5d7194;--shadow:0 18px 48px rgba(0,0,0,.38);--radius:5px}
-*{box-sizing:border-box}html,body{margin:0;padding:0;background:radial-gradient(circle at 15% 12%, rgba(23,184,255,.13), transparent 28%),radial-gradient(circle at 84% 16%, rgba(255,212,0,.09), transparent 22%),linear-gradient(180deg,#020712 0%, #06101d 100%);color:var(--white);font-family:Pretendard,system-ui,sans-serif;min-height:100%}body{overflow-x:hidden}button,input,select{font:inherit}a{text-decoration:none;color:inherit}.hidden{display:none!important}
-#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.25}.app{position:relative;z-index:1;max-width:1600px;width:calc(100% - 36px);margin:0 auto;padding:0 0 44px}
+*{box-sizing:border-box}html,body{
+  margin:0;
+  padding:0;
+  min-height:100%;
+  background:
+    radial-gradient(circle at 82% 34%, rgba(99, 196, 160, 0.05) 0%, rgba(99,196,160,0.02) 16%, transparent 34%),
+    radial-gradient(circle at 18% 76%, rgba(35, 120, 104, 0.06) 0%, transparent 28%),
+    linear-gradient(180deg,#021b1a 0%, #04211f 44%, #031716 100%);
+  color:var(--white);
+  font-family:'BBAInter','Inter','Pretendard',system-ui,sans-serif;
+  letter-spacing:-0.01em
+}body{overflow-x:hidden}button,input,select{font:inherit}a{text-decoration:none;color:inherit}.hidden{display:none!important}
+#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.045;filter:blur(.4px)}
+.site-rings{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+.site-rings:before,
+.site-rings:after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(160,255,220,.10);
+}
+.site-rings:before{
+  width:1600px;
+  height:1600px;
+  right:-760px;
+  top:-120px;
+  box-shadow:
+    0 0 0 120px rgba(160,255,220,.04),
+    0 0 0 240px rgba(160,255,220,.035),
+    0 0 0 360px rgba(160,255,220,.03),
+    0 0 0 480px rgba(160,255,220,.025),
+    0 0 0 600px rgba(160,255,220,.02);
+  opacity:.95;
+}
+.site-rings:after{
+  width:1200px;
+  height:1200px;
+  left:-760px;
+  bottom:-760px;
+  box-shadow:
+    0 0 0 110px rgba(160,255,220,.022),
+    0 0 0 220px rgba(160,255,220,.018),
+    0 0 0 330px rgba(160,255,220,.014);
+  opacity:.55;
+}
+.privacy-page{
+  position:relative;
+  overflow:hidden;
+  background:transparent !important;
+}
+.app{position:relative;z-index:1;max-width:1600px;width:calc(100% - 36px);margin:0 auto;padding:0 0 44px}
 .main-header{position:sticky;top:0;z-index:40;width:100%;background:linear-gradient(90deg,#0b0f14 0%, #09131a 55%, #0b0f14 100%);backdrop-filter:blur(12px)}
 .header-shell{width:100%;border-top:0;border-left:0;border-right:0;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(10,12,16,.92);border-radius:0;box-shadow:none;overflow:hidden}
-.header-inner{display:flex;align-items:center;gap:12px;padding:8px 16px;min-height:56px}.logo-area{display:flex;align-items:center;gap:10px;min-width:220px;padding-left:8px}
+.header-inner{display:flex;align-items:center;gap:12px;padding:8px 16px;min-height:56px}.logo-area{display:flex;align-items:center;gap:10px;min-width:220px;padding-left:8px;cursor:pointer}
 .logo-mark{width:58px;height:58px;border-radius:5px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, rgba(23,184,255,.18), rgba(255,212,0,.13));border:1px solid rgba(255,255,255,.1);box-shadow:0 0 20px rgba(23,184,255,.2)}.logo-mark span{font-size:28px;animation:floatGlow 2.4s ease-in-out infinite}
 @keyframes floatGlow{0%,100%{transform:translateY(0);filter:drop-shadow(0 0 8px rgba(255,212,0,.35))}50%{transform:translateY(-2px);filter:drop-shadow(0 0 14px rgba(23,184,255,.45))}}
 .logo-copy .mini{font-size:11px;color:var(--cyan2);letter-spacing:2px;text-transform:uppercase;font-weight:700}.logo-copy .main{font-family:Orbitron,sans-serif;font-size:23px;font-weight:900;letter-spacing:1.5px}.logo-copy .main .c{color:var(--cyan);text-shadow:0 0 22px rgba(23,184,255,.34)}.logo-copy .main .y{color:var(--gold);text-shadow:0 0 22px rgba(255,212,0,.28)}.logo-copy .sub{font-size:11px;color:var(--muted)}
@@ -312,7 +367,7 @@ body{
 .main-header{top:0;background:linear-gradient(180deg, rgba(5,8,16,.94), rgba(5,8,16,.72), rgba(5,8,16,.24));backdrop-filter:blur(16px)}
 .header-shell,
 .section-box,.panel,.hero-panel,.live-card,.info-card,.animal-card,.history-card,.tx-item,.event-item,.result-card,.log-item,.verify-zone,.verify-contract-card,.verify-entry-box-v2,.verify-result-pane-v2,.verify-env-preview,.entry-focus-card,.fav-card,.wow-card,.jackpot-card,.stat-tile,.balance-item,.metric,.live-card,.history-cell,.history-card,.block-item,.verify-env-axis-card,.env-axis-card,.env-meta-item,.entry-stat,.strategy-stat,.verify-contract-card-v2,.verify-zone-v2{
-  background:linear-gradient(180deg, rgba(13,20,32,.94), rgba(9,14,23,.98)) !important;
+  background:linear-gradient(180deg, rgba(13,20,32,.88), rgba(9,14,23,.93)) !important;
   border:1px solid rgba(116,132,158,.16) !important;
   box-shadow:0 10px 28px rgba(0,0,0,.18) !important;
 }
@@ -1949,6 +2004,136 @@ body{
   box-shadow:0 0 0 1px rgba(0,255,157,.10) inset, 0 0 22px rgba(0,255,157,.06);
 }
 
+
+
+/* privacy policy page */
+.privacy-page-wrap{padding:28px 0 8px}
+.privacy-shell{position:relative;min-height:calc(100vh - 180px);overflow:hidden;border-radius:5px;background:radial-gradient(circle at 18% 18%, rgba(10,132,110,.10), transparent 24%),linear-gradient(180deg,#031519 0%,#042024 100%);}
+.privacy-shell:before,.privacy-shell:after{content:"";position:absolute;border:1px solid rgba(123,185,172,.13);border-radius:50%;pointer-events:none}
+.privacy-shell:before{width:1200px;height:1200px;right:-520px;top:-40px}
+.privacy-shell:after{width:900px;height:900px;right:-370px;top:120px}
+.privacy-ring{position:absolute;right:-180px;top:40px;width:980px;height:980px;border-radius:50%;border:1px solid rgba(123,185,172,.10);pointer-events:none}
+.privacy-ring.r2{width:760px;height:760px;right:-70px;top:150px}
+.privacy-ring.r3{width:560px;height:560px;right:30px;top:250px}
+.privacy-content{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0px 24px 96px}
+.privacy-header{text-align:center;margin-bottom:26px}
+.privacy-header h1{margin:0;font-family:Georgia, 'Times New Roman', serif;font-size:54px;line-height:1.05;font-weight:500;color:#f4fbfa}
+.privacy-updated{margin-top:14px;font-size:14px;color:#d2ebe4;font-weight:600}
+.privacy-doc{font-size:15px;line-height:1.8;color:#e8f5f1}
+.privacy-doc p{margin:0 0 18px}
+.privacy-doc h2{margin:28px 0 12px;font-size:16px;line-height:1.5;font-weight:800;color:#ffffff;text-transform:uppercase}
+.privacy-doc h3{margin:20px 0 10px;font-size:15px;font-weight:700;color:#ffffff}
+.privacy-doc ul{margin:8px 0 18px 18px;padding:0}
+.privacy-doc li{margin:0 0 8px}
+.privacy-doc strong{color:#ffffff}
+.privacy-doc a{color:#bfece0}
+.privacy-note{margin-top:28px;padding:14px 16px;border-radius:5px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:#d8efea}
+@media (max-width: 900px){.privacy-content{padding:48px 18px 72px}.privacy-header h1{font-size:40px}.privacy-doc{font-size:14px;line-height:1.75}}
+
+
+
+/* === final privacy background global override === */
+html,body{
+  background:
+    radial-gradient(circle at 18% 18%, rgba(10,132,110,.10), transparent 24%),
+    linear-gradient(180deg,#031519 0%, #042024 100%) !important;
+}
+body{
+  position:relative;
+}
+#bgCanvas{z-index:0;opacity:.03}
+.privacy-global-bg{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(10,132,110,.10), transparent 24%),
+    linear-gradient(180deg,#031519 0%, #042024 100%);
+}
+.privacy-global-bg::before,
+.privacy-global-bg::after{
+  content:"";
+  position:absolute;
+  border:1px solid rgba(123,185,172,.13);
+  border-radius:50%;
+}
+.privacy-global-bg::before{
+  width:1200px;
+  height:1200px;
+  right:-520px;
+  top:-40px;
+}
+.privacy-global-bg::after{
+  width:900px;
+  height:900px;
+  right:-370px;
+  top:120px;
+}
+.privacy-global-bg .privacy-ring{
+  position:absolute;
+  right:-180px;
+  top:40px;
+  width:980px;
+  height:980px;
+  border-radius:50%;
+  border:1px solid rgba(123,185,172,.10);
+}
+.privacy-global-bg .privacy-ring.r2{
+  width:760px;
+  height:760px;
+  right:-70px;
+  top:150px;
+}
+.privacy-global-bg .privacy-ring.r3{
+  width:560px;
+  height:560px;
+  right:30px;
+  top:250px;
+}
+.site-rings{
+  display:none !important;
+}
+.app,
+.main-header,
+.page,
+.page-wrap,
+.privacy-page,
+.privacy-page-wrap{
+  position:relative;
+  z-index:1;
+}
+.privacy-shell{
+  background:transparent !important;
+}
+
+
+
+/* === final privacy dedupe fix : privacy page only === */
+#page-privacy .privacy-shell::before,
+#page-privacy .privacy-shell::after,
+#page-privacy .privacy-ring::before,
+#page-privacy .privacy-ring::after{
+  content:none !important;
+  display:none !important;
+}
+
+#page-privacy .privacy-shell{
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#page-privacy .privacy-ring{
+  display:none !important;
+}
+
+#page-privacy .privacy-page-wrap,
+#page-privacy .privacy-content,
+#page-privacy .privacy-doc{
+  background: transparent !important;
+}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js">
 document.getElementById('applyVerifyPrevBlockBtn')?.addEventListener('click',()=>{
@@ -2023,11 +2208,13 @@ window.__monitorDemoState = {
 </head>
 <body>
 <canvas id="bgCanvas"></canvas>
+<div class="privacy-global-bg"><div class="privacy-ring"></div><div class="privacy-ring r2"></div><div class="privacy-ring r3"></div></div>
+<div class="site-rings"></div>
 <div class="app">
 <header class="main-header hl-header">
   <div class="hl-topbar">
     <div class="hl-brand-group">
-      <a class="hl-brand" href="#" aria-label="Block Beast Arena Home">
+      <a class="hl-brand" href="#" aria-label="Block Beast Arena Home" onclick="event.preventDefault(); navigate('dashboard')">
         <span class="hl-brand-mark"><span></span><span></span></span>
         <span class="hl-brand-text"><span class="hl-c">BLOCK</span><span class="hl-y">BEAST</span><span class="hl-c">ARENA</span></span>
       </a>
@@ -2563,8 +2750,11 @@ function animalScore(animal, env, block){const noiseA=parseInt(block.hash.slice(
 function computeProjectedRanking(){if(!state.lockedEnvironment||!state.lockedEnvironmentBlock) return []; const basis=state.blockFeed[0]||state.lockedEnvironmentBlock; return ANIMALS.map(a=>{const r=animalScore(a,state.lockedEnvironment,basis); return {...a,projected:r.score,envBonus:r.envBonus}}).sort((x,y)=>y.projected-x.projected)}
 function computeSettlementRanking(block){return ANIMALS.map(a=>{const r=animalScore(a,state.lockedEnvironment,block); return {...a,finalScore:r.score,envBonus:r.envBonus}}).sort((x,y)=>y.finalScore-x.finalScore)}
 function refreshMarketSnapshot(){const ranking=computeProjectedRanking(); const map={}; ranking.forEach((r,idx)=>{const handle=state.entries.filter(e=>e.picks.includes(r.id)); const totalStake=handle.reduce((s,e)=>s+e.stake,rand(18000,120000)); const participants=Math.max(handle.length+rand(12,40),rand(30,260)-idx*15); const baseOdds=Math.max(1.84, Number((1.84+idx*1.62).toFixed(2))); const adjOdds=Number((baseOdds-r.envBonus*0.12).toFixed(2)); const strength=Math.max(5,Math.min(95,30-idx*2.7+r.envBonus*3+rand(-2,2))); map[r.id]={totalStake,participants,baseOdds,adjOdds,strength,rank:idx+1}}); state.marketSnapshot=map}
-function navigate(page){document.querySelectorAll('.nav-item').forEach(el=>el.classList.toggle('active', el.dataset.page===page)); document.querySelectorAll('.page').forEach(el=>el.classList.toggle('active', el.id===`page-${page}`))}
-function bindNavigation(){document.querySelectorAll('.nav-item').forEach(el=>el.addEventListener('click',()=>navigate(el.dataset.page)))}
+function setNavSelection(page){document.querySelectorAll('.nav-item').forEach(el=>el.classList.toggle('active', !!page && el.dataset.page===page));}
+function showPage(page){document.querySelectorAll('.page').forEach(el=>el.classList.toggle('active', el.id===`page-${page}`));}
+function navigate(page){setNavSelection(page); showPage(page); window.scrollTo({top:0, behavior:'smooth'});}
+function openPrivacyPolicy(){setNavSelection(null); showPage('privacy'); window.scrollTo({top:0, behavior:'smooth'});}
+function bindNavigation(){document.querySelectorAll('.nav-item').forEach(el=>el.addEventListener('click',()=>navigate(el.dataset.page))); const footerPrivacyLink=document.getElementById('footerPrivacyLink'); if(footerPrivacyLink){footerPrivacyLink.addEventListener('click',(e)=>{e.preventDefault(); openPrivacyPolicy();});}}
 function pushLog(text){state.eventLog.unshift({text,time:timeNow()}); state.eventLog=state.eventLog.slice(0,80); renderLogs()}
 function toast(title, desc, pills=[]){const wrap=document.getElementById('toastStack'); const el=document.createElement('div'); el.className='toast'; el.innerHTML=`<div class="title">${title}</div><div class="desc">${desc}</div><div class="meta">${pills.map(p=>`<span>${p}</span>`).join('')}</div>`; wrap.appendChild(el); setTimeout(()=>el.remove(),5100)}
 function updateHashTicker(){document.getElementById('hashStreamInner').textContent=state.blockFeed.slice(0,10).map(b=>`#${b.number} ${b.hash.slice(0,16)}… tx:${b.txCount}`).join('   •   ')}
@@ -2964,7 +3154,7 @@ function bindActions(){
   document.getElementById('removeCurrentFavoriteBtn').addEventListener('click',removeCurrentFavorite);
 }
 function boot(){drawBackground(); bindNavigation(); bindActions(); renderBetTypes(); updateSlipGuide(); seedHistory(); const firstBlock=createMockBlock(); state.blockFeed=[firstBlock]; state.lockedEnvironmentBlock=firstBlock; state.lockedEnvironment=deriveEnvironment(firstBlock); for(let i=0;i<6;i++){const b=i===0?firstBlock:createMockBlock(state.blockFeed[0]); state.blockFeed.unshift(b)} state.blockFeed=state.blockFeed.slice(0,10); pushLog(`ROUND #${state.currentRound} 시작 · 환경락 블록 #${state.lockedEnvironmentBlock.number}`); renderAll(); applyVerificationInputs(14,2486,600192542593); scheduleNextBlock(); setInterval(updateCountdown,250); setTimeout(tryAutoEntry,300)}
-boot();
+window.addEventListener('DOMContentLoaded', boot, { once:true });
 
 document.getElementById('applyVerifyPrevBlockBtn')?.addEventListener('click',()=>{
   const v=document.getElementById('verifyPrevBlockInput')?.value?.replace('#','')||'';
@@ -3030,6 +3220,76 @@ window.__monitorDemoState = {
 
 </script>
 
+
+<section id="page-privacy" class="page privacy-page">
+  <div class="privacy-page-wrap">
+    <div class="privacy-shell">
+      <div class="privacy-ring"></div>
+      <div class="privacy-ring r2"></div>
+      <div class="privacy-ring r3"></div>
+      <div class="privacy-content">
+        <div class="privacy-header">
+          <h1>Privacy Policy</h1>
+          <div class="privacy-updated">Last updated on January 26, 2025</div>
+        </div>
+        <div class="privacy-doc">
+          <p>This Privacy Policy (“Policy”) for Hyperliquid Corp. (“Company”, “we”, “our”, or “us”) describes the basis on which we may process personal data we may collect from users of the Company’s website, app.hyperliquid.xyz, including any of its subdomains (“Website”), in accordance with applicable law. For purposes of applicable data protection laws, the Company is the controller. For the purposes of this Policy, “you” and “your” refers to you as the user of the Website.</p>
+          <p>Read this Policy carefully so that you understand your rights in relation to your personal data and how we might collect, use, and process it. If you do not agree to this Policy, do not use, access, connect to or interact with the Website, or otherwise provide your information to us.</p>
+          <h2>PERSONAL DATA WE COLLECT ABOUT YOU, WHY WE PROCESS IT, AND THE LEGAL BASIS FOR PROCESSING</h2>
+          <p>When you access, use, connect to, or interact with the Website, we may collect certain categories of information about you, including personal data, from a variety of sources.</p>
+          <h3>Information you provide to us:</h3>
+          <p>Data may include: (i) any digital-asset, smart-contract, or protocol address (“Wallet”) information; and (ii) geolocation data. You provide this data to us when you connect your Wallet to the Website.</p>
+          <p>Other data may include transaction data or history (such as your public blockchain transaction history and other information associated with a linked address or Wallet and token holdings. Should you contact us, we will collect the content of the communications we have with you and any personal data contained within, including the email address you used to contact us.</p>
+          <h3>Information we collect automatically:</h3>
+          <p>When you visit certain pages on our Website, our servers save each access in a log file. The following data may be collected: (i) the date and time of access; (ii) the country from which the website is accessed; (iii) any API endpoints being accessed; (iv) user agent details; (v) the operating system of your computer and the browser you are using (provider, version, and language); and (vi) the transmission protocol used (e.g., HTTP/1.1).</p>
+          <p>Finally, we may use web beacons/clear gifs, geolocation and tracking technologies, and other applications when you visit the Website, including technologies collecting certain information about your access to, use of, connection to, or interaction with the Website (“Usage Data”) that may be integrated with third-party service providers.</p>
+          <p>In our legitimate interests to provide effective services to you, we may also use this data to create aggregated, anonymized, or de-identified data.</p>
+          <h3>Third-Party Wallet Connections and Disclaimer:</h3>
+          <p>Certain features of the Website may require you to connect a compatible third-party digital Wallet. By using such Wallet, you agree that your access to, use of, connection to, and/or interactions with such third-party Wallets are governed by the policy for the applicable Wallet, and you agree that you are using the Wallet in accordance with the terms and conditions of the applicable third-party provider of such Wallet.</p>
+          <p>Wallets are not maintained or supported by, or associated or affiliated with, the Company. We expressly disclaim any and all liability for actions arising from your use of third-party Wallets, including but without limitation, actions relating to the use and/or disclosure of personal information by such third-party Wallets.</p>
+          <h3>Legal Basis for Processing Personal Data:</h3>
+          <p>We generally process the information we collect when we need to do so to perform our contract with you. For example, the processing of this data is carried out for the purpose of enabling your access to, use of, connection to, and interaction with the Website, including: (i) to facilitate your connection to the Website; and (ii) to identify if you are likely to be a Restricted Person, as defined in our general Terms of Use, available at app.hyperliquid.xyz/terms. Each case with respect to any of (i) or (ii) is in order for us to perform our contract with you and in our legitimate interests to provide access to the Website to you.</p>
+          <p>With your consent, we may use any data collected, including Usage Data, to tailor features and content to you and to ensure content is presented in the most effective manner for you and your device. We may also use and run analytics to better understand your user experience with respect to the Website.</p>
+          <p>We may also process this data in our legitimate interests to assist system security and stability for provision of the Website, to conduct troubleshooting, data analytics, testing, and research, and to enable optimization and internal statistical analysis with respect to the Website, as well as to maintain the safety and security of our users, the Website, and to improve and develop the Website.</p>
+          <p>In addition to the foregoing, we may use any of your information to comply with any applicable legal obligations, to enforce any applicable terms of use, and to protect or defend the Website, our rights, and the rights of our users or others.</p>
+          <h3>Cookie Policy:</h3>
+          <p>We use cookies to enhance your experience when accessing and using the Website. The cookies we use are strictly necessary cookies, which help ensure compliance with our Terms of Use, and are otherwise integral to our ability to provide the best user experience and to help us understand general usage patterns. These cookies are not used for marketing purposes. By continuing to use the Website, you consent to the placement of these cookies.</p>
+          <h2>YOUR RIGHTS</h2>
+          <p>Under applicable data protection laws, you may have certain rights in relation to your personal data. These rights may include the following:</p>
+          <ul>
+            <li>Access to your personal data that we hold, information on how we use it, and who we share it with;</li>
+            <li>Request the correction of inaccurate or incomplete personal data we hold about you, which we may verify as necessary before making changes;</li>
+            <li>Deletion or removal of your personal data, in certain circumstances;</li>
+            <li>Objection to the processing of your personal data, in certain circumstances;</li>
+            <li>Restriction of the processing of your personal data, in certain circumstances;</li>
+            <li>Portability of your personal data in a structured, commonly used, machine-readable format;</li>
+            <li>Withdrawal of consent, where we rely on consent to process personal data.</li>
+          </ul>
+          <p>You may submit a written request concerning the processing of your personal data to <a href="mailto:support@hyperliquid.zendesk.com">support@hyperliquid.zendesk.com</a>. Please note that, prior to any response to such request, we will require you to verify your identity. In addition, we may have valid legal reasons to refuse your request and will inform you if that is the case.</p>
+          <h2>SHARING OF PERSONAL DATA</h2>
+          <p>In certain circumstances, we may share your information with third parties with your consent, as necessary, or as otherwise required or permitted by law, including, but not limited to service providers and vendors, professional advisors, and other parties for legal and security reasons and to protect our Website.</p>
+          <p>Your personal information may be transferred to and stored or processed in countries outside the jurisdiction in which you live and reside, including outside the European Economic Area (“EEA”) and United Kingdom (“UK”), and including to the United States of America, in order to provide the Website.</p>
+          <h2>RETENTION</h2>
+          <p>We will retain your personal data only for so long as necessary to fulfill the purposes for which it was collected, including for the purposes of satisfying any legal, accounting or reporting requirements, or as otherwise required by law.</p>
+          <h2>CHILDRENS’ PRIVACY AND DATA PROTECTION</h2>
+          <p>If we become aware that we have unknowingly collected information about any person under eighteen (18) years of age, we will make commercially reasonable efforts to delete such personal data and other information from our records.</p>
+          <h2>SECURITY MEASURES TAKEN TO PROTECT PERSONAL DATA</h2>
+          <p>Be aware that despite our efforts to protect your personal data and other information, we cannot guarantee perfect security of your information transmitted through the Website. Any transmission is at your own risk.</p>
+          <h2>USAGE DATA COLLECTION</h2>
+          <p>When you access, use, connect to, or interact with the Website, the Company and any of its third-party service providers may receive and record personal data that you may have provided and your digital signature.</p>
+          <h2>SOCIAL MEDIA AND OTHER THIRD-PARTY WEBSITES AND LINKS</h2>
+          <p>We may provide links on the Website to other websites or online platforms operated by third parties, including social media or content platforms operated by third parties, such as X (formerly Twitter) or Medium. We do not own, operate, or control such third-party websites, and you should review their privacy and security policies separately.</p>
+          <h2>PERIODIC REVIEWS AND UPDATES TO POLICY</h2>
+          <p>This Policy takes into account the requirements of Panama’s Law No. 81 of 2019 on Personal Data Protection and general privacy principles. Individuals located in the EU and UK may have rights under the GDPR. We may review and update this Policy from time to time. Updates to this Policy will apply only to information collected after the date of the change.</p>
+          <h2>CONTACT</h2>
+          <p>Should you have any questions or complaints about our privacy or data-protection practices, your personal data, or this Policy, you can email us at <a href="mailto:support@hyperliquid.zendesk.com">support@hyperliquid.zendesk.com</a>.</p>
+          <div class="privacy-note">This screen is shown as a dedicated policy view. While this page is open, the top navigation intentionally has no selected menu state.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="hl-footer">
   <div class="hl-footer-inner">
     <div class="hl-footer-status"><span class="live-dot"></span><span>Online</span></div>
@@ -3038,7 +3298,7 @@ window.__monitorDemoState = {
       <a href="#">Docs</a>
       <a href="#">Support</a>
       <a href="#">Terms</a>
-      <a href="#">Privacy Policy</a>
+      <a href="#" id="footerPrivacyLink">Privacy Policy</a>
     </div>
   </div>
 </footer>
@@ -3318,6 +3578,26 @@ async function runSettlementDemo(){
     profitRank3:'수익금 3위 +9,600 SOL'
   });
 }
+
+  const homeLogo = document.getElementById('homeLogo');
+  if (homeLogo) {
+    const goDashboard = () => {
+      window.location.hash = '#dashboard';
+      if (typeof showPage === 'function') {
+        showPage('dashboard');
+      } else {
+        const dashNav = document.querySelector('.nav-item[data-page="dashboard"]');
+        if (dashNav) dashNav.click();
+      }
+    };
+    homeLogo.addEventListener('click', goDashboard);
+    homeLogo.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        goDashboard();
+      }
+    });
+  }
 </script>
 </body>
 </html>
