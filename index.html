@@ -97,6 +97,66 @@ button.primary,button.secondary,button.dark,button.table-pick{border-radius:5px;
 .animal-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.animal-card{padding:6px;border-radius:5px;background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden;cursor:pointer;transition:.2s}.animal-card:hover{transform:translateY(-2px);border-color:rgba(23,184,255,.42);box-shadow:0 0 0 1px rgba(23,184,255,.12) inset}.animal-card.selected{border-color:rgba(255,212,0,.55);box-shadow:0 0 0 1px rgba(255,212,0,.18) inset, 0 0 26px rgba(255,212,0,.1)}.animal-emoji{font-size:28px}.animal-name{margin-top:8px;font-size:18px;font-weight:800}.animal-role{font-size:12px;color:var(--cyan2)}.animal-meta{display:flex;justify-content:space-between;gap:8px;margin-top:10px;font-size:12px;color:var(--muted)}.statline{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.statline span{padding:6px 8px;border-radius:5px;font-size:11px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);color:var(--muted)}.trend{margin-top:10px;height:7px;border-radius:5px;background:rgba(255,255,255,.06);overflow:hidden}.trend span{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--green))}
 .cards-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.stat-tile{padding:6px;border-radius:5px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)}.stat-tile .k{font-size:11px;color:var(--muted);letter-spacing:1.4px;text-transform:uppercase}.stat-tile .v{font-family:Orbitron,sans-serif;font-size:28px;margin-top:6px}
 .history-card{padding:6px;border-radius:5px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;gap:8px}.history-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.status-pill{padding:6px 10px;border-radius:5px;font-size:11px;font-weight:800}.status-live{background:rgba(23,184,255,.12);border:1px solid rgba(23,184,255,.24);color:var(--cyan2)}.status-win{background:rgba(0,255,157,.12);border:1px solid rgba(0,255,157,.22);color:var(--green)}.status-lose{background:rgba(255,79,123,.12);border:1px solid rgba(255,79,123,.22);color:var(--red)}.history-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.history-cell{padding:6px;border-radius:5px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05)}.history-cell .k{font-size:11px;color:var(--muted)}.history-cell .v{font-size:14px;margin-top:4px;font-weight:700}
+.mypicks-summary-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-bottom:14px}
+.mypicks-summary-grid .summary{min-height:114px}
+.mypicks-summary-grid .summary.emphasis{border-color:rgba(245,201,72,.22);background:linear-gradient(180deg, rgba(245,201,72,.07), rgba(255,255,255,.03))}
+.mypicks-summary-grid .summary .v.positive,.mypicks-performance-grid .v.positive,.mypicks-entry-pnl.positive{color:var(--green)}
+.mypicks-summary-grid .summary .v.negative,.mypicks-performance-grid .v.negative,.mypicks-entry-pnl.negative{color:var(--red)}
+.mypicks-performance-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:16px}
+.mypicks-performance-grid .perf-card{padding:14px}
+.mypicks-performance-grid .k{font-size:11px;color:var(--muted);letter-spacing:1.3px;text-transform:uppercase}
+.mypicks-performance-grid .v{margin-top:8px;font-family:Orbitron,sans-serif;font-size:24px}
+.mypicks-toolbar{padding:16px;border-radius:5px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);margin-bottom:18px}
+.mypicks-toolbar-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.mypicks-toolbar-row + .mypicks-toolbar-row{margin-top:12px}
+.mypicks-chip-group{display:flex;gap:8px;flex-wrap:wrap}
+.mypicks-toolbar-row.controls .input-group{margin-top:0}
+.mypicks-search-group{flex:1 1 420px}
+.mypicks-sort-group{width:220px}
+.mypicks-result-meta{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:12px}
+.mypicks-history-list{gap:14px}
+.mypicks-entry-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.mypicks-entry-title{display:flex;flex-direction:column;gap:4px}
+.mypicks-entry-title .round{font-family:Orbitron,sans-serif;font-size:18px}
+.mypicks-entry-title .meta{font-size:12px;color:var(--muted)}
+.mypicks-entry-stake{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.mypicks-entry-picks{display:flex;gap:6px;flex-wrap:wrap}
+.mypicks-entry-picks span{padding:5px 8px;border-radius:5px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:11px}
+.mypicks-entry-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.mypicks-entry-grid .history-cell{min-height:74px}
+.mypicks-entry-outcome-grid{display:grid;grid-template-columns:1.1fr 1.1fr .8fr .9fr;gap:10px}
+.mypicks-entry-outcome-grid .history-cell{min-height:74px}
+.mypicks-entry-pnl{font-family:Orbitron,sans-serif;font-size:18px}
+.mypicks-empty{padding:24px;border-radius:5px;border:1px dashed rgba(255,255,255,.10);color:var(--muted);text-align:center}
+@media (max-width:1280px){.mypicks-summary-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.mypicks-performance-grid,.mypicks-entry-grid,.mypicks-entry-outcome-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.mypicks-summary-grid,.mypicks-performance-grid,.mypicks-entry-grid,.mypicks-entry-outcome-grid{grid-template-columns:1fr}.mypicks-sort-group{width:100%}.mypicks-result-meta{flex-direction:column;align-items:flex-start}}
+
+.winner-advanced-toolbar{padding:16px;border-radius:5px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);margin-top:18px}
+.winner-toolbar-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.winner-toolbar-row + .winner-toolbar-row{margin-top:12px}
+.winner-chip-group{display:flex;gap:8px;flex-wrap:wrap}
+.winner-search-group{flex:1 1 420px}
+.winner-sort-group,.winner-event-group{width:220px}
+.winner-result-meta{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:12px}
+.winner-summary-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-top:18px}
+.winner-summary-grid .summary{min-height:112px}
+.winner-summary-grid .summary.emphasis{border-color:rgba(245,201,72,.22);background:linear-gradient(180deg, rgba(245,201,72,.07), rgba(255,255,255,.03))}
+.winner-insight-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-top:18px}
+.winner-insight-card{padding:16px;border-radius:5px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)}
+.winner-insight-card .title{font-size:14px;font-weight:800;color:var(--white)}
+.winner-insight-card .sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.7}
+.winner-insight-list{display:grid;gap:10px;margin-top:12px}
+.winner-insight-row{display:grid;grid-template-columns:1.2fr .9fr .9fr .7fr;gap:10px;padding:10px 12px;border-radius:5px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);align-items:center}
+.winner-insight-row .name{font-weight:800}
+.winner-insight-row .meta{font-size:12px;color:var(--muted)}
+.winner-badge{display:inline-flex;align-items:center;justify-content:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:11px;font-weight:800;color:var(--cyan2)}
+.winner-badge.alert{color:var(--gold);border-color:rgba(245,201,72,.22);background:rgba(245,201,72,.08)}
+.winner-badge.muted{color:var(--muted)}
+.winner-empty{padding:24px;border-radius:5px;border:1px dashed rgba(255,255,255,.10);color:var(--muted);text-align:center}
+.winner-table-highlight{color:var(--gold);font-weight:800}
+@media (max-width:1280px){.winner-summary-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.winner-insight-grid{grid-template-columns:1fr}.winner-insight-row{grid-template-columns:1fr 1fr}}
+@media (max-width:820px){.winner-summary-grid,.winner-stats-grid{grid-template-columns:1fr}.winner-sort-group,.winner-event-group{width:100%}.winner-result-meta{flex-direction:column;align-items:flex-start}.winner-insight-row{grid-template-columns:1fr}}
+
 .tx-item,.event-item,.result-card,.log-item{padding:8px;border-radius:5px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)}.tx-item .top,.event-item .top,.result-card .top,.log-item .top{display:flex;justify-content:space-between;gap:10px}.result-card .round{font-family:Orbitron,sans-serif;font-size:18px}.result-card .meta{font-size:12px;color:var(--muted)}.result-card .podium{margin-top:8px;font-size:14px}.result-card .env{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.result-card .env span{padding:6px 8px;border-radius:5px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);font-size:11px;color:var(--muted)}.recent-list,.log-box,.event-list,.tx-list{display:flex;flex-direction:column;gap:10px}.log-item strong{color:var(--white)}.bar-row{display:grid;grid-template-columns:150px 1fr 64px;gap:10px;align-items:center}.bar{height:12px;border-radius:5px;background:rgba(255,255,255,.06);overflow:hidden;border:1px solid rgba(255,255,255,.06)}.bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--cyan))}.bar-row .val{text-align:right;font-family:Rajdhani,sans-serif;font-size:18px;font-weight:700}
 .footer-note{margin-top:18px;padding:6px 10px;border-radius:5px;background:rgba(255,79,123,.08);border:1px solid rgba(255,79,123,.2);color:#ffd7df;font-size:13px}
 .toast-stack{position:fixed;right:18px;bottom:48px;display:flex;flex-direction:column;gap:10px;z-index:50;align-items:flex-end}.toast{width:360px;padding:5px 10px;border-radius:5px;background:rgba(8,17,33,.96);border:1px solid var(--line);box-shadow:var(--shadow);animation:toastIn .35s ease, toastOut .35s ease 4.65s forwards}.toast .title{font-weight:900}.toast .desc{margin-top:4px;font-size:12px;color:var(--muted)}.toast .meta{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}.toast .meta span{font-size:11px;padding:6px 8px;border-radius:5px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);color:var(--muted)}@keyframes toastIn{from{opacity:0;transform:translateY(12px) translateX(16px)}to{opacity:1;transform:translateY(0) translateX(0)}}@keyframes toastOut{to{opacity:0;transform:translateY(12px) translateX(16px)}}
@@ -2033,13 +2093,6 @@ body{
 .privacy-doc li{margin:0 0 8px}
 .privacy-doc strong{color:#ffffff}
 .privacy-doc a{color:#bfece0}
-.privacy-doc h4{margin:16px 0 8px;font-size:14px;font-weight:700;color:#ffffff}
-.privacy-doc pre{margin:10px 0 16px;padding:14px 16px;border-radius:5px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);overflow:auto;color:#eef7f4}
-.privacy-doc code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-.privacy-doc table{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:14px;line-height:1.6;background:rgba(255,255,255,.03)}
-.privacy-doc th,.privacy-doc td{padding:10px 12px;border:1px solid rgba(255,255,255,.08);text-align:left;vertical-align:top}
-.privacy-doc th{background:rgba(255,255,255,.06);color:#ffffff;font-size:13px;font-weight:800}
-.privacy-doc tbody tr:nth-child(even){background:rgba(255,255,255,.02)}
 .privacy-note{margin-top:28px;padding:14px 16px;border-radius:5px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:#d8efea}
 @media (max-width: 900px){.privacy-content{padding:48px 18px 72px}.privacy-header h1{font-size:40px}.privacy-doc{font-size:14px;line-height:1.75}}
 
@@ -2195,6 +2248,194 @@ body.glow-boost .blockno .num,body.glow-boost .live-card .value,body.glow-boost 
 body.accent-aurora{--cyan:#8dffda;--cyan2:#d8fff4;--gold:#86a8ff;--gold2:#5b7cff;--green:#63ffc4}
 body.accent-ember{--cyan:#ffb26b;--cyan2:#ffe7c7;--gold:#ff6f61;--gold2:#ff8f3d;--green:#ffcf70}
 @media (max-width:900px){.topmenu-trigger{min-width:auto}.topmenu-label{display:none}.settings-panel{right:-6px}.top-floating-menu{right:-6px}}
+
+
+
+/* === UX IMPROVEMENTS 2026 === */
+.experience-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0 0}.experience-pill{padding:12px 14px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}.experience-pill strong{display:block;font-size:13px;color:var(--white)}.experience-pill span{display:block;margin-top:5px;font-size:12px;color:var(--muted);line-height:1.5}.experience-pill .eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan2);font-weight:800;margin-bottom:6px}
+.action-dock{position:sticky;top:10px;z-index:8;display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:16px;padding:12px 14px;border-radius:16px;background:rgba(5,14,25,.78);backdrop-filter:blur(18px);border:1px solid rgba(126,244,232,.12);box-shadow:0 18px 44px rgba(0,0,0,.24)}.action-dock .dock-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}.action-dock .dock-spacer{flex:1}.action-dock-btn{padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.05);color:var(--white);font-weight:800;cursor:pointer;transition:.18s}.action-dock-btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#08111f;border-color:transparent}.action-dock-btn:hover{transform:translateY(-1px);border-color:rgba(126,244,232,.24)}
+.insight-hub{display:grid;grid-template-columns:1.15fr 1fr .9fr;gap:18px;margin-top:18px}.insight-card{padding:18px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}.quick-step-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.quick-step{padding:12px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);display:flex;gap:12px;align-items:flex-start;min-height:96px}.quick-step .n{width:32px;height:32px;border-radius:11px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--white);flex:none}.quick-step strong{display:block;font-size:14px}.quick-step span{display:block;margin-top:5px;font-size:12px;line-height:1.55;color:var(--muted)}.quick-step.done{border-color:rgba(0,255,157,.28);background:linear-gradient(180deg,rgba(0,255,157,.10),rgba(255,255,255,.03))}.quick-step.active{border-color:rgba(255,212,0,.30);background:linear-gradient(180deg,rgba(255,212,0,.12),rgba(255,255,255,.03))}.quick-step.done .n{background:rgba(0,255,157,.16);color:var(--green)}.quick-step.active .n{background:rgba(255,212,0,.18);color:var(--gold)}
+.smart-primary{font-size:20px;font-weight:900;line-height:1.35;color:var(--white)}.smart-copy{margin-top:10px;font-size:13px;line-height:1.75;color:var(--muted)}.smart-meta{margin-top:14px;padding:12px 14px;border-radius:14px;background:rgba(4,12,22,.45);border:1px solid rgba(255,255,255,.07);font-size:12px;color:var(--cyan2);line-height:1.65}.smart-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.trust-list{display:grid;gap:10px;margin-top:12px}.trust-item{padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06)}.trust-item strong{display:block;font-size:13px}.trust-item span{display:block;margin-top:4px;font-size:12px;color:var(--muted);line-height:1.55}.entry-guard-banner{margin-top:12px;padding:12px 14px;border-radius:14px;background:rgba(23,184,255,.08);border:1px solid rgba(23,184,255,.18);font-size:12px;line-height:1.65;color:var(--cyan2)}.entry-guard-banner.warn{background:rgba(255,79,123,.10);border-color:rgba(255,79,123,.22);color:#ffc0cf}.entry-guard-banner.ok{background:rgba(0,255,157,.08);border-color:rgba(0,255,157,.18);color:#8ff7c3}
+.stake-presets{display:flex;flex-wrap:wrap;gap:8px;margin:-2px 0 12px}.stake-preset-btn{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:12px;font-weight:800;color:var(--white);cursor:pointer}.stake-preset-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#04101c;border-color:transparent}
+.wallet-flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:12px}.wallet-flow-step{padding:12px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);min-height:110px}.wallet-flow-step .eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.wallet-flow-step strong{display:block;margin-top:8px;font-size:14px}.wallet-flow-step span{display:block;margin-top:6px;font-size:12px;line-height:1.55;color:var(--muted)}.wallet-flow-step.active{border-color:rgba(255,212,0,.22);background:linear-gradient(180deg,rgba(255,212,0,.10),rgba(255,255,255,.03))}.wallet-flow-step.done{border-color:rgba(0,255,157,.22);background:linear-gradient(180deg,rgba(0,255,157,.08),rgba(255,255,255,.03))}.wallet-flow-status{margin-top:12px;padding:12px 14px;border-radius:14px;background:rgba(4,12,22,.42);border:1px solid rgba(255,255,255,.07);font-size:12px;line-height:1.65;color:var(--cyan2)}
+.safe-play-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.safe-pill-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px}.safe-pill{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:12px;font-weight:800;color:var(--white)}
+.mobile-bottom-nav{display:none}
+.section-anchor-note{margin-top:14px;padding:11px 13px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);font-size:12px;line-height:1.65;color:var(--muted)}
+@media (max-width:1280px){.experience-strip,.insight-hub,.wallet-flow,.safe-play-grid{grid-template-columns:1fr 1fr}.experience-strip{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:820px){.experience-strip,.insight-hub,.quick-step-grid,.wallet-flow,.safe-play-grid{grid-template-columns:1fr}.action-dock{top:auto;bottom:76px;position:fixed;left:12px;right:12px;z-index:11}.action-dock .dock-label,.action-dock .dock-spacer{display:none}.action-dock-btn{flex:1;min-width:0}.mobile-bottom-nav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:12;padding:10px 8px calc(10px + env(safe-area-inset-bottom));background:rgba(5,14,25,.92);backdrop-filter:blur(18px);border-top:1px solid rgba(255,255,255,.08)}.mobile-tab{display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:center;padding:8px 4px;border-radius:12px;border:none;background:transparent;color:var(--muted);font-size:11px;font-weight:800;cursor:pointer}.mobile-tab.active{color:var(--white);background:rgba(126,244,232,.08)}.toast-stack{bottom:92px}.app{padding-bottom:150px!important}}
+
+
+/* ===== Block Verify fairness engine upgrade ===== */
+.fairness-engine-shell{
+  position:relative;
+  overflow:hidden;
+}
+.fairness-engine-shell:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(107,196,255,.14), transparent 24%),
+    radial-gradient(circle at 92% 18%, rgba(247,201,72,.10), transparent 20%),
+    linear-gradient(135deg, rgba(255,255,255,.018), transparent 48%);
+}
+.fairness-engine-title,
+.fairness-hero-card,
+.fairness-card-grid,
+.fairness-footnote{position:relative;z-index:1}
+.fairness-hero-card{
+  padding:18px 20px;
+  border-radius:5px;
+  background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 10px 28px rgba(0,0,0,.16);
+}
+.fairness-hero-badge{
+  display:inline-flex;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(25,195,125,.10);
+  border:1px solid rgba(25,195,125,.24);
+  color:#8df0bf;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+.fairness-hero-card h4{
+  margin:14px 0 10px;
+  font-size:26px;
+  line-height:1.25;
+  letter-spacing:-.03em;
+}
+.fairness-hero-card p{
+  margin:0;
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.75;
+}
+.fairness-chip-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+.fairness-chip-row span{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  color:#d7e2f3;
+  font-size:12px;
+  font-weight:700;
+}
+.fairness-card-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-top:14px;
+}
+.fairness-card{
+  padding:16px 16px 15px;
+  border-radius:5px;
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.024));
+  border:1px solid rgba(255,255,255,.08);
+}
+.fairness-card-k{
+  font-size:11px;
+  color:var(--cyan2);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:800;
+}
+.fairness-card-v{
+  margin-top:8px;
+  font-size:18px;
+  font-weight:800;
+  line-height:1.35;
+  color:#f3f7ff;
+}
+.fairness-card p{
+  margin:10px 0 0;
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.75;
+}
+.fairness-steps{
+  margin:10px 0 0;
+  padding-left:18px;
+  color:var(--muted);
+}
+.fairness-steps li{
+  margin-top:8px;
+  line-height:1.65;
+  font-size:13px;
+}
+.fairness-footnote{
+  margin-top:14px;
+  padding:14px 16px;
+  border-radius:5px;
+  background:rgba(247,201,72,.08);
+  border:1px solid rgba(247,201,72,.18);
+  color:#e9eef7;
+  font-size:13px;
+  line-height:1.75;
+}
+.fairness-footnote strong{color:var(--gold)}
+@media (max-width: 980px){
+  .fairness-card-grid{grid-template-columns:1fr}
+  .fairness-hero-card h4{font-size:22px}
+}
+
+
+.live-verify-shell{position:relative;overflow:hidden}
+.live-verify-shell:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 12% 16%, rgba(107,196,255,.14), transparent 24%),radial-gradient(circle at 92% 14%, rgba(245,201,72,.10), transparent 18%),linear-gradient(135deg, rgba(255,255,255,.018), transparent 46%)}
+.live-verify-title,.live-verify-hero,.live-verify-stat-grid,.live-verify-mini-grid,.live-verify-podium,.live-verify-section-label{position:relative;z-index:1}
+.live-verify-hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;padding:20px 22px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.022));border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+.live-verify-badge{display:inline-flex;padding:7px 12px;border-radius:999px;background:rgba(107,196,255,.12);border:1px solid rgba(107,196,255,.24);color:#d7efff;font-size:11px;font-weight:800;letter-spacing:.08em}
+.live-verify-hero h4{margin:14px 0 10px;font-size:25px;line-height:1.25;letter-spacing:-.03em;max-width:760px}
+.live-verify-hero p{margin:0;font-size:13px;line-height:1.78;color:var(--muted);max-width:780px}
+.live-verify-actions{display:flex;flex-direction:column;gap:10px;justify-content:flex-end;align-items:stretch;min-width:208px}
+.live-verify-actions button{height:46px;border-radius:12px!important}
+.live-verify-stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:16px}
+.live-verify-stat-grid2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}
+.live-verify-stat,.live-verify-mini-card,.live-verify-rank{padding:16px 17px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.022));border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
+.live-verify-stat{position:relative;overflow:hidden}
+.live-verify-stat:before,.live-verify-mini-card:before,.live-verify-rank:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg, rgba(107,196,255,.95), rgba(107,196,255,.05));opacity:.7}
+.live-verify-stat.emphasis{background:linear-gradient(180deg, rgba(245,201,72,.12), rgba(255,255,255,.03));border-color:rgba(245,201,72,.24);box-shadow:0 0 0 1px rgba(245,201,72,.06) inset}
+.live-verify-stat.emphasis:before{background:linear-gradient(180deg, rgba(245,201,72,.95), rgba(245,201,72,.08));opacity:.95}
+.live-verify-stat .k,.live-verify-mini-card .k,.live-verify-rank .k{font-size:11px;color:var(--cyan2);text-transform:uppercase;letter-spacing:.11em;font-weight:800;position:relative;z-index:1}
+.live-verify-stat .v,.live-verify-mini-card .v{margin-top:8px;font-size:24px;font-weight:800;line-height:1.2;color:#f3f7ff;position:relative;z-index:1}
+.live-verify-stat .sub,.live-verify-mini-card .sub,.live-verify-rank .sub{margin-top:8px;font-size:12px;color:var(--muted);line-height:1.6;position:relative;z-index:1}
+.live-verify-mini-grid{display:grid;grid-template-columns:1.05fr 1.15fr .8fr;gap:14px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08)}
+.live-verify-section-label{margin-top:18px;display:flex;align-items:center;gap:10px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);font-size:11px;font-weight:800;letter-spacing:.16em;color:#a9bad1;text-transform:uppercase}
+.live-verify-section-label:before{content:"";width:34px;height:1px;background:linear-gradient(90deg, rgba(245,201,72,.95), rgba(107,196,255,.2))}
+.live-verify-podium{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px;align-items:stretch}
+.live-verify-rank{display:flex;flex-direction:column;justify-content:center;min-height:136px;position:relative;overflow:hidden;gap:2px}
+.live-verify-rank:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg, rgba(107,196,255,.045), transparent 36%, transparent 68%, rgba(245,201,72,.06))}
+.live-verify-rank .place{font-size:13px;font-weight:900;color:#f7c948;letter-spacing:.14em;text-transform:uppercase;position:relative;z-index:1}
+.live-verify-rank .name{margin-top:10px;font-size:24px;font-weight:800;line-height:1.18;color:#f3f7ff;position:relative;z-index:1}
+.live-verify-rank .meta{margin-top:10px;font-size:12px;color:var(--cyan2);position:relative;z-index:1}
+.live-verify-rank.rank-1{min-height:156px;background:linear-gradient(180deg, rgba(245,201,72,.14), rgba(255,255,255,.028));border-color:rgba(245,201,72,.28);box-shadow:0 0 0 1px rgba(245,201,72,.07) inset, 0 12px 30px rgba(0,0,0,.18)}
+.live-verify-rank.rank-1:before{background:linear-gradient(180deg, rgba(245,201,72,.98), rgba(245,201,72,.08));opacity:1}
+.live-verify-rank.rank-1 .name{font-size:28px}
+.live-verify-rank.rank-2{transform:translateY(12px);background:linear-gradient(180deg, rgba(195,230,255,.10), rgba(255,255,255,.022));border-color:rgba(195,230,255,.18)}
+.live-verify-rank.rank-2:before{background:linear-gradient(180deg, rgba(195,230,255,.95), rgba(195,230,255,.08));opacity:.9}
+.live-verify-rank.rank-3{transform:translateY(18px);background:linear-gradient(180deg, rgba(216,180,138,.10), rgba(255,255,255,.022));border-color:rgba(216,180,138,.18)}
+.live-verify-rank.rank-3:before{background:linear-gradient(180deg, rgba(216,180,138,.95), rgba(216,180,138,.08));opacity:.9}
+.live-verify-rank.rank-2 .place{color:#c3e6ff}
+.live-verify-rank.rank-3 .place{color:#d8b48a}
+@media (max-width:1100px){.live-verify-stat-grid,.live-verify-mini-grid,.live-verify-podium{grid-template-columns:1fr 1fr}.live-verify-hero{grid-template-columns:1fr}.live-verify-actions{min-width:0;flex-direction:row;flex-wrap:wrap}.live-verify-rank.rank-1,.live-verify-rank.rank-2,.live-verify-rank.rank-3{transform:none;min-height:128px}}
+@media (max-width:820px){.live-verify-stat-grid,.live-verify-mini-grid,.live-verify-podium{grid-template-columns:1fr}.live-verify-hero h4{font-size:22px}.live-verify-mini-grid,.live-verify-section-label{padding-top:16px}.live-verify-rank.rank-1,.live-verify-rank.rank-2,.live-verify-rank.rank-3{transform:none;min-height:128px}.live-verify-rank.rank-1 .name{font-size:24px}}
+
+
+.live-verify-rank.rank-1,.live-verify-rank.rank-2,.live-verify-rank.rank-3{transform:none!important;min-height:148px;}
+.live-verify-rank.rank-1{order:1;}
+.live-verify-rank.rank-2{order:2;}
+.live-verify-rank.rank-3{order:3;}
 
 </style>
 <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js">
@@ -2462,7 +2703,7 @@ window.__monitorDemoState = {
           <div class="progress"><span id="roundProgress"></span></div>
         </div>
         <div class="env-meta-stack">
-          <div class="env-meta-item"><div class="k">LOCK BLOCK</div><div class="v" id="participantStatus">#889,614</div></div>
+          <div class="env-meta-item"><div class="k">ROUND</div><div class="v" id="participantStatus">#889,614</div></div>
           <div class="env-meta-item"><div class="k">LOCK TIME</div><div class="v">2026. 4. 14. 0시 27분 55초</div></div>
         </div>
       </div>
@@ -2656,31 +2897,199 @@ window.__monitorDemoState = {
 </section>
 
 <section class="page" id="page-mypicks">
-  <div class="section-box">
-    <div class="section-title"><h3>내 선택 히스토리</h3><div class="sub">언제 · 어떤 게임에 · 어떻게 참여했는지와 결과를 함께 표시</div></div>
-    <div class="cards-3" style="margin-bottom:18px">
-      <div class="history-cell"><div class="k">진행중</div><div class="v" id="pickPending">0</div></div>
-      <div class="history-cell"><div class="k">적중</div><div class="v" id="pickWin">0</div></div>
-      <div class="history-cell"><div class="k">미적중</div><div class="v" id="pickLose">0</div></div>
+  <div class="section-box mypicks-shell">
+    <div class="section-title"><h3>My Picks · 참여 이력 분석</h3><div class="sub">필터 · 검색 · 정렬 · 손익 요약까지 한 화면에서 관리</div></div>
+
+    <div class="mypicks-summary-grid">
+      <div class="history-cell summary emphasis"><div class="k">진행중</div><div class="v" id="pickPending">0</div><div class="small-note">아직 결과 확정 전</div></div>
+      <div class="history-cell summary"><div class="k">적중</div><div class="v" id="pickWin">0</div><div class="small-note">정산 완료 기준</div></div>
+      <div class="history-cell summary"><div class="k">미적중</div><div class="v" id="pickLose">0</div><div class="small-note">정산 완료 기준</div></div>
+      <div class="history-cell summary"><div class="k">누적 참여</div><div class="v" id="pickTotalStake">0 SPL</div><div class="small-note">필터 적용 기준</div></div>
+      <div class="history-cell summary"><div class="k">실현 손익</div><div class="v" id="pickRealizedPnl">0 SPL</div><div class="small-note">당첨 수령 - 참여금</div></div>
+      <div class="history-cell summary"><div class="k">ROI</div><div class="v" id="pickRoi">0%</div><div class="small-note">실현 손익률</div></div>
     </div>
-    <div class="recent-list" id="myPickHistory"></div>
+
+    <div class="mypicks-performance-grid">
+      <div class="info-card perf-card">
+        <div class="k">적중률</div>
+        <div class="v" id="pickHitRate">0%</div>
+        <div class="small-note">확정 결과 중 적중 비중</div>
+      </div>
+      <div class="info-card perf-card">
+        <div class="k">평균 참여금</div>
+        <div class="v" id="pickAvgStake">0 SPL</div>
+        <div class="small-note">필터 적용 내역 평균</div>
+      </div>
+      <div class="info-card perf-card">
+        <div class="k">최대 수령 추정</div>
+        <div class="v" id="pickBestPayout">0 SPL</div>
+        <div class="small-note">개별 엔트리 기준 최고 수령</div>
+      </div>
+      <div class="info-card perf-card">
+        <div class="k">미정산 익스포저</div>
+        <div class="v" id="pickPendingStake">0 SPL</div>
+        <div class="small-note">진행중 참여금 합계</div>
+      </div>
+    </div>
+
+    <div class="mypicks-toolbar">
+      <div class="mypicks-toolbar-row">
+        <div class="mypicks-chip-group" id="myPickPeriodChips">
+          <button class="filter-chip active" data-period="7d" type="button">최근 7일</button>
+          <button class="filter-chip" data-period="30d" type="button">최근 30일</button>
+          <button class="filter-chip" data-period="all" type="button">전체</button>
+        </div>
+        <div class="mypicks-chip-group" id="myPickStatusChips">
+          <button class="filter-chip active" data-status="all" type="button">전체 상태</button>
+          <button class="filter-chip" data-status="live" type="button">진행중</button>
+          <button class="filter-chip" data-status="win" type="button">적중</button>
+          <button class="filter-chip" data-status="lose" type="button">미적중</button>
+        </div>
+      </div>
+
+      <div class="mypicks-toolbar-row controls">
+        <div class="input-group mypicks-search-group">
+          <label>검색</label>
+          <input id="myPickSearchInput" type="text" placeholder="Round, 게임 방식, 비스트명 검색">
+        </div>
+        <div class="input-group mypicks-sort-group">
+          <label>정렬</label>
+          <select id="myPickSortSelect">
+            <option value="latest">최신순</option>
+            <option value="oldest">오래된순</option>
+            <option value="profit">수익순</option>
+            <option value="stake">참여금순</option>
+            <option value="pending">진행중 우선</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mypicks-result-meta">
+        <div class="small-note" id="myPickFilterSummary">전체 참여 내역을 표시합니다.</div>
+        <button class="dark" id="myPickResetBtn" type="button">필터 초기화</button>
+      </div>
+    </div>
+
+    <div class="recent-list mypicks-history-list" id="myPickHistory"></div>
   </div>
 </section>
 
 <section class="page" id="page-blocks">
   <div class="cards-2">
-    <div class="section-box">
-      <div class="section-title"><h3>블록데이터 엔진</h3><div class="sub">당첨자 조작 방지 검증용 핵심 페이지</div></div>
-      <div class="small-note">환경 LOCK 블록과 정산 블록, 우승 비스트, 적중자 수를 라운드 단위로 교차 검증할 수 있습니다.</div>
-      <div class="block-list" id="blockDataList" style="margin-top:14px"></div>
+    <div class="section-box live-verify-shell">
+      <div class="section-title live-verify-title"><h3>LAST VERIFIED ROUND</h3><div class="sub">직전 확정 경기 기준으로 즉시 재검증할 수 있는 결과 요약입니다</div></div>
+      <div class="live-verify-hero">
+        <div>
+          <div class="live-verify-badge" id="liveVerifyBadge">LAST CONFIRMED</div>
+          <h4>직전 경기의 확정 블록과 입력값을 그대로 다시 넣어, 같은 결과가 재현되는지 바로 검증할 수 있습니다.</h4>
+          <p>이 박스는 진행 중인 라운드가 아니라 이미 확정된 직전 경기 전용입니다. 환경값, Verification Input, 순위 결과가 모두 고정된 상태이므로 아래 입력창에 그대로 반영해 즉시 재검증하는 용도에 맞춰 설계되었습니다.</p>
+        </div>
+        <div class="live-verify-actions">
+          <button class="secondary" id="liveVerifyCurrentBtn" type="button">직전 결과값 적용</button>
+          <button class="dark" id="liveVerifyLatestHistoryBtn" type="button">히스토리 위치 보기</button>
+        </div>
+      </div>
+      <div class="live-verify-stat-grid">
+        <div class="live-verify-stat emphasis">
+          <div class="k">Verified Round</div>
+          <div class="v" id="liveVerifyRound">#-</div>
+          <div class="sub">재검증 기준 직전 확정 회차</div>
+        </div>
+        <div class="live-verify-stat">
+          <div class="k">Verify Status</div>
+          <div class="v" id="liveVerifyStatus">Ready</div>
+
+        </div>
+        <div class="live-verify-stat">
+          <div class="k">Lock Block</div>
+          <div class="v" id="liveVerifyLockBlock">#-</div>
+          <div class="sub">환경이 고정된 기준 블록</div>
+        </div>
+        <div class="live-verify-stat">
+          <div class="k">Settlement Block</div>
+          <div class="v" id="liveVerifySettleBlock">#-</div>
+          <div class="sub">순위가 확정된 정산 블록</div>
+        </div>
+      </div>
+      <div class="live-verify-stat-grid2">
+        <div class="live-verify-stat">
+          <div class="k">Confirmed Environment</div>
+          <div class="v" id="liveVerifyEnvironment">- / - / -</div>
+          <div class="sub">직전 경기에서 실제로 적용된 전장</div>
+        </div>
+        <div class="live-verify-stat">
+          <div class="k">Verification Input</div>
+          <div class="v" id="liveVerifyInputSummary">TX 0 · OUT 0</div>
+          <div class="sub">아래 입력창에 그대로 넣는 재검증 기준값</div>
+        </div>
+        <div class="live-verify-stat">
+          <div class="k">Pulse</div>
+          <div class="v" id="liveVerifyCountdown">0s</div>
+          <div class="sub">정산 시각에서 추출된 맥박값</div>
+        </div>
+      </div>
+      <div class="live-verify-section-label">Verified podium snapshot</div>
+      <div class="live-verify-podium">
+        <div class="live-verify-rank rank-1">
+          <div class="k">Verified winner</div>
+          <div class="place">1ST</div>
+          <div class="name" id="liveVerifyTop1">-</div>
+          <div class="meta" id="liveVerifyTop1Meta">점수 · 직전 확정 결과</div>
+        </div>
+        <div class="live-verify-rank rank-2">
+          <div class="k">Runner Up</div>
+          <div class="place">2ND</div>
+          <div class="name" id="liveVerifyTop2">-</div>
+          <div class="meta" id="liveVerifyTop2Meta">점수 · 직전 확정 결과</div>
+        </div>
+        <div class="live-verify-rank rank-3">
+          <div class="k">Top 3 finish</div>
+          <div class="place">3RD</div>
+          <div class="name" id="liveVerifyTop3">-</div>
+          <div class="meta" id="liveVerifyTop3Meta">점수 · 직전 확정 결과</div>
+        </div>
+      </div>
     </div>
-    <div class="section-box">
-      <div class="section-title"><h3>블록 파생 규칙</h3><div class="sub">공정성 설명</div></div>
-      <div class="recent-list">
-        <div class="result-card"><div class="round">1. 환경 LOCK</div><div class="meta">직전 블록 해시 일부 + TxCount + Output 지표로 Sky/Ground/Tempo 결정</div></div>
-        <div class="result-card"><div class="round">2. 10분 대기</div><div class="meta">카운트다운 종료 후 도착하는 첫 BTC 블록만 정산 대상</div></div>
-        <div class="result-card"><div class="round">3. 순위 계산</div><div class="meta">환경 가중치 + 비스트 기본능력치 + 정산 블록 지표 결합</div></div>
-        <div class="result-card"><div class="round">4. 결과 공개</div><div class="meta">LOCK 블록과 정산 블록을 함께 보여 조작 불가 구조를 검증</div></div>
+    <div class="section-box fairness-engine-shell">
+      <div class="section-title fairness-engine-title"><h3>Proof of Fairness Engine</h3><div class="sub">왜 블록 변조가 어렵고, 왜 동일 결과가 재현되는지 설명합니다</div></div>
+      <div class="fairness-hero-card">
+        <div class="fairness-hero-badge">PUBLIC • DETERMINISTIC • REPLAYABLE</div>
+        <h4>같은 블록 데이터와 같은 공식이면, 누구나 같은 결과를 다시 얻습니다.</h4>
+        <p>Block Verify는 서버 내부 난수가 아니라 공개 블록 데이터를 입력값으로 사용합니다. 운영자가 값을 임의로 바꾸지 않는 한, 같은 블록 번호·Tx 수·Output 값·시간 정보는 항상 같은 계산 결과만 만듭니다.</p>
+        <div class="fairness-chip-row">
+          <span>Immutable Block Source</span>
+          <span>No Hidden RNG</span>
+          <span>Replay Same Result</span>
+        </div>
+      </div>
+      <div class="fairness-card-grid">
+        <div class="fairness-card">
+          <div class="fairness-card-k">01 · 왜 변조가 어려운가</div>
+          <div class="fairness-card-v">확정 블록은 사후 조작이 매우 어렵습니다</div>
+          <p>블록 데이터는 네트워크에 공개 기록되며, 이미 확정된 블록을 특정 결과에 맞게 단독 수정하기 어렵습니다. 즉, 결과 재료 자체가 운영 서버 내부 값보다 훨씬 강한 공개 검증 기반을 가집니다.</p>
+        </div>
+        <div class="fairness-card">
+          <div class="fairness-card-k">02 · 핵심 의미</div>
+          <div class="fairness-card-v">같은 입력값 = 같은 결과</div>
+          <p>Block Number, Tx Count, Output Value, Block Time을 같은 공식에 대입하면 항상 동일한 결과가 도출됩니다. 숨겨진 랜덤 시드나 관리자 전용 보정값이 끼어들지 않는다는 점이 핵심입니다.</p>
+        </div>
+        <div class="fairness-card">
+          <div class="fairness-card-k">03 · 이 기능의 의미</div>
+          <div class="fairness-card-v">신뢰를 약속이 아니라 검증으로 제공합니다</div>
+          <p>일반적인 게임은 내부 RNG를 사용해 유저가 계산 과정을 보지 못합니다. 반면 이 구조는 외부 공개 데이터와 고정 규칙을 사용하므로, 결과가 어떻게 만들어졌는지 누구나 따라가며 확인할 수 있습니다.</p>
+        </div>
+        <div class="fairness-card">
+          <div class="fairness-card-k">04 · 사용 가이드</div>
+          <div class="fairness-card-v">검증은 3단계면 충분합니다</div>
+          <ol class="fairness-steps">
+            <li>블록 번호와 표시된 값을 입력하거나 불러옵니다.</li>
+            <li>입력값이 Explorer 데이터와 일치하는지 확인합니다.</li>
+            <li>공식 적용 후 나온 결과가 화면 표시와 같은지 비교합니다.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="fairness-footnote">
+        <strong>Important Note.</strong> 블록체인이 직접 우승자를 선택하는 것이 아니라, 공개 블록 데이터를 공개 계산 규칙의 입력 재료로 사용합니다. 따라서 미래 블록은 예측하기 어렵고, 사후에는 누구나 같은 결과를 재현할 수 있습니다.
       </div>
     </div>
   </div>
@@ -2778,7 +3187,20 @@ window.__monitorDemoState = {
   </div>
   <div class="section-box" style="margin-top:18px">
     <div class="section-title"><h3>라운드 블록 히스토리</h3><div class="sub">최근 100경기 기준</div></div>
-    <div class="table-wrap"><table class="table"><thead><tr><th>ROUND</th><th>LOCK BLOCK</th><th>LOCK TIME</th><th>SETTLE BLOCK</th><th>SETTLE TIME / PULSE</th><th>환경</th><th>1위</th><th>상금 풀</th><th>적중</th><th>검증</th></tr></thead><tbody id="blockHistoryBody"></tbody></table></div>
+    <div class="table-wrap"><table class="table"><thead><tr><th>ROUND</th><th>LOCK BLOCK</th><th>LOCK TIME</th><th>SETTLE BLOCK</th><th>SETTLE TIME / PULSE</th><th>환경</th><th>1위</th><th>상금 풀</th><th>적중</th><th>검증</th></tr></thead><tbody id="blockHistoryBody">
+<tr><td>#1246</td><td>#892,441</td><td>2026. 04. 23. 22:14:08</td><td>#892,442</td><td>2026. 04. 23. 22:22:41 / 41</td><td>Sunfire / Wildfield / Ambush</td><td>🐉 Dragon</td><td>184,000 SPL</td><td>3</td><td><button class="history-inline-btn">불러오기</button></td></tr>
+<tr><td>#1245</td><td>#892,439</td><td>2026. 04. 23. 22:03:56</td><td>#892,440</td><td>2026. 04. 23. 22:11:24 / 24</td><td>Mistwood / Stone Ridge / Skirmish</td><td>🐺 Wolf</td><td>162,000 SPL</td><td>2</td><td><button class="history-inline-btn">불러오기</button></td></tr>
+<tr><td>#1244</td><td>#892,437</td><td>2026. 04. 23. 21:53:11</td><td>#892,438</td><td>2026. 04. 23. 22:00:52 / 52</td><td>Stormmire / Black Bog / Siege</td><td>🐻 Bear</td><td>201,000 SPL</td><td>1</td><td><button class="history-inline-btn">불러오기</button></td></tr>
+<tr><td>#1243</td><td>#892,435</td><td>2026. 04. 23. 21:42:34</td><td>#892,436</td><td>2026. 04. 23. 21:49:07 / 7</td><td>Sunfire / Stone Ridge / Ambush</td><td>🦁 Lion</td><td>149,000 SPL</td><td>4</td><td><button class="history-inline-btn">불러오기</button></td></tr>
+<tr><td>#1242</td><td>#892,433</td><td>2026. 04. 23. 21:31:58</td><td>#892,434</td><td>2026. 04. 23. 21:39:55 / 55</td><td>Mistwood / Wildfield / Siege</td><td>🐎 Warhorse</td><td>176,000 SPL</td><td>0</td><td><button class="history-inline-btn">불러오기</button></td></tr>
+<tr><td>#1241</td><td>#892,431</td><td>2026. 04. 23. 21:21:22</td><td>#892,432</td><td>2026. 04. 23. 21:28:40 / 40</td><td>Stormmire / Wildfield / Skirmish</td><td>🦊 Fox</td><td>133,000 SPL</td><td>5</td><td><button class="history-inline-btn">불러오기</button></td></tr>
+<tr><td>#1240</td><td>#892,429</td><td>2026. 04. 23. 21:10:44</td><td>#892,430</td><td>2026. 04. 23. 21:18:13 / 13</td><td>Sunfire / Black Bog / Ambush</td><td>🦂 Scorpion</td><td>121,000 SPL</td><td>2</td><td><button class="history-inline-btn">불러오기</button></td></tr>
+<tr><td>#1239</td><td>#892,427</td><td>2026. 04. 23. 20:59:12</td><td>#892,428</td><td>2026. 04. 23. 21:06:36 / 36</td><td>Mistwood / Black Bog / Siege</td><td>🐏 Ram</td><td>157,000 SPL</td><td>1</td><td><button class="history-inline-btn">불러오기</button></td></tr>
+<tr><td>#1238</td><td>#892,425</td><td>2026. 04. 23. 20:48:38</td><td>#892,426</td><td>2026. 04. 23. 20:55:09 / 9</td><td>Stormmire / Stone Ridge / Skirmish</td><td>🦝 Raccoon</td><td>111,000 SPL</td><td>3</td><td><button class="history-inline-btn">불러오기</button></td></tr>
+<tr><td>#1237</td><td>#892,423</td><td>2026. 04. 23. 20:37:01</td><td>#892,424</td><td>2026. 04. 23. 20:44:58 / 58</td><td>Sunfire / Wildfield / Siege</td><td>🐓 Rooster</td><td>168,000 SPL</td><td>0</td><td><button class="history-inline-btn">불러오기</button></td></tr>
+<tr><td>#1236</td><td>#892,421</td><td>2026. 04. 23. 20:26:29</td><td>#892,422</td><td>2026. 04. 23. 20:33:15 / 15</td><td>Mistwood / Wildfield / Ambush</td><td>🐜 Army Ant</td><td>126,000 SPL</td><td>6</td><td><button class="history-inline-btn">불러오기</button></td></tr>
+<tr><td>#1235</td><td>#892,419</td><td>2026. 04. 23. 20:15:42</td><td>#892,420</td><td>2026. 04. 23. 20:23:02 / 2</td><td>Stormmire / Black Bog / Ambush</td><td>🐸 Frog</td><td>118,000 SPL</td><td>2</td><td><button class="history-inline-btn">불러오기</button></td></tr>
+</tbody></table></div>
   </div>
 </section>
 
@@ -2803,19 +3225,86 @@ window.__monitorDemoState = {
       </div>
     </div>
     <div class="section-box">
-      <div class="section-title"><h3>당첨 홍보 통계</h3><div class="sub"></div></div>
+      <div class="section-title"><h3>당첨 홍보 통계</h3><div class="sub">기존 홍보 카드와 중복되지 않도록 운영용 핵심 지표 중심으로 재구성</div></div>
       <div class="winner-stats-grid">
-        <div class="stat-tile"><div class="k">선택 필터</div><div class="v" id="winnerFilterTitle">전체</div></div>
+        <div class="stat-tile"><div class="k">선택 방식</div><div class="v" id="winnerFilterTitle">전체</div></div>
         <div class="stat-tile"><div class="k">평균 적중률</div><div class="v" id="winnerAvgHitRate">-</div></div>
         <div class="stat-tile"><div class="k">평균 상금 배수</div><div class="v" id="winnerAvgMultiple">-</div></div>
         <div class="stat-tile"><div class="k">누적 수령 인원</div><div class="v" id="winnerTotalReceivers">-</div></div>
       </div>
-
+      <div class="winner-summary-grid">
+        <div class="stat-tile summary emphasis"><div class="k">표시 라운드 수</div><div class="v" id="winnerVisibleRounds">-</div><div class="small-note" id="winnerVisibleRoundsSub">-</div></div>
+        <div class="stat-tile summary"><div class="k">최다 우승 비스트</div><div class="v" id="winnerTopBeast">-</div><div class="small-note" id="winnerTopBeastSub">-</div></div>
+        <div class="stat-tile summary"><div class="k">평균 상금 풀</div><div class="v" id="winnerAvgPool">-</div><div class="small-note" id="winnerAvgPoolSub">-</div></div>
+        <div class="stat-tile summary"><div class="k">무적중 이벤트율</div><div class="v" id="winnerNoWinnerRate">-</div><div class="small-note" id="winnerNoWinnerRateSub">-</div></div>
+        <div class="stat-tile summary"><div class="k">고배당 이벤트율</div><div class="v" id="winnerHighMultipleRate">-</div><div class="small-note" id="winnerHighMultipleRateSub">-</div></div>
+        <div class="stat-tile summary"><div class="k">평균 참여 규모</div><div class="v" id="winnerAvgParticipants">-</div><div class="small-note" id="winnerAvgParticipantsSub">-</div></div>
+      </div>
     </div>
   </div>
+
+  <div class="section-box winner-advanced-toolbar">
+    <div class="winner-toolbar-row">
+      <div>
+        <div class="small-note" style="margin-top:0">기간 필터</div>
+        <div class="winner-chip-group" id="winnerPeriodRow">
+          <button class="filter-chip active" data-winner-period="all">전체</button>
+          <button class="filter-chip" data-winner-period="7d">7일</button>
+          <button class="filter-chip" data-winner-period="30d">30일</button>
+          <button class="filter-chip" data-winner-period="90d">90일</button>
+        </div>
+      </div>
+      <div>
+        <div class="small-note" style="margin-top:0">이벤트 유형</div>
+        <div class="input-group winner-event-group">
+          <select id="winnerEventFilter">
+            <option value="all">전체 이벤트</option>
+            <option value="high">고배당</option>
+            <option value="no_winner">무적중</option>
+            <option value="crowd">다수 적중</option>
+            <option value="premium">대형 상금풀</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="winner-toolbar-row controls">
+      <div class="input-group winner-search-group">
+        <label>검색</label>
+        <input type="text" id="winnerSearchInput" placeholder="ROUND, 참여방식, 우승 비스트, 이벤트 유형으로 검색">
+      </div>
+      <div class="input-group winner-sort-group">
+        <label>정렬</label>
+        <select id="winnerSortSelect">
+          <option value="latest">최신 라운드순</option>
+          <option value="oldest">오래된 라운드순</option>
+          <option value="multiple">배당 높은순</option>
+          <option value="pool">상금풀 큰순</option>
+          <option value="receivers">수령 인원 많은순</option>
+        </select>
+      </div>
+    </div>
+    <div class="winner-result-meta">
+      <div class="small-note" id="winnerResultCount">표시 결과 0건</div>
+      <button class="dark" type="button" id="winnerResetFiltersBtn">필터 초기화</button>
+    </div>
+  </div>
+
+  <div class="winner-insight-grid">
+    <div class="section-box winner-insight-card">
+      <div class="title">우승 비스트 빈도 분석</div>
+      <div class="sub">기간/방식 필터를 반영한 기준으로 실제 1위 비스트 출현 빈도를 보여줍니다. Winner History에 새로운 통찰을 더하되, Analytics와 겹치는 깊은 시뮬레이션은 제외했습니다.</div>
+      <div class="winner-insight-list" id="winnerBeastInsightList"></div>
+    </div>
+    <div class="section-box winner-insight-card">
+      <div class="title">이벤트 패턴 요약</div>
+      <div class="sub">검색·필터 결과에서 운영상 바로 쓸 수 있는 이벤트 패턴을 추려 보여줍니다.</div>
+      <div class="winner-insight-list" id="winnerPatternInsightList"></div>
+    </div>
+  </div>
+
   <div class="section-box" style="margin-top:18px">
-    <div class="section-title"><h3>참여방식별 당첨 히스토리</h3><div class="sub">라운드별 상금 풀 · 참여인원 · 수령인원 · 적중률 · 최고 배당</div></div>
-    <div class="table-wrap"><table class="table winner-type-table"><thead><tr><th>ROUND</th><th>참여방식</th><th>상금 풀</th><th>참여인원</th><th>상금 수령 인원</th><th>적중률</th><th>최고 배당</th><th>홍보 포인트</th></tr></thead><tbody id="winnerHistoryBody"></tbody></table></div>
+    <div class="section-title"><h3>참여방식별 당첨 히스토리</h3><div class="sub">라운드별 상금 풀 · 참여인원 · 수령인원 · 적중률 · 최고 배당 · 우승 비스트 · 이벤트 유형</div></div>
+    <div class="table-wrap"><table class="table winner-type-table"><thead><tr><th>ROUND</th><th>참여방식</th><th>우승 비스트</th><th>상금 풀</th><th>참여인원</th><th>상금 수령 인원</th><th>적중률</th><th>최고 배당</th><th>이벤트 유형</th><th>홍보 포인트</th></tr></thead><tbody id="winnerHistoryBody"></tbody></table></div>
   </div>
 </section>
 
@@ -2843,6 +3332,33 @@ window.__monitorDemoState = {
       <div class="tx-list" id="payoutList"></div>
     </div>
   </div>
+
+  <div class="cards-2" style="margin-top:18px">
+    <div class="section-box">
+      <div class="section-title"><h3>자산 흐름</h3><div class="sub">SOL → SPL → 참여 → 정산 → 수령 흐름을 한눈에</div></div>
+      <div class="wallet-flow" id="walletFlowSteps">
+        <div class="wallet-flow-step" id="wfConnect"><div class="eyebrow">Step 1</div><strong>지갑 연결</strong><span>사용자 주소를 활성화하고 개인화 데이터를 연결합니다.</span></div>
+        <div class="wallet-flow-step" id="wfExchange"><div class="eyebrow">Step 2</div><strong>티켓 교환</strong><span>SOL을 SPL로 교환한 뒤 참여 가능한 상태로 전환합니다.</span></div>
+        <div class="wallet-flow-step" id="wfEnter"><div class="eyebrow">Step 3</div><strong>참여 잠금</strong><span>선택한 조합과 참여 SPL이 현재 라운드에 잠깁니다.</span></div>
+        <div class="wallet-flow-step" id="wfSettle"><div class="eyebrow">Step 4</div><strong>정산 확인</strong><span>마감 후 첫 BTC 블록이 도착하면 순위가 확정됩니다.</span></div>
+        <div class="wallet-flow-step" id="wfClaim"><div class="eyebrow">Step 5</div><strong>수령 완료</strong><span>적중 시 SOL 수령 내역이 지갑 로그에 반영됩니다.</span></div>
+      </div>
+      <div class="wallet-flow-status" id="walletFlowStatus">지갑 연결 전입니다. 먼저 지갑을 연결한 뒤 티켓 교환과 참여 흐름을 시작하세요.</div>
+    </div>
+    <div class="section-box">
+      <div class="section-title"><h3>세션 가드</h3><div class="sub">책임감 있는 이용과 실수 방지 설정</div></div>
+      <div class="safe-play-grid">
+        <div class="input-group"><label>세션 제한 (분)</label><input id="safeSessionLimitInput" type="number" min="10" step="5" value="45"></div>
+        <div class="input-group"><label>1회 최대 참여 SPL</label><input id="safeStakeLimitInput" type="number" min="50" step="50" value="1000"></div>
+      </div>
+      <div class="safe-pill-row">
+        <div class="safe-pill" id="safeSessionBadge">기본값 45분 / 1000 SPL</div>
+        <button class="secondary" type="button" id="safeApplyLimitsBtn">세션 가드 적용</button>
+      </div>
+      <div class="section-anchor-note">한도를 넘는 참여는 차단되며, 세션 종료 임박 시 토스트 알림으로 휴식을 권장합니다.</div>
+    </div>
+  </div>
+
   <div class="section-box" style="margin-top:18px">
     <div class="section-title"><h3>거래 내역</h3><div class="sub">교환 · 참여 · 정산 전체 로그</div></div>
     <div class="tx-list" id="txList"></div>
@@ -2896,7 +3412,7 @@ const ANIMALS = [
   { id:"frog", emoji:"🐸", name:"Frog", role:"습지 기습", base:80, tags:["Stormmire+","Black Bog+","Ambush+"], env:{ sky:{Sunfire:-2,Mistwood:2,Stormmire:4}, ground:{"Stone Ridge":-2,Wildfield:1,"Black Bog":5}, tempo:{Ambush:4,Skirmish:1,Siege:-3}}, flair:"환경을 타면 폭발하는 조건부 변수" },
   { id:"lion", emoji:"🦁", name:"Lion", role:"초반 압도", base:86, tags:["Sunfire+","Ambush+","Stormmire-"], env:{ sky:{Sunfire:3,Mistwood:0,Stormmire:-3}, ground:{"Stone Ridge":2,Wildfield:1,"Black Bog":-2}, tempo:{Ambush:4,Skirmish:1,Siege:-2}}, flair:"개시 구간을 찢는 공격형 강캐" }
 ];
-const state = {walletConnected:false,walletAddress:"",solBalance:3.2,splBalance:0,feeSplAccum:0,currentRound:1247,roundStart:Date.now(),roundDeadline:Date.now()+ROUND_SECONDS*1000,participantMin:2,lockedEnvironment:null,lockedEnvironmentBlock:null,waitingSettlementBlock:false,rolloverVault:0,entries:[],entryHistory:[],myEntries:[],txHistory:[],payoutHistory:[],participants:new Set(),results:[],blockFeed:[],eventLog:[],marketSnapshot:{},favoriteSets:[],autoEntry:{enabled:false,target:'current',minBalance:500,minOdds:2.8,maxLosses:3,currentLosses:0,stake:200},lastPlayedCombo:null,winnerHistoryFilter:'all'};
+const state = {walletConnected:false,walletAddress:"",solBalance:3.2,splBalance:0,feeSplAccum:0,currentRound:1247,roundStart:Date.now(),roundDeadline:Date.now()+ROUND_SECONDS*1000,winnerPeriodFilter:'all',winnerEventFilter:'all',winnerSearchQuery:'',winnerSort:'latest',participantMin:2,lockedEnvironment:null,lockedEnvironmentBlock:null,waitingSettlementBlock:false,rolloverVault:0,entries:[],entryHistory:[],myEntries:[],txHistory:[],payoutHistory:[],participants:new Set(),results:[],blockFeed:[],eventLog:[],marketSnapshot:{},favoriteSets:[],autoEntry:{enabled:false,target:'current',minBalance:500,minOdds:2.8,maxLosses:3,currentLosses:0,stake:200},lastPlayedCombo:null,winnerHistoryFilter:'all'};
 const selection = {picks:[],activeBetId:"alpha"};
 function rand(min,max){return Math.floor(Math.random()*(max-min+1))+min} function randFloat(min,max){return Math.random()*(max-min)+min}
 function formatNum(n,d=0){return Number(n).toLocaleString('ko-KR',{minimumFractionDigits:d,maximumFractionDigits:d})}
@@ -2940,7 +3456,159 @@ function renderRecentResults(){const box=document.getElementById('recentResults'
 function renderLogs(){const box=document.getElementById('eventLog'); box.innerHTML=state.eventLog.length?state.eventLog.map(item=>`<div class="log-item"><div class="top"><strong>${item.text}</strong><span>${item.time}</span></div></div>`).join(''):`<div class="small-note">이벤트가 아직 없습니다.</div>`}
 function renderWinrateChart(){const stats={}; ANIMALS.forEach(a=>stats[a.id]={name:a.name,emoji:a.emoji,wins:0}); const target=state.results.slice(0,20); target.forEach(r=>stats[r.ranking[0].id].wins+=1); const rows=Object.values(stats).map(v=>({...v,rate:target.length?(v.wins/target.length*100):0})).sort((a,b)=>b.rate-a.rate||a.name.localeCompare(b.name,'ko')).slice(0,10); document.getElementById('winrateChart').innerHTML=rows.map(row=>`<div class="bar-row"><div>${row.emoji} ${row.name}</div><div class="bar"><span style="width:${target.length?Math.max(2,row.rate):2}%"></span></div><div class="val">${row.rate.toFixed(1)}%</div></div>`).join('')}
 function getEntryOutcome(entry){const result=state.results.find(r=>r.round===entry.round); if(!result) return {status:'live',label:'진행중',className:'status-live',result}; const won=isWinningEntry(entry,result.ranking); return {status:won?'win':'lose',label:won?'적중':'미적중',className:won?'status-win':'status-lose',result}}
-function renderMyPickHistory(){const box=document.getElementById('myPickHistory'); const owned=state.entryHistory.filter(e=>e.owner===state.walletAddress); const pending=owned.filter(e=>!state.results.find(r=>r.round===e.round)).length; const win=owned.filter(e=>{const r=state.results.find(x=>x.round===e.round); return r&&isWinningEntry(e,r.ranking)}).length; const lose=owned.filter(e=>{const r=state.results.find(x=>x.round===e.round); return r&&!isWinningEntry(e,r.ranking)}).length; document.getElementById('pickPending').textContent=pending; document.getElementById('pickWin').textContent=win; document.getElementById('pickLose').textContent=lose; if(!owned.length){box.innerHTML=`<div class="small-note">선택 내역이 아직 없습니다.</div>`; return} box.innerHTML=owned.slice().reverse().slice(0,20).map(e=>{const outcome=getEntryOutcome(e), res=outcome.result; return `<div class="history-card"><div class="history-top"><div><div style="font-family:Orbitron,sans-serif;font-size:18px">ROUND #${e.round}</div><div class="small-note">${e.createdAt}</div></div><div class="status-pill ${outcome.className}">${outcome.label}</div></div><div class="history-grid"><div class="history-cell"><div class="k">참여 방식</div><div class="v">${e.betName}</div></div><div class="history-cell"><div class="k">선택 비스트</div><div class="v">${e.picks.map(id=>ANIMALS.find(a=>a.id===id).name).join(' / ')}</div></div><div class="history-cell"><div class="k">참여 SPL</div><div class="v">${formatNum(e.stake)} SPL</div></div><div class="history-cell"><div class="k">예상 최대</div><div class="v">${formatNum(e.stake*e.multiplier/1000,3)} SOL</div></div></div>${res?`<div class="history-grid"><div class="history-cell"><div class="k">결과 블록</div><div class="v">LOCK #${res.lockBlock} / SETTLE #${res.settleBlock}</div></div><div class="history-cell"><div class="k">최종 결과</div><div class="v">1위 ${res.ranking[0].name} / 2위 ${res.ranking[1].name}</div></div><div class="history-cell"><div class="k">내 결과</div><div class="v">${outcome.label}</div></div><div class="history-cell"><div class="k">상금 풀</div><div class="v">${formatNum(res.prizeSpl)} SPL</div></div></div>`:''}</div>`}).join('')}
+function getMyPickFilters(){
+  const period=document.querySelector('#myPickPeriodChips .filter-chip.active')?.dataset.period||'7d';
+  const status=document.querySelector('#myPickStatusChips .filter-chip.active')?.dataset.status||'all';
+  const search=(document.getElementById('myPickSearchInput')?.value||'').trim().toLowerCase();
+  const sort=document.getElementById('myPickSortSelect')?.value||'latest';
+  return {period,status,search,sort};
+}
+function getMyPickPayout(entry,result){
+  if(!result) return 0;
+  if(!isWinningEntry(entry,result.ranking)) return 0;
+  const winnerCount=Math.max(1, Number(result.winnerCount||1));
+  return Number((result.prizeSpl||0)/winnerCount);
+}
+function buildMyPickRecord(entry){
+  const outcome=getEntryOutcome(entry);
+  const result=outcome.result;
+  const payoutSpl=getMyPickPayout(entry,result);
+  const pnlSpl=outcome.status==='live'?0:(payoutSpl-entry.stake);
+  const animals=entry.picks.map(id=>ANIMALS.find(a=>a.id===id)).filter(Boolean);
+  const searchText=[`round ${entry.round}`, entry.betName, ...animals.map(a=>a.name), ...animals.map(a=>a.role||''), outcome.label].join(' ').toLowerCase();
+  const createdTs=Date.parse((entry.createdAt||'').replace(/\. /g,'-').replace(/\./g,'').trim()) || 0;
+  return {...entry,outcome,result,payoutSpl,pnlSpl,searchText,createdTs,animals};
+}
+function bindMyPickHistoryControls(){
+  const root=document.getElementById('page-mypicks');
+  if(!root||root.dataset.boundMyPicks==='1') return;
+  root.dataset.boundMyPicks='1';
+  root.querySelectorAll('#myPickPeriodChips .filter-chip').forEach(btn=>btn.addEventListener('click',()=>{
+    root.querySelectorAll('#myPickPeriodChips .filter-chip').forEach(x=>x.classList.remove('active'));
+    btn.classList.add('active');
+    renderMyPickHistory();
+  }));
+  root.querySelectorAll('#myPickStatusChips .filter-chip').forEach(btn=>btn.addEventListener('click',()=>{
+    root.querySelectorAll('#myPickStatusChips .filter-chip').forEach(x=>x.classList.remove('active'));
+    btn.classList.add('active');
+    renderMyPickHistory();
+  }));
+  document.getElementById('myPickSearchInput')?.addEventListener('input',renderMyPickHistory);
+  document.getElementById('myPickSortSelect')?.addEventListener('change',renderMyPickHistory);
+  document.getElementById('myPickResetBtn')?.addEventListener('click',()=>{
+    const periodDefault=root.querySelector('#myPickPeriodChips .filter-chip[data-period="7d"]');
+    const statusDefault=root.querySelector('#myPickStatusChips .filter-chip[data-status="all"]');
+    root.querySelectorAll('.filter-chip').forEach(x=>x.classList.remove('active'));
+    if(periodDefault) periodDefault.classList.add('active');
+    if(statusDefault) statusDefault.classList.add('active');
+    const searchInput=document.getElementById('myPickSearchInput');
+    const sortSelect=document.getElementById('myPickSortSelect');
+    if(searchInput) searchInput.value='';
+    if(sortSelect) sortSelect.value='latest';
+    renderMyPickHistory();
+  });
+}
+function renderMyPickHistory(){
+  bindMyPickHistoryControls();
+  const box=document.getElementById('myPickHistory');
+  const owned=state.entryHistory.filter(e=>e.owner===state.walletAddress).map(buildMyPickRecord);
+  const filters=getMyPickFilters();
+  const now=Date.now();
+  const periodLimit=filters.period==='7d'?now-7*24*60*60*1000:filters.period==='30d'?now-30*24*60*60*1000:0;
+  let filtered=owned.filter(item=>{
+    const passPeriod=!periodLimit || !item.createdTs || item.createdTs>=periodLimit;
+    const passStatus=filters.status==='all' || item.outcome.status===filters.status;
+    const passSearch=!filters.search || item.searchText.includes(filters.search);
+    return passPeriod && passStatus && passSearch;
+  });
+
+  filtered.sort((a,b)=>{
+    if(filters.sort==='oldest') return (a.createdTs||0)-(b.createdTs||0);
+    if(filters.sort==='profit') return (b.pnlSpl||0)-(a.pnlSpl||0) || (b.createdTs||0)-(a.createdTs||0);
+    if(filters.sort==='stake') return (b.stake||0)-(a.stake||0) || (b.createdTs||0)-(a.createdTs||0);
+    if(filters.sort==='pending'){
+      const order={live:0,win:1,lose:2};
+      return (order[a.outcome.status]??9)-(order[b.outcome.status]??9) || (b.createdTs||0)-(a.createdTs||0);
+    }
+    return (b.createdTs||0)-(a.createdTs||0);
+  });
+
+  const pending=filtered.filter(e=>e.outcome.status==='live');
+  const settled=filtered.filter(e=>e.outcome.status!=='live');
+  const wins=filtered.filter(e=>e.outcome.status==='win');
+  const loses=filtered.filter(e=>e.outcome.status==='lose');
+  const totalStake=filtered.reduce((sum,e)=>sum+Number(e.stake||0),0);
+  const pendingStake=pending.reduce((sum,e)=>sum+Number(e.stake||0),0);
+  const realizedPnl=settled.reduce((sum,e)=>sum+Number(e.pnlSpl||0),0);
+  const bestPayout=wins.reduce((max,e)=>Math.max(max,Number(e.payoutSpl||0)),0);
+  const avgStake=filtered.length?totalStake/filtered.length:0;
+  const hitRate=settled.length?(wins.length/settled.length*100):0;
+  const roi=settled.length?(realizedPnl/Math.max(1, settled.reduce((sum,e)=>sum+Number(e.stake||0),0))*100):0;
+
+  document.getElementById('pickPending').textContent=pending.length;
+  document.getElementById('pickWin').textContent=wins.length;
+  document.getElementById('pickLose').textContent=loses.length;
+  document.getElementById('pickTotalStake').textContent=`${formatNum(totalStake)} SPL`;
+  const pnlEl=document.getElementById('pickRealizedPnl');
+  pnlEl.textContent=`${realizedPnl>=0?'+':''}${formatNum(realizedPnl)} SPL`;
+  pnlEl.classList.toggle('positive',realizedPnl>0);
+  pnlEl.classList.toggle('negative',realizedPnl<0);
+  const roiEl=document.getElementById('pickRoi');
+  roiEl.textContent=`${roi>=0?'+':''}${roi.toFixed(1)}%`;
+  roiEl.classList.toggle('positive',roi>0);
+  roiEl.classList.toggle('negative',roi<0);
+
+  document.getElementById('pickHitRate').textContent=`${hitRate.toFixed(1)}%`;
+  document.getElementById('pickAvgStake').textContent=`${formatNum(avgStake)} SPL`;
+  document.getElementById('pickBestPayout').textContent=`${formatNum(bestPayout)} SPL`;
+  document.getElementById('pickPendingStake').textContent=`${formatNum(pendingStake)} SPL`;
+
+  const summaryParts=[
+    filters.period==='7d'?'최근 7일':filters.period==='30d'?'최근 30일':'전체',
+    filters.status==='all'?'전체 상태':filters.status==='live'?'진행중만':filters.status==='win'?'적중만':'미적중만',
+    filters.search?`검색어: ${filters.search}`:'검색어 없음',
+    `총 ${filtered.length}건`
+  ];
+  document.getElementById('myPickFilterSummary').textContent=summaryParts.join(' · ');
+
+  if(!filtered.length){
+    box.innerHTML=`<div class="mypicks-empty">조건에 맞는 참여 내역이 없습니다.<br>필터를 초기화하거나 검색어를 조정해보세요.</div>`;
+    return;
+  }
+
+  box.innerHTML=filtered.slice(0,50).map(e=>{
+    const picksHtml=e.animals.map(a=>`<span>${a.emoji} ${a.name}</span>`).join('');
+    const pnlClass=e.pnlSpl>0?'positive':e.pnlSpl<0?'negative':'';
+    const payoutText=e.outcome.status==='live'?'정산 전':`${formatNum(e.payoutSpl)} SPL`;
+    const finalText=e.result?`1위 ${e.result.ranking[0].name} · 2위 ${e.result.ranking[1].name} · 3위 ${e.result.ranking[2].name}`:'결과 대기중';
+    return `<div class="history-card">
+      <div class="mypicks-entry-head">
+        <div class="mypicks-entry-title">
+          <div class="round">ROUND #${e.round}</div>
+          <div class="meta">${e.createdAt} · ${e.auto?'자동 참여':'수동 참여'}</div>
+        </div>
+        <div class="mypicks-entry-stake">
+          <div class="status-pill ${e.outcome.className}">${e.outcome.label}</div>
+          <div class="mypicks-entry-pnl ${pnlClass}">${e.outcome.status==='live'?'보류':`${e.pnlSpl>=0?'+':''}${formatNum(e.pnlSpl)} SPL`}</div>
+        </div>
+      </div>
+      <div class="mypicks-entry-picks">${picksHtml}</div>
+      <div class="mypicks-entry-grid">
+        <div class="history-cell"><div class="k">참여 방식</div><div class="v">${e.betName}</div></div>
+        <div class="history-cell"><div class="k">참여 SPL</div><div class="v">${formatNum(e.stake)} SPL</div></div>
+        <div class="history-cell"><div class="k">진입 시 배당</div><div class="v">${e.multiplier.toFixed(2)}x</div></div>
+        <div class="history-cell"><div class="k">예상 최대</div><div class="v">${formatNum(e.stake*e.multiplier/1000,3)} SOL</div></div>
+        <div class="history-cell"><div class="k">추정 수령</div><div class="v">${payoutText}</div></div>
+      </div>
+      <div class="mypicks-entry-outcome-grid">
+        <div class="history-cell"><div class="k">결과 블록</div><div class="v">${e.result?`LOCK #${e.result.lockBlock} / SETTLE #${e.result.settleBlock}`:'결과 확정 대기'}</div></div>
+        <div class="history-cell"><div class="k">최종 결과</div><div class="v">${finalText}</div></div>
+        <div class="history-cell"><div class="k">상금 풀</div><div class="v">${e.result?`${formatNum(e.result.prizeSpl)} SPL`:'-'}</div></div>
+        <div class="history-cell"><div class="k">적중 수</div><div class="v">${e.result?`${e.result.winnerCount||0}건`:'-'}</div></div>
+      </div>
+    </div>`;
+  }).join('');
+}
 const VERIFY_ABI=[
   "function score((uint8 beastId,uint256 prevSeedA,uint256 prevSeedB,uint256 nextSeedA,uint256 nextSeedB,uint8 pulse) x) view returns (uint256 scaledScore)",
   "function scoreHuman((uint8 beastId,uint256 prevSeedA,uint256 prevSeedB,uint256 nextSeedA,uint256 nextSeedB,uint8 pulse) x) view returns (uint256 integerPart, uint256 decimalPart4)",
@@ -3153,12 +3821,88 @@ function applyVerificationInputs(pulse,txCount,output){
   document.getElementById('verifyOutputInput').value=String(output||0);
 }
 function pseudoSeed(v){let h=0; const s=String(v); for(let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))%1000003; return h}
-function buildWinnerMetric(res,bet){const seed=pseudoSeed(`${res.round}-${bet.id}-${res.prizeSpl}`); const participationWeight={alpha:1.22,twin:1.08,chain:0.88,podium:0.82,trinity:0.58}[bet.id]||1; const baseHit={alpha:0.118,twin:0.074,chain:0.041,podium:0.052,trinity:0.019}[bet.id]||0.05; const participants=Math.max(18,Math.round(((res.prizeSpl/1800)*participationWeight)+22+(seed%37))); const winners=Math.max(0,Math.round(participants*(baseHit+((seed%9)-4)*0.003))); const prizePool=Math.round((res.prizeSpl*(0.72+((seed%11)*0.035)))*participationWeight/10)*10; const avgStake=90+(seed%130); const payoutPerWinner=winners>0?prizePool/winners:0; const maxMultiple=winners>0?Number((payoutPerWinner/avgStake*(1.08+(seed%7)*0.04)).toFixed(1)):0; const hitRate=Number((winners/participants*100).toFixed(1)); const wow=maxMultiple>=18?'초고배당 터짐':maxMultiple>=12?'대박 회차':winners===0?'당첨자 없음':winners<=2?'소수 적중':'다수 적중'; return {round:res.round,betId:bet.id,betName:bet.name,prizePool,participants,winners,hitRate,maxMultiple,wow}}
+function buildWinnerMetric(res,bet){const seed=pseudoSeed(`${res.round}-${bet.id}-${res.prizeSpl}`); const participationWeight={alpha:1.22,twin:1.08,chain:0.88,podium:0.82,trinity:0.58}[bet.id]||1; const baseHit={alpha:0.118,twin:0.074,chain:0.041,podium:0.052,trinity:0.019}[bet.id]||0.05; const participants=Math.max(18,Math.round(((res.prizeSpl/1800)*participationWeight)+22+(seed%37))); const winners=Math.max(0,Math.round(participants*(baseHit+((seed%9)-4)*0.003))); const prizePool=Math.round((res.prizeSpl*(0.72+((seed%11)*0.035)))*participationWeight/10)*10; const avgStake=90+(seed%130); const payoutPerWinner=winners>0?prizePool/winners:0; const maxMultiple=winners>0?Number((payoutPerWinner/avgStake*(1.08+(seed%7)*0.04)).toFixed(1)):0; const hitRate=Number((winners/participants*100).toFixed(1)); const topBeast=res.ranking?.[0]||{name:'-',emoji:'❔'}; const eventType=winners===0?'no_winner':maxMultiple>=18?'high':hitRate>=12?'crowd':prizePool>=220000?'premium':'standard'; const eventLabelMap={high:'고배당',no_winner:'무적중',crowd:'다수 적중',premium:'대형 상금풀',standard:'일반'}; const wow=maxMultiple>=18?'초고배당 터짐':maxMultiple>=12?'대박 회차':winners===0?'당첨자 없음':winners<=2?'소수 적중':'다수 적중'; return {round:res.round,betId:bet.id,betName:bet.name,prizePool,participants,winners,hitRate,maxMultiple,wow,topBeastName:topBeast.name,topBeastEmoji:topBeast.emoji,eventType,eventLabel:eventLabelMap[eventType],settleTime:res.settleTime,lockTime:res.lockTime,env:`${res.env.sky} / ${res.env.ground} / ${res.env.tempo}`}}
 function getWinnerHistoryRows(){const rows=[]; state.results.forEach(res=>BET_TYPES.forEach(bet=>rows.push(buildWinnerMetric(res,bet)))); return rows.sort((a,b)=>b.round-a.round)}
-function renderWinnerHistory(){const rows=getWinnerHistoryRows(); const filter=state.winnerHistoryFilter||'all'; const filtered=filter==='all'?rows:rows.filter(r=>r.betId===filter); const body=document.getElementById('winnerHistoryBody'); const titleMap={all:'전체',alpha:'Alpha Pick',twin:'Twin Pack',chain:'Chain Order',podium:'Podium Mesh',trinity:'Trinity Order'}; document.getElementById('winnerFilterTitle').textContent=titleMap[filter]||'전체'; if(!filtered.length){body.innerHTML='<tr><td colspan="8">당첨 히스토리가 아직 없습니다.</td></tr>'; return}
- const maxMultiple=filtered.reduce((a,b)=>a.maxMultiple>b.maxMultiple?a:b); const maxPool=filtered.reduce((a,b)=>a.prizePool>b.prizePool?a:b); const maxReceivers=filtered.reduce((a,b)=>a.winners>b.winners?a:b); const avgHitRate=filtered.reduce((s,r)=>s+r.hitRate,0)/filtered.length; const avgMultiple=filtered.reduce((s,r)=>s+r.maxMultiple,0)/filtered.length; const totalReceivers=filtered.reduce((s,r)=>s+r.winners,0); document.getElementById('winnerJackpotValue').textContent=`${maxMultiple.maxMultiple.toFixed(1)}x`; document.getElementById('winnerJackpotSub').textContent=`ROUND #${maxMultiple.round} · ${maxMultiple.betName} · 수령 ${maxMultiple.winners}명 · 적중률 ${maxMultiple.hitRate}%`; document.getElementById('winnerMaxMultiple').textContent=`${maxMultiple.maxMultiple.toFixed(1)}x`; document.getElementById('winnerMaxMultipleSub').textContent=`ROUND #${maxMultiple.round} · ${maxMultiple.betName}`; document.getElementById('winnerMaxPool').textContent=`${formatNum(maxPool.prizePool)} SPL`; document.getElementById('winnerMaxPoolSub').textContent=`ROUND #${maxPool.round} · ${maxPool.betName}`; document.getElementById('winnerMaxReceivers').textContent=`${formatNum(maxReceivers.winners)}명`; document.getElementById('winnerMaxReceiversSub').textContent=`ROUND #${maxReceivers.round} · ${maxReceivers.betName}`; document.getElementById('winnerAvgHitRate').textContent=`${avgHitRate.toFixed(1)}%`; document.getElementById('winnerAvgMultiple').textContent=`${avgMultiple.toFixed(1)}x`; document.getElementById('winnerTotalReceivers').textContent=`${formatNum(totalReceivers)}명`; body.innerHTML=filtered.slice(0,120).map(r=>`<tr><td>#${r.round}</td><td><strong>${r.betName}</strong></td><td>${formatNum(r.prizePool)} SPL</td><td>${formatNum(r.participants)}명</td><td>${formatNum(r.winners)}명</td><td>${r.hitRate.toFixed(1)}%</td><td><span class="trophy-pill">${r.maxMultiple.toFixed(1)}x</span></td><td>${r.wow}</td></tr>`).join('');
- document.querySelectorAll('[data-winner-filter]').forEach(btn=>btn.classList.toggle('active',btn.dataset.winnerFilter===filter));}
-function renderBlockData(){const list=document.getElementById('blockDataList'); list.innerHTML=state.blockFeed.map((b,idx)=>`<div class="block-item"><div><div class="bn">#${formatNum(b.number)}</div><div class="meta">${b.hash.slice(0,22)}…</div><div class="meta">${formatDateTime(b.time)}</div></div><div class="block-meta-line"><div class="meta">TX ${formatNum(b.txCount)} · OUT ${formatNum(b.output)}</div><div><span class="pulse-badge">맥박 ${new Date(b.time).getSeconds()}</span> <button class="history-inline-btn" data-block-index="${idx}">검증</button></div></div></div>`).join(''); list.querySelectorAll('[data-block-index]').forEach(btn=>btn.addEventListener('click',()=>{const b=state.blockFeed[Number(btn.dataset.blockIndex)]; const pulse=new Date(b.time).getSeconds(); applyVerificationInputs(pulse,b.txCount,Math.floor(b.output))})); document.getElementById('blockHistoryBody').innerHTML=state.results.slice(0,100).map((r,idx)=>`<tr><td>#${r.round}</td><td>#${r.lockBlock}</td><td>${formatDateTime(r.lockTime)}</td><td>#${r.settleBlock}</td><td>${formatDateTime(r.settleTime)} / ${r.pulse}</td><td>${r.env.sky} / ${r.env.ground} / ${r.env.tempo}</td><td>${r.ranking[0].emoji} ${r.ranking[0].name}</td><td>${formatNum(r.prizeSpl)} SPL</td><td>${r.winnerCount}</td><td><button class="history-inline-btn" data-history-index="${idx}">불러오기</button></td></tr>`).join('')||`<tr><td colspan="10">아직 확정된 라운드가 없습니다.</td></tr>`; document.querySelectorAll('[data-history-index]').forEach(btn=>btn.addEventListener('click',()=>{const r=state.results[Number(btn.dataset.historyIndex)]; applyVerificationInputs(r.pulse,r.lockTxCount||0,r.settleOutput||0)}))}
+function getWinnerPeriodDays(period){return ({'7d':7,'30d':30,'90d':90}[period]||null)}
+function matchesWinnerPeriod(row, period){const days=getWinnerPeriodDays(period); if(!days) return true; const base=new Date(row.settleTime||row.lockTime||Date.now()).getTime(); return (Date.now()-base)<=days*24*60*60*1000}
+function renderWinnerHistory(){const rows=getWinnerHistoryRows(); const typeFilter=state.winnerHistoryFilter||'all'; const periodFilter=state.winnerPeriodFilter||'all'; const eventFilter=state.winnerEventFilter||'all'; const search=(state.winnerSearchQuery||'').trim().toLowerCase(); const sort=state.winnerSort||'latest'; const body=document.getElementById('winnerHistoryBody'); const titleMap={all:'전체',alpha:'Alpha Pick',twin:'Twin Pack',chain:'Chain Order',podium:'Podium Mesh',trinity:'Trinity Order'}; document.getElementById('winnerFilterTitle').textContent=titleMap[typeFilter]||'전체'; let filtered=rows.filter(r=>typeFilter==='all'||r.betId===typeFilter).filter(r=>matchesWinnerPeriod(r,periodFilter)).filter(r=>eventFilter==='all'||r.eventType===eventFilter).filter(r=>{if(!search) return true; return [`#${r.round}`,r.betName,r.topBeastName,r.eventLabel,r.wow].join(' ').toLowerCase().includes(search)});
+ const sorters={latest:(a,b)=>b.round-a.round,oldest:(a,b)=>a.round-b.round,multiple:(a,b)=>b.maxMultiple-a.maxMultiple||b.round-a.round,pool:(a,b)=>b.prizePool-a.prizePool||b.round-a.round,receivers:(a,b)=>b.winners-a.winners||b.round-a.round}; filtered=filtered.sort(sorters[sort]||sorters.latest); const uniqueRoundsMap=new Map(); filtered.forEach(r=>{if(!uniqueRoundsMap.has(r.round)) uniqueRoundsMap.set(r.round,r)}); const roundLevel=[...uniqueRoundsMap.values()]; document.getElementById('winnerResultCount').textContent=`표시 결과 ${formatNum(filtered.length)}건 · 라운드 ${formatNum(roundLevel.length)}개`; document.querySelectorAll('[data-winner-filter]').forEach(btn=>btn.classList.toggle('active',btn.dataset.winnerFilter===typeFilter)); document.querySelectorAll('[data-winner-period]').forEach(btn=>btn.classList.toggle('active',btn.dataset.winnerPeriod===periodFilter)); if(!filtered.length){ body.innerHTML='<tr><td colspan="10">조건에 맞는 당첨 히스토리가 없습니다.</td></tr>'; document.getElementById('winnerJackpotValue').textContent='-'; document.getElementById('winnerJackpotSub').textContent='필터 조건에 맞는 결과가 없습니다.'; ['winnerMaxMultiple','winnerMaxPool','winnerMaxReceivers','winnerAvgHitRate','winnerAvgMultiple','winnerTotalReceivers','winnerVisibleRounds','winnerTopBeast','winnerAvgPool','winnerNoWinnerRate','winnerHighMultipleRate','winnerAvgParticipants'].forEach(id=>{const el=document.getElementById(id); if(el) el.textContent='-'}); document.getElementById('winnerBeastInsightList').innerHTML='<div class="winner-empty">비스트 빈도 데이터가 없습니다.</div>'; document.getElementById('winnerPatternInsightList').innerHTML='<div class="winner-empty">이벤트 패턴 데이터가 없습니다.</div>'; return}
+ const maxMultiple=filtered.reduce((a,b)=>a.maxMultiple>b.maxMultiple?a:b); const maxPool=filtered.reduce((a,b)=>a.prizePool>b.prizePool?a:b); const maxReceivers=filtered.reduce((a,b)=>a.winners>b.winners?a:b); const avgHitRate=filtered.reduce((s,r)=>s+r.hitRate,0)/filtered.length; const avgMultiple=filtered.reduce((s,r)=>s+r.maxMultiple,0)/filtered.length; const totalReceivers=filtered.reduce((s,r)=>s+r.winners,0); const avgPool=filtered.reduce((s,r)=>s+r.prizePool,0)/filtered.length; const avgParticipants=filtered.reduce((s,r)=>s+r.participants,0)/filtered.length; const noWinnerRate=filtered.filter(r=>r.winners===0).length/filtered.length*100; const highMultipleRate=filtered.filter(r=>r.maxMultiple>=18).length/filtered.length*100; const beastMap={}; roundLevel.forEach(r=>{beastMap[r.topBeastName]=(beastMap[r.topBeastName]||0)+1}); const [topBeastName, topBeastWins]=Object.entries(beastMap).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'ko'))[0]||['-',0];
+ document.getElementById('winnerJackpotValue').textContent=`${maxMultiple.maxMultiple.toFixed(1)}x`; document.getElementById('winnerJackpotSub').textContent=`ROUND #${maxMultiple.round} · ${maxMultiple.betName} · ${maxMultiple.topBeastEmoji} ${maxMultiple.topBeastName} · 수령 ${maxMultiple.winners}명 · 적중률 ${maxMultiple.hitRate}%`; document.getElementById('winnerMaxMultiple').textContent=`${maxMultiple.maxMultiple.toFixed(1)}x`; document.getElementById('winnerMaxMultipleSub').textContent=`ROUND #${maxMultiple.round} · ${maxMultiple.betName}`; document.getElementById('winnerMaxPool').textContent=`${formatNum(maxPool.prizePool)} SPL`; document.getElementById('winnerMaxPoolSub').textContent=`ROUND #${maxPool.round} · ${maxPool.betName}`; document.getElementById('winnerMaxReceivers').textContent=`${formatNum(maxReceivers.winners)}명`; document.getElementById('winnerMaxReceiversSub').textContent=`ROUND #${maxReceivers.round} · ${maxReceivers.betName}`; document.getElementById('winnerAvgHitRate').textContent=`${avgHitRate.toFixed(1)}%`; document.getElementById('winnerAvgMultiple').textContent=`${avgMultiple.toFixed(1)}x`; document.getElementById('winnerTotalReceivers').textContent=`${formatNum(totalReceivers)}명`; document.getElementById('winnerVisibleRounds').textContent=`${formatNum(roundLevel.length)}개`; document.getElementById('winnerVisibleRoundsSub').textContent=`행 ${formatNum(filtered.length)}건 기준`; document.getElementById('winnerTopBeast').textContent=topBeastName; document.getElementById('winnerTopBeastSub').textContent=`${formatNum(topBeastWins)}회 우승`; document.getElementById('winnerAvgPool').textContent=`${formatNum(avgPool)} SPL`; document.getElementById('winnerAvgPoolSub').textContent='필터 반영 평균'; document.getElementById('winnerNoWinnerRate').textContent=`${noWinnerRate.toFixed(1)}%`; document.getElementById('winnerNoWinnerRateSub').textContent='당첨자 없는 회차 비중'; document.getElementById('winnerHighMultipleRate').textContent=`${highMultipleRate.toFixed(1)}%`; document.getElementById('winnerHighMultipleRateSub').textContent='18배 이상 기준'; document.getElementById('winnerAvgParticipants').textContent=`${formatNum(avgParticipants)}명`; document.getElementById('winnerAvgParticipantsSub').textContent='회차당 평균';
+ const topBeasts=Object.entries(beastMap).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'ko')).slice(0,5); document.getElementById('winnerBeastInsightList').innerHTML=topBeasts.map(([name,count],idx)=>{const share=roundLevel.length?count/roundLevel.length*100:0; return `<div class="winner-insight-row"><div><div class="name">#${idx+1} ${name}</div><div class="meta">필터 반영 우승 빈도</div></div><div><span class="winner-badge">${formatNum(count)}회</span></div><div><span class="winner-badge muted">점유 ${share.toFixed(1)}%</span></div><div class="winner-table-highlight">${share>=20?'핵심':'추적'}</div></div>`}).join('') || '<div class="winner-empty">비스트 빈도 데이터가 없습니다.</div>';
+ const premiumCount=filtered.filter(r=>r.eventType==='premium').length; const crowdCount=filtered.filter(r=>r.eventType==='crowd').length; const patternItems=[{title:'무적중 이벤트',desc:`전체 ${formatNum(filtered.filter(r=>r.eventType==='no_winner').length)}건 · 이월성 회차 추적 필요`,badge:`${noWinnerRate.toFixed(1)}%`,tone:'alert'},{title:'고배당 이벤트',desc:`${formatNum(filtered.filter(r=>r.eventType==='high').length)}건 · 마케팅용 하이라이트 후보`,badge:`${highMultipleRate.toFixed(1)}%`,tone:'alert'},{title:'다수 적중 이벤트',desc:`${formatNum(crowdCount)}건 · 대중 참여형 회차 비중`,badge:`${crowdCount}건`,tone:'muted'},{title:'대형 상금풀 이벤트',desc:`${formatNum(premiumCount)}건 · 풀 규모 홍보 활용 가능`,badge:`${premiumCount}건`,tone:'muted'}]; document.getElementById('winnerPatternInsightList').innerHTML=patternItems.map(item=>`<div class="winner-insight-row"><div><div class="name">${item.title}</div><div class="meta">${item.desc}</div></div><div><span class="winner-badge ${item.tone==='alert'?'alert':'muted'}">${item.badge}</span></div><div><span class="winner-badge muted">필터 반영</span></div><div class="winner-table-highlight">${item.tone==='alert'?'주의':'참고'}</div></div>`).join('');
+ body.innerHTML=filtered.slice(0,120).map(r=>`<tr><td>#${r.round}</td><td><strong>${r.betName}</strong></td><td>${r.topBeastEmoji} ${r.topBeastName}</td><td>${formatNum(r.prizePool)} SPL</td><td>${formatNum(r.participants)}명</td><td>${formatNum(r.winners)}명</td><td>${r.hitRate.toFixed(1)}%</td><td><span class="trophy-pill">${r.maxMultiple.toFixed(1)}x</span></td><td><span class="winner-badge ${r.eventType==='high'||r.eventType==='no_winner'?'alert':'muted'}">${r.eventLabel}</span></td><td>${r.wow}</td></tr>`).join('');}
+function renderBlockData(){
+  const list=document.getElementById('blockDataList');
+  const verified=state.results[0]||null;
+  const env=verified?.env||{sky:'-',ground:'-',tempo:'-'};
+  const badge=verified?'LAST CONFIRMED':'NO CONFIRMED RESULT';
+  const status=verified?'Ready to Replay':'Waiting';
+  const statusSub=verified?'직전 확정 경기의 동일 입력값으로 즉시 재검증할 수 있습니다.':'아직 확정된 직전 경기 결과가 없습니다.';
+
+  const setText=(id,value)=>{
+    const el=document.getElementById(id);
+    if(el) el.textContent=value;
+  };
+
+  setText('liveVerifyBadge', badge);
+  setText('liveVerifyRound', verified?`#${verified.round}`:'#-');
+  setText('liveVerifyStatus', status);
+  setText('liveVerifyStatusSub', statusSub);
+  setText('liveVerifyLockBlock', verified?`#${formatNum(verified.lockBlock)}`:'#-');
+  setText('liveVerifySettleBlock', verified?`#${formatNum(verified.settleBlock)}`:'#-');
+  setText('liveVerifyCountdown', verified?`${verified.pulse}s`:'0s');
+  setText('liveVerifyEnvironment', `${env.sky} / ${env.ground} / ${env.tempo}`);
+  setText('liveVerifyInputSummary', verified?`TX ${formatNum(verified.lockTxCount||0)} · OUT ${formatNum(Math.floor(verified.settleOutput||0))}`:'TX 0 · OUT 0');
+
+  const ranking=verified?.ranking||[];
+  [[0,'liveVerifyTop1','liveVerifyTop1Meta'],[1,'liveVerifyTop2','liveVerifyTop2Meta'],[2,'liveVerifyTop3','liveVerifyTop3Meta']].forEach(([idx,id,metaId])=>{
+    const item=ranking[idx];
+    setText(id, item?`${item.emoji} ${item.name}`:'-');
+    setText(metaId, item?`점수 ${item.score.toFixed(1)} · 직전 확정 결과`:'점수 정보 없음');
+  });
+
+  if(list){
+    list.innerHTML=(state.blockFeed||[]).map((b,idx)=>`<div class="block-item"><div><div class="bn">#${formatNum(b.number)}</div><div class="meta">${b.hash.slice(0,22)}…</div><div class="meta">${formatDateTime(b.time)}</div></div><div class="block-meta-line"><div class="meta">TX ${formatNum(b.txCount)} · OUT ${formatNum(b.output)}</div><div><span class="pulse-badge">맥박 ${new Date(b.time).getSeconds()}</span> <button class="history-inline-btn" data-block-index="${idx}">검증</button></div></div></div>`).join('') || `<div class="small-note">최근 블록 데이터가 없습니다.</div>`;
+    list.querySelectorAll('[data-block-index]').forEach(btn=>btn.addEventListener('click',()=>{
+      const b=state.blockFeed[Number(btn.dataset.blockIndex)];
+      const pulse=new Date(b.time).getSeconds();
+      applyVerificationInputs(pulse,b.txCount,Math.floor(b.output));
+    }));
+  }
+
+  const currentBtn=document.getElementById('liveVerifyCurrentBtn');
+  if(currentBtn && !currentBtn.dataset.bound){
+    currentBtn.dataset.bound='1';
+    currentBtn.addEventListener('click',()=>{
+      const r=state.results[0];
+      if(!r){
+        toast('불러올 결과 없음','아직 확정된 직전 경기 결과가 없습니다.',[]);
+        return;
+      }
+      applyVerificationInputs(r.pulse,r.lockTxCount||0,r.settleOutput||0);
+      toast('직전 결과값 적용', `ROUND #${r.round} 기준 재검증 입력값을 반영했습니다.`, [`LOCK #${r.lockBlock}`, `SETTLE #${r.settleBlock}`]);
+    });
+  }
+
+  const latestHistoryBtn=document.getElementById('liveVerifyLatestHistoryBtn');
+  if(latestHistoryBtn && !latestHistoryBtn.dataset.bound){
+    latestHistoryBtn.dataset.bound='1';
+    latestHistoryBtn.addEventListener('click',()=>{
+      const target=document.getElementById('blockHistorySection') || document.getElementById('blockHistoryBody');
+      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  }
+
+  const blockHistoryBody=document.getElementById('blockHistoryBody');
+  if(blockHistoryBody){
+    blockHistoryBody.innerHTML=state.results.slice(0,100).map((r,idx)=>`<tr><td>#${r.round}</td><td>#${r.lockBlock}</td><td>${formatDateTime(r.lockTime)}</td><td>#${r.settleBlock}</td><td>${formatDateTime(r.settleTime)} / ${r.pulse}</td><td>${r.env.sky} / ${r.env.ground} / ${r.env.tempo}</td><td>${r.ranking[0].emoji} ${r.ranking[0].name}</td><td>${formatNum(r.prizeSpl)} SPL</td><td>${r.winnerCount}</td><td><button class="history-inline-btn" data-history-index="${idx}">불러오기</button></td></tr>`).join('') || `<tr><td colspan="10">아직 확정된 라운드가 없습니다.</td></tr>`;
+    blockHistoryBody.querySelectorAll('[data-history-index]').forEach(btn=>btn.addEventListener('click',()=>{
+      const r=state.results[Number(btn.dataset.historyIndex)];
+      applyVerificationInputs(r.pulse,r.lockTxCount||0,r.settleOutput||0);
+    }));
+  }
+}
 function renderWalletPage(){const txBox=document.getElementById('txList'); const items=state.txHistory.length?state.txHistory:[{kind:'대기',desc:'아직 지갑 활동이 없습니다.',amount:'-',time:''}]; txBox.innerHTML=items.map(t=>`<div class="tx-item"><div class="top"><div><strong>${t.kind}</strong><div class="small-note">${t.desc}</div></div><div>${t.amount}</div></div><div class="small-note">${t.time||''}</div></div>`).join(''); const payoutBox=document.getElementById('payoutList'); const payouts=state.payoutHistory.length?state.payoutHistory:[{round:'-',block:'-',tx:'-',amount:'수령 기록 없음'}]; payoutBox.innerHTML=payouts.map(p=>`<div class="tx-item"><div class="top"><div><strong>ROUND #${p.round}</strong><div class="small-note">SETTLE BLOCK #${p.block}</div></div><div>${p.amount}</div></div><div class="small-note">${p.tx?`지갑 반영 TX: ${p.tx}`:'적중 시 정산 블록과 함께 지갑 반영 내역이 생성됩니다.'}</div></div>`).join('')}
 function renderSimulationPage(){const hist=state.results.slice(0,100), winMap={}, betStat={alpha:{win:0,total:0,name:'Alpha'},twin:{win:0,total:0,name:'Twin'},chain:{win:0,total:0,name:'Chain'},podium:{win:0,total:0,name:'Podium'},trinity:{win:0,total:0,name:'Trinity'}}; ANIMALS.forEach(a=>winMap[a.id]=0); hist.forEach(r=>winMap[r.ranking[0].id]+=1); state.entryHistory.forEach(e=>{const rr=hist.find(r=>r.round===e.round); if(rr){betStat[e.betId].total+=1; if(isWinningEntry(e,rr.ranking)) betStat[e.betId].win+=1}}); const sortedAnimals=Object.entries(winMap).map(([id,v])=>({id,v,animal:ANIMALS.find(a=>a.id===id)})).sort((a,b)=>b.v-a.v||a.animal.name.localeCompare(b.animal.name,'ko')).slice(0,10); const noWinnerRate=hist.length?(hist.filter(r=>r.winnerCount===0).length/hist.length*100):0; const crowdBias=Object.values(state.marketSnapshot).length?(Object.values(state.marketSnapshot).reduce((s,v)=>s+v.strength,0)/Object.values(state.marketSnapshot).length).toFixed(0):'-'; document.getElementById('simRounds').textContent=hist.length||0; document.getElementById('simTopAnimal').textContent=sortedAnimals[0]?.animal?.name||'-'; document.getElementById('simNoWinnerRate').textContent=`${noWinnerRate.toFixed(1)}%`; document.getElementById('simCrowdBias').textContent=crowdBias==='-'?'-':`${crowdBias}점`; document.getElementById('simWinChart').innerHTML=sortedAnimals.map(r=>`<div class="bar-row"><div>${r.animal.emoji} ${r.animal.name}</div><div class="bar"><span style="width:${hist.length?(r.v/hist.length*100):0}%"></span></div><div class="val">${hist.length?(r.v/hist.length*100).toFixed(1):0}%</div></div>`).join('')||`<div class="small-note">데이터 없음</div>`; document.getElementById('simBetChart').innerHTML=Object.values(betStat).map(r=>{const rate=r.total?(r.win/r.total*100):0; return `<div class="bar-row"><div>${r.name}</div><div class="bar"><span style="width:${rate}%"></span></div><div class="val">${rate.toFixed(1)}%</div></div>`}).join(''); document.getElementById('simHistoryBody').innerHTML=hist.map(r=>`<tr><td>#${r.round}</td><td>${r.ranking[0].name}</td><td>${r.ranking[1].name}</td><td>${r.ranking[2].name}</td><td>#${r.lockBlock}</td><td>#${r.settleBlock}</td><td>${r.winnerCount===0?'Y':'-'}</td></tr>`).join('')||`<tr><td colspan="7">아직 결과 없음</td></tr>`}
 
@@ -3298,6 +4042,11 @@ function bindActions(){
     applyVerificationInputs(new Date(b.time).getSeconds(),b.txCount,Math.floor(b.output))
   });
   document.querySelectorAll('[data-winner-filter]').forEach(btn=>btn.addEventListener('click',()=>{state.winnerHistoryFilter=btn.dataset.winnerFilter; renderWinnerHistory()}));
+  document.querySelectorAll('[data-winner-period]').forEach(btn=>btn.addEventListener('click',()=>{state.winnerPeriodFilter=btn.dataset.winnerPeriod; renderWinnerHistory()}));
+  document.getElementById('winnerEventFilter')?.addEventListener('change',e=>{state.winnerEventFilter=e.target.value; renderWinnerHistory()});
+  document.getElementById('winnerSearchInput')?.addEventListener('input',e=>{state.winnerSearchQuery=e.target.value; renderWinnerHistory()});
+  document.getElementById('winnerSortSelect')?.addEventListener('change',e=>{state.winnerSort=e.target.value; renderWinnerHistory()});
+  document.getElementById('winnerResetFiltersBtn')?.addEventListener('click',()=>{state.winnerHistoryFilter='all'; state.winnerPeriodFilter='all'; state.winnerEventFilter='all'; state.winnerSearchQuery=''; state.winnerSort='latest'; const eventEl=document.getElementById('winnerEventFilter'); if(eventEl) eventEl.value='all'; const searchEl=document.getElementById('winnerSearchInput'); if(searchEl) searchEl.value=''; const sortEl=document.getElementById('winnerSortSelect'); if(sortEl) sortEl.value='latest'; renderWinnerHistory()});
   document.getElementById('autoEntryToggleBtn').addEventListener('click',()=>{
     state.autoEntry.enabled=!state.autoEntry.enabled;
     renderAll();
@@ -3520,356 +4269,23 @@ window.__monitorDemoState = {
 
 
 <section class="page privacy-page" id="page-platform">
-  <div class="privacy-page-wrap"><div class="privacy-shell"><div class="privacy-ring"></div><div class="privacy-ring r2"></div><div class="privacy-ring r3"></div><div class="privacy-content"><div class="privacy-header"><h1>How It Works</h1><div class="privacy-updated">Round flow, battle logic, and settlement structure</div></div><div class="privacy-doc">
-    <p>This page explains how the platform operates, how rounds are opened, how live blockchain data is used to generate battle conditions, how Beast battles are resolved, and how rewards are distributed. It is intended to give users a transparent understanding of gameplay mechanics before participating.</p>
-
-    <h2>Platform Overview</h2>
-    <p>The platform is a round-based prediction and battle game powered by live blockchain reference data.</p>
-    <p>Users participate in active rounds using tickets and choose among available game modes. Each round follows a real-time blockchain timing cycle, where public blockchain inputs determine battlefield conditions and final battle outcomes.</p>
-    <p>Every round requires a minimum cycle of approximately <strong>10 minutes or longer</strong>, depending on blockchain block arrival timing.</p>
-
-    <h2>Core Game Flow</h2>
-    <h3>Phase 1 – Environment Snapshot Opens</h3>
-    <p>Before ticket entry begins, the most recent confirmed blockchain block becomes the <strong>Previous Block</strong>.</p>
-    <p>Selected public values include:</p>
+  <div class="privacy-page-wrap"><div class="privacy-shell"><div class="privacy-ring"></div><div class="privacy-ring r2"></div><div class="privacy-ring r3"></div><div class="privacy-content"><div class="privacy-header"><h1>Platform</h1><div class="privacy-updated">How the product works in practice</div></div><div class="privacy-doc">
+    <p>Block Beast Arena is a wallet-connected gaming platform designed for transparent round participation, deterministic result handling, and structured reward settlement. Users connect a supported Solana wallet, convert SOL into playable in-platform tickets, enter live rounds, select one or more options, and receive rewards when the final round result matches their winning participation.</p>
+    <p>The service is built to reduce operational ambiguity. Participation units, prize-pool formation, ticket usage, and reward settlement are separated into clearly understandable stages so users can review what they spend, what they entered, and how results are settled.</p>
+    <h2>Core Product Structure</h2>
+    <h3>Wallet-first access</h3><p>The platform is designed around direct wallet interaction rather than traditional email-and-password onboarding. Users remain responsible for signing transactions and maintaining control of their wallets. The platform does not take custody of private keys or wallet recovery phrases.</p>
+    <h3>Ticket-based gameplay</h3><p>Users do not participate in rounds directly with SOL. Instead, SOL is exchanged into in-platform ticket balance, and tickets are consumed when entering a round. This structure makes participation accounting, prize-pool calculation, and reward settlement easier to present and audit.</p>
+    <h3>Round-based settlement</h3><p>Each round has a defined participation window, final result condition, and settlement flow. Once the official round result is fixed, winning ticket volume is calculated, the reward allocation is derived from published platform logic, and eligible rewards become claimable or distributable according to the system flow.</p>
+    <h2>Operational Design Principles</h2>
     <ul>
-      <li>transaction count (<code>txCount</code>)</li>
-      <li>output BTC volume (<code>outputBTC</code>)</li>
+      <li>Clear separation between wallet connection, ticket exchange, gameplay entry, and reward settlement</li>
+      <li>Consistent round logic across participation, locking, result confirmation, and payout processing</li>
+      <li>Visibility into balances, transaction history, and round records wherever technically available</li>
+      <li>Operational controls for fraud prevention, duplicate participation review, and risk monitoring</li>
     </ul>
-    <p>These values generate the round’s fixed battlefield conditions:</p>
-    <ul>
-      <li><strong>Biome</strong></li>
-      <li><strong>Terrain</strong></li>
-      <li><strong>Combat Type</strong></li>
-    </ul>
-    <p>Once created, these conditions remain locked for the round.</p>
-    <p>📍 <strong>[INSERT IMAGE – Round Start / Environment Snapshot UI]</strong></p>
-
-    <h3>Phase 2 – Entry Window (Approx. 10 Minutes)</h3>
-    <p>After the environment is locked, ticket participation opens for approximately 10 minutes.</p>
-    <p>During this period, users may:</p>
-    <ul>
-      <li>choose game modes;</li>
-      <li>select Beast outcomes;</li>
-      <li>allocate tickets;</li>
-      <li>review estimated rewards;</li>
-      <li>monitor live pool growth.</li>
-    </ul>
-    <p>Any blockchain blocks mined during this participation window are <strong>ignored for settlement purposes</strong>.</p>
-    <p>📍 <strong>[INSERT IMAGE – Countdown Entry Window UI]</strong></p>
-
-    <h3>Phase 3 – Entry Lock</h3>
-    <p>When the countdown ends:</p>
-    <ul>
-      <li>no more entries are accepted;</li>
-      <li>reward pools are finalized;</li>
-      <li>selections are locked;</li>
-      <li>settlement enters pending state.</li>
-    </ul>
-    <p>📍 <strong>[INSERT IMAGE – LOCK / Entry Closed UI]</strong></p>
-
-    <h3>Phase 4 – Result Block Wait</h3>
-    <p>After lock, the platform waits for the <strong>first valid blockchain block arriving after lock time</strong>. This becomes the <strong>Result Block</strong>.</p>
-    <p>Selected public values include:</p>
-    <ul>
-      <li><code>txCount</code></li>
-      <li><code>outputBTC</code></li>
-      <li>arrival timestamp (<code>second</code>)</li>
-    </ul>
-    <p>📍 <strong>[INSERT IMAGE – Waiting for Result Block UI]</strong></p>
-
-    <h3>Phase 5 – Beast Battle Resolution</h3>
-    <p>The final winner is determined automatically by combining:</p>
-    <ul>
-      <li>fixed battlefield conditions from the Previous Block;</li>
-      <li>dynamic values from the Result Block;</li>
-      <li>Beast base attributes;</li>
-      <li>public weight values;</li>
-      <li>published trait rules;</li>
-      <li>battle score formulas.</li>
-    </ul>
-    <p>📍 <strong>[INSERT IMAGE – Beast Battle Result Animation]</strong></p>
-
-    <h2>Battle Resolution Rules</h2>
-    <p>Five blockchain inputs determine every round.</p>
-    <p>Only live blockchain inputs change.</p>
-    <p>All Beast stats, weights, formulas, and tie-break rules are fixed and publicly disclosed.</p>
-
-    <h3>Previous Block Data</h3>
-    <ul>
-      <li>Previous <code>txCount</code></li>
-      <li>Previous <code>outputBTC</code></li>
-    </ul>
-    <p>Used to determine:</p>
-    <ul>
-      <li>Biome</li>
-      <li>Terrain</li>
-      <li>Combat</li>
-    </ul>
-
-    <h3>Result Block Data</h3>
-    <ul>
-      <li>Result <code>txCount</code></li>
-      <li>Result <code>outputBTC</code></li>
-      <li>Result block arrival <code>second</code></li>
-    </ul>
-    <p>Used to determine:</p>
-    <ul>
-      <li>Positioning</li>
-      <li>Battlefield Variable</li>
-      <li>Trait Trigger Timing</li>
-    </ul>
-
-    <h3>Environment Resolution</h3>
-    <p>The battlefield environment is determined by the Previous Block.</p>
-    <h4>Biome</h4>
-    <pre><code>BiomeIndex = Previous txCount % 3
-0 = Sunfire
-1 = Mistwood
-2 = Stormmire</code></pre>
-    <h4>Terrain</h4>
-    <pre><code>TerrainIndex = Previous outputBTC % 3
-0 = Stone Ridge
-1 = Wildfield
-2 = Black Bog</code></pre>
-    <h4>Combat</h4>
-    <pre><code>CombatIndex = (Previous txCount + Previous outputBTC) % 3
-0 = Ambush
-1 = Skirmish
-2 = Siege</code></pre>
-
-    <h3>Dynamic Factors</h3>
-    <p>Each Beast’s dynamic values are determined using the Result Block.</p>
-    <h4>Positioning</h4>
-    <pre><code>Position_i = ((Result txCount + 7×i) % 17 - 8) × 0.5</code></pre>
-    <h4>Battlefield Variable</h4>
-    <pre><code>BattleVar_i = ( INT(Result txCount / (i+1)) + (Result outputBTC % (10+i)) ) % 10 × 0.5</code></pre>
-    <p>Both dynamic coefficients are fixed at <strong>0.5</strong>.</p>
-
-    <h3>Final Score Formula</h3>
-    <p>A Beast’s final score is calculated as:</p>
-    <pre><code>Final Score_i
-= Base Power_i × W1_i
-+ Biome Bonus_i × W2_i
-+ Terrain Bonus_i × W3_i
-+ Combat Bonus_i × W4_i
-+ Positioning_i × W5_i
-+ Battlefield Variable_i × W6_i
-+ Trait Trigger_i × W7_i</code></pre>
-    <h4>Tie-break Rule</h4>
-    <pre><code>Judge Score_i = Final Score_i + (13 - BeastID_i) / 100000</code></pre>
-    <p>If scores are equal, a fixed BeastID-based tie-break value is applied.</p>
-
-    <h2>Beast Battle System</h2>
-    <h3>Active Battle Roster</h3>
-    <p>Each standard round uses <strong>10 active battle Beasts</strong>.</p>
-    <p>Every Beast has permanent public characteristics including:</p>
-    <ul>
-      <li>Base Power</li>
-      <li>Environment Affinity</li>
-      <li>Combat Preference</li>
-      <li>Tactical Weight Modifiers</li>
-      <li>Trait Trigger Rules</li>
-    </ul>
-    <p>These values are fixed balance attributes and do not change during standard rounds.</p>
-
-    <h3>Event Beasts</h3>
-    <p>Two special Beasts exist for limited-time events only:</p>
-    <ul>
-      <li><strong>Dragon</strong> (Beast #11)</li>
-      <li><strong>Frog</strong> (Beast #12)</li>
-    </ul>
-    <p>These Beasts do not participate in standard rounds unless specifically announced.</p>
-    <p>📍 <strong>[INSERT IMAGE – Event Beast Showcase]</strong></p>
-
-    <h2>Public Attribute Model</h2>
-    <p>The platform publishes all core Beast data needed to understand battle resolution, including fixed base stats, environmental modifiers, public weight values, and fixed trait trigger rules.</p>
-    <p>These values are static balance data used to maintain transparency and competitive consistency.</p>
-
-    <h2>Beast Stats</h2>
-    <h3>Fixed Beast Stat Table</h3>
-    <table>
-      <thead>
-        <tr><th>BeastID</th><th>Beast</th><th>Archetype</th><th>Base Power</th><th>Sunfire</th><th>Mistwood</th><th>Stormmire</th><th>Stone Ridge</th><th>Wildfield</th><th>Black Bog</th><th>Ambush</th><th>Skirmish</th><th>Siege</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>Army Ant</td><td>Swarm Reversal</td><td>76</td><td>1</td><td>2</td><td>1</td><td>1</td><td>2</td><td>2</td><td>5</td><td>1</td><td>-3</td></tr>
-        <tr><td>2</td><td>Bear</td><td>Iron Vanguard</td><td>86</td><td>-2</td><td>3</td><td>2</td><td>-1</td><td>0</td><td>3</td><td>-2</td><td>1</td><td>4</td></tr>
-        <tr><td>3</td><td>Lion</td><td>Alpha Pounce</td><td>88</td><td>3</td><td>0</td><td>-3</td><td>4</td><td>-1</td><td>-1</td><td>3</td><td>0</td><td>-3</td></tr>
-        <tr><td>4</td><td>Fox</td><td>Trick Leap</td><td>83</td><td>3</td><td>0</td><td>-1</td><td>1</td><td>2</td><td>0</td><td>4</td><td>1</td><td>0</td></tr>
-        <tr><td>5</td><td>Scorpion</td><td>Venom Ambush</td><td>70</td><td>1</td><td>1</td><td>2</td><td>0</td><td>1</td><td>4</td><td>5</td><td>2</td><td>-2</td></tr>
-        <tr><td>6</td><td>Warhorse</td><td>Disciplined Charge</td><td>82</td><td>4</td><td>0</td><td>-3</td><td>-1</td><td>4</td><td>1</td><td>1</td><td>1</td><td>2</td></tr>
-        <tr><td>7</td><td>Ram</td><td>Momentum Aura</td><td>79</td><td>1</td><td>2</td><td>4</td><td>-1</td><td>2</td><td>2</td><td>0</td><td>2</td><td>5</td></tr>
-        <tr><td>8</td><td>Raccoon</td><td>Chaos Raider</td><td>80</td><td>1</td><td>4</td><td>1</td><td>1</td><td>2</td><td>2</td><td>2</td><td>2</td><td>-1</td></tr>
-        <tr><td>9</td><td>Rooster</td><td>Dawn Striker</td><td>78</td><td>5</td><td>2</td><td>-1</td><td>4</td><td>1</td><td>-3</td><td>4</td><td>3</td><td>0</td></tr>
-        <tr><td>10</td><td>Wolf</td><td>Relentless Hunt</td><td>82</td><td>1</td><td>3</td><td>1</td><td>1</td><td>3</td><td>1</td><td>1</td><td>3</td><td>2</td></tr>
-        <tr><td>11</td><td>Dragon</td><td>Battlefield Shaker</td><td>89</td><td>4</td><td>0</td><td>2</td><td>-1</td><td>-2</td><td>0</td><td>0</td><td>3</td><td>4</td></tr>
-        <tr><td>12</td><td>Frog</td><td>Last Stand Bruiser</td><td>69</td><td>-2</td><td>2</td><td>4</td><td>-2</td><td>1</td><td>5</td><td>3</td><td>3</td><td>-3</td></tr>
-      </tbody>
-    </table>
-    <h4>Guide</h4>
-    <ul>
-      <li><strong>Base Power</strong>: fixed core power value of each Beast.</li>
-      <li><strong>Sunfire / Mistwood / Stormmire</strong>: Biome affinity modifiers.</li>
-      <li><strong>Stone Ridge / Wildfield / Black Bog</strong>: Terrain affinity modifiers.</li>
-      <li><strong>Ambush / Skirmish / Siege</strong>: Combat preference modifiers.</li>
-    </ul>
-    <p>Once the battlefield environment is fixed, each Beast receives the modifier shown in the matching column.</p>
-
-    <h2>Weight Matrix</h2>
-    <h3>Fixed Weight Matrix</h3>
-    <table>
-      <thead>
-        <tr><th>BeastID</th><th>Beast</th><th>W1 Base</th><th>W2 Biome</th><th>W3 Terrain</th><th>W4 Combat</th><th>W5 Positioning</th><th>W6 BattleVar</th><th>W7 Trait</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>Army Ant</td><td>0.30</td><td>0.65</td><td>0.59</td><td>0.88</td><td>0.98</td><td>0.76</td><td>1.10</td></tr>
-        <tr><td>2</td><td>Bear</td><td>0.30</td><td>0.65</td><td>0.63</td><td>0.92</td><td>0.85</td><td>0.70</td><td>0.90</td></tr>
-        <tr><td>3</td><td>Lion</td><td>0.30</td><td>0.82</td><td>0.59</td><td>0.93</td><td>1.05</td><td>0.80</td><td>0.95</td></tr>
-        <tr><td>4</td><td>Fox</td><td>0.30</td><td>0.68</td><td>0.63</td><td>0.97</td><td>0.90</td><td>0.82</td><td>1.05</td></tr>
-        <tr><td>5</td><td>Scorpion</td><td>0.30</td><td>0.68</td><td>0.80</td><td>1.02</td><td>0.90</td><td>0.74</td><td>1.05</td></tr>
-        <tr><td>6</td><td>Warhorse</td><td>0.30</td><td>0.72</td><td>0.63</td><td>0.84</td><td>0.95</td><td>0.76</td><td>0.90</td></tr>
-        <tr><td>7</td><td>Ram</td><td>0.30</td><td>0.72</td><td>0.68</td><td>0.88</td><td>0.88</td><td>0.72</td><td>1.00</td></tr>
-        <tr><td>8</td><td>Raccoon</td><td>0.30</td><td>0.65</td><td>0.55</td><td>0.80</td><td>1.02</td><td>0.90</td><td>0.95</td></tr>
-        <tr><td>9</td><td>Rooster</td><td>0.30</td><td>0.82</td><td>0.72</td><td>0.82</td><td>0.90</td><td>0.78</td><td>1.00</td></tr>
-        <tr><td>10</td><td>Wolf</td><td>0.30</td><td>0.72</td><td>0.63</td><td>1.03</td><td>0.90</td><td>0.74</td><td>1.00</td></tr>
-        <tr><td>11</td><td>Dragon</td><td>0.30</td><td>0.85</td><td>0.76</td><td>1.01</td><td>0.92</td><td>0.73</td><td>1.00</td></tr>
-        <tr><td>12</td><td>Frog</td><td>0.30</td><td>0.72</td><td>0.76</td><td>1.05</td><td>0.85</td><td>0.72</td><td>1.10</td></tr>
-      </tbody>
-    </table>
-    <h4>Weight Definitions</h4>
-    <ul>
-      <li><strong>W1</strong> = Base Power Weight</li>
-      <li><strong>W2</strong> = Biome Weight</li>
-      <li><strong>W3</strong> = Terrain Weight</li>
-      <li><strong>W4</strong> = Combat Weight</li>
-      <li><strong>W5</strong> = Positioning Weight</li>
-      <li><strong>W6</strong> = Battlefield Variable Weight</li>
-      <li><strong>W7</strong> = Trait Trigger Weight</li>
-    </ul>
-    <p>This weight matrix is the fixed coefficient set used directly in the total battle score formula.</p>
-
-    <h2>Trait Rules</h2>
-    <h3>Fixed Trait Trigger Rules</h3>
-    <table>
-      <thead>
-        <tr><th>BeastID</th><th>Beast</th><th>Trait Rule</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>Army Ant</td><td>40초 이상 +4, 55초 이상 추가 +2. 포지셔닝 절대값이 2 이하이고 Combat가 Skirmish 또는 Siege면 추가 +1</td></tr>
-        <tr><td>2</td><td>Bear</td><td>8~28초면 +3, 아니면 +1. 포지셔닝 절대값 2 이하 +1. Biome/Terrain이 모두 하위 2구간이면 +1</td></tr>
-        <tr><td>3</td><td>Lion</td><td>0~20초 +5, 21~30초 +2, 이후 -1. Biome 또는 Combat가 0이면 +2, Biome 또는 Combat가 2이면 -2</td></tr>
-        <tr><td>4</td><td>Fox</td><td>12~18초 또는 42~48초면 +6. Combat가 Ambush면 추가 +1</td></tr>
-        <tr><td>5</td><td>Scorpion</td><td>22~29초 또는 52초 이상 +4, 아니면 +1. Biome/Terrain/Combat 중 하나라도 2이면 +3</td></tr>
-        <tr><td>6</td><td>Warhorse</td><td>35~50초 +4, 28~34초 +2. Terrain 또는 Combat가 2이면 +2</td></tr>
-        <tr><td>7</td><td>Ram</td><td>15~35초 +3, 아니면 +1. 포지셔닝이 0 이상이고 전장변수가 5 이상이면 +2. Combat가 2이면 -1</td></tr>
-        <tr><td>8</td><td>Raccoon</td><td>20~40초 +2, 아니면 +1. Biome/Terrain/Combat가 모두 0 또는 1이면 +2</td></tr>
-        <tr><td>9</td><td>Rooster</td><td><code>(second + result txcount) % 7 = 0</code>이면 +8, 아니면 <code>second % 5 = 0</code>이면 +3, 그 외 -2</td></tr>
-        <tr><td>10</td><td>Wolf</td><td>0~10초 또는 30~35초이면 +4. Biome=0 이고 Terrain=0이면 +2</td></tr>
-        <tr><td>11</td><td>Dragon</td><td>38~55초 +4, 28~37초 +2. Biome 또는 Combat가 2이면 +2</td></tr>
-        <tr><td>12</td><td>Frog</td><td>45초 이상 +5, 35~44초 +2, 그 외 -1. Biome/Terrain/Combat 중 하나라도 2이면 +2</td></tr>
-      </tbody>
-    </table>
-    <p>Trait triggers are primarily driven by the Result Block second, while some Beasts also reference result txcount or environment indices.</p>
-
-    <h2>Environment Conditions</h2>
-    <p>Round environments are generated from blockchain-derived Previous Block inputs.</p>
-    <h3>Biome</h3>
-    <ul><li>Sunfire</li><li>Mistwood</li><li>Stormmire</li></ul>
-    <h3>Terrain</h3>
-    <ul><li>Stone Ridge</li><li>Wildfield</li><li>Black Bog</li></ul>
-    <h3>Combat Type</h3>
-    <ul><li>Ambush</li><li>Skirmish</li><li>Siege</li></ul>
-    <p>These conditions influence Beast performance according to published modifiers.</p>
-    <p>Example:</p>
-    <ul>
-      <li>Some Beasts perform better in Wildfield.</li>
-      <li>Some Beasts lose power in Siege battles.</li>
-      <li>Some Beasts gain advantage in Ambush settings.</li>
-    </ul>
-
-    <h2>Game Modes</h2>
-    <p>The platform may offer the following progressive game modes:</p>
-    <ol>
-      <li><strong>Alpha Pick</strong></li>
-      <li><strong>Tweak Pick</strong></li>
-      <li><strong>Chain Order</strong></li>
-      <li><strong>Podium Mesh</strong></li>
-      <li><strong>Trinity Order</strong></li>
-    </ol>
-    <p>Each mode has different difficulty, prediction depth, and reward potential.</p>
-
-    <h2>Mode Unlock System</h2>
-    <p>Game modes are activated progressively based on available minimum reward pool reserves.</p>
-    <pre><code>Alpha Pick → Tweak Pick → Chain Order → Podium Mesh → Trinity Order</code></pre>
-    <p>Each mode maintains its own pool allocation, sustainability thresholds, and payout requirements.</p>
-    <p>📍 <strong>[INSERT IMAGE – Mode Unlock Progress UI]</strong></p>
-
-    <h2>Tickets and Entry</h2>
-    <p>Users may obtain tickets through supported methods and allocate them to active rounds.</p>
-    <p>Users may:</p>
-    <ul>
-      <li>place single entries;</li>
-      <li>split tickets across selections;</li>
-      <li>join multiple modes where available.</li>
-    </ul>
-    <p>Once the round locks, entries cannot be modified.</p>
-
-    <h2>Rewards</h2>
-    <p>Rewards are distributed according to the published pool model.</p>
-    <p>Each mode may maintain:</p>
-    <ul>
-      <li>its own reward pool;</li>
-      <li>minimum payout thresholds;</li>
-      <li>reserve balances;</li>
-      <li>jackpot enhancements;</li>
-      <li>promotional overlays.</li>
-    </ul>
-    <p>For full payout mechanics, see the <strong>Rewards</strong> page.</p>
-
-    <h2>Fair Play Principles</h2>
-    <p>The platform is designed around transparent, rule-based mechanics.</p>
-    <p>Measures may include:</p>
-    <ul>
-      <li>public blockchain reference inputs;</li>
-      <li>fixed lock times;</li>
-      <li>first valid post-lock block settlement logic;</li>
-      <li>public Beast stats and formulas;</li>
-      <li>automated calculations;</li>
-      <li>anti-abuse monitoring;</li>
-      <li>invalid entry exclusion.</li>
-    </ul>
-    <p>For more details, see <strong>Fair Play</strong>.</p>
-
-    <h2>Common Questions</h2>
-    <h3>Why does each round take at least 10 minutes?</h3>
-    <p>Because each round requires:</p>
-    <ol>
-      <li>environment generation;</li>
-      <li>participation window;</li>
-      <li>lock;</li>
-      <li>waiting for Result Block;</li>
-      <li>automated settlement.</li>
-    </ol>
-
-    <h3>Can blocks mined during the countdown affect the result?</h3>
-    <p>No.</p>
-    <p>Blocks mined during the active entry window are ignored.</p>
-    <p>Only the first valid block after lock is used for settlement.</p>
-
-    <h3>Do Beast stats change every round?</h3>
-    <p>No.</p>
-    <p>Base Beast attributes, weights, and formulas are fixed public balance data.</p>
-    <p>Only blockchain inputs vary each round.</p>
-
-    <h3>Are Dragon and Frog always active?</h3>
-    <p>No.</p>
-    <p>They are event-only Beasts unless otherwise announced.</p>
-
-    <h2>Important Notice</h2>
-    <p>Battle formulas, balancing weights, available Beasts, game modes, reward thresholds, supported chains, and settlement logic may be updated periodically for fairness, security, sustainability, or gameplay quality.</p>
-    <p>Users should review round-specific information before participating.</p>
-    <div class="privacy-note">How It Works is intended to explain the platform’s round structure, published battle logic, and settlement flow in a clear, service-ready format.</div>
+    <h2>What Users Should Understand</h2>
+    <p>Before using the platform, users should understand that blockchain interactions may be irreversible, ticket balances are gameplay units rather than direct wallet-native assets, and rewards depend on official round outcomes and the platform’s published settlement logic.</p>
+    <div class="privacy-note">Platform documents are intended to explain the commercial and operational structure of the service in a clear, service-ready format. They do not replace the Terms, Privacy Policy, or game-specific rules.</div>
   </div></div></div></div>
 </section>
 <section class="page privacy-page" id="page-fairplay">
@@ -3982,7 +4398,7 @@ window.__monitorDemoState = {
   <div class="hl-footer-inner">
     <div class="hl-footer-status"><span class="live-dot"></span><span>Online</span></div>
     <div class="hl-footer-links">
-      <a href="#" data-footer-page="platform">How It Works</a>
+      <a href="#" data-footer-page="platform">Platform</a>
       <a href="#" data-footer-page="fairplay">Fair Play</a>
       <a href="#" data-footer-page="rewards">Rewards</a>
       <a href="#" data-footer-page="help">Help</a>
@@ -4462,6 +4878,265 @@ async function runSettlementDemo(){
 
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', initEnhancedUi, {once:true});
   else initEnhancedUi();
+})();
+</script>
+
+<!-- UX IMPROVED SCRIPT -->
+
+<script>
+(function(){
+  if(!window.state) return;
+  state.safety = state.safety || {sessionLimitMin:45, stakeLimitSpl:1000, startedAt:Date.now(), lastReminderAt:0};
+  state.entryPending = false;
+
+  function currentPage(){
+    const active=document.querySelector('.page.active');
+    return active ? active.id.replace('page-','') : 'dashboard';
+  }
+
+  function setDockActive(page){
+    document.querySelectorAll('#mobileBottomNav [data-page]').forEach(btn=>btn.classList.toggle('active', btn.dataset.page===page));
+  }
+
+  function bindDockActions(){
+    document.querySelectorAll('[data-dock-action]').forEach(btn=>{
+      if(btn.__uxBound) return;
+      btn.__uxBound = true;
+      btn.addEventListener('click', ()=>{
+        const action = btn.dataset.dockAction;
+        if(action==='connect') return connectWallet();
+        if(action==='exchange') return document.getElementById('exchangeBtn')?.scrollIntoView({behavior:'smooth',block:'center'});
+        if(action==='play') return document.getElementById('liveBoard')?.scrollIntoView({behavior:'smooth',block:'start'});
+        if(action==='verify') return navigate('blocks');
+        if(action==='wallet') return navigate('wallet');
+      });
+    });
+    document.querySelectorAll('#mobileBottomNav [data-page]').forEach(btn=>{
+      if(btn.__uxBound) return;
+      btn.__uxBound = true;
+      btn.addEventListener('click', ()=>navigate(btn.dataset.page));
+    });
+  }
+
+  function bindStakePresets(){
+    document.querySelectorAll('.stake-preset-btn').forEach(btn=>{
+      if(btn.__uxBound) return;
+      btn.__uxBound = true;
+      btn.addEventListener('click', ()=>{
+        const input=document.getElementById('stakeInput');
+        if(!input) return;
+        input.value=btn.dataset.value;
+        if(typeof renderComboPreview==='function') renderComboPreview();
+        if(typeof updateSlipGuide==='function') updateSlipGuide();
+        renderExperienceLayers();
+      });
+    });
+  }
+
+  function bindSafety(){
+    const apply=document.getElementById('safeApplyLimitsBtn');
+    if(apply && !apply.__uxBound){
+      apply.__uxBound=true;
+      apply.addEventListener('click', ()=>{
+        const sessionLimit=Number(document.getElementById('safeSessionLimitInput')?.value||45);
+        const stakeLimit=Number(document.getElementById('safeStakeLimitInput')?.value||1000);
+        state.safety.sessionLimitMin=Math.max(10, sessionLimit);
+        state.safety.stakeLimitSpl=Math.max(50, stakeLimit);
+        state.safety.startedAt=Date.now();
+        state.safety.lastReminderAt=0;
+        toast('세션 가드 적용', `${state.safety.sessionLimitMin}분 / 최대 ${formatNum(state.safety.stakeLimitSpl)} SPL`, ['Responsible Play']);
+        renderExperienceLayers();
+      });
+    }
+  }
+
+  function updateQuickSteps(){
+    const bet=typeof getActiveBet==='function' ? getActiveBet() : {picks:1};
+    const steps={
+      qsConnect: !!state.walletConnected,
+      qsExchange: Number(state.splBalance||0) > 0,
+      qsSelect: (state.walletConnected && selection.picks.length===bet.picks),
+      qsEnter: !!state.entryHistory.filter(e=>e.owner===state.walletAddress && e.round===state.currentRound).length
+    };
+    const order=['qsConnect','qsExchange','qsSelect','qsEnter'];
+    let firstIncomplete = order.find(id=>!steps[id]);
+    order.forEach(id=>{
+      const el=document.getElementById(id);
+      if(!el) return;
+      el.classList.remove('done','active');
+      if(steps[id]) el.classList.add('done');
+      else if(id===firstIncomplete) el.classList.add('active');
+    });
+  }
+
+  function updateSmartBrief(){
+    const title=document.getElementById('smartInsightTitle');
+    const body=document.getElementById('smartInsightBody');
+    const meta=document.getElementById('smartInsightMeta');
+    if(!title||!body||!meta) return;
+    const bet=typeof getActiveBet==='function' ? getActiveBet() : BET_TYPES[0];
+    const currentEntries=state.entryHistory.filter(e=>e.owner===state.walletAddress && e.round===state.currentRound);
+    const pinned=typeof getPinnedFavorite==='function' ? getPinnedFavorite() : null;
+    if(!state.walletConnected){
+      title.textContent='지갑을 연결해 개인화 상태와 빠른 시작 흐름을 활성화하세요.';
+      body.textContent='연결 후에는 잔액, 추천 다음 행동, 저장된 세트, 지갑 로그가 홈 브리프에 자동 반영됩니다.';
+      meta.textContent='미연결 상태 · 저장 세트 비활성 · 자동참여 준비 전';
+      return;
+    }
+    if(state.splBalance<=0){
+      title.textContent='티켓 교환이 다음 단계입니다.';
+      body.textContent='현재 연결은 완료되었지만 참여 가능한 SPL이 없습니다. 먼저 SOL을 SPL로 교환하면 예상 배당과 참여 CTA가 즉시 살아납니다.';
+      meta.textContent=`지갑 연결 완료 · 보유 ${formatNum(state.solBalance,3)} SOL · SPL ${formatNum(state.splBalance)}`;
+      return;
+    }
+    if(selection.picks.length < bet.picks){
+      title.textContent=`${bet.name}에 필요한 ${bet.picks}개 슬롯을 먼저 채우세요.`;
+      body.textContent=pinned ? `대표 세트 ${pinned.name}을 바로 불러오거나, 현재 조합을 완성해 예상 배당을 확인해보세요.` : '아직 선택 조합이 완성되지 않았습니다. 홈에서 슬롯을 채우면 예상 수령이 즉시 갱신됩니다.';
+      meta.textContent=`SPL ${formatNum(state.splBalance)} · 현재 ${selection.picks.length}/${bet.picks} 선택 · 자동참여 ${state.autoEntry?.enabled?'ON':'OFF'}`;
+      return;
+    }
+    if(!currentEntries.length){
+      const est=getBetTypeLiveOdds(bet.id, selection.picks);
+      title.textContent='이제 참여 확정만 남았습니다.';
+      body.textContent=`현재 조합은 ${est.toFixed(2)}x 예상 배당으로 계산됩니다. 동일 조합 중복 참여는 막고, 다른 전략은 별도 엔트리로 유지됩니다.`;
+      meta.textContent=`${selection.picks.map(id=>ANIMALS.find(a=>a.id===id)?.name).join(' / ')} · 현재 라운드 엔트리 0개`;
+      return;
+    }
+    title.textContent='현재 라운드에 이미 참여 중입니다.';
+    body.textContent='같은 조합은 다시 잠글 수 없도록 차단했고, 다른 전략 조합만 추가로 참여할 수 있게 바꿨습니다.';
+    meta.textContent=`현재 라운드 엔트리 ${currentEntries.length}개 · 저장 세트 ${state.favoriteSets.length}개 · 자동참여 ${state.autoEntry?.enabled?'ON':'OFF'}`;
+  }
+
+  function updateEntryGuard(){
+    const el=document.getElementById('entryGuardBanner');
+    if(!el || !state.walletConnected) {
+      if(el){ el.className='entry-guard-banner'; el.textContent='지갑 연결 후 현재 조합과 세션 가드를 기준으로 실수 방지 상태를 안내합니다.'; }
+      return;
+    }
+    const sameRound=state.entryHistory.filter(e=>e.owner===state.walletAddress && e.round===state.currentRound);
+    const hasExact=sameRound.some(e=>e.betId===selection.activeBetId && JSON.stringify(e.picks)===JSON.stringify(selection.picks));
+    el.className='entry-guard-banner ' + (hasExact ? 'warn' : 'ok');
+    if(hasExact){
+      el.textContent='현재 선택은 이미 같은 라운드에 잠긴 동일 조합입니다. 다른 조합으로 바꾸거나 현재 참여 내역을 확인하세요.';
+    }else if(sameRound.length){
+      el.textContent=`현재 라운드에 ${sameRound.length}개의 엔트리가 있습니다. 동일 조합만 차단하고, 다른 전략 엔트리는 허용됩니다.`;
+    }else{
+      el.textContent='현재 라운드에 아직 내 엔트리가 없습니다. 동일 조합 중복 참여는 자동 차단됩니다.';
+    }
+  }
+
+  function updateWalletJourney(){
+    const steps=['wfConnect','wfExchange','wfEnter','wfSettle','wfClaim'];
+    steps.forEach(id=>document.getElementById(id)?.classList.remove('done','active'));
+    const entries=state.entryHistory.filter(e=>e.owner===state.walletAddress);
+    const payouts=state.payoutHistory.length;
+    const active = !state.walletConnected ? 'wfConnect' : state.splBalance<=0 ? 'wfExchange' : !entries.length ? 'wfEnter' : !state.results.length ? 'wfSettle' : payouts ? 'wfClaim' : 'wfSettle';
+    const doneMap={
+      wfConnect: state.walletConnected,
+      wfExchange: state.walletConnected && state.splBalance>0,
+      wfEnter: entries.length>0,
+      wfSettle: state.results.length>0,
+      wfClaim: payouts>0
+    };
+    steps.forEach(id=>{ const el=document.getElementById(id); if(!el) return; if(doneMap[id]) el.classList.add('done'); else if(id===active) el.classList.add('active'); });
+    const status=document.getElementById('walletFlowStatus');
+    if(!status) return;
+    if(!state.walletConnected) status.textContent='지갑 연결 전입니다. 먼저 지갑을 연결한 뒤 티켓 교환과 참여 흐름을 시작하세요.';
+    else if(state.splBalance<=0) status.textContent=`지갑 연결 완료 · 현재 ${formatNum(state.solBalance,3)} SOL 보유 · SPL이 없어 티켓 교환 단계가 다음 행동입니다.`;
+    else if(!entries.length) status.textContent=`SPL ${formatNum(state.splBalance)} 보유 중입니다. 이제 조합을 선택하고 현재 라운드에 참여를 잠글 수 있습니다.`;
+    else if(!state.results.length) status.textContent=`현재까지 ${entries.length}개의 엔트리가 기록되었습니다. 마감 이후 첫 BTC 블록이 도착하면 정산이 진행됩니다.`;
+    else if(!payouts) status.textContent='최근 정산 결과가 생성되었지만 아직 내 수령 로그는 없습니다. 당첨 히스토리와 결과 탭을 함께 확인하세요.';
+    else status.textContent=`최근 수령 로그 ${payouts}건이 반영되었습니다. 정산 블록과 트랜잭션 로그를 지갑 탭에서 함께 확인할 수 있습니다.`;
+  }
+
+  function updateSafetyBadge(){
+    const badge=document.getElementById('safeSessionBadge');
+    if(!badge) return;
+    const mins=Math.max(0, Math.floor((Date.now() - (state.safety.startedAt||Date.now()))/60000));
+    badge.textContent=`제한 ${state.safety.sessionLimitMin}분 / 최대 ${formatNum(state.safety.stakeLimitSpl)} SPL · 경과 ${mins}분`;
+  }
+
+  function checkSessionReminder(){
+    if(!state.walletConnected) return;
+    const elapsed=Date.now() - (state.safety.startedAt||Date.now());
+    const remain=(state.safety.sessionLimitMin*60000)-elapsed;
+    if(remain <= 10*60000 && remain > 0 && Date.now() - (state.safety.lastReminderAt||0) > 8*60000){
+      state.safety.lastReminderAt = Date.now();
+      toast('세션 가드 알림', `${Math.ceil(remain/60000)}분 후 세션 제한에 도달합니다. 잠시 휴식을 고려하세요.`, ['Responsible Play']);
+    }
+  }
+
+  function updateEntryButtonState(){
+    const btn=document.getElementById('enterRoundBtn');
+    if(!btn) return;
+    btn.disabled=!!state.entryPending;
+    btn.style.opacity=state.entryPending?'0.65':'';
+    if(state.entryPending) btn.textContent='참여 처리 중...';
+    document.querySelectorAll('.stake-preset-btn').forEach(p=>{
+      const input=document.getElementById('stakeInput');
+      p.classList.toggle('active', input && Number(input.value)===Number(p.dataset.value));
+    });
+  }
+
+  function renderExperienceLayers(){
+    updateQuickSteps();
+    updateSmartBrief();
+    updateEntryGuard();
+    updateWalletJourney();
+    updateSafetyBadge();
+    updateEntryButtonState();
+    setDockActive(currentPage());
+  }
+
+  const _navigate = window.navigate;
+  window.navigate = function(page){
+    _navigate(page);
+    renderExperienceLayers();
+  };
+
+  const _renderAll = window.renderAll;
+  window.renderAll = function(){
+    _renderAll();
+    renderExperienceLayers();
+  };
+
+  const originalEnterRound = window.enterRound;
+  window.enterRound = function(isAuto=false){
+    if(state.entryPending) return showErrorModal('참여 처리 중','이전 참여 요청을 처리 중입니다. 잠시만 기다려 주세요.',['Entry Pending']);
+    const bet=getActiveBet(), stake=Number(document.getElementById('stakeInput').value||0);
+    if(!state.walletConnected) return showErrorModal('지갑 연결 필요','참여확정 전에 지갑 연결이 필요합니다.',['Round Entry']);
+    if(selection.picks.length!==bet.picks) return showErrorModal('선택 수량 확인',`${bet.picks}마리를 선택하세요.`,['Pick Validation']);
+    if(stake<50) return showErrorModal('최소 참여 수량','최소 50 SPL 이상 참여하세요.',['Min 50 SPL']);
+    if(stake>state.splBalance) return showErrorModal('잔액 부족','보유 SPL이 부족합니다.',['Balance Check']);
+    if(state.safety?.stakeLimitSpl && stake>state.safety.stakeLimitSpl) return showErrorModal('세션 가드 차단',`1회 최대 참여 한도 ${formatNum(state.safety.stakeLimitSpl)} SPL을 초과했습니다.`,['Responsible Play']);
+    const elapsed=Date.now()-(state.safety.startedAt||Date.now());
+    if(state.safety?.sessionLimitMin && elapsed>state.safety.sessionLimitMin*60000) return showErrorModal('세션 제한 도달',`${state.safety.sessionLimitMin}분 세션 제한에 도달했습니다. 잠시 휴식 후 다시 시작하세요.`,['Responsible Play']);
+    const sameRoundEntries=state.entries.filter(e=>e.owner===state.walletAddress&&e.round===state.currentRound);
+    const sameCombo=sameRoundEntries.find(e=>e.betId===bet.id&&JSON.stringify(e.picks)===JSON.stringify(selection.picks));
+    if(sameCombo) return showErrorModal('중복 참여 방지','같은 라운드에 동일 조합이 이미 잠겨 있습니다. 다른 조합만 추가 참여할 수 있습니다.',['Duplicate Guard']);
+    state.entryPending=true;
+    renderExperienceLayers();
+    try {
+      return originalEnterRound(isAuto);
+    } finally {
+      setTimeout(()=>{ state.entryPending=false; renderExperienceLayers(); }, 900);
+    }
+  };
+
+  function initImprovedUx(){
+    bindDockActions();
+    bindStakePresets();
+    bindSafety();
+    const sessionInput=document.getElementById('safeSessionLimitInput');
+    const stakeInput=document.getElementById('safeStakeLimitInput');
+    if(sessionInput) sessionInput.value=state.safety.sessionLimitMin;
+    if(stakeInput) stakeInput.value=state.safety.stakeLimitSpl;
+    setInterval(checkSessionReminder, 30000);
+    renderExperienceLayers();
+  }
+
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', initImprovedUx, {once:true});
+  else initImprovedUx();
 })();
 </script>
 
