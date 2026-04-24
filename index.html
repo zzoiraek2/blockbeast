@@ -2437,6 +2437,22 @@ body.accent-ember{--cyan:#ffb26b;--cyan2:#ffe7c7;--gold:#ff6f61;--gold2:#ff8f3d;
 .live-verify-rank.rank-2{order:2;}
 .live-verify-rank.rank-3{order:3;}
 
+
+
+/* === Hide browser scrollbar while keeping vertical scroll === */
+html,
+body {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js">
 document.getElementById('applyVerifyPrevBlockBtn')?.addEventListener('click',()=>{
