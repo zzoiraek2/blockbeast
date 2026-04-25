@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Block Beast Arena v3</title>
+<title>Block Beast Arena · Solana Slotstream</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@500;600;700&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -904,6 +904,10 @@ body{padding-bottom:64px;}
   background:#0a1017;border-top:1px solid rgba(255,255,255,.02);
 }
 .hl-subbar-left{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.hl-asset-pills{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.hl-stat-pill{min-width:108px;justify-content:space-between;}
+.hl-stat-pill strong{font-family:Orbitron,sans-serif;font-size:12px;letter-spacing:.02em;color:#f4f7ff;}
+.hl-lock-pill strong{color:#c9afff;}
 .hl-subbar-right{flex:1;min-width:220px;display:flex;justify-content:flex-end;}
 .hash-ticker{padding:0;background:transparent;border:0;min-height:auto;width:min(760px,100%);}
 .hash-ticker .label{font-size:10px;color:#7f8ba0;letter-spacing:.12em;font-weight:600;}
@@ -2266,7 +2270,7 @@ body.accent-ember{--cyan:#ffb26b;--cyan2:#ffe7c7;--gold:#ff6f61;--gold2:#ff8f3d;
 @media (max-width:820px){.experience-strip,.insight-hub,.quick-step-grid,.wallet-flow,.safe-play-grid{grid-template-columns:1fr}.action-dock{top:auto;bottom:76px;position:fixed;left:12px;right:12px;z-index:11}.action-dock .dock-label,.action-dock .dock-spacer{display:none}.action-dock-btn{flex:1;min-width:0}.mobile-bottom-nav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:12;padding:10px 8px calc(10px + env(safe-area-inset-bottom));background:rgba(5,14,25,.92);backdrop-filter:blur(18px);border-top:1px solid rgba(255,255,255,.08)}.mobile-tab{display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:center;padding:8px 4px;border-radius:12px;border:none;background:transparent;color:var(--muted);font-size:11px;font-weight:800;cursor:pointer}.mobile-tab.active{color:var(--white);background:rgba(126,244,232,.08)}.toast-stack{bottom:92px}.app{padding-bottom:150px!important}}
 
 
-/* ===== Block Verify fairness engine upgrade ===== */
+/* ===== Slot Verify fairness engine upgrade ===== */
 .fairness-engine-shell{
   position:relative;
   overflow:hidden;
@@ -2472,6 +2476,245 @@ html {
   scrollbar-gutter: auto !important;
 }
 
+
+
+/* === Solana Slotstream Upgrade Patch === */
+:root{
+  --sol-purple:#9945ff;
+  --sol-green:#14f195;
+  --sol-blue:#00c2ff;
+  --sol-ink:#080915;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:-20%;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(circle at 72% 18%, rgba(153,69,255,.20), transparent 26%),
+    radial-gradient(circle at 20% 70%, rgba(20,241,149,.12), transparent 28%),
+    linear-gradient(120deg, rgba(153,69,255,.045), transparent 34%, rgba(20,241,149,.035));
+  animation: solanaNebula 12s ease-in-out infinite alternate;
+}
+@keyframes solanaNebula{from{transform:translate3d(-1%,0,0) scale(1)}to{transform:translate3d(1.5%,-1%,0) scale(1.04)}}
+.hl-brand-mark,
+.logo-mark{background:linear-gradient(135deg, rgba(153,69,255,.42), rgba(20,241,149,.25))!important;box-shadow:0 0 28px rgba(153,69,255,.20),0 0 38px rgba(20,241,149,.10)!important}
+.wallet-btn,.btn-gold,button.primary,.filter-chip.active{background:linear-gradient(135deg,var(--sol-purple),var(--sol-green))!important;color:#071015!important;border:0!important;box-shadow:0 16px 34px rgba(153,69,255,.18)!important}
+.btn-blue,button.secondary,.verify-contract-link,.history-inline-btn{border-color:rgba(20,241,149,.35)!important;color:#baffdf!important;background:rgba(20,241,149,.08)!important}
+.nav-item.active{color:#a7ffd8!important;background:linear-gradient(135deg,rgba(153,69,255,.12),rgba(20,241,149,.08))!important;border-color:rgba(20,241,149,.28)!important}
+.hero-panel,.section-box,.panel,.live-card{border-color:rgba(153,69,255,.23)!important;box-shadow:0 18px 48px rgba(0,0,0,.38),0 0 0 1px rgba(20,241,149,.035) inset!important}
+.hero-left{isolation:isolate;min-height:420px;overflow:hidden}
+.hero-left::after{
+  content:"";
+  position:absolute;
+  right:30px;
+  bottom:18px;
+  width:230px;
+  height:230px;
+  pointer-events:none;
+  opacity:.92;
+  background:
+    linear-gradient(135deg, rgba(153,69,255,.95), rgba(20,241,149,.90)) 50% 26%/150px 22px no-repeat,
+    linear-gradient(135deg, rgba(0,194,255,.78), rgba(153,69,255,.80)) 50% 50%/150px 22px no-repeat,
+    linear-gradient(135deg, rgba(20,241,149,.90), rgba(0,194,255,.78)) 50% 74%/150px 22px no-repeat;
+  border-radius:50%;
+  filter:drop-shadow(0 0 28px rgba(153,69,255,.35)) drop-shadow(0 0 22px rgba(20,241,149,.20));
+  transform:perspective(700px) rotateX(56deg) rotateZ(-22deg);
+  animation: solanaBlockFloat 4.6s ease-in-out infinite;
+  z-index:0;
+}
+.hero-left > *{position:relative;z-index:1}
+@keyframes solanaBlockFloat{0%,100%{transform:perspective(700px) rotateX(56deg) rotateZ(-22deg) translateY(0)}50%{transform:perspective(700px) rotateX(56deg) rotateZ(-22deg) translateY(-10px)}}
+.hashbox{position:relative;overflow:hidden;border-color:rgba(20,241,149,.26)!important;background:linear-gradient(180deg,rgba(5,9,22,.92),rgba(7,13,26,.96))!important}
+.hashbox::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(20,241,149,.16),transparent);transform:translateX(-100%);animation:solanaScan 3.6s linear infinite;pointer-events:none}
+@keyframes solanaScan{to{transform:translateX(100%)}}
+.hashbox .value,.blockno .num,.metric .v,.stat-tile .v,.live-card .value{color:#9fffd0!important;text-shadow:0 0 22px rgba(20,241,149,.26)!important}
+.sol-symbol{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:9px;background:linear-gradient(135deg,var(--sol-purple),var(--sol-green));color:#05110d!important;box-shadow:0 0 18px rgba(20,241,149,.42);font-weight:900;animation:solanaPulse 1.8s ease-in-out infinite!important}
+@keyframes solanaPulse{0%,100%{transform:scale(1);filter:brightness(1)}50%{transform:scale(1.08);filter:brightness(1.25)}}
+.solana-signal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.solana-signal{padding:10px 12px;border-radius:12px;background:linear-gradient(180deg,rgba(153,69,255,.10),rgba(20,241,149,.045));border:1px solid rgba(20,241,149,.16)}
+.solana-signal .k{font-size:10px;color:#91a8c7;text-transform:uppercase;letter-spacing:.12em}
+.solana-signal .v{margin-top:5px;font-family:Orbitron,sans-serif;font-size:15px;color:#dfffee}.solana-signal .pulse-line{height:3px;margin-top:8px;border-radius:999px;background:linear-gradient(90deg,var(--sol-purple),var(--sol-green),var(--sol-blue));background-size:220% 100%;animation:solanaFlow 2.4s linear infinite}@keyframes solanaFlow{to{background-position:220% 0}}
+.step.active{background:linear-gradient(135deg,rgba(153,69,255,.18),rgba(20,241,149,.12))!important;color:#baffdf!important}.step.active .n{background:rgba(20,241,149,.18)!important;color:#baffdf!important}
+.monitor-status-pill,.status-chip,.live-verify-badge{background:rgba(20,241,149,.09)!important;border-color:rgba(20,241,149,.24)!important;color:#9fffd0!important}
+@media(max-width:820px){.hero-left::after{width:150px;height:150px;right:-10px;bottom:8px;opacity:.42}.solana-signal-grid{grid-template-columns:1fr}}
+
+
+/* === Solana visual upgrade v2 === */
+.dashboard-hero{grid-template-columns:1.08fr .92fr;gap:20px}
+.hero-panel,.section-box,.panel{position:relative;overflow:hidden}
+.section-box:before,.panel:before{
+  content:"";position:absolute;left:0;right:0;top:0;height:2px;
+  background:linear-gradient(90deg,rgba(153,69,255,0),rgba(153,69,255,.68),rgba(20,241,149,.72),rgba(107,196,255,.76),rgba(153,69,255,0));
+  opacity:.9;pointer-events:none
+}
+.page.active .section-box,.page.active .panel{animation:sectionLift .32s ease}
+@keyframes sectionLift{from{opacity:.72;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.solana-hero-left{padding:22px 22px 20px;background:
+ radial-gradient(circle at 18% 22%, rgba(153,69,255,.12), transparent 34%),
+ radial-gradient(circle at 84% 14%, rgba(20,241,149,.13), transparent 28%),
+ linear-gradient(180deg, rgba(7,17,31,.98), rgba(7,13,24,.98));
+}
+.solana-hero-left:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(135deg, rgba(153,69,255,.08), transparent 28%, transparent 72%, rgba(20,241,149,.07));
+}
+.solana-stage-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin-top:14px;align-items:stretch}
+.solana-stage-main{
+  position:relative;min-height:332px;padding:14px 14px 16px;border-radius:16px;
+  background:linear-gradient(180deg, rgba(11,20,35,.94), rgba(8,16,29,.98));
+  border:1px solid rgba(126,244,232,.16);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),0 18px 36px rgba(0,0,0,.28)
+}
+.solana-stage-main:before{
+  content:"";position:absolute;inset:0;border-radius:16px;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.042) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size:26px 26px;mask-image:linear-gradient(180deg, rgba(255,255,255,.42), transparent 92%);
+  opacity:.65
+}
+.solana-stage-overlay{display:flex;gap:8px;flex-wrap:wrap;position:relative;z-index:2}
+.stage-chip{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);font-size:11px;font-weight:800;color:var(--muted)}
+.stage-chip.active{background:rgba(20,241,149,.10);border-color:rgba(20,241,149,.26);color:#9dffd7}
+.solana-stage-core{position:relative;min-height:220px;margin-top:14px;border-radius:14px;overflow:hidden;background:radial-gradient(circle at 50% 50%, rgba(19,32,59,.65), rgba(7,15,28,.35) 62%, rgba(6,12,22,.18) 100%)}
+.solana-stage-grid{position:absolute;inset:0;background:linear-gradient(180deg, transparent 0%, rgba(8,15,27,.18) 52%, rgba(8,15,27,.78) 100%)}
+.solana-stage-pulse{position:absolute;inset:auto 0 0 0;height:42%;background:linear-gradient(180deg, rgba(20,241,149,0), rgba(20,241,149,.09) 35%, rgba(107,196,255,.06) 65%, rgba(153,69,255,0));animation:stageSweep 2.8s linear infinite;mix-blend-mode:screen}
+@keyframes stageSweep{0%{transform:translateY(55%)}100%{transform:translateY(-140%)}}
+.solana-orbit{position:absolute;border-radius:999px;border:1px solid rgba(107,196,255,.18)}
+.solana-orbit.orbit-a{width:300px;height:300px;left:50%;top:50%;transform:translate(-50%,-50%)}
+.solana-orbit.orbit-b{width:220px;height:220px;left:50%;top:50%;transform:translate(-50%,-50%) rotate(14deg);border-color:rgba(20,241,149,.18)}
+.solana-orbit.orbit-c{width:150px;height:150px;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-18deg);border-color:rgba(153,69,255,.22)}
+.solana-beam{position:absolute;left:50%;top:10%;width:2px;height:78%;transform:translateX(-50%);background:linear-gradient(180deg, rgba(107,196,255,0), rgba(107,196,255,.28), rgba(20,241,149,.6), rgba(107,196,255,.12), rgba(107,196,255,0));box-shadow:0 0 32px rgba(20,241,149,.35)}
+.solana-monolith{position:absolute;left:50%;top:50%;width:260px;height:190px;transform:translate(-50%,-50%)}
+.solana-monolith-layer{position:absolute;left:50%;width:190px;height:28px;border-radius:12px;transform:translateX(-50%) skewX(-28deg);background:linear-gradient(90deg, #7c3aed 0%, #a855f7 18%, #6bc4ff 45%, #14f195 72%, #76e4f7 100%);box-shadow:0 0 28px rgba(107,196,255,.28), 0 0 34px rgba(20,241,149,.16)}
+.solana-monolith-layer:after{content:"";position:absolute;inset:4px 8px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,.22), rgba(255,255,255,0));opacity:.42}
+.solana-monolith .layer-1{top:30px}
+.solana-monolith .layer-2{top:81px;left:50%;width:206px}
+.solana-monolith .layer-3{top:132px}
+.solana-monolith-shadow{position:absolute;left:50%;bottom:6px;width:210px;height:34px;border-radius:50%;transform:translateX(-50%);background:radial-gradient(circle, rgba(20,241,149,.32), rgba(107,196,255,.18) 35%, rgba(124,58,237,.12) 55%, rgba(0,0,0,0) 75%);filter:blur(8px)}
+.solana-stage-footer{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;position:relative;z-index:2}
+.stage-stat{padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.06)}
+.stage-stat span{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.stage-stat strong{display:block;margin-top:7px;font-size:13px;color:#f2f8ff;line-height:1.45}
+.solana-stage-side{display:grid;gap:12px}
+.hero-hashbox{min-height:unset;padding:14px;border-radius:16px;background:linear-gradient(180deg, rgba(9,19,35,.96), rgba(8,14,28,.98));border:1px solid rgba(107,196,255,.16)}
+.hero-hashbox .value{font-size:22px;line-height:1.25;word-break:break-word}
+.solana-signal-grid{display:grid;gap:10px}
+.solana-signal{position:relative;padding:12px 14px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.07);overflow:hidden}
+.solana-signal .k{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+.solana-signal .v{margin-top:7px;font-family:Orbitron,sans-serif;font-size:18px;color:#eff8ff}
+.pulse-line{margin-top:10px;height:5px;border-radius:999px;background:linear-gradient(90deg, rgba(124,58,237,.85), rgba(107,196,255,.95), rgba(20,241,149,.95));box-shadow:0 0 18px rgba(107,196,255,.22);animation:pulseMove 1.9s ease-in-out infinite}
+@keyframes pulseMove{0%,100%{transform:scaleX(.58);transform-origin:left}50%{transform:scaleX(1)}}
+.solana-mini-flow{display:grid;gap:10px}
+.solana-mini-item{padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07)}
+.solana-mini-item span{display:block;font-size:11px;color:var(--cyan2);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.solana-mini-item strong{display:block;margin-top:7px;font-size:14px;line-height:1.45}
+.solana-hero-right{padding:28px 30px 28px;background:
+ radial-gradient(circle at 78% 16%, rgba(20,241,149,.13), transparent 28%),
+ radial-gradient(circle at 18% 18%, rgba(153,69,255,.12), transparent 34%),
+ linear-gradient(180deg, rgba(7,15,28,.98), rgba(7,12,23,.98));
+ display:flex;flex-direction:column;justify-content:center}
+.hero-topline{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.hero-kicker,.rb-chip{display:inline-flex;align-items:center;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.05);font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--muted2);text-transform:uppercase}
+.hero-brand-ribbon{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.rb-chip{color:#d9ebff}
+.rb-chip.alt{background:rgba(153,69,255,.12);border-color:rgba(153,69,255,.24);color:#d9caff}
+.hero-line-main{color:#f7fbff;font-size:74px;letter-spacing:1px;text-shadow:0 0 28px rgba(107,196,255,.18)}
+.hero-line-sub{display:flex;align-items:center;gap:10px}
+.hero-desc-title{margin-top:16px;font-size:18px;font-weight:800;color:#ebf5ff}
+.solana-hero-right .desc{margin-top:10px;max-width:none;font-size:15px;color:#9eb4d4;line-height:1.85}
+.solana-hero-right .desc strong{color:#ffffff}
+.hero-proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
+.hero-proof-card{padding:14px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.07)}
+.hero-proof-card .t{font-size:13px;font-weight:800;color:#f5fbff}
+.hero-proof-card .s{margin-top:7px;font-size:12px;line-height:1.65;color:var(--muted)}
+.hero-summary-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+.hero-strip-item{padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07)}
+.hero-strip-item span{display:block;font-size:11px;color:var(--cyan2);letter-spacing:.1em;text-transform:uppercase}
+.hero-strip-item strong{display:block;margin-top:7px;font-size:14px;line-height:1.45;color:#f4f8ff}
+.hero-derive-upgrade{margin-top:16px;border-radius:16px;background:linear-gradient(180deg, rgba(153,69,255,.10), rgba(20,241,149,.05));border:1px solid rgba(20,241,149,.16)}
+.btn-gold,.btn-blue{min-height:52px;padding:12px 20px;border-radius:14px}
+.live-overview{margin-top:20px}
+.live-card{border-radius:16px;padding:14px}
+.hashbox,.metric,.info-card,.balance-item,.history-card,.live-card,.verify-tile,.history-cell,.block-item,.event-card-pro,.event-item,.tx-item,.result-card,.log-item,.winner-insight-card,.verify-zone-v2,.verify-entry-box-v2,.verify-result-pane-v2,.verify-contract-card-v2,.selection-summary,.entry-carousel-card,.animal-card,.wow-card,.jackpot-card{border-radius:16px}
+@media (max-width:1280px){
+  .dashboard-hero{grid-template-columns:1fr}
+  .solana-stage-wrap{grid-template-columns:1fr}
+  .hero-summary-strip,.hero-proof-grid,.solana-stage-footer{grid-template-columns:1fr}
+}
+@media (max-width:820px){
+  .solana-hero-left,.solana-hero-right{padding:20px 18px}
+  .hero-line-main{font-size:52px}
+  .solana-monolith{width:220px;height:170px}
+  .solana-monolith-layer{width:168px}
+  .solana-monolith .layer-2{width:184px}
+}
+
+
+/* === Customer participation UX upgrade v1 === */
+.round-action-panel{margin-top:18px;padding:18px;border-radius:18px;background:radial-gradient(circle at 12% 20%, rgba(20,241,149,.14), transparent 36%),radial-gradient(circle at 88% 20%, rgba(153,69,255,.14), transparent 34%),linear-gradient(180deg, rgba(8,18,34,.98), rgba(6,13,25,.98));border:1px solid rgba(126,244,232,.18);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.round-action-panel:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(20,241,149,.16),transparent 20%,transparent 80%,rgba(153,69,255,.14));opacity:.42}
+.round-action-main{display:flex;justify-content:space-between;gap:14px;align-items:center;position:relative;z-index:1}
+.round-action-status{display:flex;align-items:center;gap:12px}.status-dot-live{width:13px;height:13px;border-radius:999px;background:#14f195;box-shadow:0 0 0 7px rgba(20,241,149,.08),0 0 20px rgba(20,241,149,.7);animation:blink 1.3s infinite}.round-action-status .eyebrow,.slot-explainer-head .eyebrow{font-size:11px;color:var(--cyan2);font-weight:900;letter-spacing:.16em;text-transform:uppercase}.round-action-status strong{display:block;margin-top:4px;font-size:22px}.round-action-countdown{text-align:right}.round-action-countdown span{display:block;font-size:12px;color:var(--muted)}.round-action-countdown strong{display:block;margin-top:3px;font-family:Orbitron,sans-serif;font-size:34px;color:var(--gold);line-height:1}
+.round-action-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px;position:relative;z-index:1}.round-action-tile{padding:14px;border-radius:15px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07)}.round-action-tile.emphasis{border-color:rgba(20,241,149,.24);background:rgba(20,241,149,.07)}.round-action-tile.reward{border-color:rgba(247,201,72,.24);background:rgba(247,201,72,.07)}.round-action-tile span{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.round-action-tile strong{display:block;margin-top:7px;font-size:18px;color:#fff}.round-action-tile small{display:block;margin-top:6px;color:var(--muted);line-height:1.45}.round-action-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;position:relative;z-index:1}.round-action-buttons button{min-height:44px;border-radius:13px;padding:9px 16px}.round-action-panel.ready{border-color:rgba(20,241,149,.36)}.round-action-panel.needs-wallet .action-confirm{opacity:.55}
+.slot-explainer-panel{margin-top:18px;padding:18px;border-radius:18px;background:linear-gradient(180deg, rgba(8,18,34,.94), rgba(6,13,25,.97));border:1px solid rgba(107,196,255,.15);box-shadow:var(--shadow)}.slot-explainer-head{display:flex;justify-content:space-between;gap:14px;align-items:center}.slot-explainer-head h3{margin:5px 0 0;font-size:21px}.slot-explainer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}.slot-explainer-card{padding:15px;border-radius:15px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07)}.slot-explainer-card span{font-size:11px;color:var(--cyan2);font-weight:900;letter-spacing:.13em;text-transform:uppercase}.slot-explainer-card strong{display:block;margin-top:8px;font-size:17px}.slot-explainer-card p{margin:7px 0 0;color:var(--muted);font-size:13px;line-height:1.65}
+.customer-selection-summary{border-color:rgba(20,241,149,.18);background:radial-gradient(circle at 15% 0%,rgba(20,241,149,.10),transparent 34%),linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025))}.customer-pick-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;position:relative;z-index:1}.customer-pick-strip span{padding:7px 10px;border-radius:999px;background:rgba(20,241,149,.08);border:1px solid rgba(20,241,149,.15);color:#bfffe6;font-size:12px;font-weight:800}.customer-risk-row{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.customer-risk-row div{padding:9px 10px;border-radius:12px;background:rgba(4,12,22,.46);border:1px solid rgba(255,255,255,.06)}.customer-risk-row span{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.customer-risk-row strong{display:block;margin-top:5px;font-family:Orbitron,sans-serif;font-size:15px}.customer-animal-card{padding:12px!important}.animal-topline{display:flex;justify-content:space-between;gap:8px;align-items:center}.animal-chip{padding:5px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.08);font-size:10px;font-weight:900;letter-spacing:.1em}.animal-chip.hot{color:#14f195;background:rgba(20,241,149,.08);border-color:rgba(20,241,149,.22)}.animal-chip.good{color:#6bc4ff;background:rgba(107,196,255,.08);border-color:rgba(107,196,255,.22)}.animal-chip.risk{color:#f7c948;background:rgba(247,201,72,.08);border-color:rgba(247,201,72,.22)}.pick-order-badge{position:absolute;right:10px;top:10px;z-index:3;padding:6px 9px;border-radius:999px;background:linear-gradient(135deg,#f7c948,#14f195);color:#07111d;font-size:11px;font-weight:900;box-shadow:0 10px 24px rgba(20,241,149,.16)}.customer-insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}.customer-insight-grid div{padding:7px 8px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}.customer-insight-grid span{display:block;font-size:9px;color:var(--muted);text-transform:uppercase}.customer-insight-grid strong{display:block;margin-top:4px;font-size:12px;color:#fff}.app-modal-desc strong{color:#fff}
+@media(max-width:1280px){.round-action-grid,.slot-explainer-grid{grid-template-columns:1fr 1fr}.round-action-main{align-items:flex-start}.round-action-countdown{text-align:left}.customer-risk-row{grid-template-columns:1fr}}
+@media(max-width:820px){.round-action-main{flex-direction:column}.round-action-grid,.slot-explainer-grid{grid-template-columns:1fr}.slot-explainer-head{flex-direction:column;align-items:flex-start}.round-action-buttons button{width:100%}}
+
+
+/* === FINAL HEADER LOCK PATCH: viewport-based top menu === */
+:root{--bba-header-height:104px;}
+html,body{
+  overflow-x:hidden !important;
+  overflow-y:auto !important;
+  height:auto !important;
+  min-height:100% !important;
+}
+body{
+  padding-top:var(--bba-header-height) !important;
+}
+.app{
+  transform:none !important;
+  transform-origin:initial !important;
+  overflow:visible !important;
+  contain:none !important;
+  padding-top:0 !important;
+}
+.page-wrap{
+  margin-top:14px !important;
+  padding-top:0 !important;
+  overflow:visible !important;
+  transform:none !important;
+  contain:none !important;
+}
+.main-header,
+.main-header.hl-header{
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  width:100vw !important;
+  margin:0 !important;
+  z-index:999999 !important;
+  transform:none !important;
+  contain:none !important;
+  will-change:auto !important;
+  background:#07111a !important;
+}
+.main-header .header-shell,
+.main-header .hash-ticker,
+.main-header .hl-topbar,
+.main-header .hl-subbar{
+  width:100% !important;
+  max-width:none !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+@media (max-width:900px){
+  :root{--bba-header-height:150px;}
+}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js">
 document.getElementById('applyVerifyPrevBlockBtn')?.addEventListener('click',()=>{
@@ -2496,12 +2739,12 @@ function updateSettlementMonitorView(data){
   const isWaiting=(v)=>!v || v==='WAITING';
 
   safe('monitorNextStep', data.nextStep || 'WAITING');
-  safe('monitorNextStepDesc', data.nextStepDesc || '첫 도착 BTC 블록 대기 중입니다.');
+  safe('monitorNextStepDesc', data.nextStepDesc || '첫 확정 Solana slot 대기 중입니다.');
 
   safe('monitorSettleBlock', data.settleBlock || 'WAITING');
   safe('monitorSettleTime', isWaiting(data.settleBlock) ? '' : (data.settleTime || '도착시각 -'));
-  safe('monitorSettleTx', isWaiting(data.settleBlock) ? '' : (data.settleTx || 'TxCount -'));
-  safe('monitorSettleOutput', isWaiting(data.settleBlock) ? '' : (data.settleOutput || 'Output -'));
+  safe('monitorSettleTx', isWaiting(data.settleBlock) ? '' : (data.settleTx || 'Successful Tx -'));
+  safe('monitorSettleOutput', isWaiting(data.settleBlock) ? '' : (data.settleOutput || 'Compute Units -'));
 
   safe('monitorRankResult', data.rankResult || 'WAITING');
   safe('monitorBestOdds', isWaiting(data.rankResult) ? '' : (data.bestOdds || '최고배당률 -'));
@@ -2517,14 +2760,14 @@ function updateSettlementMonitorView(data){
   safe('monitorProfitRank3', isWaiting(data.payoutStatus) ? '' : (data.profitRank3 || '수익금 3위 -'));
 
   if(pill){
-    pill.textContent = data.pill || 'BTC 블록 도착 대기중';
+    pill.textContent = data.pill || 'Solana slot 도착 대기중';
   }
 }
 
 window.__monitorDemoState = {
-  pill:'BTC 블록 도착 대기중',
+  pill:'Solana slot 도착 대기중',
   nextStep:'WAITING',
-  nextStepDesc:'첫 도착 BTC 블록 대기 중입니다.',
+  nextStepDesc:'첫 확정 Solana slot 대기 중입니다.',
   settleBlock:'WAITING',
   settleTime:'',
   settleTx:'',
@@ -2559,7 +2802,7 @@ window.__monitorDemoState = {
       <nav class="main-nav hl-nav" id="mainNav">
         <a class="nav-item active" data-page="dashboard">대시보드</a>
         <a class="nav-item" data-page="mypicks">내 선택</a>
-        <a class="nav-item" data-page="blocks">블록검증</a>
+        <a class="nav-item" data-page="blocks">결과 검증</a>
         <a class="nav-item" data-page="winners">당첨 히스토리</a>
         <a class="nav-item" data-page="events">이벤트</a>
         <a class="nav-item" data-page="wallet">지갑</a>
@@ -2663,10 +2906,15 @@ window.__monitorDemoState = {
     <div class="hl-subbar-left">
       <div class="pill hl-pill">ROUND <strong id="currentRoundText">#1247</strong></div>
       <div class="pill hl-pill" id="walletMini">지갑 미연결</div>
+      <div class="hl-asset-pills">
+        <div class="pill hl-pill hl-stat-pill">SOL <strong id="headerSolMini">-</strong></div>
+        <div class="pill hl-pill hl-stat-pill">TICKETS <strong id="headerTicketMini">-</strong></div>
+        <div class="pill hl-pill hl-stat-pill hl-lock-pill">LOCK <strong id="headerLockMini">Ø SPL</strong></div>
+      </div>
     </div>
     <div class="hl-subbar-right">
       <div class="hash-ticker">
-        <div class="label">LIVE BTC HASH</div>
+        <div class="label">LIVE SOLANA BLOCKHASH</div>
         <div class="hash-stream"><div class="hash-stream-inner" id="hashStreamInner"></div></div>
       </div>
     </div>
@@ -2676,47 +2924,108 @@ window.__monitorDemoState = {
 <div class="page-wrap">
 <section class="page active" id="page-dashboard">
   <section class="dashboard-hero" id="dashboardHero">
-    <div class="hero-panel hero-left">
+    <div class="hero-panel hero-left solana-hero-left">
       <div class="blockline">
-        <div class="live-title"><span class="btc">₿</span><span>BITCOIN BLOCKCHAIN LIVE</span></div>
-        <div class="blockno"><span class="label">BLOCK #</span><span class="num" id="heroBlockNumber">889,616</span></div>
+        <div class="live-title"><span class="btc sol-symbol">◎</span><span>SOLANA SLOTSTREAM LIVE</span></div>
+        <div class="blockno"><span class="label">FINALIZED SLOT</span><span class="num" id="heroBlockNumber">382,918,271</span></div>
       </div>
-      <div class="hashbox">
-        <div class="label">Current Block Hash</div>
-        <div class="value" id="heroHashValue">000000000000000000029f8c…</div>
+
+      <div class="solana-stage-wrap">
+        <div class="solana-stage-main" aria-label="Solana visual slot engine">
+          <div class="solana-stage-overlay">
+            <span class="stage-chip active">LOCK SLOT FEED</span>
+            <span class="stage-chip">RESOLVE SLOT WATCH</span>
+            <span class="stage-chip">VISUAL FAIR PLAY</span>
+          </div>
+          <div class="solana-stage-core">
+            <div class="solana-orbit orbit-a"></div>
+            <div class="solana-orbit orbit-b"></div>
+            <div class="solana-orbit orbit-c"></div>
+            <div class="solana-beam"></div>
+            <div class="solana-monolith">
+              <span class="solana-monolith-layer layer-1"></span>
+              <span class="solana-monolith-layer layer-2"></span>
+              <span class="solana-monolith-layer layer-3"></span>
+              <span class="solana-monolith-shadow"></span>
+            </div>
+            <div class="solana-stage-grid"></div>
+            <div class="solana-stage-pulse"></div>
+          </div>
+          <div class="solana-stage-footer">
+            <div class="stage-stat"><span>Lock Slot</span><strong>직전 finalized slot</strong></div>
+            <div class="stage-stat"><span>Resolve Slot</span><strong>마감 후 첫 finalized slot</strong></div>
+            <div class="stage-stat"><span>Entropy Inputs</span><strong>Result Blockhash · Tx · CU</strong></div>
+          </div>
+        </div>
+
+        <div class="solana-stage-side">
+          <div class="hashbox hero-hashbox">
+            <div class="label">Current Finalized Blockhash</div>
+            <div class="value" id="heroHashValue">6E9g9kzQ81FJsBU9jh632EPK…</div>
+          </div>
+          <div class="solana-signal-grid" aria-label="Solana live slot signals">
+            <div class="solana-signal"><div class="k">Slot Cadence</div><div class="v">~400ms</div><div class="pulse-line"></div></div>
+            <div class="solana-signal"><div class="k">Entropy Source</div><div class="v">Blockhash</div><div class="pulse-line"></div></div>
+            <div class="solana-signal"><div class="k">Game Input</div><div class="v">Successful Tx + CU</div><div class="pulse-line"></div></div>
+          </div>
+          <div class="solana-mini-flow">
+            <div class="solana-mini-item"><span>① Arena Lock</span><strong>Environment 3축 고정</strong></div>
+            <div class="solana-mini-item"><span>② Entry Freeze</span><strong>참여 및 상금풀 잠금</strong></div>
+            <div class="solana-mini-item"><span>③ Result Resolve</span><strong>최종 순위 · 배당 확정</strong></div>
+          </div>
+        </div>
       </div>
+
       <div class="metrics">
-        <div class="metric"><div class="k">Hash Rate</div><div class="v" id="metricHashrate">782.4 EH/s</div></div>
-        <div class="metric"><div class="k">Difficulty</div><div class="v" id="metricDifficulty">108.52T</div></div>
-        <div class="metric"><div class="k">Confirmations</div><div class="v">6/6</div></div>
-        <div class="metric"><div class="k">Settlement ETA</div><div class="v" id="metricEta">10m</div></div>
+        <div class="metric"><div class="k">TPS Proxy</div><div class="v" id="metricHashrate">3,420 TPS</div></div>
+        <div class="metric"><div class="k">Total Compute Units</div><div class="v" id="metricDifficulty">412.8M CU</div></div>
+        <div class="metric"><div class="k">Result Status</div><div class="v">Finalized</div></div>
+        <div class="metric"><div class="k">Resolve ETA</div><div class="v" id="metricEta">10m</div></div>
       </div>
-      <div class="derive">
-        <div class="k">🎯 진행 경과</div>
+
+      <div class="derive hero-derive-upgrade">
+        <div class="k">🎯 Round Pipeline</div>
         <div class="stepflow">
-          <div class="step active"><span class="n">1</span> 최초 BTC 블록</div>
-          <div class="step active"><span class="n">2</span> 환경 3축 고정</div>
-          <div class="step"><span class="n">3</span> 10분 카운트다운</div>
-          <div class="step"><span class="n">4</span> 정산금 LOCK </div>
-          <div class="step"><span class="n">5</span> 첫 도착 BTC 블록 정산</div>
-          <div class="step"><span class="n">6</span> ARENA 순위 확정</div>
-          <div class="step"><span class="n">7</span> 정산금 배당/이월 처리</div>
+          <div class="step active"><span class="n">1</span> 기준 Finalized Slot</div>
+          <div class="step active"><span class="n">2</span> Arena 환경 잠금</div>
+          <div class="step"><span class="n">3</span> 10분 엔트리 윈도우</div>
+          <div class="step"><span class="n">4</span> Prize Pool Lock</div>
+          <div class="step"><span class="n">5</span> Resolve Slot 포착</div>
+          <div class="step"><span class="n">6</span> Beast 순위 확정</div>
+          <div class="step"><span class="n">7</span> Reward 배분 / 이월</div>
         </div>
       </div>
     </div>
-    <div class="hero-panel hero-right">
-      <div class="status-chip">🔒 블록 데이터 엔진 완료 · 결과 추적 가능</div>
+
+    <div class="hero-panel hero-right solana-hero-right">
+      <div class="hero-topline">
+        <div class="status-chip">⚡ Solana Slot Engine Ready · 결과 추적 가능</div>
+        <div class="hero-kicker">LIVE FAIRNESS HUD</div>
+      </div>
+      <div class="hero-brand-ribbon">
+        <span class="rb-chip">BLOCK BEAST ARENA</span>
+        <span class="rb-chip alt">SOLANA MODE</span>
+      </div>
       <h1>
-        <span class="title-line"><span class="b">BLOCK</span></span>
-        <span class="title-line"><span class="r">BEAST</span><span class="b">ARENA</span></span>
+        <span class="title-line hero-line-main">SLOT-SYNCED</span>
+        <span class="title-line hero-line-sub"><span class="r">BEAST</span><span class="b">ARENA</span></span>
       </h1>
-      <div class="desc">직전 블록이 전장을 먼저 고정하고, 마감 후 첫 블록이 최종 순위를 확정한다. 고객은 지갑 연결, SPL 교환, 참여 락, 결과 검증, 최근 100경기 분석까지 한 화면 흐름에서 이어서 볼 수 있다.</div>
-      <div class="hero-badges">
-        <div class="badge">🔒 공정성 검증</div><div class="badge">⚡ 자동 정산 컨셉</div><div class="badge">👁️ 블록 공개</div><div class="badge">📈 최근 결과 분석</div>
+      <div class="hero-desc-title">랜덤은 숨기지 않고, 결과는 끊기지 않게.</div>
+      <div class="desc">직전 finalized slot이 전장을 먼저 잠그고, 마감 후 첫 finalized Resolve Slot의 <strong>Result Blockhash</strong> · <strong>Successful Transactions</strong> · <strong>Total Compute Units</strong>가 최종 순위를 확정한다. 사용자는 지갑 연결, SPL 교환, 참여 잠금, 결과 검증, 최근 100경기 분석까지 한 화면 리듬 안에서 이어서 확인할 수 있다.</div>
+      <div class="hero-proof-grid">
+        <div class="hero-proof-card"><div class="t">Lock Slot 공개</div><div class="s">환경이 언제 고정됐는지 즉시 확인</div></div>
+        <div class="hero-proof-card"><div class="t">Resolve Slot 판정</div><div class="s">결과 확정 입력값을 명확히 분리</div></div>
+        <div class="hero-proof-card"><div class="t">Result Blockhash</div><div class="s">해시 기반 결과 재현 흐름 유지</div></div>
+        <div class="hero-proof-card"><div class="t">100R Analysis</div><div class="s">최근 흐름과 대중 편향까지 한 번에</div></div>
+      </div>
+      <div class="hero-summary-strip">
+        <div class="hero-strip-item"><span>Lock Source</span><strong>직전 finalized slot</strong></div>
+        <div class="hero-strip-item"><span>Resolve Source</span><strong>마감 후 첫 finalized slot</strong></div>
+        <div class="hero-strip-item"><span>Visual Promise</span><strong>보는 순간 Solana 기반임이 느껴지게</strong></div>
       </div>
       <div class="cta-row">
-        <button class="btn-gold" onclick="document.getElementById('liveBoard').scrollIntoView({behavior:'smooth'})">지금 선택하기</button>
-        <button class="btn-blue" onclick="navigate('blocks')">블록 검증 보기</button>
+        <button class="btn-gold" onclick="document.getElementById('liveBoard').scrollIntoView({behavior:'smooth'})">지금 엔트리 열기</button>
+        <button class="btn-blue" onclick="navigate('blocks')">결과 검증 보기</button>
       </div>
     </div>
   </section>
@@ -2728,13 +3037,42 @@ window.__monitorDemoState = {
     <div class="live-card users"><div class="top"><div class="ico">👥</div><div><div class="label">참여자 수</div><div class="value" id="liveParticipants">0명</div></div></div><div class="sub">2명 이상이어야 라운드 확정 가능</div></div>
   </section>
 
+
+  <section class="round-action-panel" id="roundActionPanel">
+    <div class="round-action-main">
+      <div class="round-action-status">
+        <span class="status-dot-live"></span>
+        <div>
+          <div class="eyebrow">CURRENT ROUND</div>
+          <strong id="actionRoundState">OPEN · 선택 가능</strong>
+        </div>
+      </div>
+      <div class="round-action-countdown">
+        <span>마감까지</span>
+        <strong id="actionCountdown">10:00</strong>
+      </div>
+    </div>
+    <div class="round-action-grid">
+      <div class="round-action-tile emphasis"><span>내 상태</span><strong id="actionWalletState">지갑 미연결</strong><small id="actionWalletHint">Connect 후 SPL 교환 가능</small></div>
+      <div class="round-action-tile"><span>참여 조건</span><strong id="actionEntryNeed">최소 50 SPL</strong><small>선택 방식별 필요 비스트 수 확인</small></div>
+      <div class="round-action-tile"><span>현재 조합</span><strong id="actionPickState">선택 대기</strong><small id="actionPickHint">비스트를 선택하면 예상 수령이 표시됩니다</small></div>
+      <div class="round-action-tile reward"><span>예상 최대 수령</span><strong id="actionExpectedPayout">-</strong><small id="actionOddsState">현재예상 배당 -</small></div>
+    </div>
+    <div class="round-action-buttons">
+      <button class="primary" type="button" id="actionConnectWalletBtn">지갑 연결</button>
+      <button class="secondary" type="button" id="actionExchangeBtn">SPL 교환</button>
+      <button class="dark" type="button" id="actionChooseBtn">비스트 선택</button>
+      <button class="primary action-confirm" type="button" id="actionConfirmBtn">참여 확정</button>
+    </div>
+  </section>
+
   <div class="section-box" style="margin-top:18px">
     <div class="section-title"><h3>ROUND ENVIRONMENT LOCK</h3><div class="sub">환경 고정값과 정산 대기 상태를 한 번에 확인</div></div>
     <div class="env-lock-grid">
       <div class="info-card env-lock-card">
         <div>
           <div class="countdown" id="countdownText">10:00</div>
-          <div class="small-note" id="roundStatusText">환경이 최신 BTC 블록 기준으로 잠겨 있습니다.</div>
+          <div class="small-note" id="roundStatusText">환경이 최신 Solana slot 기준으로 잠겨 있습니다.</div>
           <div class="progress"><span id="roundProgress"></span></div>
         </div>
         <div class="env-meta-stack">
@@ -2748,19 +3086,19 @@ window.__monitorDemoState = {
           <div class="env-axis-card">
             <div class="axis-k">Sky Axis</div>
             <div class="axis-v" id="envSky">Sunfire</div>
-            <div class="axis-sub" id="envSkySeed">TxCount 기반</div>
+            <div class="axis-sub" id="envSkySeed">Successful Tx 기반</div>
             <div class="axis-desc">상공 환경과 시야 계열 보정</div>
           </div>
           <div class="env-axis-card">
             <div class="axis-k">Ground Axis</div>
             <div class="axis-v" id="envGround">Wildfield</div>
-            <div class="axis-sub" id="envGroundSeed">Output 기반</div>
+            <div class="axis-sub" id="envGroundSeed">Compute Units 기반</div>
             <div class="axis-desc">지면 상태와 이동 저항 보정</div>
           </div>
           <div class="env-axis-card">
             <div class="axis-k">Tempo Axis</div>
             <div class="axis-v" id="envTempo">Skirmish</div>
-            <div class="axis-sub" id="envTempoSeed">Tx+Output 기반</div>
+            <div class="axis-sub" id="envTempoSeed">Tx+Compute Units 기반</div>
             <div class="axis-desc">전투 템포와 초반/후반 성향 보정</div>
           </div>
         </div>
@@ -2775,6 +3113,21 @@ window.__monitorDemoState = {
       </div>
     </div>
   </div>
+
+  <section class="slot-explainer-panel">
+    <div class="slot-explainer-head">
+      <div>
+        <div class="eyebrow">WHY THIS ROUND IS VERIFIABLE</div>
+        <h3>고객이 이해하기 쉬운 Slot 판정 구조</h3>
+      </div>
+      <button class="dark" type="button" onclick="navigate('blocks')">상세 검증 보기</button>
+    </div>
+    <div class="slot-explainer-grid">
+      <div class="slot-explainer-card"><span>Lock Slot</span><strong>전장 고정 기준</strong><p>라운드 시작 전 이미 확정된 Solana slot으로 Sky · Ground · Tempo 환경을 먼저 고정합니다.</p></div>
+      <div class="slot-explainer-card"><span>Resolve Slot</span><strong>결과 확정 기준</strong><p>마감 후 처음 포착되는 finalized slot을 결과 계산 입력값으로 사용합니다.</p></div>
+      <div class="slot-explainer-card"><span>Result Blockhash</span><strong>순위 변동 해시</strong><p>Blockhash, Successful Tx, Compute Units를 조합해 최종 Beast 순위를 재현 가능하게 산출합니다.</p></div>
+    </div>
+  </section>
 
   <div class="dashboard-grid top-stage">
     <aside class="sidebar">
@@ -2797,9 +3150,9 @@ window.__monitorDemoState = {
   <div class="settlement-monitor-head">
     <div>
       <h3>SETTLEMENT MONITOR</h3>
-      <div class="sub">마감 이후 첫 BTC 블록 도착부터 순위 확정, 배당/이월 처리 상태까지 실시간 추적</div>
+      <div class="sub">마감 이후 첫 확정 Solana slot 도착부터 순위 확정, 배당/이월 처리 상태까지 실시간 추적</div>
     </div>
-    <div class="monitor-status-pill" id="monitorStatusPill">BTC 블록 도착 대기중</div>
+    <div class="monitor-status-pill" id="monitorStatusPill">Solana slot 도착 대기중</div>
   </div>
   <div class="demo-seq-bar">
     <button class="demo-seq-btn" type="button" onclick="runSettlementDemo()">데모 재생</button>
@@ -2812,12 +3165,12 @@ window.__monitorDemoState = {
       <div class="k">NEXT STEP</div>
       <div class="v orbitron" id="monitorNextStep">WAITING</div>
       <div class="meta compact-meta">
-        <div id="monitorNextStepDesc">첫 도착 BTC 블록 대기 중입니다.</div>
+        <div id="monitorNextStepDesc">첫 확정 Solana slot 대기 중입니다.</div>
       </div>
     </div>
 
     <div class="monitor-card compact-card" id="monitorCardBlock">
-      <div class="k">SETTLE BTC BLOCK</div>
+      <div class="k">SETTLE SOLANA SLOT</div>
       <div class="v orbitron" id="monitorSettleBlock">WAITING</div>
       <div class="meta compact-meta">
         <div id="monitorSettleTime"></div>
@@ -2838,7 +3191,7 @@ window.__monitorDemoState = {
     </div>
 
     <div class="monitor-card compact-card" id="monitorCardPayout">
-      <div class="k">PAYOUT STATUS</div>
+      <div class="k">PAYCU STATUS</div>
       <div class="v orbitron" id="monitorPayoutStatus">WAITING</div>
       <div class="meta compact-meta">
         <div id="monitorRolloverAmount"></div>
@@ -2926,7 +3279,7 @@ window.__monitorDemoState = {
         <div class="panel"><div class="section-title"><h3>최근 경기 결과</h3><div class="sub">고객 분석용 리포트</div></div><div class="recent-list" id="recentResults"></div></div>
         <div class="panel"><div class="section-title"><h3>이벤트 로그</h3><div class="sub">블록 생성 · 환경 락 · 정산 알림</div></div><div class="log-box" id="eventLog"></div></div>
       </div>
-      <div class="footer-note">이 파일은 실제 오픈용 UX 수준에 맞춘 프론트 프로토타입입니다. 다만 실제 운영을 위해서는 BTC 블록 인덱서, Solana 지갑 서명, SPL 소각, SOL 자동 정산 백엔드가 별도로 필요합니다.</div>
+      <div class="footer-note">이 파일은 실제 오픈용 UX 수준에 맞춘 프론트 프로토타입입니다. 다만 실제 운영을 위해서는 Solana slot/blockhash 인덱서, 지갑 서명, SPL 소각, SOL 자동 정산 백엔드가 별도로 필요합니다.</div>
     </div>
   </div>
 </section>
@@ -3016,7 +3369,7 @@ window.__monitorDemoState = {
       <div class="live-verify-hero">
         <div>
           <div class="live-verify-badge" id="liveVerifyBadge">LAST CONFIRMED</div>
-          <h4>직전 경기의 확정 블록과 입력값을 그대로 다시 넣어, 같은 결과가 재현되는지 바로 검증할 수 있습니다.</h4>
+          <h4>직전 경기의 확정 Slot과 입력값을 그대로 다시 넣어, 같은 결과가 재현되는지 바로 검증할 수 있습니다.</h4>
           <p>이 박스는 진행 중인 라운드가 아니라 이미 확정된 직전 경기 전용입니다. 환경값, Verification Input, 순위 결과가 모두 고정된 상태이므로 아래 입력창에 그대로 반영해 즉시 재검증하는 용도에 맞춰 설계되었습니다.</p>
         </div>
         <div class="live-verify-actions">
@@ -3036,14 +3389,14 @@ window.__monitorDemoState = {
 
         </div>
         <div class="live-verify-stat">
-          <div class="k">Lock Block</div>
+          <div class="k">Lock Slot</div>
           <div class="v" id="liveVerifyLockBlock">#-</div>
-          <div class="sub">환경이 고정된 기준 블록</div>
+          <div class="sub">환경이 고정된 기준 Slot</div>
         </div>
         <div class="live-verify-stat">
-          <div class="k">Settlement Block</div>
+          <div class="k">Resolve Slot</div>
           <div class="v" id="liveVerifySettleBlock">#-</div>
-          <div class="sub">순위가 확정된 정산 블록</div>
+          <div class="sub">순위가 확정된 결과 Slot</div>
         </div>
       </div>
       <div class="live-verify-stat-grid2">
@@ -3054,7 +3407,7 @@ window.__monitorDemoState = {
         </div>
         <div class="live-verify-stat">
           <div class="k">Verification Input</div>
-          <div class="v" id="liveVerifyInputSummary">TX 0 · OUT 0</div>
+          <div class="v" id="liveVerifyInputSummary">Successful Tx 0 · CU 0</div>
           <div class="sub">아래 입력창에 그대로 넣는 재검증 기준값</div>
         </div>
         <div class="live-verify-stat">
@@ -3090,7 +3443,7 @@ window.__monitorDemoState = {
       <div class="fairness-hero-card">
         <div class="fairness-hero-badge">PUBLIC • DETERMINISTIC • REPLAYABLE</div>
         <h4>같은 블록 데이터와 같은 공식이면, 누구나 같은 결과를 다시 얻습니다.</h4>
-        <p>Block Verify는 서버 내부 난수가 아니라 공개 블록 데이터를 입력값으로 사용합니다. 운영자가 값을 임의로 바꾸지 않는 한, 같은 블록 번호·Tx 수·Output 값·시간 정보는 항상 같은 계산 결과만 만듭니다.</p>
+        <p>Slot Verify는 서버 내부 난수가 아니라 공개 블록 데이터를 입력값으로 사용합니다. 운영자가 값을 임의로 바꾸지 않는 한, 같은 Slot·Successful Tx·Compute Units·도착 시각은 항상 같은 계산 결과만 만듭니다.</p>
         <div class="fairness-chip-row">
           <span>Immutable Block Source</span>
           <span>No Hidden RNG</span>
@@ -3100,13 +3453,13 @@ window.__monitorDemoState = {
       <div class="fairness-card-grid">
         <div class="fairness-card">
           <div class="fairness-card-k">01 · 왜 변조가 어려운가</div>
-          <div class="fairness-card-v">확정 블록은 사후 조작이 매우 어렵습니다</div>
+          <div class="fairness-card-v">확정 Slot은 사후 조작이 매우 어렵습니다</div>
           <p>블록 데이터는 네트워크에 공개 기록되며, 이미 확정된 블록을 특정 결과에 맞게 단독 수정하기 어렵습니다. 즉, 결과 재료 자체가 운영 서버 내부 값보다 훨씬 강한 공개 검증 기반을 가집니다.</p>
         </div>
         <div class="fairness-card">
           <div class="fairness-card-k">02 · 핵심 의미</div>
           <div class="fairness-card-v">같은 입력값 = 같은 결과</div>
-          <p>Block Number, Tx Count, Output Value, Block Time을 같은 공식에 대입하면 항상 동일한 결과가 도출됩니다. 숨겨진 랜덤 시드나 관리자 전용 보정값이 끼어들지 않는다는 점이 핵심입니다.</p>
+          <p>Slot Number, Successful Transactions, Total Compute Units, Arrival Time을 같은 공식에 대입하면 항상 동일한 결과가 도출됩니다. 숨겨진 랜덤 시드나 관리자 전용 보정값이 끼어들지 않는다는 점이 핵심입니다.</p>
         </div>
         <div class="fairness-card">
           <div class="fairness-card-k">03 · 이 기능의 의미</div>
@@ -3117,7 +3470,7 @@ window.__monitorDemoState = {
           <div class="fairness-card-k">04 · 사용 가이드</div>
           <div class="fairness-card-v">검증은 3단계면 충분합니다</div>
           <ol class="fairness-steps">
-            <li>블록 번호와 표시된 값을 입력하거나 불러옵니다.</li>
+            <li>Slot 번호와 표시된 Solana 값을 입력하거나 불러옵니다.</li>
             <li>입력값이 Explorer 데이터와 일치하는지 확인합니다.</li>
             <li>공식 적용 후 나온 결과가 화면 표시와 같은지 비교합니다.</li>
           </ol>
@@ -3156,8 +3509,8 @@ window.__monitorDemoState = {
           </div>
         </div>
         <div class="verify-row cols-2 verify-row-values-v2">
-          <div class="input-group"><label>TxCount</label><input id="verifyPrevTxInput" type="number" min="0" step="1" value="2486"></div>
-          <div class="input-group"><label>OutputBTC</label><input id="verifyPrevOutputInput" type="number" min="0" step="1" value="600192542593"></div>
+          <div class="input-group"><label>Successful Tx</label><input id="verifyPrevTxInput" type="number" min="0" step="1" value="1542"></div>
+          <div class="input-group"><label>Total Compute Units</label><input id="verifyPrevOutputInput" type="number" min="0" step="1" value="412877222"></div>
         </div>
       </div>
 
@@ -3179,8 +3532,8 @@ window.__monitorDemoState = {
         </div>
         <div class="verify-row cols-3 verify-row-values-v2">
           <div class="input-group"><label>맥박</label><input id="verifyPulseInput" type="number" min="0" max="59" value="14"></div>
-          <div class="input-group"><label>TxCount</label><input id="verifyTxInput" type="number" min="0" step="1" value="2486"></div>
-          <div class="input-group"><label>OutputBTC</label><input id="verifyOutputInput" type="number" min="0" step="1" value="600192542593"></div>
+          <div class="input-group"><label>Successful Tx</label><input id="verifyTxInput" type="number" min="0" step="1" value="1542"></div>
+          <div class="input-group"><label>Total Compute Units</label><input id="verifyOutputInput" type="number" min="0" step="1" value="412877222"></div>
         </div>
       </div>
 
@@ -3193,23 +3546,23 @@ window.__monitorDemoState = {
       <div class="verify-env-preview" id="verifyEnvPreview">
         <div class="verify-env-preview-head">
           <strong>환경 프리뷰</strong>
-          <span>환경설정 TxCount / OutputBTC 기준</span>
+          <span>환경설정 Successful Tx / Compute Units 기준</span>
         </div>
         <div class="verify-env-axis-grid">
           <div class="verify-env-axis-card">
             <div class="k">SKY</div>
             <div class="v" id="verifyEnvSky">-</div>
-            <div class="sub" id="verifyEnvSkySeed">TxCount 기반</div>
+            <div class="sub" id="verifyEnvSkySeed">Successful Tx 기반</div>
           </div>
           <div class="verify-env-axis-card">
             <div class="k">GROUND</div>
             <div class="v" id="verifyEnvGround">-</div>
-            <div class="sub" id="verifyEnvGroundSeed">OutputBTC 기반</div>
+            <div class="sub" id="verifyEnvGroundSeed">Compute Units 기반</div>
           </div>
           <div class="verify-env-axis-card">
             <div class="k">TEMPO</div>
             <div class="v" id="verifyEnvTempo">-</div>
-            <div class="sub" id="verifyEnvTempoSeed">TxCount + OutputBTC 기반</div>
+            <div class="sub" id="verifyEnvTempoSeed">Successful Tx + Compute Units 기반</div>
           </div>
         </div>
       </div>
@@ -3221,8 +3574,8 @@ window.__monitorDemoState = {
     </div>
   </div>
   <div class="section-box" style="margin-top:18px">
-    <div class="section-title"><h3>라운드 블록 히스토리</h3><div class="sub">최근 100경기 기준</div></div>
-    <div class="table-wrap"><table class="table"><thead><tr><th>ROUND</th><th>LOCK BLOCK</th><th>LOCK TIME</th><th>SETTLE BLOCK</th><th>SETTLE TIME / PULSE</th><th>환경</th><th>1위</th><th>상금 풀</th><th>적중</th><th>검증</th></tr></thead><tbody id="blockHistoryBody">
+    <div class="section-title"><h3>라운드 슬롯 히스토리</h3><div class="sub">최근 100경기 기준</div></div>
+    <div class="table-wrap"><table class="table"><thead><tr><th>ROUND</th><th>LOCK SLOT</th><th>LOCK TIME</th><th>RESOLVE SLOT</th><th>RESOLVE TIME / PULSE</th><th>환경</th><th>1위</th><th>상금 풀</th><th>적중</th><th>검증</th></tr></thead><tbody id="blockHistoryBody">
 <tr><td>#1246</td><td>#892,441</td><td>2026. 04. 23. 22:14:08</td><td>#892,442</td><td>2026. 04. 23. 22:22:41 / 41</td><td>Sunfire / Wildfield / Ambush</td><td>🐉 Dragon</td><td>184,000 SPL</td><td>3</td><td><button class="history-inline-btn">불러오기</button></td></tr>
 <tr><td>#1245</td><td>#892,439</td><td>2026. 04. 23. 22:03:56</td><td>#892,440</td><td>2026. 04. 23. 22:11:24 / 24</td><td>Mistwood / Stone Ridge / Skirmish</td><td>🐺 Wolf</td><td>162,000 SPL</td><td>2</td><td><button class="history-inline-btn">불러오기</button></td></tr>
 <tr><td>#1244</td><td>#892,437</td><td>2026. 04. 23. 21:53:11</td><td>#892,438</td><td>2026. 04. 23. 22:00:52 / 52</td><td>Stormmire / Black Bog / Siege</td><td>🐻 Bear</td><td>201,000 SPL</td><td>1</td><td><button class="history-inline-btn">불러오기</button></td></tr>
@@ -3427,10 +3780,10 @@ window.__monitorDemoState = {
             <div class="event-card-actions"><button class="secondary" type="button" data-event-toast="Double Arena 시작 알림을 설정했습니다.">시작 알림</button><button class="dark" type="button" onclick="navigate('blocks')">룰 확인</button></div>
           </div>
 
-          <div class="event-card-pro" data-category="verification" data-status="notice" data-mode="all" data-title="블록 검증 업데이트 환경 LOCK 정산 블록">
+          <div class="event-card-pro" data-category="verification" data-status="notice" data-mode="all" data-title="블록 검증 업데이트 환경 LOCK 결과 Slot">
             <div class="event-card-head"><span class="event-status notice">공지</span><span class="event-mode">검증</span></div>
             <h4>블록 검증 업데이트</h4>
-            <p>환경 LOCK 블록과 정산 블록을 동일 라운드 카드에서 함께 표시해 재검증 진입 동선을 단축합니다.</p>
+            <p>환경 LOCK 블록과 결과 Slot을 동일 라운드 카드에서 함께 표시해 재검증 진입 동선을 단축합니다.</p>
             <div class="event-meta-row"><span>운영 공지</span><span>영향: Verify 메뉴</span></div>
             <div class="event-progress"><span style="width:100%"></span></div>
             <div class="event-card-actions"><button class="secondary" type="button" onclick="navigate('blocks')">검증 메뉴 이동</button><button class="dark" type="button" data-event-toast="검증 업데이트 공지를 확인했습니다.">확인</button></div>
@@ -3497,7 +3850,7 @@ window.__monitorDemoState = {
       </div>
     </div>
     <div class="section-box">
-      <div class="section-title"><h3>상금 배분 추적</h3><div class="sub">상금 획득 시 정산 블록과 트랜잭션 로그를 함께 표시</div></div>
+      <div class="section-title"><h3>상금 배분 추적</h3><div class="sub">상금 획득 시 Resolve Slot과 트랜잭션 로그를 함께 표시</div></div>
       <div class="tx-list" id="payoutList"></div>
     </div>
   </div>
@@ -3509,7 +3862,7 @@ window.__monitorDemoState = {
         <div class="wallet-flow-step" id="wfConnect"><div class="eyebrow">Step 1</div><strong>지갑 연결</strong><span>사용자 주소를 활성화하고 개인화 데이터를 연결합니다.</span></div>
         <div class="wallet-flow-step" id="wfExchange"><div class="eyebrow">Step 2</div><strong>티켓 교환</strong><span>SOL을 SPL로 교환한 뒤 참여 가능한 상태로 전환합니다.</span></div>
         <div class="wallet-flow-step" id="wfEnter"><div class="eyebrow">Step 3</div><strong>참여 잠금</strong><span>선택한 조합과 참여 SPL이 현재 라운드에 잠깁니다.</span></div>
-        <div class="wallet-flow-step" id="wfSettle"><div class="eyebrow">Step 4</div><strong>정산 확인</strong><span>마감 후 첫 BTC 블록이 도착하면 순위가 확정됩니다.</span></div>
+        <div class="wallet-flow-step" id="wfSettle"><div class="eyebrow">Step 4</div><strong>정산 확인</strong><span>마감 후 첫 finalized Resolve Slot이 포착되면 순위가 확정됩니다.</span></div>
         <div class="wallet-flow-step" id="wfClaim"><div class="eyebrow">Step 5</div><strong>수령 완료</strong><span>적중 시 SOL 수령 내역이 지갑 로그에 반영됩니다.</span></div>
       </div>
       <div class="wallet-flow-status" id="walletFlowStatus">지갑 연결 전입니다. 먼저 지갑을 연결한 뒤 티켓 교환과 참여 흐름을 시작하세요.</div>
@@ -3550,7 +3903,7 @@ window.__monitorDemoState = {
   </div>
   <div class="section-box" style="margin-top:18px">
     <div class="section-title"><h3>최근 100경기 테이블</h3><div class="sub">실전 분석 로그</div></div>
-    <div class="table-wrap"><table class="table"><thead><tr><th>ROUND</th><th>1위</th><th>2위</th><th>3위</th><th>LOCK</th><th>SETTLE</th><th>무적중 여부</th></tr></thead><tbody id="simHistoryBody"></tbody></table></div>
+    <div class="table-wrap"><table class="table"><thead><tr><th>ROUND</th><th>1위</th><th>2위</th><th>3위</th><th>LOCK SLOT</th><th>RESOLVE SLOT</th><th>무적중 여부</th></tr></thead><tbody id="simHistoryBody"></tbody></table></div>
   </div>
 </section>
 </div>
@@ -3588,7 +3941,7 @@ function formatNum(n,d=0){return Number(n).toLocaleString('ko-KR',{minimumFracti
 function shortAddr(addr){return addr ? `${addr.slice(0,4)}...${addr.slice(-4)}` : "미연결"} function timeNow(){return new Date().toLocaleTimeString('ko-KR',{hour12:false})} function formatDateTime(ts){if(!ts) return '--'; return new Date(ts).toLocaleString('ko-KR',{hour12:false})} function toDateTimeLocal(ts){const d=new Date(ts||Date.now()); const pad=n=>String(n).padStart(2,'0'); return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`}
 function drawBackground(){const c=document.getElementById('bgCanvas'); const ctx=c.getContext('2d'); function resize(){c.width=innerWidth;c.height=innerHeight} resize(); addEventListener('resize',resize); const pts=Array.from({length:70},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.5+0.5,s:Math.random()*0.4+0.1})); (function tick(){ctx.clearRect(0,0,c.width,c.height); pts.forEach(p=>{p.y+=p.s; if(p.y>c.height){p.y=-10;p.x=Math.random()*c.width} ctx.beginPath(); ctx.fillStyle='rgba(23,184,255,.35)'; ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill()}); requestAnimationFrame(tick)})()}
 function hashFrom(num){const chars='abcdef0123456789'; let h=''; for(let i=0;i<64;i++) h+=chars[(num*(i+7)+i*13+rand(0,15))%chars.length]; return h}
-function createMockBlock(prev){const number=prev?prev.number+1:889610+rand(1,9); const txCount=rand(1200,5200); const output=rand(340000000000,1980000000000); const fee=Number(randFloat(0.65,6.4).toFixed(2)); const hash=hashFrom(number); return {number,txCount,output,fee,hash,time:Date.now()}}
+function createMockBlock(prev){const number=prev?prev.number+1:382918260+rand(1,24); const txCount=rand(900,2600); const output=rand(180000000,920000000); const fee=Number(randFloat(0.00004,0.0028).toFixed(6)); const hash=hashFrom(number+txCount+output).replace(/^0+/,'A').slice(0,44); return {number,txCount,output,fee,hash,time:Date.now()}}
 function deriveEnvironment(block){const a=parseInt(block.hash.slice(0,4),16), b=parseInt(block.hash.slice(8,12),16), c=parseInt(block.hash.slice(16,20),16); const skyKeys=["Sunfire","Mistwood","Stormmire"], groundKeys=["Stone Ridge","Wildfield","Black Bog"], tempoKeys=["Ambush","Skirmish","Siege"]; return {sky:skyKeys[a%3], ground:groundKeys[(b+block.txCount)%3], tempo:tempoKeys[(c+Math.floor(block.output))%3]}}
 function animalScore(animal, env, block){const noiseA=parseInt(block.hash.slice(24,28),16)%11-5, noiseB=parseInt(block.hash.slice(32,36),16)%9-4, noiseC=parseInt(block.hash.slice(40,44),16)%13-6; const envBonus=animal.env.sky[env.sky]+animal.env.ground[env.ground]+animal.env.tempo[env.tempo]; const blockFactor=((block.txCount%17)-8)*.55+((Math.floor(block.output)%13)-6)*.5+noiseA*.4+noiseB*.25+noiseC*.15; return {score:animal.base+envBonus*2.2+blockFactor,envBonus,blockFactor}}
 function computeProjectedRanking(){if(!state.lockedEnvironment||!state.lockedEnvironmentBlock) return []; const basis=state.blockFeed[0]||state.lockedEnvironmentBlock; return ANIMALS.map(a=>{const r=animalScore(a,state.lockedEnvironment,basis); return {...a,projected:r.score,envBonus:r.envBonus}}).sort((x,y)=>y.projected-x.projected)}
@@ -3602,26 +3955,57 @@ function openPrivacyPolicy(){openFooterDocPage('privacy');}
 function bindNavigation(){document.querySelectorAll('.nav-item').forEach(el=>el.addEventListener('click',()=>navigate(el.dataset.page))); document.querySelectorAll('[data-footer-page]').forEach(link=>{link.addEventListener('click',(e)=>{e.preventDefault(); const page=link.dataset.footerPage; if(page){openFooterDocPage(page);}});});}
 function pushLog(text){state.eventLog.unshift({text,time:timeNow()}); state.eventLog=state.eventLog.slice(0,80); renderLogs()}
 function toast(title, desc, pills=[]){const wrap=document.getElementById('toastStack'); const el=document.createElement('div'); el.className='toast'; el.innerHTML=`<div class="title">${title}</div><div class="desc">${desc}</div><div class="meta">${pills.map(p=>`<span>${p}</span>`).join('')}</div>`; wrap.appendChild(el); setTimeout(()=>el.remove(),5100)}
-function updateHashTicker(){document.getElementById('hashStreamInner').textContent=state.blockFeed.slice(0,10).map(b=>`#${b.number} ${b.hash.slice(0,16)}… tx:${b.txCount}`).join('   •   ')}
-function renderHeaderBits(){document.getElementById('currentRoundText').textContent=`#${state.currentRound}`; document.getElementById('walletMini').textContent=state.walletConnected?`${shortAddr(state.walletAddress)} · ${formatNum(state.splBalance)} SPL`:'지갑 미연결'; document.getElementById('walletAddressView').textContent=state.walletConnected?state.walletAddress:'미연결'; document.getElementById('walletFeeView').textContent=`${formatNum(state.feeSplAccum)} SPL`; document.getElementById('walletSolView').textContent=`${formatNum(state.solBalance,3)} SOL`; document.getElementById('walletSplView').textContent=`${formatNum(state.splBalance)} SPL`; document.getElementById('solBalance').textContent=formatNum(state.solBalance,3); document.getElementById('splBalance').textContent=formatNum(state.splBalance); document.getElementById('heroBlockNumber').textContent=formatNum((state.blockFeed[0]||state.lockedEnvironmentBlock).number); document.getElementById('heroHashValue').textContent=`${((state.blockFeed[0]||state.lockedEnvironmentBlock).hash).slice(0,26)}…`; document.getElementById('metricHashrate').textContent=`${randFloat(720,840).toFixed(1)} EH/s`; document.getElementById('metricDifficulty').textContent=`${randFloat(105,111).toFixed(2)}T`; document.getElementById('metricEta').textContent=state.waitingSettlementBlock?'FIRST BLOCK':`${Math.max(0,Math.ceil((state.roundDeadline-Date.now())/1000))}s`}
-function updateEnvUI(){const env=state.lockedEnvironment; const lock=state.lockedEnvironmentBlock; document.getElementById('envSky').textContent=`${env.sky}`; document.getElementById('envGround').textContent=`${env.ground}`; document.getElementById('envTempo').textContent=`${env.tempo}`; document.getElementById('envSkySeed').textContent=`TxCount ${formatNum(lock.txCount)} 기준`; document.getElementById('envGroundSeed').textContent=`Output ${formatNum(lock.output)} 기준`; document.getElementById('envTempoSeed').textContent=`Tx+Output ${formatNum(lock.txCount+lock.output)} 기준`; document.getElementById('lockBlockBadge').textContent=`#${formatNum(lock.number)}`; document.getElementById('lockTimeBadge').textContent=formatDateTime(lock.time);}
-function updateCountdown(){const diff=Math.max(0,state.roundDeadline-Date.now()); document.getElementById('countdownText').textContent=`${String(Math.floor(diff/60000)).padStart(2,'0')}:${String(Math.floor((diff%60000)/1000)).padStart(2,'0')}`; document.getElementById('roundProgress').style.width=`${Math.min(100,Math.max(0,((ROUND_SECONDS*1000-diff)/(ROUND_SECONDS*1000))*100))}%`; document.getElementById('participantStatus').textContent=`${state.participants.size} / ${state.participantMin} 참여`; if(diff>0){document.getElementById('roundStatusText').textContent=`환경은 #${formatNum(state.lockedEnvironmentBlock.number)} 블록으로 확정됨 · ${Math.ceil(diff/1000)}초 후 마감`; document.getElementById('settleWaitBadge').textContent='정산 대기중'} else if(state.participants.size<state.participantMin){document.getElementById('roundStatusText').textContent=''; document.getElementById('settleWaitBadge').textContent='2명'} else {state.waitingSettlementBlock=true; document.getElementById('roundStatusText').textContent='10분이 경과했습니다. 지금부터 도착하는 첫 BTC 블록으로 결과를 확정합니다.'; document.getElementById('settleWaitBadge').textContent='첫 블록 대기'}}
+function updateHashTicker(){document.getElementById('hashStreamInner').textContent=state.blockFeed.slice(0,10).map(b=>`slot:${b.number} ${b.hash.slice(0,16)}… successTx:${b.txCount} CU:${formatNum(b.output)}`).join('   •   ')}
+function renderHeaderBits(){const myLocked=state.walletConnected?state.entries.filter(e=>e.owner===state.walletAddress).reduce((s,e)=>s+e.stake,0):0; document.getElementById('currentRoundText').textContent=`#${state.currentRound}`; document.getElementById('walletMini').textContent=state.walletConnected?`${shortAddr(state.walletAddress)} · ${formatNum(state.splBalance)} SPL`:'지갑 미연결'; document.getElementById('headerSolMini').textContent=state.walletConnected?formatNum(state.solBalance,3):'-'; document.getElementById('headerTicketMini').textContent=state.walletConnected?`${formatNum(state.splBalance)} SPL`:'-'; document.getElementById('headerLockMini').textContent=state.walletConnected?`${formatNum(myLocked)} SPL`:'Ø SPL'; document.getElementById('walletAddressView').textContent=state.walletConnected?state.walletAddress:'미연결'; document.getElementById('walletFeeView').textContent=`${formatNum(state.feeSplAccum)} SPL`; document.getElementById('walletSolView').textContent=`${formatNum(state.solBalance,3)} SOL`; document.getElementById('walletSplView').textContent=`${formatNum(state.splBalance)} SPL`; document.getElementById('solBalance').textContent=formatNum(state.solBalance,3); document.getElementById('splBalance').textContent=formatNum(state.splBalance); document.getElementById('heroBlockNumber').textContent=formatNum((state.blockFeed[0]||state.lockedEnvironmentBlock).number); document.getElementById('heroHashValue').textContent=`${((state.blockFeed[0]||state.lockedEnvironmentBlock).hash).slice(0,26)}…`; document.getElementById('metricHashrate').textContent=`${formatNum(rand(2400,5200))} TPS`; document.getElementById('metricDifficulty').textContent=`${formatNum(rand(180,920))}M CU`; document.getElementById('metricEta').textContent=state.waitingSettlementBlock?'NEXT SLOT':`${Math.max(0,Math.ceil((state.roundDeadline-Date.now())/1000))}s`}
+function updateEnvUI(){const env=state.lockedEnvironment; const lock=state.lockedEnvironmentBlock; document.getElementById('envSky').textContent=`${env.sky}`; document.getElementById('envGround').textContent=`${env.ground}`; document.getElementById('envTempo').textContent=`${env.tempo}`; document.getElementById('envSkySeed').textContent=`Successful Tx ${formatNum(lock.txCount)} 기준`; document.getElementById('envGroundSeed').textContent=`Compute Units ${formatNum(lock.output)} 기준`; document.getElementById('envTempoSeed').textContent=`Tx+Compute Units ${formatNum(lock.txCount+lock.output)} 기준`; document.getElementById('lockBlockBadge').textContent=`#${formatNum(lock.number)}`; document.getElementById('lockTimeBadge').textContent=formatDateTime(lock.time);}
+function updateCountdown(){const diff=Math.max(0,state.roundDeadline-Date.now()); document.getElementById('countdownText').textContent=`${String(Math.floor(diff/60000)).padStart(2,'0')}:${String(Math.floor((diff%60000)/1000)).padStart(2,'0')}`; document.getElementById('roundProgress').style.width=`${Math.min(100,Math.max(0,((ROUND_SECONDS*1000-diff)/(ROUND_SECONDS*1000))*100))}%`; document.getElementById('participantStatus').textContent=`${state.participants.size} / ${state.participantMin} 참여`; if(diff>0){document.getElementById('roundStatusText').textContent=`환경은 slot #${formatNum(state.lockedEnvironmentBlock.number)} 기준으로 확정됨 · ${Math.ceil(diff/1000)}초 후 마감`; document.getElementById('settleWaitBadge').textContent='정산 대기중'} else if(state.participants.size<state.participantMin){document.getElementById('roundStatusText').textContent=''; document.getElementById('settleWaitBadge').textContent='2명'} else {state.waitingSettlementBlock=true; document.getElementById('roundStatusText').textContent='10분이 경과했습니다. 지금부터 도착하는 첫 확정 Solana slot으로 결과를 확정합니다.'; document.getElementById('settleWaitBadge').textContent='첫 확정 slot 대기'}}
 function renderOverview(){const totalLocked=state.entries.reduce((s,e)=>s+e.stake,0), prizeSol=totalLocked/1000+state.rolloverVault/1000; document.getElementById('liveTotalLocked').textContent=`${formatNum(totalLocked)} SPL`; document.getElementById('livePrizePool').textContent=`${formatNum(prizeSol,3)} SOL`; document.getElementById('liveRollover').textContent=`${formatNum(state.rolloverVault)} SPL`; document.getElementById('liveParticipants').textContent=`${state.participants.size}명`}
 function getBetTypeLiveOdds(betId, picks=[]){const bet=BET_TYPES.find(t=>t.id===betId)||BET_TYPES[0]; const totalPool=state.entries.reduce((s,e)=>s+e.stake,0)+state.rolloverVault+1200; const sameTypeEntries=state.entries.filter(e=>e.betId===bet.id); const sameTypeStake=sameTypeEntries.reduce((s,e)=>s+e.stake,0); const competitionFactor=1+sameTypeEntries.length*0.08+sameTypeStake/4000; let pickFactor=1; if(picks.length){const ranking=computeProjectedRanking(); const ids=(picks||[]).filter(Boolean); const rankSum=ids.reduce((s,id)=>s+Math.max(1, ranking.findIndex(r=>r.id===id)+1 || 10),0); const qualityBase=bet.id==='alpha'?11:bet.id==='twin'?13:bet.id==='chain'?15:bet.id==='podium'?17:20; pickFactor=Math.max(0.72, Math.min(1.45, qualityBase/Math.max(rankSum,1))); }
  const poolFactor=Math.max(0.82, Math.min(1.35, totalPool/Math.max(2400, sameTypeStake+1800))); const live=bet.baseMultiplier*pickFactor*poolFactor/competitionFactor*1.22; return Number(Math.max(Math.max(1.1, bet.baseMultiplier*0.6), live).toFixed(2))}
 function renderBetTypes(){const box=document.getElementById('betTypeList'); const activeBetId=selection.activeBetId||(document.querySelector('.bet-type.active')?.dataset.bet)||BET_TYPES[0].id; box.innerHTML=BET_TYPES.map((t)=>{const liveOdds=getBetTypeLiveOdds(t.id); return `<div class="bet-type ${t.id===activeBetId?'active':''}" data-bet="${t.id}"><div class="bet-meta"><div><div class="name">${t.name}</div><div class="desc">${t.desc}</div></div><div class="mult-wrap"><div class="mult-label">현재예상</div><div class="mult">${liveOdds.toFixed(2)}x</div><div class="mult-sub">기준 ${t.baseMultiplier.toFixed(1)}x</div></div></div></div>`}).join(''); document.querySelectorAll('.bet-type').forEach(el=>el.addEventListener('click',()=>{selection.activeBetId=el.dataset.bet; document.querySelectorAll('.bet-type').forEach(x=>x.classList.remove('active')); el.classList.add('active'); selection.picks=[]; updateSlipGuide(); renderSelectionPills(); renderAnimals(); renderBetTypes(); renderComboPreview()}))}
 function getActiveBet(){const el=document.querySelector('.bet-type.active'); const betId=el?.dataset.bet||selection.activeBetId||BET_TYPES[0].id; selection.activeBetId=betId; return BET_TYPES.find(t=>t.id===betId)||BET_TYPES[0]}
 function getSelectionSlotLabels(bet){if(bet.id==='chain') return ['1위 예측','2위 예측']; if(bet.id==='trinity') return ['1위 예측','2위 예측','3위 예측']; return Array.from({length:bet.picks},(_,i)=>`선택 슬롯 ${i+1}`)}
-function renderSelectionPills(){const bet=getActiveBet(); const labels=getSelectionSlotLabels(bet); const filled=selection.picks.length; const ready=filled===bet.picks; const selectedAnimals=selection.picks.map(id=>ANIMALS.find(a=>a.id===id)).filter(Boolean); const lead=selectedAnimals[0]; const slotHtml=labels.map((label,idx)=>{const animal=ANIMALS.find(a=>a.id===selection.picks[idx]); return animal?`<div class="selection-slot filled"><div class="selection-slot-label">${label}</div><div class="selection-slot-main"><div class="selection-slot-emoji">${animal.emoji}</div><div><div class="selection-slot-name">${animal.name}</div><div class="selection-slot-role">${animal.role}</div></div><div class="selection-slot-status">선택 완료</div></div></div>`:`<div class="selection-slot pending"><div class="selection-slot-label">${label}</div><div class="selection-slot-empty">비스트를 선택해 슬롯을 채우세요</div></div>`}).join(''); document.getElementById('selectionPills').innerHTML=`<div class="selection-summary"><div class="selection-summary-top"><div><div class="selection-summary-label">현재 선택 상태</div><div class="selection-summary-title">${bet.name} · ${filled} / ${bet.picks} 선택</div><div class="selection-summary-sub">${ready?(lead?`${lead.emoji} ${lead.name}${selectedAnimals.length>1?` 외 ${selectedAnimals.length-1}`:''} 선택 완료`:'선택 완료'):`아직 ${bet.picks-filled}마리 더 선택해야 합니다`}</div></div><div class="selection-summary-badge ${ready?'ready':'pending'}">${ready?'참여 가능':'선택 진행중'}</div></div><div class="selection-slot-grid cols-${Math.min(Math.max(bet.picks,1),3)}">${slotHtml}</div><div class="selection-summary-stats"><div class="selection-summary-stat"><div class="k">예측 조건</div><div class="v">${bet.desc}</div></div><div class="selection-summary-stat"><div class="k">현재 대표 선택</div><div class="v highlight">${lead?`${lead.emoji} ${lead.name}`:'대기 중'}</div></div></div></div>`}
-function updateSlipGuide(){const bet=getActiveBet(); if(selection.picks.length>bet.picks) selection.picks=selection.picks.slice(0,bet.picks); const liveOdds=getBetTypeLiveOdds(bet.id,selection.picks); const remaining=Math.max(0,bet.picks-selection.picks.length); const stake=Number(document.getElementById('stakeInput')?.value||0); const enterBtn=document.getElementById('enterRoundBtn'); if(enterBtn){enterBtn.textContent=stake>0?`${formatNum(stake)} SPL로 참여 확정`:'참여 확정'} document.getElementById('slipGuide').textContent=remaining===0?`${bet.name} · 선택 완료 · 기준 ${bet.baseMultiplier.toFixed(1)}x / 현재예상 ${liveOdds.toFixed(2)}x · 참여 금액 입력 후 확정하세요.`:`${bet.name} · ${bet.desc} · ${remaining}마리 더 선택 필요 · 기준 ${bet.baseMultiplier.toFixed(1)}x / 현재예상 ${liveOdds.toFixed(2)}x`}
-function togglePick(id){const req=getActiveBet().picks; const idx=selection.picks.indexOf(id); if(idx>=0) selection.picks.splice(idx,1); else {if(selection.picks.length>=req) selection.picks.shift(); selection.picks.push(id)} renderSelectionPills(); renderAnimals(); updateSlipGuide(); renderComboPreview()}
-function quickPick(id){selection.picks=[]; togglePick(id); renderComboPreview()}
-function renderLiveAnimalTable(){refreshMarketSnapshot(); const body=document.getElementById('liveAnimalTableBody'); const ranking=computeProjectedRanking(); body.innerHTML=ranking.map((a,idx)=>{const m=state.marketSnapshot[a.id]; return `<tr><td><div class="entity-cell"><div class="rank-badge">${idx+1}</div><div class="entity-meta"><div class="name">${a.emoji} ${a.name}</div><div class="desc">${a.role} · ${a.flair}</div></div></div></td><td><strong>${formatNum(m.totalStake)} SPL</strong></td><td class="odds-base">${m.baseOdds.toFixed(2)}x</td><td class="odds-adj">${m.adjOdds.toFixed(2)}x</td><td>${formatNum(m.participants)}명</td><td><div class="strength-wrap"><div class="strength-bar"><span style="width:${m.strength}%"></span></div><span>${m.strength}%</span></div></td><td><button class="table-pick" data-pick="${a.id}">+ 선택</button></td></tr>`}).join(''); body.querySelectorAll('button[data-pick]').forEach(btn=>btn.addEventListener('click',()=>quickPick(btn.dataset.pick)))}
-function renderComboPreview(){const bet=getActiveBet(); const liveOdds=getBetTypeLiveOdds(bet.id,selection.picks); const stake=Number(document.getElementById('stakeInput')?.value||0); const estPayout=stake?Number((stake*liveOdds/1000).toFixed(4)):0; document.getElementById('comboEstimatedOdds').textContent=`${liveOdds.toFixed(2)}x`; document.getElementById('comboEstimatedPayout').textContent=stake?`${formatNum(estPayout,4)} SOL`:'-'; const pickText=selection.picks.length?selection.picks.map(id=>ANIMALS.find(a=>a.id===id)?.name).join(' / '):'선택 전'; const remain=Math.max(0,bet.picks-selection.picks.length); document.getElementById('comboPreviewNote').textContent=remain===0?`${pickText} · 동일 유형 참여량과 현재 풀 기준 예상값이며 최종 확정배당은 결과 시점 정산 기준입니다.`:`${pickText} · ${remain}마리 더 선택하면 예상 배당과 최대 수령을 기준으로 바로 참여를 확정할 수 있습니다.`; const enterBtn=document.getElementById('enterRoundBtn'); if(enterBtn){enterBtn.textContent=stake>0?`${formatNum(stake)} SPL로 참여 확정`:'참여 확정'}}
-function renderAnimals(){const ranking=computeProjectedRanking(), oddsMap={}; ranking.forEach((r,idx)=>oddsMap[r.id]={rank:idx+1,pct:Math.max(3,Math.min(18,17-idx*1.35+r.envBonus*.15))}); const grid=document.getElementById('animalGrid'); grid.innerHTML=ANIMALS.map(a=>{const o=oddsMap[a.id]||{rank:'-',pct:8}; return `<div class="animal-card ${selection.picks.includes(a.id)?'selected':''}" data-id="${a.id}"><div class="animal-emoji">${a.emoji}</div><div class="animal-name">${a.name}</div><div class="animal-role">${a.role}</div><div class="animal-meta"><span>기본 ${a.base}</span><span>예상 ${o.rank}위권</span></div><div class="statline">${a.tags.map(t=>`<span>${t}</span>`).join('')}</div><div class="small-note">${a.flair}</div><div class="trend"><span style="width:${Math.max(18,Math.min(95,o.pct*5))}%"></span></div></div>`}).join(''); grid.querySelectorAll('.animal-card').forEach(card=>card.addEventListener('click',()=>togglePick(card.dataset.id)))}
+function getPickNames(){return selection.picks.map(id=>ANIMALS.find(a=>a.id===id)).filter(Boolean)}
+function getAnimalMarketInsight(animal, projectedRank){
+  const m=state.marketSnapshot?.[animal.id]||{totalStake:0,participants:0,adjOdds:0};
+  const envFit=projectedRank<=3?'HOT':projectedRank<=6?'GOOD':'RISK';
+  const crowdRisk=m.totalStake>900?'HIGH':m.totalStake>450?'MID':'LOW';
+  const reward=m.adjOdds>=8?'HIGH':m.adjOdds>=4?'MID':'LOW';
+  return {envFit,crowdRisk,reward,market:m};
+}
+function renderSelectionPills(){
+  const bet=getActiveBet(); const labels=getSelectionSlotLabels(bet); const filled=selection.picks.length; const ready=filled===bet.picks;
+  const selectedAnimals=getPickNames(); const lead=selectedAnimals[0]; const liveOdds=getBetTypeLiveOdds(bet.id,selection.picks); const stake=Number(document.getElementById('stakeInput')?.value||0); const estPayout=stake?Number((stake*liveOdds/1000).toFixed(4)):0;
+  const slotHtml=labels.map((label,idx)=>{const animal=ANIMALS.find(a=>a.id===selection.picks[idx]); return animal?`<div class="selection-slot filled"><div class="selection-slot-label">${label}</div><div class="selection-slot-main"><div class="selection-slot-emoji">${animal.emoji}</div><div><div class="selection-slot-name">${animal.name}</div><div class="selection-slot-role">${animal.role}</div></div><div class="selection-slot-status">PICK ${idx+1}</div></div></div>`:`<div class="selection-slot pending"><div class="selection-slot-label">${label}</div><div class="selection-slot-empty">비스트를 선택해 슬롯을 채우세요</div></div>`}).join('');
+  const pickLine=selectedAnimals.length?selectedAnimals.map((a,i)=>`<span>${i+1}. ${a.emoji} ${a.name}</span>`).join(''):'<span>아직 선택 없음</span>';
+  document.getElementById('selectionPills').innerHTML=`<div class="selection-summary customer-selection-summary"><div class="selection-summary-top"><div><div class="selection-summary-label">ENTRY READINESS</div><div class="selection-summary-title">${bet.name} · ${filled} / ${bet.picks} 선택</div><div class="selection-summary-sub">${ready?'선택 완료 · 참여 전 예상 수령을 확인하세요':`아직 ${bet.picks-filled}마리 더 선택해야 합니다`}</div></div><div class="selection-summary-badge ${ready?'ready':'pending'}">${ready?'참여 가능':'선택 진행중'}</div></div><div class="selection-slot-grid cols-${Math.min(Math.max(bet.picks,1),3)}">${slotHtml}</div><div class="customer-pick-strip">${pickLine}</div><div class="selection-summary-stats"><div class="selection-summary-stat"><div class="k">예측 조건</div><div class="v">${bet.desc}</div></div><div class="selection-summary-stat"><div class="k">예상 수령</div><div class="v highlight">${stake?`${formatNum(estPayout,4)} SOL`: '-'}</div></div></div><div class="customer-risk-row"><div><span>현재예상 배당</span><strong>${liveOdds.toFixed(2)}x</strong></div><div><span>참여 SPL</span><strong>${formatNum(stake)} SPL</strong></div><div><span>선택 상태</span><strong>${ready?'READY':'PENDING'}</strong></div></div></div>`;
+}
+function updateSlipGuide(){const bet=getActiveBet(); if(selection.picks.length>bet.picks) selection.picks=selection.picks.slice(0,bet.picks); const liveOdds=getBetTypeLiveOdds(bet.id,selection.picks); const remaining=Math.max(0,bet.picks-selection.picks.length); const stake=Number(document.getElementById('stakeInput')?.value||0); const enterBtn=document.getElementById('enterRoundBtn'); if(enterBtn){enterBtn.textContent=stake>0?`${formatNum(stake)} SPL로 참여 확정`:'참여 확정'} document.getElementById('slipGuide').textContent=remaining===0?`${bet.name} · 선택 완료 · 현재예상 ${liveOdds.toFixed(2)}x · 참여 전 예상 수령과 잔액을 확인하세요.`:`${bet.name} · ${bet.desc} · ${remaining}마리 더 선택 필요 · 현재예상 ${liveOdds.toFixed(2)}x`; updateActionPanel()}
+function togglePick(id){const req=getActiveBet().picks; const idx=selection.picks.indexOf(id); if(idx>=0) selection.picks.splice(idx,1); else {if(selection.picks.length>=req) selection.picks.shift(); selection.picks.push(id)} renderSelectionPills(); renderAnimals(); updateSlipGuide(); renderComboPreview(); updateActionPanel()}
+function quickPick(id){selection.picks=[]; togglePick(id); renderComboPreview(); document.getElementById('selectionPills')?.scrollIntoView({behavior:'smooth',block:'center'})}
+function renderLiveAnimalTable(){refreshMarketSnapshot(); const body=document.getElementById('liveAnimalTableBody'); const ranking=computeProjectedRanking(); body.innerHTML=ranking.map((a,idx)=>{const m=state.marketSnapshot[a.id]; const fit=idx<3?'HOT':idx<6?'GOOD':'RISK'; const crowd=m.totalStake>900?'HIGH':m.totalStake>450?'MID':'LOW'; return `<tr><td><div class="entity-cell"><div class="rank-badge">${idx+1}</div><div class="entity-meta"><div class="name">${a.emoji} ${a.name}</div><div class="desc">${a.role} · ${fit} 환경 · Crowd ${crowd}</div></div></div></td><td><strong>${formatNum(m.totalStake)} SPL</strong></td><td class="odds-base">${m.baseOdds.toFixed(2)}x</td><td class="odds-adj">${m.adjOdds.toFixed(2)}x</td><td>${formatNum(m.participants)}명</td><td><div class="strength-wrap"><div class="strength-bar"><span style="width:${m.strength}%"></span></div><span>${m.strength}%</span></div></td><td><button class="table-pick" data-pick="${a.id}">+ 선택</button></td></tr>`}).join(''); body.querySelectorAll('button[data-pick]').forEach(btn=>btn.addEventListener('click',()=>quickPick(btn.dataset.pick)))}
+function renderComboPreview(){const bet=getActiveBet(); const liveOdds=getBetTypeLiveOdds(bet.id,selection.picks); const stake=Number(document.getElementById('stakeInput')?.value||0); const estPayout=stake?Number((stake*liveOdds/1000).toFixed(4)):0; document.getElementById('comboEstimatedOdds').textContent=`${liveOdds.toFixed(2)}x`; document.getElementById('comboEstimatedPayout').textContent=stake?`${formatNum(estPayout,4)} SOL`:'-'; const pickText=selection.picks.length?selection.picks.map(id=>ANIMALS.find(a=>a.id===id)?.name).join(' / '):'선택 전'; const remain=Math.max(0,bet.picks-selection.picks.length); document.getElementById('comboPreviewNote').textContent=remain===0?`${pickText} · 현재 풀/동일 유형 경쟁률 반영 예상값입니다. 최종 확정배당은 Resolve Slot 결과 시점 기준입니다.`:`${pickText} · ${remain}마리 더 선택하면 예상 배당과 최대 수령을 기준으로 바로 참여를 확정할 수 있습니다.`; const enterBtn=document.getElementById('enterRoundBtn'); if(enterBtn){enterBtn.textContent=stake>0?`${formatNum(stake)} SPL로 참여 확정`:'참여 확정'} updateActionPanel()}
+function renderAnimals(){const ranking=computeProjectedRanking(), oddsMap={}; ranking.forEach((r,idx)=>oddsMap[r.id]={rank:idx+1,pct:Math.max(3,Math.min(18,17-idx*1.35+r.envBonus*.15))}); const grid=document.getElementById('animalGrid'); grid.innerHTML=ANIMALS.map(a=>{const o=oddsMap[a.id]||{rank:'-',pct:8}; const insight=getAnimalMarketInsight(a,o.rank); const pickIdx=selection.picks.indexOf(a.id); const selected=pickIdx>=0; return `<div class="animal-card customer-animal-card ${selected?'selected':''}" data-id="${a.id}">${selected?`<div class="pick-order-badge">PICK ${pickIdx+1}</div>`:''}<div class="animal-topline"><div class="animal-emoji">${a.emoji}</div><div class="animal-chip ${insight.envFit.toLowerCase()}">${insight.envFit}</div></div><div class="animal-name">${a.name}</div><div class="animal-role">${a.role}</div><div class="animal-meta"><span>기본 ${a.base}</span><span>예상 ${o.rank}위권</span></div><div class="customer-insight-grid"><div><span>환경</span><strong>${insight.envFit}</strong></div><div><span>Crowd</span><strong>${insight.crowdRisk}</strong></div><div><span>Reward</span><strong>${insight.reward}</strong></div></div><div class="statline">${a.tags.map(t=>`<span>${t}</span>`).join('')}</div><div class="small-note">${a.flair}</div><div class="trend"><span style="width:${Math.max(18,Math.min(95,o.pct*5))}%"></span></div></div>`}).join(''); grid.querySelectorAll('.animal-card').forEach(card=>card.addEventListener('click',()=>togglePick(card.dataset.id)))}
+function updateActionPanel(){
+  const bet=(()=>{try{return getActiveBet()}catch(e){return BET_TYPES[0]}})();
+  const diff=Math.max(0,state.roundDeadline-Date.now()); const mm=String(Math.floor(diff/60000)).padStart(2,'0'); const ss=String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+  const stake=Number(document.getElementById('stakeInput')?.value||0); const liveOdds=getBetTypeLiveOdds(bet.id,selection.picks); const payout=stake?Number((stake*liveOdds/1000).toFixed(4)):0;
+  const ready=selection.picks.length===bet.picks; const pickNames=getPickNames();
+  const set=(id,val)=>{const el=document.getElementById(id); if(el) el.textContent=val};
+  set('actionRoundState', diff>0?'OPEN · 선택 가능':(state.participants.size<state.participantMin?'참여자 부족 · 대기':'마감 · Resolve Slot 대기'));
+  set('actionCountdown', `${mm}:${ss}`);
+  set('actionWalletState', state.walletConnected?`${formatNum(state.splBalance)} SPL 사용 가능`:'지갑 미연결');
+  set('actionWalletHint', state.walletConnected?'보유 SPL 기준으로 바로 참여 가능':'Connect 후 SPL 교환 가능');
+  set('actionEntryNeed', `최소 50 SPL · 현재 ${formatNum(stake)} SPL`);
+  set('actionPickState', ready?`${bet.name} READY`:`${bet.name} ${selection.picks.length}/${bet.picks}`);
+  set('actionPickHint', pickNames.length?pickNames.map(a=>a.name).join(' / '):'비스트를 선택하면 예상 수령이 표시됩니다');
+  set('actionExpectedPayout', stake?`${formatNum(payout,4)} SOL`:'-');
+  set('actionOddsState', `현재예상 ${liveOdds.toFixed(2)}x`);
+  const panel=document.getElementById('roundActionPanel'); if(panel){panel.classList.toggle('ready',ready&&state.walletConnected&&stake>=50&&stake<=state.splBalance); panel.classList.toggle('needs-wallet',!state.walletConnected)}
+}
 function renderRoundBoard(){const totalLocked=state.entries.reduce((s,e)=>s+e.stake,0), prizeSol=totalLocked/1000+state.rolloverVault/1000; const rows=[['총 락 SPL',`${formatNum(totalLocked)} SPL`,'이번 라운드에 참여 잠금된 총량'],['예상 정산 SOL',`${formatNum(prizeSol,3)} SOL`,'락 SPL + 이월 금고 기준 개념 정산치'],['이월 금고',`${formatNum(state.rolloverVault)} SPL`,'정답자 부재 시 다음 라운드 이월'],['참여 주소 수',`${state.participants.size} 주소`,'2명 이상일 때만 결과 확정 가능'],['누적 구매 수수료',`${formatNum(state.feeSplAccum)} SPL`,'티켓 교환 수수료 누적']]; document.getElementById('roundBoardBody').innerHTML=rows.map(r=>`<tr><td><strong>${r[0]}</strong></td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}
 function renderMyEntries(){const box=document.getElementById('myEntries'); if(!box) return; if(!state.myEntries.length){box.innerHTML=`<div class="entry-carousel-empty">현재 라운드 참여 내역이 없습니다. 조합을 확정하면 카드가 오른쪽으로 누적되며, 라운드 종료 후 자동으로 비워집니다.</div>`; return} box.innerHTML=state.myEntries.map((e,idx)=>{const picksHtml=e.picks.map(id=>{const a=ANIMALS.find(x=>x.id===id); return `<span>${a.emoji} ${a.name}</span>`}).join(''); const fav=state.favoriteSets.find(f=>f.betId===e.betId&&JSON.stringify(f.picks)===JSON.stringify(e.picks)); const tag=fav?(fav.pinned?'PINNED FAVORITE':'SAVED FAVORITE'):'ENTRY LOCKED'; return `<article class="entry-carousel-card"><div><div class="entry-carousel-head"><div><div class="entry-carousel-title">${e.betName}</div><div class="entry-carousel-meta">ROUND #${e.round} · ${e.auto?'자동 참여':'수동 참여'}</div></div><div class="entry-carousel-stake">${formatNum(e.stake)} SPL</div></div><div class="entry-carousel-picks">${picksHtml}</div><div class="entry-carousel-stats"><div class="entry-carousel-stat"><div class="k">현재예상배당</div><div class="v">${e.multiplier.toFixed(2)}x</div></div><div class="entry-carousel-stat payout"><div class="k">예상 최대 수령</div><div class="v">${formatNum(e.stake*e.multiplier/1000,3)} SOL</div></div></div></div><div class="entry-carousel-foot"><div class="entry-carousel-tag">${tag}</div><div class="entry-carousel-seq">ENTRY ${String(state.myEntries.length-idx).padStart(2,'0')}</div></div></article>`}).join('')}
-function renderRecentResults(){const box=document.getElementById('recentResults'); if(!state.results.length){box.innerHTML=`<div class="small-note">최근 결과가 아직 없습니다.</div>`; return} box.innerHTML=state.results.slice(0,8).map(r=>`<div class="result-card"><div class="top"><div><div class="round">#${r.round}</div><div class="meta">LOCK #${r.lockBlock} / SETTLE #${r.settleBlock}</div></div><div class="meta">${r.winnerCount?`적중 ${r.winnerCount}건`:'정답자 없음 → 이월'}</div></div><div class="podium">① ${r.ranking[0].emoji} ${r.ranking[0].name} · ② ${r.ranking[1].emoji} ${r.ranking[1].name} · ③ ${r.ranking[2].emoji} ${r.ranking[2].name}</div><div class="env"><span>${r.env.sky}</span><span>${r.env.ground}</span><span>${r.env.tempo}</span><span>Prize ${formatNum(r.prizeSpl)} SPL</span></div></div>`).join('')}
+function renderRecentResults(){const box=document.getElementById('recentResults'); if(!state.results.length){box.innerHTML=`<div class="small-note">최근 결과가 아직 없습니다.</div>`; return} box.innerHTML=state.results.slice(0,8).map(r=>`<div class="result-card"><div class="top"><div><div class="round">#${r.round}</div><div class="meta">LOCK #${r.lockBlock} / SETTLE SLOT #${r.settleBlock}</div></div><div class="meta">${r.winnerCount?`적중 ${r.winnerCount}건`:'정답자 없음 → 이월'}</div></div><div class="podium">① ${r.ranking[0].emoji} ${r.ranking[0].name} · ② ${r.ranking[1].emoji} ${r.ranking[1].name} · ③ ${r.ranking[2].emoji} ${r.ranking[2].name}</div><div class="env"><span>${r.env.sky}</span><span>${r.env.ground}</span><span>${r.env.tempo}</span><span>Prize ${formatNum(r.prizeSpl)} SPL</span></div></div>`).join('')}
 function renderLogs(){const box=document.getElementById('eventLog'); box.innerHTML=state.eventLog.length?state.eventLog.map(item=>`<div class="log-item"><div class="top"><strong>${item.text}</strong><span>${item.time}</span></div></div>`).join(''):`<div class="small-note">이벤트가 아직 없습니다.</div>`}
 function renderWinrateChart(){const stats={}; ANIMALS.forEach(a=>stats[a.id]={name:a.name,emoji:a.emoji,wins:0}); const target=state.results.slice(0,20); target.forEach(r=>stats[r.ranking[0].id].wins+=1); const rows=Object.values(stats).map(v=>({...v,rate:target.length?(v.wins/target.length*100):0})).sort((a,b)=>b.rate-a.rate||a.name.localeCompare(b.name,'ko')).slice(0,10); document.getElementById('winrateChart').innerHTML=rows.map(row=>`<div class="bar-row"><div>${row.emoji} ${row.name}</div><div class="bar"><span style="width:${target.length?Math.max(2,row.rate):2}%"></span></div><div class="val">${row.rate.toFixed(1)}%</div></div>`).join('')}
 function getEntryOutcome(entry){const result=state.results.find(r=>r.round===entry.round); if(!result) return {status:'live',label:'진행중',className:'status-live',result}; const won=isWinningEntry(entry,result.ranking); return {status:won?'win':'lose',label:won?'적중':'미적중',className:won?'status-win':'status-lose',result}}
@@ -3770,7 +4154,7 @@ function renderMyPickHistory(){
         <div class="history-cell"><div class="k">추정 수령</div><div class="v">${payoutText}</div></div>
       </div>
       <div class="mypicks-entry-outcome-grid">
-        <div class="history-cell"><div class="k">결과 블록</div><div class="v">${e.result?`LOCK #${e.result.lockBlock} / SETTLE #${e.result.settleBlock}`:'결과 확정 대기'}</div></div>
+        <div class="history-cell"><div class="k">결과 블록</div><div class="v">${e.result?`LOCK #${e.result.lockBlock} / SETTLE SLOT #${e.result.settleBlock}`:'결과 확정 대기'}</div></div>
         <div class="history-cell"><div class="k">최종 결과</div><div class="v">${finalText}</div></div>
         <div class="history-cell"><div class="k">상금 풀</div><div class="v">${e.result?`${formatNum(e.result.prizeSpl)} SPL`:'-'}</div></div>
         <div class="history-cell"><div class="k">적중 수</div><div class="v">${e.result?`${e.result.winnerCount||0}건`:'-'}</div></div>
@@ -3925,9 +4309,9 @@ function renderVerifyEnvironmentPreview(env){
   if(skyEl) skyEl.textContent=env.sky;
   if(groundEl) groundEl.textContent=env.ground;
   if(tempoEl) tempoEl.textContent=env.tempo;
-  if(skySeedEl) skySeedEl.textContent=`TxCount ${env.tx} 기준`;
-  if(groundSeedEl) groundSeedEl.textContent=`OutputBTC ${env.output} 기준`;
-  if(tempoSeedEl) tempoSeedEl.textContent=`Tx+Output ${(env.tx+env.output)} 기준`;
+  if(skySeedEl) skySeedEl.textContent=`Successful Tx ${env.tx} 기준`;
+  if(groundSeedEl) groundSeedEl.textContent=`OutputSOLANA ${env.output} 기준`;
+  if(tempoSeedEl) tempoSeedEl.textContent=`Tx+Compute Units ${(env.tx+env.output)} 기준`;
 }
 
 function renderVerificationResult(payload){
@@ -4022,7 +4406,7 @@ function renderBlockData(){
   setText('liveVerifySettleBlock', verified?`#${formatNum(verified.settleBlock)}`:'#-');
   setText('liveVerifyCountdown', verified?`${verified.pulse}s`:'0s');
   setText('liveVerifyEnvironment', `${env.sky} / ${env.ground} / ${env.tempo}`);
-  setText('liveVerifyInputSummary', verified?`TX ${formatNum(verified.lockTxCount||0)} · OUT ${formatNum(Math.floor(verified.settleOutput||0))}`:'TX 0 · OUT 0');
+  setText('liveVerifyInputSummary', verified?`Successful Tx ${formatNum(verified.lockTxCount||0)} · CU ${formatNum(Math.floor(verified.settleOutput||0))}`:'Successful Tx 0 · CU 0');
 
   const ranking=verified?.ranking||[];
   [[0,'liveVerifyTop1','liveVerifyTop1Meta'],[1,'liveVerifyTop2','liveVerifyTop2Meta'],[2,'liveVerifyTop3','liveVerifyTop3Meta']].forEach(([idx,id,metaId])=>{
@@ -4032,7 +4416,7 @@ function renderBlockData(){
   });
 
   if(list){
-    list.innerHTML=(state.blockFeed||[]).map((b,idx)=>`<div class="block-item"><div><div class="bn">#${formatNum(b.number)}</div><div class="meta">${b.hash.slice(0,22)}…</div><div class="meta">${formatDateTime(b.time)}</div></div><div class="block-meta-line"><div class="meta">TX ${formatNum(b.txCount)} · OUT ${formatNum(b.output)}</div><div><span class="pulse-badge">맥박 ${new Date(b.time).getSeconds()}</span> <button class="history-inline-btn" data-block-index="${idx}">검증</button></div></div></div>`).join('') || `<div class="small-note">최근 블록 데이터가 없습니다.</div>`;
+    list.innerHTML=(state.blockFeed||[]).map((b,idx)=>`<div class="block-item"><div><div class="bn">#${formatNum(b.number)}</div><div class="meta">${b.hash.slice(0,22)}…</div><div class="meta">${formatDateTime(b.time)}</div></div><div class="block-meta-line"><div class="meta">TX ${formatNum(b.txCount)} · CU ${formatNum(b.output)}</div><div><span class="pulse-badge">맥박 ${new Date(b.time).getSeconds()}</span> <button class="history-inline-btn" data-block-index="${idx}">검증</button></div></div></div>`).join('') || `<div class="small-note">최근 블록 데이터가 없습니다.</div>`;
     list.querySelectorAll('[data-block-index]').forEach(btn=>btn.addEventListener('click',()=>{
       const b=state.blockFeed[Number(btn.dataset.blockIndex)];
       const pulse=new Date(b.time).getSeconds();
@@ -4050,7 +4434,7 @@ function renderBlockData(){
         return;
       }
       applyVerificationInputs(r.pulse,r.lockTxCount||0,r.settleOutput||0);
-      toast('직전 결과값 적용', `ROUND #${r.round} 기준 재검증 입력값을 반영했습니다.`, [`LOCK #${r.lockBlock}`, `SETTLE #${r.settleBlock}`]);
+      toast('직전 결과값 적용', `ROUND #${r.round} 기준 재검증 입력값을 반영했습니다.`, [`LOCK #${r.lockBlock}`, `SETTLE SLOT #${r.settleBlock}`]);
     });
   }
 
@@ -4072,7 +4456,7 @@ function renderBlockData(){
     }));
   }
 }
-function renderWalletPage(){const txBox=document.getElementById('txList'); const items=state.txHistory.length?state.txHistory:[{kind:'대기',desc:'아직 지갑 활동이 없습니다.',amount:'-',time:''}]; txBox.innerHTML=items.map(t=>`<div class="tx-item"><div class="top"><div><strong>${t.kind}</strong><div class="small-note">${t.desc}</div></div><div>${t.amount}</div></div><div class="small-note">${t.time||''}</div></div>`).join(''); const payoutBox=document.getElementById('payoutList'); const payouts=state.payoutHistory.length?state.payoutHistory:[{round:'-',block:'-',tx:'-',amount:'수령 기록 없음'}]; payoutBox.innerHTML=payouts.map(p=>`<div class="tx-item"><div class="top"><div><strong>ROUND #${p.round}</strong><div class="small-note">SETTLE BLOCK #${p.block}</div></div><div>${p.amount}</div></div><div class="small-note">${p.tx?`지갑 반영 TX: ${p.tx}`:'적중 시 정산 블록과 함께 지갑 반영 내역이 생성됩니다.'}</div></div>`).join('')}
+function renderWalletPage(){const txBox=document.getElementById('txList'); const items=state.txHistory.length?state.txHistory:[{kind:'대기',desc:'아직 지갑 활동이 없습니다.',amount:'-',time:''}]; txBox.innerHTML=items.map(t=>`<div class="tx-item"><div class="top"><div><strong>${t.kind}</strong><div class="small-note">${t.desc}</div></div><div>${t.amount}</div></div><div class="small-note">${t.time||''}</div></div>`).join(''); const payoutBox=document.getElementById('payoutList'); const payouts=state.payoutHistory.length?state.payoutHistory:[{round:'-',block:'-',tx:'-',amount:'수령 기록 없음'}]; payoutBox.innerHTML=payouts.map(p=>`<div class="tx-item"><div class="top"><div><strong>ROUND #${p.round}</strong><div class="small-note">SETTLE SLOT #${p.block}</div></div><div>${p.amount}</div></div><div class="small-note">${p.tx?`지갑 반영 TX: ${p.tx}`:'적중 시 결과 Slot과 함께 지갑 반영 내역이 생성됩니다.'}</div></div>`).join('')}
 function renderSimulationPage(){const hist=state.results.slice(0,100), winMap={}, betStat={alpha:{win:0,total:0,name:'Alpha'},twin:{win:0,total:0,name:'Twin'},chain:{win:0,total:0,name:'Chain'},podium:{win:0,total:0,name:'Podium'},trinity:{win:0,total:0,name:'Trinity'}}; ANIMALS.forEach(a=>winMap[a.id]=0); hist.forEach(r=>winMap[r.ranking[0].id]+=1); state.entryHistory.forEach(e=>{const rr=hist.find(r=>r.round===e.round); if(rr){betStat[e.betId].total+=1; if(isWinningEntry(e,rr.ranking)) betStat[e.betId].win+=1}}); const sortedAnimals=Object.entries(winMap).map(([id,v])=>({id,v,animal:ANIMALS.find(a=>a.id===id)})).sort((a,b)=>b.v-a.v||a.animal.name.localeCompare(b.animal.name,'ko')).slice(0,10); const noWinnerRate=hist.length?(hist.filter(r=>r.winnerCount===0).length/hist.length*100):0; const crowdBias=Object.values(state.marketSnapshot).length?(Object.values(state.marketSnapshot).reduce((s,v)=>s+v.strength,0)/Object.values(state.marketSnapshot).length).toFixed(0):'-'; document.getElementById('simRounds').textContent=hist.length||0; document.getElementById('simTopAnimal').textContent=sortedAnimals[0]?.animal?.name||'-'; document.getElementById('simNoWinnerRate').textContent=`${noWinnerRate.toFixed(1)}%`; document.getElementById('simCrowdBias').textContent=crowdBias==='-'?'-':`${crowdBias}점`; document.getElementById('simWinChart').innerHTML=sortedAnimals.map(r=>`<div class="bar-row"><div>${r.animal.emoji} ${r.animal.name}</div><div class="bar"><span style="width:${hist.length?(r.v/hist.length*100):0}%"></span></div><div class="val">${hist.length?(r.v/hist.length*100).toFixed(1):0}%</div></div>`).join('')||`<div class="small-note">데이터 없음</div>`; document.getElementById('simBetChart').innerHTML=Object.values(betStat).map(r=>{const rate=r.total?(r.win/r.total*100):0; return `<div class="bar-row"><div>${r.name}</div><div class="bar"><span style="width:${rate}%"></span></div><div class="val">${rate.toFixed(1)}%</div></div>`}).join(''); document.getElementById('simHistoryBody').innerHTML=hist.map(r=>`<tr><td>#${r.round}</td><td>${r.ranking[0].name}</td><td>${r.ranking[1].name}</td><td>${r.ranking[2].name}</td><td>#${r.lockBlock}</td><td>#${r.settleBlock}</td><td>${r.winnerCount===0?'Y':'-'}</td></tr>`).join('')||`<tr><td colspan="7">아직 결과 없음</td></tr>`}
 
 function getFavoriteKey(betId,picks){return `${betId}:${(picks||[]).join(',')}`}
@@ -4091,7 +4475,7 @@ function resolveAutoTargetCombo(){if(state.autoEntry.target==='favorite'){const 
 function renderAutoEntryPanel(){const enabled=state.autoEntry.enabled; syncAutoEntryInputs(); const combo=resolveAutoTargetCombo(); const odds=combo?getBetTypeLiveOdds(combo.betId,combo.picks):0; const status=!enabled?'HOLD':!combo?'SETUP':state.splBalance<state.autoEntry.minBalance?'LOW BAL':state.autoEntry.currentLosses>=state.autoEntry.maxLosses?'STOP':odds<state.autoEntry.minOdds?'WAIT':'ARMED'; document.getElementById('autoEntryToggleBtn').textContent=`자동참여 ${enabled?'ON':'OFF'}`; document.getElementById('autoEntryToggleBtn').classList.toggle('active',enabled); document.getElementById('autoStatusView').textContent=status; document.getElementById('autoStatusSub').textContent=enabled?`${combo?combo.label:'대상 조합 미설정'}`:'자동참여 OFF'; document.getElementById('autoOddsView').textContent=combo?`${odds.toFixed(2)}x`:'-'; document.getElementById('autoOddsSub').textContent=`최소 ${state.autoEntry.minOdds.toFixed(1)}x`; document.getElementById('autoBalanceView').textContent=`${formatNum(state.autoEntry.minBalance)} SPL`; document.getElementById('autoBalanceSub').textContent=`현재 ${formatNum(state.splBalance)} SPL`; document.getElementById('autoLossView').textContent=`${state.autoEntry.currentLosses} / ${state.autoEntry.maxLosses}`; document.getElementById('autoLossSub').textContent=combo?combo.label:'현재 선택 조합'; document.getElementById('autoRunNote').textContent=combo?`${combo.label} 기준으로 조건 충족 시 자동 참여합니다. 현재 예상배당 ${odds.toFixed(2)}x.`:'자동참여 대상 조합을 먼저 지정하세요.';}
 function tryAutoEntry(){syncAutoEntryInputs(); if(!state.autoEntry.enabled||!state.walletConnected) return; if(state.entries.some(e=>e.owner===state.walletAddress&&e.round===state.currentRound)) return; const combo=resolveAutoTargetCombo(); if(!combo) return; const odds=getBetTypeLiveOdds(combo.betId,combo.picks); if(state.splBalance<state.autoEntry.minBalance||state.splBalance<state.autoEntry.stake||odds<state.autoEntry.minOdds||state.autoEntry.currentLosses>=state.autoEntry.maxLosses) return; const prevBet=selection.activeBetId, prevPicks=[...selection.picks]; selection.activeBetId=combo.betId; selection.picks=[...combo.picks]; enterRound(true); selection.activeBetId=prevBet; selection.picks=prevPicks;}
 
-function renderAll(){updateHashTicker(); refreshMarketSnapshot(); renderHeaderBits(); renderOverview(); updateCountdown(); updateEnvUI(); renderSelectionPills(); renderBetTypes(); renderLiveAnimalTable(); renderAnimals(); renderRoundBoard(); renderMyEntries(); renderFavorites(); renderAutoEntryPanel(); renderRecentResults(); renderLogs(); renderWinrateChart(); renderMyPickHistory(); renderBlockData(); renderWinnerHistory(); renderWalletPage(); renderSimulationPage(); renderComboPreview()}
+function renderAll(){updateHashTicker(); refreshMarketSnapshot(); renderHeaderBits(); renderOverview(); updateCountdown(); updateEnvUI(); renderSelectionPills(); renderBetTypes(); renderLiveAnimalTable(); renderAnimals(); renderRoundBoard(); renderMyEntries(); renderFavorites(); renderAutoEntryPanel(); renderRecentResults(); renderLogs(); renderWinrateChart(); renderMyPickHistory(); renderBlockData(); renderWinnerHistory(); renderWalletPage(); renderSimulationPage(); renderComboPreview(); updateActionPanel()}
 
 function openAppModal({eyebrow='SYSTEM',title='확인',desc='',meta=[],actions=[]}={}){
   const modal=document.getElementById('appModal');
@@ -4192,19 +4576,42 @@ function performWalletConnect(walletType='phantom'){if(state.walletConnected){st
 function connectWallet(){ if(state.walletConnected){ performWalletConnect(); return; } openWalletPicker() }
 
 function exchangeTickets(){const sol=Number(document.getElementById('solInput').value||0); if(!state.walletConnected) return showErrorModal('지갑 연결 필요','티켓 교환 전에 지갑을 먼저 연결하세요.',['Wallet Required']); if(sol<=0||sol>state.solBalance) return showErrorModal('입력값 확인','보유 SOL 범위를 확인하세요.',['입력 SOL 검증']); const issued=Math.floor(sol*800), fee=Math.floor(sol*200); state.solBalance=Number((state.solBalance-sol).toFixed(3)); state.splBalance+=issued; state.feeSplAccum+=fee; state.txHistory.unshift({kind:'티켓 교환',desc:`${formatNum(sol,3)} SOL → ${formatNum(issued)} SPL`,amount:`+${formatNum(issued)} SPL`,time:timeNow()}); toast('티켓 교환 완료',`${formatNum(sol,3)} SOL → ${formatNum(issued)} SPL 발행`,[`수수료 ${formatNum(fee)} SPL`,`잔액 ${formatNum(state.splBalance)} SPL`]); showActionModal('티켓 교환 완료',`${formatNum(sol,3)} SOL을 투입해 ${formatNum(issued)} SPL이 발행되었습니다.`,[`수수료 ${formatNum(fee)} SPL`,`잔액 ${formatNum(state.splBalance)} SPL`]); pushLog(`티켓 교환 · ${formatNum(sol,3)} SOL 투입 → ${formatNum(issued)} SPL 발행`); renderAll()}
-function enterRound(isAuto=false){const bet=getActiveBet(), stake=Number(document.getElementById('stakeInput').value||0); if(!state.walletConnected) return showErrorModal('지갑 연결 필요','참여확정 전에 지갑 연결이 필요합니다.',['Round Entry']); if(selection.picks.length!==bet.picks) return showErrorModal('선택 수량 확인',`${bet.picks}마리를 선택하세요.`,['Pick Validation']); if(stake<50) return showErrorModal('최소 참여 수량','최소 50 SPL 이상 참여하세요.',['Min 50 SPL']); if(stake>state.splBalance) return showErrorModal('잔액 부족','보유 SPL이 부족합니다.',['Balance Check']); state.splBalance-=stake; const entry={round:state.currentRound,owner:state.walletAddress,betId:bet.id,betName:bet.name,picks:[...selection.picks],multiplier:getBetTypeLiveOdds(bet.id,selection.picks),stake,createdAt:timeNow(),createdTs:Date.now(),auto:isAuto}; state.entries.push(entry); state.entryHistory.push(entry); state.myEntries.unshift(entry); state.myEntries=state.myEntries.slice(0,6); state.participants.add(state.walletAddress); if(state.participants.size<2&&Math.random()>.35) state.participants.add('0xAI'+rand(1000,9999)); state.txHistory.unshift({kind:'참여 락',desc:`${bet.name} · ${entry.picks.map(id=>ANIMALS.find(a=>a.id===id).name).join('/')}`,amount:`-${formatNum(stake)} SPL`,time:timeNow()}); toast(isAuto?'자동 참여 실행':'참여 잠금 완료',`${bet.name} · ${formatNum(stake)} SPL 락`,[entry.picks.map(id=>ANIMALS.find(a=>a.id===id).name).join(' / ')]); pushLog(`${isAuto?'자동 ':' '}라운드 참여 · ${bet.name} · ${formatNum(stake)} SPL 락`); state.lastPlayedCombo={betId:bet.id,picks:[...selection.picks]}; renderAll()}
+function enterRound(isAuto=false){
+  if(isAuto) return commitRoundEntry(true);
+  const bet=getActiveBet(), stake=Number(document.getElementById('stakeInput').value||0), liveOdds=getBetTypeLiveOdds(bet.id,selection.picks);
+  if(!state.walletConnected) return showErrorModal('지갑 연결 필요','참여확정 전에 지갑 연결이 필요합니다.',['Round Entry']);
+  if(selection.picks.length!==bet.picks) return showErrorModal('선택 수량 확인',`${bet.picks}마리를 선택하세요.`,['Pick Validation']);
+  if(stake<50) return showErrorModal('최소 참여 수량','최소 50 SPL 이상 참여하세요.',['Min 50 SPL']);
+  if(stake>state.splBalance) return showErrorModal('잔액 부족','보유 SPL이 부족합니다.',['Balance Check']);
+  const picks=getPickNames(); const estPayout=Number((stake*liveOdds/1000).toFixed(4));
+  openAppModal({
+    eyebrow:'ENTRY CONFIRMATION',
+    title:'이 조합으로 참여하시겠습니까?',
+    desc:`<strong>${bet.name}</strong> · ${picks.map(a=>`${a.emoji} ${a.name}`).join(' / ')}<br>참여 SPL과 예상 수령을 확인한 뒤 확정하세요.`,
+    meta:[`${formatNum(stake)} SPL`,`${liveOdds.toFixed(2)}x`,`예상 ${formatNum(estPayout,4)} SOL`,'Resolve Slot 기준 최종 확정'],
+    actions:[
+      {label:'수정하기',variant:'dark'},
+      {label:'참여 확정',variant:'primary',onClick:()=>commitRoundEntry(false)}
+    ]
+  });
+}
+function commitRoundEntry(isAuto=false){const bet=getActiveBet(), stake=Number(document.getElementById('stakeInput').value||0); if(!state.walletConnected) return showErrorModal('지갑 연결 필요','참여확정 전에 지갑 연결이 필요합니다.',['Round Entry']); if(selection.picks.length!==bet.picks) return showErrorModal('선택 수량 확인',`${bet.picks}마리를 선택하세요.`,['Pick Validation']); if(stake<50) return showErrorModal('최소 참여 수량','최소 50 SPL 이상 참여하세요.',['Min 50 SPL']); if(stake>state.splBalance) return showErrorModal('잔액 부족','보유 SPL이 부족합니다.',['Balance Check']); state.splBalance-=stake; const entry={round:state.currentRound,owner:state.walletAddress,betId:bet.id,betName:bet.name,picks:[...selection.picks],multiplier:getBetTypeLiveOdds(bet.id,selection.picks),stake,createdAt:timeNow(),createdTs:Date.now(),auto:isAuto}; state.entries.push(entry); state.entryHistory.push(entry); state.myEntries.unshift(entry); state.myEntries=state.myEntries.slice(0,6); state.participants.add(state.walletAddress); if(state.participants.size<2&&Math.random()>.35) state.participants.add('0xAI'+rand(1000,9999)); state.txHistory.unshift({kind:'참여 락',desc:`${bet.name} · ${entry.picks.map(id=>ANIMALS.find(a=>a.id===id).name).join('/')}`,amount:`-${formatNum(stake)} SPL`,time:timeNow()}); toast(isAuto?'자동 참여 실행':'참여 잠금 완료',`${bet.name} · ${formatNum(stake)} SPL 락`,[entry.picks.map(id=>ANIMALS.find(a=>a.id===id).name).join(' / ')]); pushLog(`${isAuto?'자동 ':' '}라운드 참여 · ${bet.name} · ${formatNum(stake)} SPL 락`); state.lastPlayedCombo={betId:bet.id,picks:[...selection.picks]}; renderAll()}
 function isWinningEntry(entry, ranking){const ids=entry.picks, top3=ranking.slice(0,3).map(r=>r.id); if(entry.betId==='alpha') return ranking[0].id===ids[0]; if(entry.betId==='twin') return ids.every(id=>ranking.slice(0,2).some(r=>r.id===id)); if(entry.betId==='chain') return ranking[0].id===ids[0]&&ranking[1].id===ids[1]; if(entry.betId==='podium') return ids.every(id=>top3.includes(id)); if(entry.betId==='trinity') return ranking[0].id===ids[0]&&ranking[1].id===ids[1]&&ranking[2].id===ids[2]; return false}
 function makeMockTx(round, block){return `SOL-${round}-${block}-${rand(100000,999999)}`}
-function settleRound(block){const ranking=computeSettlementRanking(block); const totalPrizeSpl=state.entries.reduce((s,e)=>s+e.stake,0)+state.rolloverVault; const winners=state.entries.filter(entry=>isWinningEntry(entry,ranking)); const myRoundEntries=state.entries.filter(e=>e.owner===state.walletAddress); if(winners.length){const totalWeight=winners.reduce((s,w)=>s+w.stake*w.multiplier,0); winners.forEach(w=>{const share=(w.stake*w.multiplier)/totalWeight; const solPrize=Number(((totalPrizeSpl/1000)*share).toFixed(4)); if(w.owner===state.walletAddress){state.solBalance=Number((state.solBalance+solPrize).toFixed(4)); const tx=makeMockTx(state.currentRound,block.number); state.txHistory.unshift({kind:'정산 수령',desc:`ROUND #${state.currentRound} 적중 · SETTLE #${block.number}`,amount:`+${formatNum(solPrize,4)} SOL`,time:timeNow()}); state.payoutHistory.unshift({round:state.currentRound,block:block.number,tx,amount:`+${formatNum(solPrize,4)} SOL`})}}); state.rolloverVault=0} else state.rolloverVault+=state.entries.reduce((s,e)=>s+e.stake,0); myRoundEntries.forEach(e=>{const win=isWinningEntry(e,ranking); e.result=win?'win':'lose'; e.resolvedRound=state.currentRound; e.settleBlock=block.number; e.settleTime=block.time; e.pulse=new Date(block.time).getSeconds()}); if(myRoundEntries.length){state.autoEntry.currentLosses=myRoundEntries.some(e=>e.result==='win')?0:state.autoEntry.currentLosses+1; state.lastPlayedCombo={betId:myRoundEntries[0].betId,picks:[...myRoundEntries[0].picks]}} state.results.unshift({round:state.currentRound,env:{...state.lockedEnvironment},lockBlock:state.lockedEnvironmentBlock.number,lockTime:state.lockedEnvironmentBlock.time,lockTxCount:state.lockedEnvironmentBlock.txCount,settleBlock:block.number,settleTime:block.time,settleOutput:block.output,pulse:new Date(block.time).getSeconds(),ranking,winnerCount:winners.length,prizeSpl:totalPrizeSpl}); state.results=state.results.slice(0,120); toast(`ROUND #${state.currentRound} 결과 확정`,winners.length?`${ranking[0].name} 우승 · 적중 ${winners.length}건`:`정답자 없음 · ${formatNum(totalPrizeSpl)} SPL 이월`,[`정산블록 #${block.number}`,`${state.lockedEnvironment.sky} · ${state.lockedEnvironment.ground} · ${state.lockedEnvironment.tempo}`]); pushLog(`ROUND #${state.currentRound} 결과 확정 · 1위 ${ranking[0].name} · 정산블록 #${block.number}`); state.currentRound+=1; state.roundStart=Date.now(); state.roundDeadline=Date.now()+ROUND_SECONDS*1000; state.waitingSettlementBlock=false; state.entries=[]; state.myEntries=[]; state.participants=new Set(); state.lockedEnvironmentBlock=block; state.lockedEnvironment=deriveEnvironment(block); renderAll(); setTimeout(tryAutoEntry,250)}
-function onNewBlock(block){state.blockFeed.unshift(block); state.blockFeed=state.blockFeed.slice(0,20); const env=deriveEnvironment(block); toast(`새 BTC 블록 #${formatNum(block.number)} 생성`,state.waitingSettlementBlock&&state.participants.size>=state.participantMin?'마감 후 첫 블록 도착. 이번 라운드 결과를 확정합니다.':'다음 라운드 환경 후보가 갱신되었습니다.',[`TX ${block.txCount}`,`OUT ${formatNum(block.output,2)} BTC`,`${env.sky} · ${env.ground} · ${env.tempo}`]); pushLog(`BTC 블록 #${formatNum(block.number)} 생성 · TX ${formatNum(block.txCount)} · ${env.sky}/${env.ground}/${env.tempo}`); if(Date.now()>=state.roundDeadline&&state.participants.size>=state.participantMin&&state.waitingSettlementBlock) settleRound(block); renderAll(); scheduleNextBlock()}
+function settleRound(block){const ranking=computeSettlementRanking(block); const totalPrizeSpl=state.entries.reduce((s,e)=>s+e.stake,0)+state.rolloverVault; const winners=state.entries.filter(entry=>isWinningEntry(entry,ranking)); const myRoundEntries=state.entries.filter(e=>e.owner===state.walletAddress); if(winners.length){const totalWeight=winners.reduce((s,w)=>s+w.stake*w.multiplier,0); winners.forEach(w=>{const share=(w.stake*w.multiplier)/totalWeight; const solPrize=Number(((totalPrizeSpl/1000)*share).toFixed(4)); if(w.owner===state.walletAddress){state.solBalance=Number((state.solBalance+solPrize).toFixed(4)); const tx=makeMockTx(state.currentRound,block.number); state.txHistory.unshift({kind:'정산 수령',desc:`ROUND #${state.currentRound} 적중 · SETTLE SLOT #${block.number}`,amount:`+${formatNum(solPrize,4)} SOL`,time:timeNow()}); state.payoutHistory.unshift({round:state.currentRound,block:block.number,tx,amount:`+${formatNum(solPrize,4)} SOL`})}}); state.rolloverVault=0} else state.rolloverVault+=state.entries.reduce((s,e)=>s+e.stake,0); myRoundEntries.forEach(e=>{const win=isWinningEntry(e,ranking); e.result=win?'win':'lose'; e.resolvedRound=state.currentRound; e.settleBlock=block.number; e.settleTime=block.time; e.pulse=new Date(block.time).getSeconds()}); if(myRoundEntries.length){state.autoEntry.currentLosses=myRoundEntries.some(e=>e.result==='win')?0:state.autoEntry.currentLosses+1; state.lastPlayedCombo={betId:myRoundEntries[0].betId,picks:[...myRoundEntries[0].picks]}} state.results.unshift({round:state.currentRound,env:{...state.lockedEnvironment},lockBlock:state.lockedEnvironmentBlock.number,lockTime:state.lockedEnvironmentBlock.time,lockTxCount:state.lockedEnvironmentBlock.txCount,settleBlock:block.number,settleTime:block.time,settleOutput:block.output,pulse:new Date(block.time).getSeconds(),ranking,winnerCount:winners.length,prizeSpl:totalPrizeSpl}); state.results=state.results.slice(0,120); toast(`ROUND #${state.currentRound} 결과 확정`,winners.length?`${ranking[0].name} 우승 · 적중 ${winners.length}건`:`정답자 없음 · ${formatNum(totalPrizeSpl)} SPL 이월`,[`정산 slot #${block.number}`,`${state.lockedEnvironment.sky} · ${state.lockedEnvironment.ground} · ${state.lockedEnvironment.tempo}`]); pushLog(`ROUND #${state.currentRound} 결과 확정 · 1위 ${ranking[0].name} · 정산 slot #${block.number}`); state.currentRound+=1; state.roundStart=Date.now(); state.roundDeadline=Date.now()+ROUND_SECONDS*1000; state.waitingSettlementBlock=false; state.entries=[]; state.myEntries=[]; state.participants=new Set(); state.lockedEnvironmentBlock=block; state.lockedEnvironment=deriveEnvironment(block); renderAll(); setTimeout(tryAutoEntry,250)}
+function onNewBlock(block){state.blockFeed.unshift(block); state.blockFeed=state.blockFeed.slice(0,20); const env=deriveEnvironment(block); toast(`새 Solana slot #${formatNum(block.number)} 생성`,state.waitingSettlementBlock&&state.participants.size>=state.participantMin?'마감 후 첫 확정 slot 도착. 이번 라운드 결과를 확정합니다.':'다음 라운드 환경 후보가 갱신되었습니다.',[`Successful Tx ${formatNum(block.txCount)}`,`CU ${formatNum(block.output)}`,`${env.sky} · ${env.ground} · ${env.tempo}`]); pushLog(`Solana slot #${formatNum(block.number)} 생성 · Successful Tx ${formatNum(block.txCount)} · CU ${formatNum(block.output)} · ${env.sky}/${env.ground}/${env.tempo}`); if(Date.now()>=state.roundDeadline&&state.participants.size>=state.participantMin&&state.waitingSettlementBlock) settleRound(block); renderAll(); scheduleNextBlock()}
 function scheduleNextBlock(){const delay=rand(BLOCK_MIN_MS,BLOCK_MAX_MS); clearTimeout(window.__blockTimer); window.__blockTimer=setTimeout(()=>onNewBlock(createMockBlock(state.blockFeed[0])),delay)}
 function seedHistory(){let prev=createMockBlock(); let round=state.currentRound-100; for(let i=0;i<100;i++){const lock=prev, env=deriveEnvironment(lock), settle=createMockBlock(lock), ranking=ANIMALS.map(a=>{const r=animalScore(a,env,settle); return {...a,finalScore:r.score}}).sort((x,y)=>y.finalScore-x.finalScore), prizeSpl=rand(600,2500)*100, winnerCount=rand(0,5); state.results.push({round:round+i,env,lockBlock:lock.number,lockTime:lock.time,lockTxCount:lock.txCount,settleBlock:settle.number,settleTime:settle.time,settleOutput:settle.output,pulse:new Date(settle.time).getSeconds(),ranking,winnerCount,prizeSpl}); prev=createMockBlock(settle)}}
 function bindActions(){
   document.getElementById('walletConnectBtn').addEventListener('click',connectWallet);
   document.getElementById('exchangeBtn').addEventListener('click',exchangeTickets);
   document.getElementById('enterRoundBtn').addEventListener('click',()=>enterRound(false));
+  document.getElementById('actionConnectWalletBtn')?.addEventListener('click',connectWallet);
+  document.getElementById('actionExchangeBtn')?.addEventListener('click',()=>document.querySelector('.sidebar .panel')?.scrollIntoView({behavior:'smooth',block:'center'}));
+  document.getElementById('actionChooseBtn')?.addEventListener('click',()=>document.getElementById('liveBoard')?.scrollIntoView({behavior:'smooth',block:'start'}));
+  document.getElementById('actionConfirmBtn')?.addEventListener('click',()=>enterRound(false));
   document.getElementById('clearSelectionBtn').addEventListener('click',()=>{selection.picks=[]; renderSelectionPills(); renderAnimals(); renderComboPreview(); updateSlipGuide(); renderAll()});
-  document.getElementById('stakeInput').addEventListener('input',()=>{renderComboPreview(); renderAutoEntryPanel()});
+  document.getElementById('stakeInput').addEventListener('input',()=>{renderComboPreview(); renderSelectionPills(); renderAutoEntryPanel(); updateActionPanel()});
   document.getElementById('connectVerifyBtn').addEventListener('click',connectVerifyContract); document.getElementById('runVerifyBtn').addEventListener('click',runContractVerification);
   document.getElementById('loadLatestBlockVerifyBtn').addEventListener('click',()=>{
     const b=state.blockFeed[0];
@@ -4232,7 +4639,7 @@ function bindActions(){
   document.getElementById('saveFavoriteBtn').addEventListener('click',saveCurrentFavorite);
   document.getElementById('removeCurrentFavoriteBtn').addEventListener('click',removeCurrentFavorite);
 }
-function boot(){drawBackground(); bindNavigation(); bindActions(); renderBetTypes(); updateSlipGuide(); seedHistory(); const firstBlock=createMockBlock(); state.blockFeed=[firstBlock]; state.lockedEnvironmentBlock=firstBlock; state.lockedEnvironment=deriveEnvironment(firstBlock); for(let i=0;i<6;i++){const b=i===0?firstBlock:createMockBlock(state.blockFeed[0]); state.blockFeed.unshift(b)} state.blockFeed=state.blockFeed.slice(0,10); pushLog(`ROUND #${state.currentRound} 시작 · 환경락 블록 #${state.lockedEnvironmentBlock.number}`); renderAll(); applyVerificationInputs(14,2486,600192542593); scheduleNextBlock(); setInterval(updateCountdown,250); setTimeout(tryAutoEntry,300)}
+function boot(){drawBackground(); bindNavigation(); bindActions(); renderBetTypes(); updateSlipGuide(); seedHistory(); const firstBlock=createMockBlock(); state.blockFeed=[firstBlock]; state.lockedEnvironmentBlock=firstBlock; state.lockedEnvironment=deriveEnvironment(firstBlock); for(let i=0;i<6;i++){const b=i===0?firstBlock:createMockBlock(state.blockFeed[0]); state.blockFeed.unshift(b)} state.blockFeed=state.blockFeed.slice(0,10); pushLog(`ROUND #${state.currentRound} 시작 · 환경락 slot #${state.lockedEnvironmentBlock.number}`); renderAll(); applyVerificationInputs(14,1542,412877222); scheduleNextBlock(); setInterval(updateCountdown,250); setTimeout(tryAutoEntry,300)}
 window.addEventListener('DOMContentLoaded', boot, { once:true });
 
 document.getElementById('applyVerifyPrevBlockBtn')?.addEventListener('click',()=>{
@@ -4251,12 +4658,12 @@ function updateSettlementMonitorView(data){
   const isWaiting=(v)=>!v || v==='WAITING';
 
   safe('monitorNextStep', data.nextStep || 'WAITING');
-  safe('monitorNextStepDesc', data.nextStepDesc || '첫 도착 BTC 블록 대기 중입니다.');
+  safe('monitorNextStepDesc', data.nextStepDesc || '첫 확정 Solana slot 대기 중입니다.');
 
   safe('monitorSettleBlock', data.settleBlock || 'WAITING');
   safe('monitorSettleTime', isWaiting(data.settleBlock) ? '' : (data.settleTime || '도착시각 -'));
-  safe('monitorSettleTx', isWaiting(data.settleBlock) ? '' : (data.settleTx || 'TxCount -'));
-  safe('monitorSettleOutput', isWaiting(data.settleBlock) ? '' : (data.settleOutput || 'Output -'));
+  safe('monitorSettleTx', isWaiting(data.settleBlock) ? '' : (data.settleTx || 'Successful Tx -'));
+  safe('monitorSettleOutput', isWaiting(data.settleBlock) ? '' : (data.settleOutput || 'Compute Units -'));
 
   safe('monitorRankResult', data.rankResult || 'WAITING');
   safe('monitorBestOdds', isWaiting(data.rankResult) ? '' : (data.bestOdds || '최고배당률 -'));
@@ -4272,14 +4679,14 @@ function updateSettlementMonitorView(data){
   safe('monitorProfitRank3', isWaiting(data.payoutStatus) ? '' : (data.profitRank3 || '수익금 3위 -'));
 
   if(pill){
-    pill.textContent = data.pill || 'BTC 블록 도착 대기중';
+    pill.textContent = data.pill || 'Solana slot 도착 대기중';
   }
 }
 
 window.__monitorDemoState = {
-  pill:'BTC 블록 도착 대기중',
+  pill:'Solana slot 도착 대기중',
   nextStep:'WAITING',
-  nextStepDesc:'첫 도착 BTC 블록 대기 중입니다.',
+  nextStepDesc:'첫 확정 Solana slot 대기 중입니다.',
   settleBlock:'WAITING',
   settleTime:'',
   settleTx:'',
@@ -4594,12 +5001,12 @@ function updateSettlementMonitorView(data){
   const isWaiting=(v)=>!v || v==='WAITING';
 
   safe('monitorNextStep', data.nextStep || 'WAITING');
-  safe('monitorNextStepDesc', data.nextStepDesc || '첫 도착 BTC 블록 대기 중입니다.');
+  safe('monitorNextStepDesc', data.nextStepDesc || '첫 확정 Solana slot 대기 중입니다.');
 
   safe('monitorSettleBlock', data.settleBlock || 'WAITING');
   safe('monitorSettleTime', isWaiting(data.settleBlock) ? '' : (data.settleTime || '도착시각 -'));
-  safe('monitorSettleTx', isWaiting(data.settleBlock) ? '' : (data.settleTx || 'TxCount -'));
-  safe('monitorSettleOutput', isWaiting(data.settleBlock) ? '' : (data.settleOutput || 'Output -'));
+  safe('monitorSettleTx', isWaiting(data.settleBlock) ? '' : (data.settleTx || 'Successful Tx -'));
+  safe('monitorSettleOutput', isWaiting(data.settleBlock) ? '' : (data.settleOutput || 'Compute Units -'));
 
   safe('monitorRankResult', data.rankResult || 'WAITING');
   safe('monitorBestOdds', isWaiting(data.rankResult) ? '' : (data.bestOdds || '최고배당률 -'));
@@ -4615,14 +5022,14 @@ function updateSettlementMonitorView(data){
   safe('monitorProfitRank3', isWaiting(data.payoutStatus) ? '' : (data.profitRank3 || '수익금 3위 -'));
 
   if(pill){
-    pill.textContent = data.pill || 'BTC 블록 도착 대기중';
+    pill.textContent = data.pill || 'Solana slot 도착 대기중';
   }
 }
 
 window.__monitorDemoState = {
-  pill:'BTC 블록 도착 대기중',
+  pill:'Solana slot 도착 대기중',
   nextStep:'WAITING',
-  nextStepDesc:'첫 도착 BTC 블록 대기 중입니다.',
+  nextStepDesc:'첫 확정 Solana slot 대기 중입니다.',
   settleBlock:'WAITING',
   settleTime:'',
   settleTx:'',
@@ -4703,12 +5110,12 @@ function updateSettlementMonitorView(data){
   const isWaiting=(v)=>!v || v==='WAITING';
 
   safe('monitorNextStep', data.nextStep || 'WAITING');
-  safe('monitorNextStepDesc', data.nextStepDesc || '첫 도착 BTC 블록 대기 중입니다.');
+  safe('monitorNextStepDesc', data.nextStepDesc || '첫 확정 Solana slot 대기 중입니다.');
 
   safe('monitorSettleBlock', data.settleBlock || 'WAITING');
   safe('monitorSettleTime', isWaiting(data.settleBlock) ? '' : (data.settleTime || '도착시각 -'));
-  safe('monitorSettleTx', isWaiting(data.settleBlock) ? '' : (data.settleTx || 'TxCount -'));
-  safe('monitorSettleOutput', isWaiting(data.settleBlock) ? '' : (data.settleOutput || 'Output -'));
+  safe('monitorSettleTx', isWaiting(data.settleBlock) ? '' : (data.settleTx || 'Successful Tx -'));
+  safe('monitorSettleOutput', isWaiting(data.settleBlock) ? '' : (data.settleOutput || 'Compute Units -'));
 
   safe('monitorRankResult', data.rankResult || 'WAITING');
   safe('monitorBestOdds', isWaiting(data.rankResult) ? '' : (data.bestOdds || '최고배당률 -'));
@@ -4724,13 +5131,13 @@ function updateSettlementMonitorView(data){
   safe('monitorProfitRank3', isWaiting(data.payoutStatus) ? '' : (data.profitRank3 || '수익금 3위 -'));
 
   if(pill){
-    pill.textContent = data.pill || 'BTC 블록 도착 대기중';
+    pill.textContent = data.pill || 'Solana slot 도착 대기중';
   }
 }
 window.__monitorDemoState = {
-  pill:'BTC 블록 도착 대기중',
+  pill:'Solana slot 도착 대기중',
   nextStep:'WAITING',
-  nextStepDesc:'첫 도착 BTC 블록 대기 중입니다.',
+  nextStepDesc:'첫 확정 Solana slot 대기 중입니다.',
   settleBlock:'WAITING',
   settleTime:'',
   settleTx:'',
@@ -4761,7 +5168,7 @@ async function runSettlementDemo(){
   updateSettlementMonitorView({
     pill:'다음 스텝 진행 중',
     nextStep:'BLOCK ARRIVED',
-    nextStepDesc:'첫 도착 BTC 블록 데이터를 수신하는 중입니다.',
+    nextStepDesc:'첫 도착 Solana slot 데이터를 수신하는 중입니다.',
     settleBlock:'WAITING',
     rankResult:'WAITING',
     payoutStatus:'WAITING'
@@ -4772,13 +5179,13 @@ async function runSettlementDemo(){
   setMonitorCardState('monitorCardStep','done');
   setMonitorCardState('monitorCardBlock','active');
   updateSettlementMonitorView({
-    pill:'BTC 블록 도착 완료',
+    pill:'Solana slot 도착 완료',
     nextStep:'도착 완료',
-    nextStepDesc:'정산 대상 BTC 블록이 확정되었습니다.',
+    nextStepDesc:'정산 대상 Solana slot이 확정되었습니다.',
     settleBlock:'#889,618',
     settleTime:'도착시각 2026. 4. 14. 00:28:02',
-    settleTx:'TxCount 5,182',
-    settleOutput:'Output 1,038,777,222',
+    settleTx:'Successful Tx 5,182',
+    settleOutput:'Compute Units 1,038,777,222',
     rankResult:'WAITING',
     payoutStatus:'WAITING'
   });
@@ -4793,8 +5200,8 @@ async function runSettlementDemo(){
     nextStepDesc:'블록값과 LOCK 환경을 결합해 순위를 계산합니다.',
     settleBlock:'#889,618',
     settleTime:'도착시각 2026. 4. 14. 00:28:02',
-    settleTx:'TxCount 5,182',
-    settleOutput:'Output 1,038,777,222',
+    settleTx:'Successful Tx 5,182',
+    settleOutput:'Compute Units 1,038,777,222',
     rankResult:'당첨자 12명',
     bestOdds:'최고배당률 6.22x',
     rankTop1:'1위 Warhorse',
@@ -4813,8 +5220,8 @@ async function runSettlementDemo(){
     nextStepDesc:'당첨자 기준 배당과 잔여금 계산을 진행합니다.',
     settleBlock:'#889,618',
     settleTime:'도착시각 2026. 4. 14. 00:28:02',
-    settleTx:'TxCount 5,182',
-    settleOutput:'Output 1,038,777,222',
+    settleTx:'Successful Tx 5,182',
+    settleOutput:'Compute Units 1,038,777,222',
     rankResult:'당첨자 12명',
     bestOdds:'최고배당률 6.22x',
     rankTop1:'1위 Warhorse',
@@ -4834,11 +5241,11 @@ async function runSettlementDemo(){
   updateSettlementMonitorView({
     pill:'정산 완료',
     nextStep:'DONE',
-    nextStepDesc:'첫 도착 BTC 블록 정산이 완료되었습니다.',
+    nextStepDesc:'첫 확정 Slot 정산이 완료되었습니다.',
     settleBlock:'#889,618',
     settleTime:'도착시각 2026. 4. 14. 00:28:02',
-    settleTx:'TxCount 5,182',
-    settleOutput:'Output 1,038,777,222',
+    settleTx:'Successful Tx 5,182',
+    settleOutput:'Compute Units 1,038,777,222',
     rankResult:'당첨자 12명',
     bestOdds:'최고배당률 6.22x',
     rankTop1:'1위 Warhorse',
@@ -4885,13 +5292,13 @@ async function runSettlementDemo(){
     en:{
       langName:'English', settings:'Settings', settingsTitle:'Arena Settings', replay:'Replay Settlement Monitor', reset:'Reset UI Preferences',
       connect:'Connect', disconnect:'Disconnect', walletDisconnected:'Wallet offline',
-      nav_dashboard:'Dashboard', nav_mypicks:'My Picks', nav_blocks:'Block Verify', nav_winners:'Winner History', nav_events:'Events', nav_wallet:'Wallet', nav_sim:'Analytics',
+      nav_dashboard:'Dashboard', nav_mypicks:'My Picks', nav_blocks:'Slot Verify', nav_winners:'Winner History', nav_events:'Events', nav_wallet:'Wallet', nav_sim:'Analytics',
       compactTitle:'Compact HUD', compactDesc:'Tighter spacing for a denser control deck.',
       ambientTitle:'Ambient Rings', ambientDesc:'Show the animated background rings and particles.',
       motionTitle:'Motion FX', motionDesc:'Keep ticker, glow and animated transitions alive.',
       glowTitle:'Score Glow Boost', glowDesc:'Enhance key score cards, winners and block numbers.',
       hudScale:'HUD Scale', langSection:'Language', visualSection:'Visual Mode',
-      heroLive:'BITCOIN BLOCKCHAIN LIVE', currentBlockHash:'Current Block Hash',
+      heroLive:'SOLANA BLOCKCHAIN LIVE', currentBlockHash:'Current Finalized Blockhash',
       visual_ocean:'Ocean', visual_aurora:'Aurora', visual_ember:'Ember'
     },
     ru:{
@@ -4920,8 +5327,9 @@ async function runSettlementDemo(){
     document.body.classList.remove('accent-ocean','accent-aurora','accent-ember');
     document.body.classList.add(`accent-${state.ui.accent||'ocean'}`);
     document.documentElement.style.setProperty('--ui-scale', (state.ui.hudScale||100)/100);
-    document.querySelector('.app')?.style.setProperty('transform', `scale(${(state.ui.hudScale||100)/100})`);
-    document.querySelector('.app')?.style.setProperty('transform-origin', 'top center');
+    /* HEADER FIX: do not transform .app. A transformed ancestor makes fixed/sticky headers scroll with the page. */
+    document.querySelector('.app')?.style.removeProperty('transform');
+    document.querySelector('.app')?.style.removeProperty('transform-origin');
   }
 
   function applyLanguage(){
@@ -5213,9 +5621,9 @@ async function runSettlementDemo(){
     if(!state.walletConnected) status.textContent='지갑 연결 전입니다. 먼저 지갑을 연결한 뒤 티켓 교환과 참여 흐름을 시작하세요.';
     else if(state.splBalance<=0) status.textContent=`지갑 연결 완료 · 현재 ${formatNum(state.solBalance,3)} SOL 보유 · SPL이 없어 티켓 교환 단계가 다음 행동입니다.`;
     else if(!entries.length) status.textContent=`SPL ${formatNum(state.splBalance)} 보유 중입니다. 이제 조합을 선택하고 현재 라운드에 참여를 잠글 수 있습니다.`;
-    else if(!state.results.length) status.textContent=`현재까지 ${entries.length}개의 엔트리가 기록되었습니다. 마감 이후 첫 BTC 블록이 도착하면 정산이 진행됩니다.`;
+    else if(!state.results.length) status.textContent=`현재까지 ${entries.length}개의 엔트리가 기록되었습니다. 마감 이후 첫 확정 Solana slot이 도착하면 정산이 진행됩니다.`;
     else if(!payouts) status.textContent='최근 정산 결과가 생성되었지만 아직 내 수령 로그는 없습니다. 당첨 히스토리와 결과 탭을 함께 확인하세요.';
-    else status.textContent=`최근 수령 로그 ${payouts}건이 반영되었습니다. 정산 블록과 트랜잭션 로그를 지갑 탭에서 함께 확인할 수 있습니다.`;
+    else status.textContent=`최근 수령 로그 ${payouts}건이 반영되었습니다. 결과 Slot과 트랜잭션 로그를 지갑 탭에서 함께 확인할 수 있습니다.`;
   }
 
   function updateSafetyBadge(){
@@ -5356,6 +5764,30 @@ async function runSettlementDemo(){
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', bindEnhancedEventsPage, {once:true}); else bindEnhancedEventsPage();
   const prevNavigate=window.navigate;
   if(typeof prevNavigate==='function') window.navigate=function(page){ prevNavigate(page); if(page==='events') bindEnhancedEventsPage(); };
+})();
+</script>
+
+<script>
+(function(){
+  let scheduled=false;
+  function lockHeader(){
+    scheduled=false;
+    const header=document.querySelector('.main-header.hl-header') || document.querySelector('.main-header');
+    const app=document.querySelector('.app');
+    if(!header) return;
+    if(header.parentElement!==document.body){
+      document.body.insertBefore(header, document.body.firstChild);
+    }
+    if(app){
+      app.style.setProperty('transform','none','important');
+      app.style.removeProperty('transform-origin');
+    }
+    const h=Math.ceil(header.getBoundingClientRect().height || 104);
+    document.documentElement.style.setProperty('--bba-header-height', h+'px');
+  }
+  function schedule(){ if(!scheduled){scheduled=true; requestAnimationFrame(lockHeader);} }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', lockHeader, {once:true}); else lockHeader();
+  window.addEventListener('resize', schedule);
 })();
 </script>
 
