@@ -1782,7 +1782,7 @@ body{
   border-radius:8px;
   background:rgba(255,255,255,.02);
   padding:10px 11px;
-  min-height:187px;
+  min-height:156px;
 }
 .env-axis-card .axis-label{
   color:#7f93b1;
@@ -2770,6 +2770,1246 @@ body{
 @media(max-width:1280px){.mode-round-panel.compact-current-round .mode-round-body{grid-template-columns:1fr}.mode-round-panel.compact-current-round .mode-main-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.mode-round-panel.compact-current-round .mode-condition-list{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:820px){.mode-round-panel.compact-current-round .mode-round-head{align-items:flex-start}.mode-round-panel.compact-current-round .mode-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.mode-round-panel.compact-current-round .mode-main-grid,.mode-round-panel.compact-current-round .mode-condition-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
+
+
+/* === BBA Dashboard V3 full redesign === */
+.bba-dashboard-v3{display:flex;flex-direction:column;gap:14px;padding-top:14px}.bba-status-strip{display:grid;grid-template-columns:1.18fr .95fr .95fr .95fr .95fr;gap:12px}.bba-status-card{position:relative;overflow:hidden;display:flex;align-items:center;gap:14px;min-height:78px;padding:14px 16px;border-radius:10px;background:linear-gradient(180deg,rgba(9,21,38,.92),rgba(4,12,24,.98));border:1px solid rgba(118,177,230,.18);box-shadow:0 12px 32px rgba(0,0,0,.28)}.bba-status-card:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(107,196,255,.06),transparent 42%,rgba(247,201,72,.04));pointer-events:none}.bba-status-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;border:1px solid rgba(107,196,255,.28);background:rgba(107,196,255,.08);box-shadow:inset 0 0 18px rgba(107,196,255,.08)}.bba-status-card span,.bba-eyebrow{display:block;font-size:10px;color:#93a6c2;text-transform:uppercase;letter-spacing:1.5px;font-weight:900}.bba-status-card strong{display:block;margin-top:5px;font-size:18px;color:#f3f7ff}.bba-status-card small{display:block;margin-top:5px;color:#6f819f;font-size:11px}.bba-status-card em{font-style:normal;color:#57ff8a}.bba-status-card.pool strong,.bba-status-card.pool b{color:#bf72ff}.bba-status-card.marketing strong,.bba-status-card.marketing em{color:var(--gold)}.bba-status-card.unlock em{color:#26d7ff}.bba-dashboard-grid-v3{display:grid;grid-template-columns:minmax(620px,1fr) minmax(560px,.98fr);gap:14px;align-items:start}.bba-left-stack,.bba-right-stack{display:flex;flex-direction:column;gap:14px}.bba-panel{position:relative;overflow:hidden;border-radius:10px;background:linear-gradient(180deg,rgba(7,18,34,.94),rgba(4,10,20,.99));border:1px solid rgba(107,196,255,.18);box-shadow:0 18px 42px rgba(0,0,0,.34)}.bba-panel:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 10% 0%,rgba(107,196,255,.09),transparent 28%),radial-gradient(circle at 100% 100%,rgba(247,201,72,.045),transparent 34%);pointer-events:none}.bba-panel>*{position:relative;z-index:1}.bba-panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:16px 18px 8px}.bba-panel-head.compact{padding:14px 16px 8px}.bba-panel-head h2,.bba-panel-head h3{margin:3px 0 0;color:#f4f8ff}.bba-panel-head h2{font-size:22px}.bba-panel-head h3{font-size:22px}.bba-panel-head p{margin:5px 0 0;color:#8ea1bd;font-size:12px}.bba-round-badge,.mode-status-badge{min-width:84px;text-align:center;border-radius:7px;padding:6px 12px;color:#9cff80;background:rgba(60,255,117,.1);border:1px solid rgba(60,255,117,.28);font-weight:900;font-size:12px}.bba-current-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:8px 16px 6px}.mode-condition-row{position:relative;min-height:72px;padding:12px;border-radius:8px;background:rgba(255,255,255,.028);border:1px solid rgba(255,255,255,.08);overflow:hidden}.mode-condition-row .k{font-size:10px;color:#8fa2bd;text-transform:uppercase;letter-spacing:1.2px}.mode-condition-row .v{margin-top:5px;font-family:Orbitron,sans-serif;font-size:17px;color:#dce9ff}.mode-condition-row .tag{position:absolute;right:10px;top:10px;padding:3px 7px;border-radius:999px;font-size:10px;color:#8da1bc;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}.mode-condition-row.met{border-color:rgba(80,255,157,.23);background:rgba(80,255,157,.045)}.mode-condition-row.met .tag{color:#79ffb5;background:rgba(80,255,157,.08);border-color:rgba(80,255,157,.2)}.mode-progress{position:absolute;left:10px;right:10px;bottom:8px;height:5px;border-radius:999px;background:rgba(255,255,255,.07);overflow:hidden}.mode-progress span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#00c8ff,#5dffbc)}.bba-activation-card{margin:8px 16px 0;padding:12px 14px;border-radius:9px;display:flex;justify-content:space-between;align-items:center;gap:14px;background:linear-gradient(90deg,rgba(80,255,157,.075),rgba(107,196,255,.035));border:1px solid rgba(128,255,188,.15)}.bba-activation-left{display:flex;align-items:center;gap:14px}.bba-check-orb{width:68px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle,rgba(97,255,129,.22),rgba(68,255,109,.06));border:1px solid rgba(97,255,129,.22);box-shadow:0 0 28px rgba(80,255,157,.13)}.bba-check-orb span{font-size:38px;color:#8dff82}.bba-activation-left strong{display:block;color:#85ff7a;font-size:18px}.bba-activation-left small{display:block;margin-top:6px;color:#c5d2e5}.bba-countdown-box{min-width:170px;border-left:1px solid rgba(255,255,255,.12);padding-left:20px;text-align:center}.bba-countdown-box span,.bba-countdown-box small{display:block;color:#91a3bd;font-size:11px;text-transform:uppercase}.bba-countdown-box strong{display:block;margin:4px 0;font-family:Orbitron,sans-serif;font-size:34px;color:#2edbff;text-shadow:0 0 18px rgba(46,219,255,.22)}.bba-progress-row{display:grid;grid-template-columns:120px 1fr 58px;gap:10px;align-items:center;padding:10px 16px 0}.bba-progress-row span{font-size:11px;color:#90a2bc;font-weight:800}.bba-progress{height:10px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;border:1px solid rgba(255,255,255,.08)}.bba-progress i{display:block;height:100%;background:linear-gradient(90deg,#009dff,#20d6ff);border-radius:inherit}.bba-progress-row b{font-family:Orbitron,sans-serif;color:#dce9ff}.bba-odds-rule{margin:10px 16px 0;display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:10px 12px;border-radius:8px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);font-size:12px;color:#9baeca}.bba-odds-rule strong{color:var(--gold)}.bba-mode-detail-card{margin:10px 16px 0;display:grid;grid-template-columns:1.3fr 1fr;gap:12px;align-items:center;padding:12px;border-radius:9px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08)}.bba-mode-detail-main{display:flex;gap:12px;align-items:center}.bba-alpha-emblem{width:54px;height:54px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-family:Orbitron,sans-serif;font-size:32px;color:#08101a;background:linear-gradient(135deg,var(--gold),#ff9f1a);box-shadow:0 0 28px rgba(247,201,72,.22)}.bba-mode-titleline{display:flex;gap:10px;align-items:center}.bba-mode-titleline strong{font-size:19px}.bba-mode-titleline em{font-style:normal;padding:4px 8px;border-radius:999px;background:rgba(80,255,157,.08);border:1px solid rgba(80,255,157,.2);color:#7cffaa;font-size:10px;font-weight:900}.bba-mode-detail-main p{margin:5px 0 0;color:#8da0bd;font-size:12px}.bba-mode-stats-mini{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.bba-mode-stats-mini div{padding:8px;border-radius:8px;background:rgba(4,12,22,.55);border:1px solid rgba(255,255,255,.06)}.bba-mode-stats-mini span{display:block;color:#8396b2;font-size:10px}.bba-mode-stats-mini strong{display:block;margin-top:4px;color:#f7c948;font-family:Rajdhani,sans-serif;font-size:16px}.bba-alpha-cta{margin:10px 16px 16px;padding:14px 18px;display:flex;gap:18px;align-items:center;border-radius:10px;background:linear-gradient(90deg,rgba(247,201,72,.14),rgba(247,201,72,.03));border:1px solid rgba(247,201,72,.3);box-shadow:inset 0 0 32px rgba(247,201,72,.045)}.bba-alpha-symbol{width:96px;height:96px;border-radius:22px;display:flex;align-items:center;justify-content:center;font-family:Orbitron,sans-serif;font-size:58px;color:#160f02;background:radial-gradient(circle,#ffe574,#d99c0d);box-shadow:0 0 34px rgba(247,201,72,.3)}.bba-alpha-copy h3{margin:0;font-size:22px;color:var(--gold)}.bba-alpha-copy h3 span{margin-left:8px;padding:4px 8px;border-radius:6px;background:rgba(247,201,72,.12);border:1px solid rgba(247,201,72,.22);font-size:12px}.bba-alpha-copy p{margin:8px 0 14px;color:#d6def0}.bba-cta-actions{display:flex;gap:10px}.bba-primary-cta,.bba-ghost-cta{height:42px;border-radius:8px;padding:0 22px;font-weight:900;cursor:pointer}.bba-primary-cta{border:0;background:linear-gradient(135deg,#ffe16e,#f3b313);color:#07111d}.bba-ghost-cta{border:1px solid rgba(46,219,255,.35);background:rgba(46,219,255,.06);color:#aee9ff}.bba-bottom-left-grid,.bba-right-bottom-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:14px}.bba-right-bottom-grid{grid-template-columns:1fr 1fr}.bba-mini-head{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.07);font-weight:900;color:#eaf3ff;display:flex;justify-content:space-between;align-items:center}.bba-mini-head button{border:0;background:transparent;color:#26d7ff;cursor:pointer;font-weight:800}.bba-position-list{padding:12px 14px;display:grid;gap:8px}.bba-position-list div{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06)}.bba-position-list span{color:#bac7d9}.bba-position-list strong{font-family:Orbitron,sans-serif;color:#2edbff}.bba-position-list .highlight strong{color:#c879ff}.bba-entry-wrap{height:210px;padding:12px}.bba-entry-composer{padding-bottom:16px}.bba-composer-grid{display:grid;grid-template-columns:1fr 1.15fr .85fr;gap:14px;padding:8px 16px 0}.bba-subtitle{font-size:12px;font-weight:900;color:#c7d6ee;margin-bottom:9px;text-transform:uppercase;letter-spacing:1px}.bba-input-action{display:flex;gap:8px}.bba-input-action input{min-width:0}.bba-wallet-mini{padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}.bba-wallet-mini span{display:block;font-size:10px;color:#92a5bf}.bba-wallet-mini strong{font-family:Orbitron,sans-serif}.bba-mode-unlock-list{display:grid;gap:8px;padding:8px 14px 12px}.bba-mode-unlock-list .mode-tab{width:100%;min-height:62px;display:grid;grid-template-columns:1fr auto;align-items:center;text-align:left;border-radius:9px;padding:10px 12px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);cursor:pointer;transition:.18s;color:#edf4ff}.bba-mode-unlock-list .mode-tab:hover{transform:translateY(-1px);border-color:rgba(46,219,255,.28)}.bba-mode-unlock-list .mode-tab.active{background:linear-gradient(90deg,rgba(247,201,72,.12),rgba(255,255,255,.025));border-color:rgba(247,201,72,.45);box-shadow:0 0 0 1px rgba(247,201,72,.08) inset}.mode-tab-name{font-size:17px;font-weight:900}.mode-tab-meta{display:flex;gap:8px;align-items:center;margin-top:4px;color:#879bb8;font-size:11px}.mode-tab-status{padding:4px 8px;border-radius:6px;font-size:10px;font-weight:900}.mode-tab-status.open{color:#7bff9b;background:rgba(80,255,157,.08);border:1px solid rgba(80,255,157,.18)}.mode-tab-status.closed{color:#9ba8b9;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09)}.mode-tab-status.building{color:#2edbff;background:rgba(46,219,255,.08);border:1px solid rgba(46,219,255,.18)}.bba-flowline{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 14px 12px}.bba-flowline span{padding:8px;border-radius:8px;text-align:center;font-size:11px;font-weight:900;color:#7e90aa;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06)}.bba-flowline span.active{color:#7cffaa;border-color:rgba(80,255,157,.22);background:rgba(80,255,157,.06)}.bba-flowline span.waiting{color:#f7c948;border-color:rgba(247,201,72,.22);background:rgba(247,201,72,.06)}.bba-reserve-note{margin:0 14px 14px;padding:10px;border-radius:8px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);color:#aebdda;font-size:12px}.bba-info-dot{width:22px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,.15);color:#9badc6}.bba-beast-board{padding-bottom:14px}.bba-animal-grid-v3{grid-template-columns:repeat(5,1fr);gap:9px;padding:4px 14px 0}.bba-animal-grid-v3 .animal-card{min-height:104px;padding:9px;border-radius:9px;box-shadow:none}.bba-animal-grid-v3 .animal-emoji{font-size:25px}.bba-animal-grid-v3 .animal-name{margin-top:5px;font-size:13px}.bba-animal-grid-v3 .animal-role,.bba-animal-grid-v3 .statline,.bba-animal-grid-v3 .small-note,.bba-animal-grid-v3 .customer-insight-grid{display:none}.bba-animal-grid-v3 .animal-meta{font-size:10px;margin-top:5px}.bba-animal-grid-v3 .trend{height:5px;margin-top:7px}.bba-live-table-details{margin:10px 14px 0}.bba-live-table-details summary{cursor:pointer;color:#8fdcff;font-size:12px;font-weight:800}.bba-recent-list{padding:10px 12px;max-height:188px;overflow:auto}.bba-recent-list .result-card{padding:8px}.bba-jackpot-panel{padding-bottom:14px}.bba-jackpot-body{display:flex;gap:14px;align-items:center;padding:14px}.bba-chest{width:94px;height:78px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle,#f9d66d,#7c4a07);color:#2c1700;font-size:42px;box-shadow:0 0 34px rgba(247,201,72,.22)}.bba-jackpot-body span{color:#f7c948;font-size:12px;font-weight:900}.bba-jackpot-body strong{display:block;margin-top:5px;font-family:Orbitron,sans-serif;font-size:34px;color:#f7c948}.bba-jackpot-body small{display:block;margin-top:4px;color:#bdc8d9}.bba-progress.jackpot{margin:0 14px}.bba-secondary-dashboard{padding-bottom:16px}.bba-secondary-grid{display:grid;grid-template-columns:1.05fr 1.1fr .95fr .8fr;gap:14px;padding:8px 16px 0}.bba-env-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.bba-env-badges span{padding:6px 8px;border-radius:7px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);font-size:11px;color:#a9b9cf}.bba-monitor-grid-mini{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}.bba-monitor-grid-mini div{padding:9px;border-radius:8px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06)}.bba-monitor-grid-mini span{display:block;font-size:10px;color:#8396b2}.bba-monitor-grid-mini strong{display:block;margin-top:4px;color:#f1f6ff}.bba-monitor-grid-mini small{display:block;margin-top:3px;color:#7386a2}.bba-log-box{max-height:176px;overflow:auto}.bba-hidden-compat{display:none!important}.bba-live-table-details .table-wrap{max-height:260px}.bba-entry-carousel .entry-carousel-card{flex-basis:220px;min-width:220px;max-width:220px}.bba-entry-carousel .entry-carousel-title{font-size:14px}.bba-entry-carousel .entry-carousel-stake{font-size:15px}.bba-entry-carousel .entry-carousel-picks span{font-size:10px}.bba-entry-carousel .entry-carousel-stats{grid-template-columns:1fr 1fr}.bba-entry-carousel .entry-carousel-stat .v{font-size:13px}.bba-bet-types .bet-type{padding:10px;border-radius:8px}.bba-combo-preview{padding:10px}.bba-combo-preview .row{margin-top:0}.bba-combo-preview .value{font-size:17px}@media(max-width:1280px){.bba-status-strip{grid-template-columns:repeat(2,1fr)}.bba-dashboard-grid-v3,.bba-composer-grid,.bba-secondary-grid{grid-template-columns:1fr}.bba-bottom-left-grid,.bba-right-bottom-grid{grid-template-columns:1fr}.bba-animal-grid-v3{grid-template-columns:repeat(3,1fr)}}@media(max-width:820px){.bba-status-strip,.bba-current-metrics,.bba-mode-detail-card,.bba-mode-stats-mini{grid-template-columns:1fr}.bba-activation-card,.bba-alpha-cta{flex-direction:column;align-items:flex-start}.bba-countdown-box{border-left:0;border-top:1px solid rgba(255,255,255,.1);padding-left:0;padding-top:12px;text-align:left}.bba-progress-row{grid-template-columns:1fr}.bba-animal-grid-v3{grid-template-columns:repeat(2,1fr)}}
+
+/* === Dashboard V3 layout refinement: full-width + vertical unlock + wide composer === */
+.app:has(#page-dashboard.active){
+  max-width:none;
+  width:100%;
+  padding-left:16px;
+  padding-right:16px;
+}
+#page-dashboard .bba-dashboard-v3{
+  width:100%;
+  max-width:none;
+  gap:12px;
+}
+#page-dashboard .bba-dashboard-grid-v3{
+  grid-template-columns:minmax(680px,1.04fr) minmax(520px,.96fr);
+  gap:12px;
+  width:100%;
+}
+#page-dashboard .bba-right-stack{
+  gap:12px;
+}
+#page-dashboard .bba-unlock-panel{
+  align-self:stretch;
+}
+#page-dashboard .bba-mode-unlock-list{
+  display:flex !important;
+  flex-direction:column !important;
+  grid-template-columns:none !important;
+  gap:8px;
+  padding:8px 14px 12px;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab{
+  width:100%;
+  min-height:60px;
+  grid-template-columns:minmax(0,1fr) minmax(220px,auto);
+}
+#page-dashboard .bba-wide-composer-row{
+  width:100%;
+  display:block;
+}
+#page-dashboard .bba-entry-composer-wide{
+  width:100%;
+}
+#page-dashboard .bba-entry-composer-wide .bba-composer-grid{
+  grid-template-columns:minmax(300px,.9fr) minmax(420px,1.35fr) minmax(360px,1fr);
+  gap:16px;
+}
+#page-dashboard .bba-entry-composer-wide .bet-types{
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  display:grid;
+}
+#page-dashboard .bba-entry-composer-wide .bba-bet-types .bet-type{
+  min-height:104px;
+}
+#page-dashboard .bba-wide-results-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(360px,.75fr);
+  gap:12px;
+  margin-top:12px;
+}
+#page-dashboard .bba-wide-results-grid .bba-recent-list{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  max-height:none;
+}
+#page-dashboard .bba-wide-results-grid .bba-jackpot-body{
+  min-height:128px;
+}
+@media(max-width:1280px){
+  #page-dashboard .bba-dashboard-grid-v3,
+  #page-dashboard .bba-entry-composer-wide .bba-composer-grid,
+  #page-dashboard .bba-wide-results-grid{
+    grid-template-columns:1fr;
+  }
+  #page-dashboard .bba-entry-composer-wide .bet-types{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+@media(max-width:820px){
+  .app:has(#page-dashboard.active){padding-left:8px;padding-right:8px;}
+  #page-dashboard .bba-entry-composer-wide .bet-types{
+    grid-template-columns:1fr;
+  }
+  #page-dashboard .bba-wide-results-grid .bba-recent-list{
+    grid-template-columns:1fr;
+  }
+}
+
+
+#page-dashboard .bba-mode-unlock-list .mode-tab-main{
+  min-width:0;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab-name{
+  font-size:18px;
+  color:#f5f8ff;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab-meta{
+  justify-content:flex-start;
+  flex-wrap:wrap;
+  margin-top:5px;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab-side{
+  display:grid;
+  grid-template-columns:auto minmax(88px,auto) minmax(96px,130px) 44px;
+  gap:8px;
+  align-items:center;
+  justify-content:end;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab-side strong{
+  font-family:Rajdhani,sans-serif;
+  font-size:16px;
+  color:#f3f7ff;
+  white-space:nowrap;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab-side em{
+  font-style:normal;
+  text-align:right;
+  color:#8fdcff;
+  font-weight:900;
+  font-size:13px;
+}
+#page-dashboard .mode-tab-progress{
+  height:7px;
+  min-width:96px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+}
+#page-dashboard .mode-tab-progress i{
+  display:block;
+  height:100%;
+  border-radius:inherit;
+  background:linear-gradient(90deg,#00a8ff,#2edbff);
+}
+#page-dashboard .mode-tab.active .mode-tab-progress i{
+  background:linear-gradient(90deg,#f7c948,#ff9f1a);
+}
+#page-dashboard .mode-tab.closed .mode-tab-progress i{
+  background:linear-gradient(90deg,#754cff,#c64cff);
+}
+@media(max-width:820px){
+  #page-dashboard .bba-mode-unlock-list .mode-tab{
+    grid-template-columns:1fr;
+  }
+  #page-dashboard .bba-mode-unlock-list .mode-tab-side{
+    grid-template-columns:auto 1fr auto;
+  }
+  #page-dashboard .mode-tab-progress{
+    grid-column:1 / -1;
+    width:100%;
+  }
+}
+
+
+
+/* === Dashboard V5 final layout fix: true full width + filled top grid + vertical composer modes === */
+html,body{
+  width:100% !important;
+  max-width:none !important;
+}
+.app{
+  max-width:none !important;
+  width:100% !important;
+  margin:0 !important;
+  padding-left:8px !important;
+  padding-right:8px !important;
+}
+.page-wrap{
+  width:100% !important;
+  max-width:none !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+#page-dashboard,
+#page-dashboard .bba-dashboard-v3{
+  width:100% !important;
+  max-width:none !important;
+}
+#page-dashboard .bba-dashboard-v3{
+  padding-top:8px !important;
+  gap:10px !important;
+}
+#page-dashboard .bba-status-strip{
+  grid-template-columns:1.05fr .9fr .9fr .9fr .9fr !important;
+  gap:8px !important;
+}
+#page-dashboard .bba-status-card{
+  min-height:66px !important;
+  padding:10px 12px !important;
+}
+#page-dashboard .bba-status-icon{
+  width:42px !important;
+  height:42px !important;
+  font-size:20px !important;
+}
+#page-dashboard .bba-status-card strong{
+  font-size:16px !important;
+}
+#page-dashboard .bba-dashboard-grid-v3{
+  width:100% !important;
+  max-width:none !important;
+  grid-template-columns:minmax(760px,1.08fr) minmax(640px,.92fr) !important;
+  gap:10px !important;
+  align-items:stretch !important;
+}
+#page-dashboard .bba-left-stack,
+#page-dashboard .bba-right-stack{
+  height:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
+  gap:10px !important;
+}
+#page-dashboard .bba-current-panel,
+#page-dashboard .bba-unlock-panel,
+#page-dashboard .bba-beast-board,
+#page-dashboard .bba-entry-composer,
+#page-dashboard .bba-winners-panel,
+#page-dashboard .bba-jackpot-panel{
+  border-radius:8px !important;
+}
+/* Fill the left-column blank area above Entry Composer */
+#page-dashboard .bba-bottom-left-grid{
+  flex:1 1 auto !important;
+  display:grid !important;
+  grid-template-columns:minmax(260px,.72fr) minmax(420px,1.28fr) !important;
+  gap:10px !important;
+  min-height:0 !important;
+}
+#page-dashboard .bba-bottom-left-grid > .bba-panel{
+  height:100% !important;
+  min-height:0 !important;
+}
+#page-dashboard .bba-entry-wrap{
+  height:calc(100% - 47px) !important;
+  min-height:160px !important;
+}
+#page-dashboard .bba-entry-carousel-empty{
+  height:100% !important;
+}
+/* MODE UNLOCK STATUS: force picture-like vertical list, never side-by-side */
+#page-dashboard .bba-mode-unlock-list{
+  display:flex !important;
+  flex-direction:column !important;
+  flex-wrap:nowrap !important;
+  gap:7px !important;
+  padding:8px 12px 12px !important;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab{
+  display:grid !important;
+  width:100% !important;
+  min-width:0 !important;
+  min-height:58px !important;
+  grid-template-columns:minmax(0,1fr) minmax(240px,auto) !important;
+  gap:10px !important;
+  align-items:center !important;
+  padding:9px 11px !important;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab-side{
+  display:grid !important;
+  grid-template-columns:auto minmax(78px,auto) minmax(96px,124px) 38px !important;
+  gap:7px !important;
+  align-items:center !important;
+  justify-content:end !important;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab-name{
+  font-size:16px !important;
+  line-height:1.15 !important;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab-meta{
+  font-size:10.5px !important;
+  line-height:1.25 !important;
+  gap:6px !important;
+}
+#page-dashboard .mode-tab-status{
+  white-space:nowrap !important;
+}
+#page-dashboard .mode-tab-progress{
+  width:100% !important;
+  min-width:96px !important;
+}
+/* Keep LIVE BEAST BOARD compact so composer starts higher */
+#page-dashboard .bba-animal-grid-v3{
+  grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  gap:7px !important;
+  padding:4px 12px 0 !important;
+}
+#page-dashboard .bba-animal-grid-v3 .animal-card{
+  min-height:82px !important;
+  padding:7px !important;
+}
+#page-dashboard .bba-animal-grid-v3 .animal-emoji{
+  font-size:21px !important;
+}
+#page-dashboard .bba-animal-grid-v3 .animal-name{
+  font-size:12px !important;
+  margin-top:4px !important;
+}
+#page-dashboard .bba-live-table-details{
+  margin-top:6px !important;
+}
+/* ENTRY COMPOSER: full row, roomy slip/control, vertical mode list */
+#page-dashboard .bba-wide-composer-row{
+  width:100% !important;
+  margin-top:0 !important;
+}
+#page-dashboard .bba-entry-composer-wide{
+  width:100% !important;
+  min-height:300px !important;
+}
+#page-dashboard .bba-entry-composer-wide .bba-composer-grid{
+  display:grid !important;
+  grid-template-columns:minmax(260px,300px) minmax(620px) minmax(360px,420px) !important;
+  gap:14px !important;
+  padding:8px 14px 14px !important;
+  align-items:stretch !important;
+}
+#page-dashboard .bba-entry-composer-wide .bet-types,
+#page-dashboard .bba-entry-composer-wide .bba-bet-types{
+  display:flex !important;
+  flex-direction:column !important;
+  flex-wrap:nowrap !important;
+  gap:7px !important;
+  grid-template-columns:none !important;
+}
+#page-dashboard .bba-entry-composer-wide .bba-bet-types .bet-type{
+  width:100% !important;
+  min-height:54px !important;
+  padding:8px 9px !important;
+  display:block !important;
+}
+#page-dashboard .bba-entry-composer-wide .bet-type .bet-meta{
+  align-items:center !important;
+}
+#page-dashboard .bba-entry-composer-wide .bet-type .name{
+  font-size:14px !important;
+  line-height:1.1 !important;
+}
+#page-dashboard .bba-entry-composer-wide .bet-type .desc{
+  margin-top:3px !important;
+  font-size:11px !important;
+  line-height:1.25 !important;
+}
+#page-dashboard .bba-entry-composer-wide .bet-type .mult{
+  font-size:15px !important;
+  white-space:nowrap !important;
+}
+#page-dashboard .bba-entry-composer-wide .selection-summary{
+  min-height:206px !important;
+}
+#page-dashboard .bba-entry-composer-wide .selection-slot-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+}
+#page-dashboard .bba-entry-composer-wide .selection-summary-stats{
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+}
+#page-dashboard .bba-entry-composer-wide .bba-combo-preview{
+  margin-top:10px !important;
+}
+
+/* === Dashboard selection-slip relocation override === */
+#page-dashboard .bba-slip-panel{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:10px !important;
+}
+#page-dashboard .bba-slip-panel .selection-pills{
+  margin-top:0 !important;
+  flex:1 1 auto !important;
+}
+#page-dashboard .bba-slip-panel .selection-summary{
+  min-height:0 !important;
+  height:100% !important;
+}
+#page-dashboard .bba-slip-action-row{
+  display:grid !important;
+  grid-template-columns:1fr 1.25fr !important;
+  gap:8px !important;
+}
+#page-dashboard .bba-slip-action-row button{
+  min-height:42px !important;
+}
+#page-dashboard .bba-current-entries-wide{
+  width:100% !important;
+  min-height:250px !important;
+}
+#page-dashboard .bba-entry-wrap-wide{
+  height:230px !important;
+}
+#page-dashboard .bba-current-entries-wide .entry-carousel-card{
+  flex-basis:360px !important;
+  min-width:360px !important;
+  max-width:360px !important;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab{
+  cursor:pointer !important;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab.active{
+  border-color:rgba(247,201,72,.54) !important;
+  background:linear-gradient(180deg,rgba(247,201,72,.10),rgba(255,255,255,.035)) !important;
+}
+@media (max-width:1280px){
+  #page-dashboard .bba-bottom-left-grid{grid-template-columns:1fr !important}
+}
+/* Results under composer: compact winners, only 3 visible */
+#page-dashboard .bba-wide-results-grid{
+  display:grid !important;
+  grid-template-columns:minmax(0,1.05fr) minmax(420px,.95fr) !important;
+  gap:10px !important;
+  margin-top:0 !important;
+}
+#page-dashboard .bba-wide-results-grid .bba-recent-list{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:8px !important;
+  padding:8px 10px 10px !important;
+  max-height:132px !important;
+  overflow:hidden !important;
+}
+#page-dashboard .bba-wide-results-grid .bba-recent-list .result-card:nth-child(n+4){
+  display:none !important;
+}
+#page-dashboard .bba-wide-results-grid .bba-recent-list .result-card{
+  min-height:72px !important;
+  padding:8px !important;
+}
+#page-dashboard .bba-wide-results-grid .bba-recent-list .result-card .podium,
+#page-dashboard .bba-wide-results-grid .bba-recent-list .result-card .env{
+  display:none !important;
+}
+#page-dashboard .bba-wide-results-grid .bba-jackpot-body{
+  min-height:92px !important;
+  padding:10px 14px !important;
+}
+#page-dashboard .bba-wide-results-grid .bba-chest{
+  width:76px !important;
+  height:60px !important;
+  font-size:32px !important;
+}
+#page-dashboard .bba-wide-results-grid .bba-jackpot-body strong{
+  font-size:28px !important;
+}
+@media(max-width:1420px){
+  #page-dashboard .bba-dashboard-grid-v3{
+    grid-template-columns:1fr !important;
+  }
+  #page-dashboard .bba-entry-composer-wide .bba-composer-grid,
+  #page-dashboard .bba-wide-results-grid{
+    grid-template-columns:1fr !important;
+  }
+  #page-dashboard .bba-entry-composer-wide .selection-slot-grid,
+  #page-dashboard .bba-entry-composer-wide .selection-summary-stats{
+    grid-template-columns:1fr !important;
+  }
+}
+@media(max-width:900px){
+  .app{padding-left:6px !important;padding-right:6px !important;}
+  #page-dashboard .bba-status-strip,
+  #page-dashboard .bba-bottom-left-grid{
+    grid-template-columns:1fr !important;
+  }
+  #page-dashboard .bba-mode-unlock-list .mode-tab{
+    grid-template-columns:1fr !important;
+  }
+  #page-dashboard .bba-mode-unlock-list .mode-tab-side{
+    grid-template-columns:auto 1fr auto !important;
+  }
+  #page-dashboard .mode-tab-progress{
+    grid-column:1 / -1 !important;
+  }
+  #page-dashboard .bba-animal-grid-v3{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+  #page-dashboard .bba-wide-results-grid .bba-recent-list{
+    grid-template-columns:1fr !important;
+    max-height:none !important;
+  }
+}
+
+
+
+/* === Selection Slip only compact alignment patch === */
+#page-dashboard .bba-slip-panel{
+  height:260px !important;
+  min-height:260px !important;
+  max-height:330px !important;
+  position:relative !important;
+  overflow:hidden !important;
+}
+#page-dashboard .bba-slip-panel .selection-pills{
+  height:calc(100% - 47px) !important;
+  margin-top:0 !important;
+  padding:10px 12px 12px !important;
+  overflow:hidden !important;
+}
+#page-dashboard .bba-slip-panel .selection-summary{
+  height:100% !important;
+  max-height:100% !important;
+  min-height:0 !important;
+  padding:10px 12px !important;
+  overflow:hidden !important;
+}
+#page-dashboard .bba-slip-panel .selection-summary-top{
+  min-height:36px !important;
+  padding-right:184px !important;
+  align-items:center !important;
+}
+#page-dashboard .bba-slip-panel .selection-summary-title{
+  margin-top:0 !important;
+  font-size:17px !important;
+  line-height:1.2 !important;
+}
+#page-dashboard .bba-slip-panel .selection-summary-sub,
+#page-dashboard .bba-slip-panel .selection-summary-badge,
+#page-dashboard .bba-slip-panel .customer-pick-strip,
+#page-dashboard .bba-slip-panel .customer-risk-row,
+#page-dashboard #slipGuide{
+  display:none !important;
+}
+#page-dashboard .bba-slip-panel .selection-slot-grid,
+#page-dashboard .bba-slip-panel .selection-slot-grid.cols-2,
+#page-dashboard .bba-slip-panel .selection-slot-grid.cols-3{
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:8px !important;
+  margin-top:8px !important;
+}
+#page-dashboard .bba-slip-panel .selection-slot-grid.cols-1{
+  grid-template-columns:1fr !important;
+}
+#page-dashboard .bba-slip-panel .selection-slot{
+  min-height:72px !important;
+  padding:9px !important;
+}
+#page-dashboard .bba-slip-panel .selection-slot-main{
+  gap:8px !important;
+  margin-top:6px !important;
+}
+#page-dashboard .bba-slip-panel .selection-slot-emoji{
+  font-size:22px !important;
+}
+#page-dashboard .bba-slip-panel .selection-slot-name{
+  font-size:14px !important;
+  line-height:1.15 !important;
+}
+#page-dashboard .bba-slip-panel .selection-slot-role{
+  font-size:10px !important;
+  line-height:1.15 !important;
+}
+#page-dashboard .bba-slip-panel .selection-slot-status{
+  font-size:10px !important;
+}
+#page-dashboard .bba-slip-panel .selection-slot-empty{
+  font-size:12px !important;
+  line-height:1.35 !important;
+}
+#page-dashboard .bba-slip-panel .selection-summary-stats{
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:8px !important;
+  margin-top:8px !important;
+}
+#page-dashboard .bba-slip-panel .selection-summary-stat{
+  padding:8px !important;
+  min-height:54px !important;
+}
+#page-dashboard .bba-slip-panel .selection-summary-stat .k{
+  font-size:10px !important;
+}
+#page-dashboard .bba-slip-panel .selection-summary-stat .v{
+  margin-top:15px !important;
+  font-size:16px !important;
+  line-height:1.25 !important;
+}
+#page-dashboard .bba-slip-panel .bba-slip-action-row{
+  position:absolute !important;
+  top:58px !important;
+  right:12px !important;
+  z-index:8 !important;
+  display:flex !important;
+  grid-template-columns:none !important;
+  width:auto !important;
+  gap:6px !important;
+  margin:0 !important;
+}
+#page-dashboard .bba-slip-panel .bba-slip-action-row button{
+  min-height:32px !important;
+  height:32px !important;
+  padding:0 10px !important;
+  border-radius:10px !important;
+  font-size:11px !important;
+  white-space:nowrap !important;
+}
+#page-dashboard .bba-slip-panel .bba-slip-action-row .dark{
+  border-color:rgba(255,255,255,.12) !important;
+  background:rgba(255,255,255,.06) !important;
+}
+#page-dashboard .bba-slip-panel .bba-slip-action-row .primary{
+  background:linear-gradient(135deg,var(--gold),var(--gold2)) !important;
+}
+@media(max-width:900px){
+  #page-dashboard .bba-slip-panel{
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+  }
+  #page-dashboard .bba-slip-panel .selection-pills{
+    height:auto !important;
+  }
+  #page-dashboard .bba-slip-panel .bba-slip-action-row{
+    position:relative !important;
+    top:auto !important;
+    right:auto !important;
+    padding:0 12px 12px !important;
+  }
+  #page-dashboard .bba-slip-panel .selection-summary-top{
+    padding-right:0 !important;
+  }
+  #page-dashboard .bba-slip-panel .selection-slot-grid,
+  #page-dashboard .bba-slip-panel .selection-slot-grid.cols-2,
+  #page-dashboard .bba-slip-panel .selection-slot-grid.cols-3{
+    grid-template-columns:1fr !important;
+  }
+}
+
+
+
+/* === Selection Slip refinement v2: no inner frame, visible compact stats === */
+#page-dashboard .bba-slip-panel{height:260px !important;min-height:260px !important;max-height:100% !important;}
+#page-dashboard .bba-slip-panel .selection-pills{height:calc(100% - 47px) !important;padding:10px 12px 10px !important;}
+#page-dashboard .bba-slip-panel .customer-selection-summary{background:transparent !important;border:0 !important;box-shadow:none !important;padding:6px 12px 8px !important;}
+#page-dashboard .bba-slip-panel .customer-selection-summary:after{display:none !important;}
+#page-dashboard .bba-slip-panel .selection-summary-top{min-height:30px !important;padding-right:188px !important;}
+#page-dashboard .bba-slip-panel .selection-summary-title{font-size:17px !important;line-height:1.15 !important;}
+#page-dashboard .bba-slip-panel .selection-slot-grid,#page-dashboard .bba-slip-panel .selection-slot-grid.cols-2,#page-dashboard .bba-slip-panel .selection-slot-grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:8px !important;margin-top:8px !important;}
+#page-dashboard .bba-slip-panel .selection-slot{min-height:70px !important;padding:8px 9px !important;}
+#page-dashboard .bba-slip-panel .selection-summary-stats{display:grid !important;grid-template-columns:repeat(4,minmax(0,1fr)) !important;gap:8px !important;margin-top:8px !important;}
+#page-dashboard .bba-slip-panel .selection-summary-stat{min-height:48px !important;padding:7px 8px !important;border-radius:5px !important;background:rgba(4,12,22,.42) !important;border:1px solid rgba(255,255,255,.055) !important;}
+#page-dashboard .bba-slip-panel .selection-summary-stat .k{font-size:9px !important;line-height:1.05 !important;white-space:nowrap !important;letter-spacing:.08em !important;}
+#page-dashboard .bba-slip-panel .selection-summary-stat .v{margin-top:15px !important;font-size:16px !important;line-height:1.1 !important;white-space:nowrap !important;overflow:hidden !important;text-overflow:ellipsis !important;}
+#page-dashboard .bba-slip-panel .bba-slip-action-row{top:66px !important;right:23px !important;z-index:12 !important;}
+#page-dashboard .bba-slip-panel .bba-slip-action-row button{height:34px !important;min-height:30px !important;padding:0 10px !important;font-size:14px !important;box-shadow:none !important;}
+@media(max-width:1100px){#page-dashboard .bba-slip-panel .selection-summary-stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}}
+@media(max-width:900px){#page-dashboard .bba-slip-panel{height:auto !important;min-height:0 !important;max-height:none !important;}#page-dashboard .bba-slip-panel .selection-summary-top{padding-right:0 !important;}#page-dashboard .bba-slip-panel .selection-summary-stats{grid-template-columns:1fr 1fr !important;}#page-dashboard .bba-slip-panel .bba-slip-action-row{top:auto !important;right:auto !important;}}
+
+
+
+/* wallet ticket exchange panel */
+.wallet-exchange-card{position:relative;overflow:hidden}
+.wallet-exchange-card:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 0%,rgba(247,201,72,.08),transparent 36%),radial-gradient(circle at 0% 100%,rgba(107,196,255,.08),transparent 34%);pointer-events:none}
+.wallet-exchange-card>*{position:relative;z-index:1}
+.wallet-exchange-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:12px;align-items:end}
+.wallet-rate-box{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.wallet-rate-item{padding:10px;border-radius:8px;background:rgba(4,12,22,.45);border:1px solid rgba(255,255,255,.07)}
+.wallet-rate-item span{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-weight:900}
+.wallet-rate-item strong{display:block;margin-top:6px;font-family:Orbitron,sans-serif;font-size:15px;color:#f4f8ff}
+.wallet-rate-item.highlight{border-color:rgba(247,201,72,.24);background:rgba(247,201,72,.07)}
+.wallet-rate-item.highlight strong{color:var(--gold)}
+.wallet-exchange-actions{display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.wallet-exchange-actions button{min-height:42px;padding:8px 14px!important}
+.wallet-exchange-note{margin-top:10px;font-size:12px;line-height:1.6;color:var(--muted)}
+.wallet-exchange-note b{color:var(--cyan2)}
+@media (max-width:820px){.wallet-exchange-grid,.wallet-rate-box{grid-template-columns:1fr}.wallet-exchange-actions{justify-content:flex-start}}
+
+
+/* === Dashboard patch: remove MY CURRENT ENTRIES and pin Live Odds board === */
+#page-dashboard .bba-live-table-source{display:none!important}
+#page-dashboard .bba-clickable-position{
+  cursor:pointer!important;
+  border-color:rgba(46,219,255,.20)!important;
+  background:linear-gradient(90deg,rgba(46,219,255,.07),rgba(255,255,255,.025))!important;
+}
+#page-dashboard .bba-clickable-position:hover{
+  border-color:rgba(46,219,255,.42)!important;
+  box-shadow:0 0 0 1px rgba(46,219,255,.10) inset;
+}
+#page-dashboard .bba-clickable-position strong:after{
+  content:'  ›';
+  color:#8fdcff;
+  font-family:Rajdhani,sans-serif;
+}
+#page-dashboard .bba-live-odds-row{
+  width:100%!important;
+  margin-top:0!important;
+}
+#page-dashboard .bba-live-odds-board-panel{
+  min-height:250px!important;
+}
+#page-dashboard .bba-live-odds-split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  padding:8px 14px 14px;
+}
+#page-dashboard .bba-live-odds-col{
+  display:grid;
+  gap:7px;
+}
+#page-dashboard .bba-live-odds-row-card{
+  display:grid;
+  grid-template-columns:42px minmax(170px,1fr) 82px 86px 92px 70px;
+  gap:8px;
+  align-items:center;
+  min-height:48px;
+  padding:8px 10px;
+  border-radius:8px;
+  background:rgba(255,255,255,.026);
+  border:1px solid rgba(255,255,255,.075);
+}
+#page-dashboard .bba-live-odds-row-card:hover{
+  border-color:rgba(46,219,255,.24);
+  background:rgba(46,219,255,.045);
+}
+#page-dashboard .bba-live-odds-no{
+  width:30px;height:30px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:Orbitron,sans-serif;font-size:13px;font-weight:900;
+  color:#07111d;background:linear-gradient(135deg,#f7c948,#ff9f1a);
+}
+#page-dashboard .bba-live-odds-entity{
+  min-width:0;
+}
+#page-dashboard .bba-live-odds-name{
+  font-weight:900;
+  font-size:13px;
+  color:#f3f7ff;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#page-dashboard .bba-live-odds-meta{
+  margin-top:3px;
+  font-size:10px;
+  color:#8ea1bd;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#page-dashboard .bba-live-odds-stat span{
+  display:block;
+  font-size:9px;
+  color:#7f92ad;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+#page-dashboard .bba-live-odds-stat strong{
+  display:block;
+  margin-top:3px;
+  font-family:Rajdhani,sans-serif;
+  font-size:15px;
+  color:#eaf3ff;
+  white-space:nowrap;
+}
+#page-dashboard .bba-live-odds-stat.odds strong{color:#69ffae}
+#page-dashboard .bba-live-odds-stat.base strong{color:#ff6f91}
+#page-dashboard .bba-live-odds-strength{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+#page-dashboard .bba-live-odds-strength i{
+  flex:1;
+  height:6px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  overflow:hidden;
+}
+#page-dashboard .bba-live-odds-strength i b{
+  display:block;
+  height:100%;
+  border-radius:inherit;
+  background:linear-gradient(90deg,#00a8ff,#5dffbc);
+}
+#page-dashboard .bba-live-odds-strength em{
+  font-style:normal;
+  font-family:Rajdhani,sans-serif;
+  font-size:13px;
+  color:#b8c6d9;
+  min-width:28px;
+  text-align:right;
+}
+#page-dashboard .bba-live-odds-pick{
+  height:30px;
+  padding:0 10px;
+  border-radius:999px;
+  border:1px solid rgba(247,201,72,.34);
+  background:rgba(247,201,72,.08);
+  color:#f7c948;
+  font-size:11px;
+  font-weight:900;
+  cursor:pointer;
+}
+#page-dashboard .bba-dashboard-footer-results{
+}
+@media(max-width:1420px){
+  #page-dashboard .bba-live-odds-split{grid-template-columns:1fr}
+}
+@media(max-width:900px){
+  #page-dashboard .bba-live-odds-row-card{
+    grid-template-columns:34px minmax(0,1fr) 72px 72px;
+  }
+  #page-dashboard .bba-live-odds-row-card .stake,
+  #page-dashboard .bba-live-odds-row-card .base{
+    display:none;
+  }
+}
+
+
+/* === Mode-aware Live Market Board === */
+#page-dashboard .bba-market-summary{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:8px;
+  padding:0 14px 8px;
+}
+#page-dashboard .bba-market-summary:empty{display:none}
+#page-dashboard .bba-market-metric{
+  min-height:54px;
+  padding:8px 10px;
+  border-radius:8px;
+  background:rgba(255,255,255,.028);
+  border:1px solid rgba(255,255,255,.07);
+}
+#page-dashboard .bba-market-metric span{
+  display:block;
+  font-size:10px;
+  color:#7f92ad;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+#page-dashboard .bba-market-metric strong{
+  display:block;
+  margin-top:5px;
+  font-family:Rajdhani,sans-serif;
+  font-size:18px;
+  color:#f3f7ff;
+  white-space:nowrap;
+}
+#page-dashboard .bba-market-toolbar{
+  grid-column:1/-1;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  align-items:center;
+  padding:2px 0 4px;
+}
+#page-dashboard .bba-market-tab{
+  height:30px;
+  padding:0 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.09);
+  background:rgba(255,255,255,.04);
+  color:#b8c6d9;
+  font-size:11px;
+  font-weight:900;
+  cursor:pointer;
+}
+#page-dashboard .bba-market-tab.active{
+  border-color:rgba(247,201,72,.35);
+  background:rgba(247,201,72,.10);
+  color:#f7c948;
+}
+#page-dashboard .bba-market-search{
+  margin-left:auto;
+  width:min(280px,100%);
+  height:30px;
+  padding:0 10px;
+  border-radius:999px;
+  font-size:12px;
+}
+#page-dashboard .bba-live-odds-split.combo-mode{
+  grid-template-columns:1fr 1fr;
+}
+#page-dashboard .bba-combo-board{
+  display:grid;
+  gap:7px;
+}
+#page-dashboard .bba-combo-row-card{
+  display:grid;
+  grid-template-columns:34px minmax(160px,1fr) 68px 72px 76px 82px;
+  gap:8px;
+  align-items:center;
+  min-height:52px;
+  padding:8px 10px;
+  border-radius:8px;
+  background:rgba(255,255,255,.026);
+  border:1px solid rgba(255,255,255,.075);
+  cursor:pointer;
+}
+#page-dashboard .bba-combo-row-card:hover{
+  border-color:rgba(46,219,255,.24);
+  background:rgba(46,219,255,.045);
+}
+#page-dashboard .bba-combo-no{
+  width:30px;height:30px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:Orbitron,sans-serif;font-size:12px;font-weight:900;
+  color:#07111d;background:linear-gradient(135deg,#f7c948,#ff9f1a);
+}
+#page-dashboard .bba-combo-entity{min-width:0}
+#page-dashboard .bba-combo-name{
+  font-size:13px;
+  font-weight:900;
+  color:#f3f7ff;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#page-dashboard .bba-combo-meta{
+  margin-top:3px;
+  font-size:10px;
+  color:#8ea1bd;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#page-dashboard .bba-combo-stat span{
+  display:block;
+  font-size:9px;
+  color:#7f92ad;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+#page-dashboard .bba-combo-stat strong{
+  display:block;
+  margin-top:3px;
+  font-family:Rajdhani,sans-serif;
+  font-size:15px;
+  color:#eaf3ff;
+  white-space:nowrap;
+}
+#page-dashboard .bba-combo-stat.odds strong{color:#69ffae}
+#page-dashboard .bba-combo-state{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:28px;
+  padding:0 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+  color:#b8c6d9;
+  font-size:10px;
+  font-weight:900;
+  white-space:nowrap;
+}
+#page-dashboard .bba-combo-state.crowded{color:#ffcf6a;border-color:rgba(247,201,72,.24);background:rgba(247,201,72,.08)}
+#page-dashboard .bba-combo-state.value{color:#69ffae;border-color:rgba(105,255,174,.22);background:rgba(105,255,174,.07)}
+#page-dashboard .bba-combo-state.risk{color:#ff7e9d;border-color:rgba(255,126,157,.22);background:rgba(255,126,157,.07)}
+#page-dashboard .bba-market-empty{
+  padding:16px;
+  border:1px dashed rgba(255,255,255,.12);
+  border-radius:8px;
+  color:#8ea1bd;
+  font-size:13px;
+  line-height:1.6;
+}
+@media(max-width:1420px){
+  #page-dashboard .bba-live-odds-split.combo-mode{grid-template-columns:1fr}
+  #page-dashboard .bba-market-summary{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #page-dashboard .bba-combo-row-card{grid-template-columns:34px minmax(0,1fr) 74px 74px 74px}
+  #page-dashboard .bba-combo-row-card .case{display:none}
+}
+@media(max-width:900px){
+  #page-dashboard .bba-market-summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #page-dashboard .bba-market-search{margin-left:0;width:100%}
+  #page-dashboard .bba-combo-row-card{grid-template-columns:34px minmax(0,1fr) 70px 78px}
+  #page-dashboard .bba-combo-row-card .share,
+  #page-dashboard .bba-combo-row-card .stake{display:none}
+}
+
+/* === Market board compact patch: 6 metrics + 5:5 combo layout + operational cleanup === */
+#page-dashboard .bba-secondary-grid{grid-template-columns:1fr 2fr!important}
+#page-dashboard .bba-secondary-grid-lean{align-items:stretch}
+#page-dashboard .bba-env-mini,
+#page-dashboard .bba-monitor-mini{min-width:0}
+#page-dashboard .bba-market-summary{grid-template-columns:repeat(6,minmax(0,1fr))}
+#page-dashboard .bba-live-odds-split.combo-mode{grid-template-columns:1fr 1fr}
+#page-dashboard .bba-combo-board{align-content:start}
+#page-dashboard .bba-monitor-grid-mini,
+#page-dashboard .bba-monitor-grid-wide{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+#page-dashboard .bba-monitor-grid-wide>div{min-height:112px}
+#page-dashboard .bba-hidden-compat{display:none!important}
+@media(max-width:1420px){#page-dashboard .bba-live-odds-split.combo-mode{grid-template-columns:1fr}#page-dashboard .bba-secondary-grid{grid-template-columns:1fr!important}#page-dashboard .bba-monitor-grid-mini,#page-dashboard .bba-monitor-grid-wide{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:1100px){#page-dashboard .bba-market-summary{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){#page-dashboard .bba-market-summary{grid-template-columns:repeat(2,minmax(0,1fr))}#page-dashboard .bba-monitor-grid-mini,#page-dashboard .bba-monitor-grid-wide{grid-template-columns:1fr!important}}
+
+
+
+/* === Visual Upgrade V6: screenshot-grade dashboard iconography === */
+:root{
+  --bba-cyan:#20d6ff;--bba-green:#79ff76;--bba-gold:#f7c948;--bba-gold2:#ff9f1a;
+  --bba-purple:#b86bff;--bba-pink:#ff4fc3;--bba-orange:#ff7a1a;
+}
+#page-dashboard .bba-panel,#page-dashboard .bba-status-card{
+  background:
+    linear-gradient(180deg,rgba(10,22,38,.94),rgba(3,9,18,.99)),
+    radial-gradient(circle at 50% 0%,rgba(32,214,255,.08),transparent 44%)!important;
+  border-color:rgba(108,180,255,.24)!important;
+  box-shadow:0 16px 40px rgba(0,0,0,.38),inset 0 0 0 1px rgba(255,255,255,.025)!important;
+}
+#page-dashboard .bba-panel:after,#page-dashboard .bba-status-card:before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.055),transparent 48%,transparent),
+    repeating-linear-gradient(180deg,rgba(255,255,255,.024) 0 1px,transparent 1px 5px);
+  opacity:.32;mix-blend-mode:screen;
+}
+#page-dashboard .bba-eyebrow,#page-dashboard .bba-status-card span{color:#b4c5df!important;letter-spacing:1.65px!important}
+#page-dashboard .bba-panel-head h2,#page-dashboard .bba-panel-head h3,#page-dashboard .bba-mini-head{color:#f5f8ff!important;text-shadow:0 0 18px rgba(107,196,255,.10)}
+#page-dashboard .bba-status-card strong{color:#f5f8ff!important;text-shadow:0 0 18px rgba(107,196,255,.12)}
+#page-dashboard .bba-status-card.open strong em{color:var(--bba-green)!important;text-shadow:0 0 16px rgba(121,255,118,.38)}
+#page-dashboard .bba-status-card.pool strong,#page-dashboard .bba-status-card.pool b{color:var(--bba-purple)!important;text-shadow:0 0 18px rgba(184,107,255,.38)}
+#page-dashboard .bba-status-card.marketing strong,#page-dashboard .bba-status-card.marketing em{color:var(--bba-gold)!important;text-shadow:0 0 18px rgba(247,201,72,.30)}
+#page-dashboard .bba-status-card.unlock strong em{color:var(--bba-cyan)!important;text-shadow:0 0 16px rgba(32,214,255,.38)}
+#page-dashboard .bba-status-icon.bba-status-svg{
+  position:relative;flex:0 0 50px;width:50px!important;height:50px!important;border-radius:15px!important;
+  background:linear-gradient(145deg,rgba(6,18,32,.98),rgba(9,28,49,.72))!important;
+  box-shadow:0 0 24px rgba(32,214,255,.14),inset 0 0 16px rgba(255,255,255,.025)!important;
+  clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%);
+}
+#page-dashboard .bba-status-icon.bba-status-svg:before{content:"";position:absolute;inset:3px;clip-path:inherit;border:1px solid currentColor;opacity:.58;filter:drop-shadow(0 0 8px currentColor)}
+#page-dashboard .bba-status-svg svg{width:34px;height:34px;display:block;position:relative;z-index:1;overflow:visible}
+#page-dashboard .bba-status-svg .s-main{fill:currentColor;opacity:.30;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+#page-dashboard .bba-status-svg .s-line{fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px currentColor)}
+#page-dashboard .bba-status-svg .s-line.thin{stroke-width:2}.bba-status-svg .s-dot{fill:currentColor;filter:drop-shadow(0 0 7px currentColor)}
+#page-dashboard .bba-status-svg.phase{color:#20d6ff}#page-dashboard .bba-status-svg.open{color:#79ff76}#page-dashboard .bba-status-svg.pool{color:#b86bff}#page-dashboard .bba-status-svg.marketing{color:#f7c948}#page-dashboard .bba-status-svg.unlock{color:#22e7ff}
+
+#page-dashboard .mode-tab.mode-alpha{--mode-rgb:247,201,72;--mode-color:#f7c948;--mode-hot:#ff9f1a}
+#page-dashboard .mode-tab.mode-twin{--mode-rgb:32,214,255;--mode-color:#20d6ff;--mode-hot:#55eeff}
+#page-dashboard .mode-tab.mode-chain{--mode-rgb:154,91,255;--mode-color:#9a5bff;--mode-hot:#c76cff}
+#page-dashboard .mode-tab.mode-podium{--mode-rgb:255,79,195;--mode-color:#ff4fc3;--mode-hot:#ff7be2}
+#page-dashboard .mode-tab.mode-trinity{--mode-rgb:255,122,26;--mode-color:#ff7a1a;--mode-hot:#ffb15f}
+#page-dashboard .bba-mode-unlock-list .mode-tab{
+  position:relative!important;grid-template-columns:64px minmax(0,1fr) minmax(250px,auto)!important;
+  min-height:66px!important;padding:8px 10px!important;border-radius:7px!important;
+  background:linear-gradient(90deg,rgba(255,255,255,.026),rgba(255,255,255,.018))!important;
+  border-color:rgba(255,255,255,.08)!important;overflow:hidden!important;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab:before{
+  content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(var(--mode-rgb),.14),transparent 34%,rgba(255,255,255,.015));
+  opacity:.62;pointer-events:none;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab:hover{
+  transform:translateY(-1px)!important;border-color:rgba(var(--mode-rgb),.46)!important;
+  box-shadow:0 0 0 1px rgba(var(--mode-rgb),.08) inset,0 12px 28px rgba(0,0,0,.22)!important;
+}
+#page-dashboard .bba-mode-unlock-list .mode-tab.active{
+  background:linear-gradient(90deg,rgba(var(--mode-rgb),.18),rgba(255,255,255,.025))!important;
+  border-color:rgba(var(--mode-rgb),.74)!important;
+  box-shadow:0 0 0 1px rgba(var(--mode-rgb),.18) inset,0 0 30px rgba(var(--mode-rgb),.13)!important;
+}
+#page-dashboard .bba-mode-icon{
+  position:relative;z-index:1;width:58px;height:58px;display:flex;align-items:center;justify-content:center;
+  filter:drop-shadow(0 0 10px rgba(var(--mode-rgb),.42));
+}
+.mode-symbol-svg{width:58px;height:58px;display:block;overflow:visible}
+.mode-symbol-svg .m-hex{fill:rgba(var(--mode-rgb),.07);stroke:var(--mode-color);stroke-width:2;filter:drop-shadow(0 0 7px rgba(var(--mode-rgb),.55))}
+.mode-symbol-svg .m-glow{fill:rgba(var(--mode-rgb),.05);stroke:rgba(var(--mode-rgb),.26);stroke-width:1.2}
+.mode-symbol-svg .m-fill{fill:var(--mode-color);filter:drop-shadow(0 0 5px rgba(var(--mode-rgb),.58))}
+.mode-symbol-svg .m-line{fill:none;stroke:var(--mode-color);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px rgba(var(--mode-rgb),.58))}
+.mode-symbol-svg .m-line.thick{stroke-width:4.6}.mode-symbol-svg .m-line.thin{stroke-width:2.2}.mode-symbol-svg .m-node{fill:var(--mode-color);filter:drop-shadow(0 0 5px rgba(var(--mode-rgb),.60))}
+#page-dashboard .mode-tab-main,#page-dashboard .mode-tab-side{position:relative;z-index:1}
+#page-dashboard .bba-mode-unlock-list .mode-tab-name{font-family:Rajdhani,'Pretendard',sans-serif!important;font-size:19px!important;font-weight:900!important;letter-spacing:.01em!important;color:#f8fbff!important}
+#page-dashboard .bba-mode-unlock-list .mode-tab-meta{color:#9eadc4!important;font-size:11px!important;gap:8px!important}
+#page-dashboard .bba-mode-unlock-list .mode-tab-side{grid-template-columns:auto minmax(90px,auto) minmax(94px,122px) 42px 28px!important;gap:8px!important}
+#page-dashboard .mode-tab-status{border-radius:5px!important;height:30px;display:inline-flex;align-items:center;justify-content:center;min-width:82px;font-size:10px!important;letter-spacing:.03em}
+#page-dashboard .mode-tab-status.open{color:#a7ff96!important;background:rgba(79,255,117,.10)!important;border-color:rgba(79,255,117,.32)!important}
+#page-dashboard .mode-tab-status.building{color:#8beaff!important;background:rgba(32,214,255,.10)!important;border-color:rgba(32,214,255,.32)!important}
+#page-dashboard .mode-tab-status.closed{color:#b2bfce!important;background:rgba(255,255,255,.055)!important;border-color:rgba(255,255,255,.12)!important}
+#page-dashboard .bba-mode-unlock-list .mode-tab-side strong{color:#f5f8ff!important;font-size:18px!important}
+#page-dashboard .bba-mode-unlock-list .mode-tab-side em{font-family:Orbitron,sans-serif;color:var(--mode-color)!important;text-shadow:0 0 12px rgba(var(--mode-rgb),.34)}
+#page-dashboard .mode-tab-progress{height:8px!important;background:rgba(132,152,181,.15)!important;border-color:rgba(255,255,255,.08)!important}
+#page-dashboard .mode-tab-progress i{background:linear-gradient(90deg,var(--mode-color),var(--mode-hot))!important;box-shadow:0 0 12px rgba(var(--mode-rgb),.38)}
+#page-dashboard .mode-side-mark{width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;color:var(--mode-color);filter:drop-shadow(0 0 6px rgba(var(--mode-rgb),.48))}
+#page-dashboard .mode-side-mark svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+#page-dashboard .bba-symbol-alpha{--mode-rgb:247,201,72;--mode-color:#f7c948;--mode-hot:#ff9f1a}
+#page-dashboard .bba-symbol-twin{--mode-rgb:32,214,255;--mode-color:#20d6ff;--mode-hot:#55eeff}
+#page-dashboard .bba-symbol-chain{--mode-rgb:154,91,255;--mode-color:#9a5bff;--mode-hot:#c76cff}
+#page-dashboard .bba-symbol-podium{--mode-rgb:255,79,195;--mode-color:#ff4fc3;--mode-hot:#ff7be2}
+#page-dashboard .bba-symbol-trinity{--mode-rgb:255,122,26;--mode-color:#ff7a1a;--mode-hot:#ffb15f}
+#page-dashboard .bba-mode-hero-emblem,#page-dashboard .bba-mode-spotlight-symbol{
+  position:relative;overflow:visible!important;background:transparent!important;border:0!important;box-shadow:none!important;color:var(--mode-color);
+}
+#page-dashboard .bba-mode-hero-emblem{width:58px!important;height:58px!important;min-width:58px!important}
+#page-dashboard .bba-mode-hero-emblem .mode-symbol-svg{width:58px;height:58px}
+#page-dashboard .bba-mode-detail-card{
+  border-color:rgba(var(--mode-rgb,247,201,72),.28)!important;
+  background:linear-gradient(90deg,rgba(var(--mode-rgb,247,201,72),.08),rgba(255,255,255,.025))!important;
+}
+#page-dashboard .bba-alpha-cta{
+  position:relative;overflow:hidden;min-height:126px;
+  background:radial-gradient(circle at 9% 50%,rgba(247,201,72,.34),transparent 18%),linear-gradient(90deg,rgba(247,201,72,.17),rgba(247,201,72,.035) 58%,rgba(32,214,255,.045))!important;
+  border-color:rgba(247,201,72,.43)!important;
+  box-shadow:0 0 0 1px rgba(247,201,72,.10) inset,0 0 42px rgba(247,201,72,.09)!important;
+}
+#page-dashboard .bba-alpha-cta:before{
+  content:"";position:absolute;width:230px;height:230px;left:-72px;top:-52px;border-radius:50%;
+  background:repeating-conic-gradient(from 0deg,rgba(247,201,72,.32) 0 8deg,transparent 8deg 16deg);
+  opacity:.23;filter:blur(.2px) drop-shadow(0 0 16px rgba(247,201,72,.45));animation:bbaRingSlow 10s linear infinite;
+}
+#page-dashboard .bba-alpha-cta:after{
+  content:"";position:absolute;width:170px;height:170px;left:-43px;top:-21px;border-radius:50%;border:1px solid rgba(247,201,72,.28);
+  box-shadow:0 0 0 16px rgba(247,201,72,.025),0 0 42px rgba(247,201,72,.22);pointer-events:none;
+}
+@keyframes bbaRingSlow{to{transform:rotate(360deg)}}
+#page-dashboard .bba-mode-spotlight-symbol{width:110px!important;height:110px!important;min-width:110px!important;z-index:1;filter:drop-shadow(0 0 16px rgba(247,201,72,.78))}
+#page-dashboard .bba-mode-spotlight-symbol .mode-symbol-svg{width:110px;height:110px}
+#page-dashboard .bba-alpha-copy h3{color:var(--bba-gold)!important;text-shadow:0 0 18px rgba(247,201,72,.36)}
+#page-dashboard .bba-alpha-copy h3 span{color:#ffe9a3!important}
+#page-dashboard .bba-primary-cta{background:linear-gradient(135deg,#fff08d 0%,#f7c948 42%,#ff9f1a 100%)!important;color:#1a1300!important;box-shadow:0 0 20px rgba(247,201,72,.30),inset 0 1px 0 rgba(255,255,255,.45)!important}
+#page-dashboard .bba-ghost-cta{border-color:rgba(107,196,255,.48)!important;color:#dff4ff!important;background:rgba(4,14,29,.72)!important}
+
+#page-dashboard .bba-jackpot-panel{
+  border-color:rgba(247,201,72,.36)!important;
+  background:radial-gradient(circle at 20% 45%,rgba(247,201,72,.16),transparent 30%),linear-gradient(180deg,rgba(18,20,18,.98),rgba(5,10,18,.99))!important;
+}
+#page-dashboard .bba-jackpot-body{
+  position:relative;overflow:hidden;border-radius:8px;margin:0 10px 8px;
+  background:radial-gradient(circle at 20% 55%,rgba(247,201,72,.28),transparent 24%),linear-gradient(90deg,rgba(247,201,72,.08),rgba(255,255,255,.015))!important;
+  border:1px solid rgba(247,201,72,.22);
+}
+#page-dashboard .bba-chest-upgraded{width:116px!important;height:86px!important;min-width:116px!important;background:transparent!important;box-shadow:none!important;border-radius:0!important;color:transparent!important;overflow:visible!important;filter:drop-shadow(0 0 20px rgba(247,201,72,.52))}
+#page-dashboard .bba-chest-svg{width:126px;height:92px;overflow:visible;display:block}
+#page-dashboard .bba-chest-svg .chest-lid{fill:url(#bbaChestGold);stroke:#ffe68a;stroke-width:2}
+#page-dashboard .bba-chest-svg .chest-base{fill:url(#bbaChestDark);stroke:#f7c948;stroke-width:2}
+#page-dashboard .bba-chest-svg .chest-band,#page-dashboard .bba-chest-svg .chest-lock{fill:url(#bbaChestGold);stroke:#fff0a0;stroke-width:1.5}
+#page-dashboard .bba-chest-svg .chest-key{fill:#2b1300;stroke:#fff0a0;stroke-width:1.5}
+#page-dashboard .bba-chest-svg .chest-line{fill:none;stroke:#fff1a8;stroke-width:2.2;stroke-linecap:round;opacity:.82}
+#page-dashboard .bba-chest-svg .chest-glow{fill:rgba(247,201,72,.18);filter:blur(6px)}
+#page-dashboard .bba-chest-svg .spark{fill:#fff2a1;filter:drop-shadow(0 0 8px #f7c948);animation:bbaSpark 2.5s ease-in-out infinite}
+#page-dashboard .bba-chest-svg .s2{animation-delay:.6s}#page-dashboard .bba-chest-svg .s3{animation-delay:1.2s}
+@keyframes bbaSpark{0%,100%{opacity:.35;transform:scale(.92)}50%{opacity:1;transform:scale(1.08)}}
+#page-dashboard .bba-jackpot-body span{color:#ffe28a!important;text-shadow:0 0 14px rgba(247,201,72,.28)}
+#page-dashboard .bba-jackpot-body strong{color:#f7c948!important;font-size:34px!important;text-shadow:0 0 22px rgba(247,201,72,.42),0 0 3px rgba(255,255,255,.3)}
+#page-dashboard .bba-progress.jackpot{height:10px!important;border-color:rgba(247,201,72,.20)!important;background:rgba(255,255,255,.08)!important}
+#page-dashboard .bba-progress.jackpot i{background:linear-gradient(90deg,#f7c948,#ff9f1a,#fff08d)!important;box-shadow:0 0 15px rgba(247,201,72,.55)}
+#page-dashboard .bba-current-metrics .mode-condition-row:nth-child(1) .v{color:#20d6ff!important}
+#page-dashboard .bba-current-metrics .mode-condition-row:nth-child(2) .v{color:#79ff76!important}
+#page-dashboard .bba-current-metrics .mode-condition-row:nth-child(3) .v{color:#20d6ff!important}
+#page-dashboard .bba-current-metrics .mode-condition-row:nth-child(4) .v{color:#f7c948!important}
+#page-dashboard .bba-countdown-box strong,#page-dashboard #countdownText{color:#20d6ff!important;text-shadow:0 0 18px rgba(32,214,255,.45)}
+#page-dashboard .bba-check-orb{box-shadow:0 0 30px rgba(121,255,118,.20),inset 0 0 18px rgba(121,255,118,.08)!important}
+#page-dashboard .bba-activation-left strong{color:#91ff70!important;text-shadow:0 0 12px rgba(121,255,118,.30)}
+#page-dashboard .bba-progress i{background:linear-gradient(90deg,#009dff,#20d6ff,#79ffdf)!important;box-shadow:0 0 14px rgba(32,214,255,.36)}
+#page-dashboard .bba-odds-rule strong{color:#f7c948!important;text-shadow:0 0 12px rgba(247,201,72,.28)}
+@media(max-width:900px){
+  #page-dashboard .bba-mode-unlock-list .mode-tab{grid-template-columns:58px 1fr!important;gap:8px!important}
+  #page-dashboard .bba-mode-unlock-list .mode-tab-side{grid-column:1/-1;grid-template-columns:auto 1fr auto!important}
+  #page-dashboard .mode-side-mark{display:none}
+  #page-dashboard .bba-alpha-cta{min-height:0}
+  #page-dashboard .bba-mode-spotlight-symbol{width:86px!important;height:86px!important;min-width:86px!important}
+  #page-dashboard .bba-mode-spotlight-symbol .mode-symbol-svg{width:86px;height:86px}
+}
+
+
+#page-dashboard .bba-mode-detail-card,
+#page-dashboard .bba-alpha-cta{display:none!important}
+#page-dashboard .bba-mode-spotlight-card{
+  position:relative;overflow:hidden;display:grid;grid-template-columns:180px minmax(0,1fr);gap:0;
+  margin:10px 16px 16px;padding:0;border-radius:14px;
+  border:1px solid rgba(var(--mode-rgb,247,201,72),.34);
+  background:
+    linear-gradient(90deg,rgba(var(--mode-rgb,247,201,72),.10),rgba(255,255,255,.025) 42%,rgba(4,12,24,.92) 100%),
+    linear-gradient(180deg,rgba(10,19,36,.98),rgba(4,10,20,.99));
+  box-shadow:0 0 0 1px rgba(var(--mode-rgb,247,201,72),.08) inset,0 16px 38px rgba(0,0,0,.34),0 0 48px rgba(var(--mode-rgb,247,201,72),.08);
+}
+#page-dashboard .bba-mode-spotlight-card>*{position:relative;z-index:1}
+#page-dashboard .bba-mode-spotlight-card:before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(110deg,rgba(var(--mode-rgb,247,201,72),.10),transparent 36%,transparent 62%,rgba(var(--mode-rgb,247,201,72),.06));
+  pointer-events:none;
+}
+#page-dashboard .bba-mode-spotlight-card:after{
+  content:"";position:absolute;right:-60px;top:-40px;width:240px;height:240px;border-radius:50%;
+  background:radial-gradient(circle,rgba(var(--mode-rgb,247,201,72),.15),transparent 66%);
+  filter:blur(8px);pointer-events:none;
+}
+#page-dashboard .bba-mode-spotlight-visual{
+  position:relative;display:flex;align-items:center;justify-content:center;min-height:170px;
+
+  background:radial-gradient(circle at 46% 50%,rgba(var(--mode-rgb,247,201,72),.20),rgba(var(--mode-rgb,247,201,72),.04) 48%,transparent 72%);
+}
+#page-dashboard .bba-mode-spotlight-aura,
+#page-dashboard .bba-mode-spotlight-visual:before,
+#page-dashboard .bba-mode-spotlight-visual:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+#page-dashboard .bba-mode-spotlight-aura{width:190px;height:190px;border:1px solid rgba(var(--mode-rgb,247,201,72),.18);box-shadow:0 0 0 22px rgba(var(--mode-rgb,247,201,72),.025),0 0 34px rgba(var(--mode-rgb,247,201,72),.16)}
+#page-dashboard .bba-mode-spotlight-visual:before{width:220px;height:220px;background:repeating-conic-gradient(from 0deg,rgba(var(--mode-rgb,247,201,72),.22) 0 8deg,transparent 8deg 18deg);opacity:.22;animation:bbaSpotlightSpin 16s linear infinite}
+#page-dashboard .bba-mode-spotlight-visual:after{width:150px;height:150px;border:1px dashed rgba(var(--mode-rgb,247,201,72),.24);opacity:.36;animation:bbaSpotlightPulse 4.6s ease-in-out infinite}
+@keyframes bbaSpotlightSpin{to{transform:rotate(360deg)}}
+@keyframes bbaSpotlightPulse{0%,100%{transform:scale(.92);opacity:.18}50%{transform:scale(1.04);opacity:.42}}
+#page-dashboard .bba-mode-spotlight-card.mode-alpha .bba-mode-spotlight-visual:before{animation-duration:14s}
+#page-dashboard .bba-mode-spotlight-card.mode-twin .bba-mode-spotlight-visual{background:radial-gradient(circle at 50% 50%,rgba(32,214,255,.22),rgba(32,214,255,.05) 50%,transparent 72%)}
+#page-dashboard .bba-mode-spotlight-card.mode-twin .bba-mode-spotlight-visual:before{background:repeating-radial-gradient(circle,rgba(32,214,255,.18) 0 6px,transparent 6px 18px);width:210px;height:210px;animation:bbaTwinRipple 6.4s ease-in-out infinite}
+#page-dashboard .bba-mode-spotlight-card.mode-twin .bba-mode-spotlight-visual:after{border-style:solid;border-color:rgba(32,214,255,.16);box-shadow:0 0 20px rgba(32,214,255,.12) inset;animation:bbaTwinPulse 4s ease-in-out infinite}
+@keyframes bbaTwinRipple{0%,100%{transform:scale(.88);opacity:.18}50%{transform:scale(1.06);opacity:.34}}
+@keyframes bbaTwinPulse{0%,100%{transform:scale(1)}50%{transform:scale(.9)}}
+#page-dashboard .bba-mode-spotlight-card.mode-chain .bba-mode-spotlight-visual:before{width:220px;height:220px;background:repeating-linear-gradient(45deg,rgba(154,91,255,.18) 0 10px,transparent 10px 20px);border-radius:18px;transform:rotate(18deg);animation:bbaChainShift 7s linear infinite}
+#page-dashboard .bba-mode-spotlight-card.mode-chain .bba-mode-spotlight-visual:after{width:170px;height:170px;border:1px solid rgba(154,91,255,.22);box-shadow:0 0 0 12px rgba(154,91,255,.03)}
+@keyframes bbaChainShift{0%{transform:rotate(18deg) translateX(-6px)}50%{transform:rotate(18deg) translateX(6px)}100%{transform:rotate(18deg) translateX(-6px)}}
+#page-dashboard .bba-mode-spotlight-card.mode-podium .bba-mode-spotlight-visual:before{width:240px;height:120px;border-radius:999px;background:radial-gradient(circle at 50% 50%,rgba(255,79,195,.16),transparent 68%);filter:blur(4px);animation:bbaPodiumWave 5.6s ease-in-out infinite}
+#page-dashboard .bba-mode-spotlight-card.mode-podium .bba-mode-spotlight-visual:after{width:180px;height:180px;border:1px solid rgba(255,79,195,.26);box-shadow:0 0 0 10px rgba(255,79,195,.03),0 0 24px rgba(255,79,195,.14)}
+@keyframes bbaPodiumWave{0%,100%{transform:translateY(8px) scale(.92)}50%{transform:translateY(-8px) scale(1.04)}}
+#page-dashboard .bba-mode-spotlight-card.mode-trinity .bba-mode-spotlight-visual:before{width:220px;height:220px;background:conic-gradient(from 90deg,rgba(255,122,26,.28),transparent 22%,rgba(255,122,26,.12) 46%,transparent 66%,rgba(255,122,26,.28) 88%,transparent 100%);animation:bbaSpotlightSpin 9s linear infinite}
+#page-dashboard .bba-mode-spotlight-card.mode-trinity .bba-mode-spotlight-visual:after{width:168px;height:168px;border:1px solid rgba(255,122,26,.24);box-shadow:0 0 0 14px rgba(255,122,26,.04),0 0 30px rgba(255,122,26,.16);animation:bbaTrinityPulse 3.8s ease-in-out infinite}
+@keyframes bbaTrinityPulse{0%,100%{transform:scale(.94)}50%{transform:scale(1.08)}}
+#page-dashboard .bba-mode-spotlight-symbol{width:110px!important;height:110px!important;min-width:110px!important;display:flex;align-items:center;justify-content:center;z-index:2;filter:drop-shadow(0 0 18px rgba(var(--mode-rgb,247,201,72),.68))}
+#page-dashboard .bba-mode-spotlight-symbol .mode-symbol-svg{width:110px;height:110px}
+#page-dashboard .bba-mode-spotlight-content{display:flex;flex-direction:column;gap:16px;padding:18px 20px 18px 22px;min-width:0}
+#page-dashboard .bba-mode-spotlight-titleline{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#page-dashboard .bba-mode-spotlight-titleline h3{margin:0;color:#f7fbff;font-size:28px;font-weight:900;letter-spacing:.02em;text-transform:uppercase}
+#page-dashboard .bba-mode-spotlight-badge{display:inline-flex;align-items:center;justify-content:center;min-height:28px;padding:0 10px;border-radius:999px;border:1px solid rgba(var(--mode-rgb,247,201,72),.28);background:rgba(var(--mode-rgb,247,201,72),.10);color:var(--mode-color,#f7c948);font-size:11px;font-weight:900;letter-spacing:.04em}
+#page-dashboard .bba-mode-spotlight-copy p{margin:8px 0 0;color:#d7e2f0;font-size:14px;line-height:1.55}
+#page-dashboard .bba-mode-spotlight-stats{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+#page-dashboard .bba-mode-spotlight-stats div{padding:10px 12px;border-radius:10px;background:rgba(7,16,30,.66);border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 0 18px rgba(var(--mode-rgb,247,201,72),.04)}
+#page-dashboard .bba-mode-spotlight-stats span{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#91a5c3}
+#page-dashboard .bba-mode-spotlight-stats strong{margin-top:6px;font-family:Orbitron,sans-serif;font-size:18px;color:var(--mode-color,#f7c948);text-shadow:0 0 12px rgba(var(--mode-rgb,247,201,72),.22)}
+#page-dashboard .bba-mode-spotlight-actions{display:flex;gap:10px;flex-wrap:wrap}
+#page-dashboard .bba-mode-spotlight-card .bba-primary-cta{background:linear-gradient(135deg,color-mix(in srgb, var(--mode-color,#f7c948) 25%, #fff),var(--mode-color,#f7c948) 44%,var(--mode-hot,#ff9f1a) 100%)!important;color:#101521!important;box-shadow:0 0 22px rgba(var(--mode-rgb,247,201,72),.22),inset 0 1px 0 rgba(255,255,255,.42)!important}
+#page-dashboard .bba-mode-spotlight-card .bba-ghost-cta{border-color:rgba(var(--mode-rgb,247,201,72),.24)!important;color:#e8f6ff!important;background:rgba(5,14,28,.72)!important;box-shadow:inset 0 0 0 1px rgba(var(--mode-rgb,247,201,72),.07)}
+#page-dashboard .bba-mode-spotlight-card .bba-ghost-cta:hover{background:rgba(var(--mode-rgb,247,201,72),.08)!important}
+@media(max-width:980px){
+  #page-dashboard .bba-mode-spotlight-card{grid-template-columns:1fr}
+  #page-dashboard .bba-mode-spotlight-visual{min-height:138px;border-right:0;border-bottom:1px solid rgba(var(--mode-rgb,247,201,72),.18)}
+  #page-dashboard .bba-mode-spotlight-content{padding:16px}
+  #page-dashboard .bba-mode-spotlight-titleline h3{font-size:24px}
+}
+@media(max-width:760px){
+  #page-dashboard .bba-mode-spotlight-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #page-dashboard .bba-mode-spotlight-symbol{width:92px!important;height:92px!important;min-width:92px!important}
+  #page-dashboard .bba-mode-spotlight-symbol .mode-symbol-svg{width:92px;height:92px}
+}
+@media(max-width:520px){
+  #page-dashboard .bba-mode-spotlight-actions{flex-direction:column;align-items:stretch}
+  #page-dashboard .bba-mode-spotlight-stats{grid-template-columns:1fr}
+}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js">
 document.getElementById('applyVerifyPrevBlockBtn')?.addEventListener('click',()=>{
@@ -2978,380 +4218,200 @@ window.__monitorDemoState = {
 
 <div class="page-wrap">
 <section class="page active" id="page-dashboard">
-  <section class="dashboard-hero" id="dashboardHero">
-    <div class="hero-panel hero-left solana-hero-left">
-      <div class="blockline">
-        <div class="live-title"><span class="btc sol-symbol">◎</span><span>SOLANA SLOTSTREAM LIVE</span></div>
-        <div class="blockno"><span class="label">FINALIZED SLOT</span><span class="num" id="heroBlockNumber">382,918,271</span></div>
-      </div>
+  <section class="bba-dashboard-v3" aria-label="Block Beast Arena dashboard">
+    <div class="bba-status-strip">
+      <article class="bba-status-card phase"><div class="bba-status-icon bba-status-svg phase"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="s-main" d="M38 8c8 2 15 9 18 18-8 0-15 4-20 9L29 28c5-5 9-12 9-20Z"/><path class="s-line" d="M28 29 16 34l14 14 5-12"/><path class="s-line" d="M21 43 12 52m9-2-5 5"/><circle class="s-dot" cx="43" cy="21" r="4"/></svg></div><div><span>OPERATING PHASE</span><strong>Launch Phase · Alpha Focus</strong><small>초기 유입 / 알파픽 중심</small></div></article>
+      <article class="bba-status-card open"><div class="bba-status-icon bba-status-svg open"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="s-line" cx="32" cy="32" r="21"/><circle class="s-line thin" cx="32" cy="32" r="11"/><circle class="s-dot" cx="32" cy="32" r="4"/><path class="s-line" d="M32 5v9M32 50v9M5 32h9M50 32h9"/></svg></div><div><span>OPEN MODE</span><strong>Alpha Pick <em>OPEN</em></strong><small>진입형 메인 모드</small></div></article>
+      <article class="bba-status-card pool"><div class="bba-status-icon bba-status-svg pool"><svg viewBox="0 0 64 64" aria-hidden="true"><ellipse class="s-main" cx="32" cy="15" rx="18" ry="7"/><path class="s-line" d="M14 15v24c0 4 8 8 18 8s18-4 18-8V15"/><path class="s-line thin" d="M14 27c0 4 8 8 18 8s18-4 18-8M14 39c0 4 8 8 18 8s18-4 18-8"/></svg></div><div><span>EVENT POOL</span><strong><b>126 / 120 SOL</b></strong><small>Open Gate 정상 · 보조 Pool 안전</small></div></article>
+      <article class="bba-status-card marketing"><div class="bba-status-icon bba-status-svg marketing"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="s-main" d="M12 35V25h10l20-11v32L22 35H12Z"/><path class="s-line" d="M43 22c5 3 5 17 0 20M49 17c9 8 9 22 0 30"/><path class="s-line thin" d="M23 36 27 51h9l-5-12"/></svg></div><div><span>MARKETING POOL</span><strong>82 SOL · <em>Normal</em></strong><small>추천/첫충전 보너스 정상</small></div></article>
+      <article class="bba-status-card unlock"><div class="bba-status-icon bba-status-svg unlock"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="s-line" d="M18 9h28M18 55h28M23 10c0 12 18 14 18 22S23 42 23 54M41 10c0 12-18 14-18 22s18 10 18 22"/><path class="s-main" d="M27 23h10l-5 5-5-5ZM27 44h10l-5-6-5 6Z"/></svg></div><div><span>NEXT UNLOCK</span><strong>Twin Pick <em>77%</em></strong><small>Pool Gate BUILDING</small></div></article>
+    </div>
 
-      <div class="solana-stage-wrap">
-        <div class="solana-stage-main" aria-label="Solana visual slot engine">
-          <div class="solana-stage-overlay">
-            <span class="stage-chip active">RESOLVE SLOT WATCH</span>
-            <span class="stage-chip active">VISUAL FAIR PLAY</span>
-          </div>
-          <div class="solana-stage-core">
-            <div class="solana-orbit orbit-a"></div>
-            <div class="solana-orbit orbit-b"></div>
-            <div class="solana-orbit orbit-c"></div>
-            <div class="solana-beam"></div>
-            <div class="solana-monolith">
-              <span class="solana-monolith-layer layer-1"></span>
-              <span class="solana-monolith-layer layer-2"></span>
-              <span class="solana-monolith-layer layer-3"></span>
-              <span class="solana-monolith-shadow"></span>
+    <div class="bba-dashboard-grid-v3">
+      <main class="bba-left-stack">
+        <section class="bba-panel bba-current-round" id="roundActionPanel">
+          <div class="bba-panel-head">
+            <div>
+              <div class="bba-eyebrow">CURRENT ROUND</div>
+              <h2 id="actionRoundState">Alpha Pick · OPEN · BUILDING</h2>
+
             </div>
-            <div class="solana-stage-grid"></div>
-            <div class="solana-stage-pulse"></div>
+            <div class="bba-round-badge" id="modeOpenBadge">OPEN</div>
           </div>
-          <div class="solana-stage-footer">
 
-          </div>
-        </div>
+          <div class="bba-current-metrics" id="modeConditionList"></div>
 
-        <div class="solana-stage-side">
-          <div class="hashbox hero-hashbox">
-            <div class="label">Current Finalized Blockhash</div>
-            <div class="value" id="heroHashValue">6E9g9kzQ81FJsBU9jh632EPK…</div>
+          <div class="bba-activation-card">
+            <div class="bba-activation-left">
+              <div class="bba-check-orb"><span>✓</span></div>
+              <div>
+                <strong id="modePolicyNote">BUILDING · Tickets Reserved · Settlement 없음</strong>
+                <small id="roundStatusText">환경이 최신 Solana slot 기준으로 잠겨 있습니다.</small>
+              </div>
+            </div>
+            <div class="bba-countdown-box">
+              <span id="modeTimerLabel">대기 기준 마감까지</span>
+              <strong id="actionCountdown">10:00</strong>
+              <small id="modeLateCutoff">종료 60초 전 신규 진입 제외</small>
+            </div>
           </div>
-          <div class="solana-signal-grid" aria-label="Solana live slot signals">
-            <div class="solana-signal"><div class="k">Slot Cadence</div><div class="v">~400ms</div><div class="pulse-line"></div></div>
-            <div class="solana-signal"><div class="k">Entropy Source</div><div class="v">Blockhash</div><div class="pulse-line"></div></div>
-            <div class="solana-signal"><div class="k">Game Input</div><div class="v">Successful Tx + CU</div><div class="pulse-line"></div></div>
-          </div>
-          <div class="solana-mini-flow">
-            <div class="solana-mini-item"><span>① Arena Lock</span></div>
-            <div class="solana-mini-item"><span>② Entry Freeze</span></div>
-            <div class="solana-mini-item"><span>③ Result Resolve</span></div>
-          </div>
-        </div>
-      </div>
 
-      <div class="metrics">
-        <div class="metric"><div class="k">TPS Proxy</div><div class="v" id="metricHashrate">3,420 TPS</div></div>
-        <div class="metric"><div class="k">Total Compute Units</div><div class="v" id="metricDifficulty">412.8M CU</div></div>
-        <div class="metric"><div class="k">Result Status</div><div class="v">Finalized</div></div>
-        <div class="metric"><div class="k">Resolve ETA</div><div class="v" id="metricEta">10m</div></div>
-      </div>
+          <div class="bba-progress-row">
+            <span>ROUND PROGRESS</span>
+            <div class="bba-progress"><i id="roundProgress"></i></div>
+            <b id="countdownText">10:00</b>
+          </div>
 
-      <div class="derive hero-derive-upgrade">
-        <div class="k">🎯 Round Pipeline</div>
-        <div class="stepflow">
-          <div class="step active"><span class="n">1</span> 기준 Finalized Slot</div>
-          <div class="step active"><span class="n">2</span> Arena 환경 잠금</div>
-          <div class="step"><span class="n">3</span> 10분 엔트리 윈도우</div>
-          <div class="step"><span class="n">4</span> Prize Pool Lock</div>
-          <div class="step"><span class="n">5</span> Resolve Slot 포착</div>
-          <div class="step"><span class="n">6</span> Beast 순위 확정</div>
-          <div class="step"><span class="n">7</span> Reward 배분 / 이월</div>
-        </div>
-      </div>
+          <div class="bba-odds-rule">
+            <strong>🛡 MINIMUM ODDS PROTECTION</strong>
+            <span id="modeShareRuleView">25% 초과 → 1.5x / 35% 초과 제거</span>
+            <span>Last <b id="modeLateCutoffInline">60s</b> entry excluded</span>
+          </div>
+
+          <div class="bba-mode-spotlight-card bba-symbol-alpha" id="modeSpotlightPanel">
+            <div class="bba-mode-spotlight-visual">
+              <div class="bba-mode-spotlight-aura"></div>
+              <div class="bba-mode-spotlight-symbol bba-symbol-alpha" id="modeSpotlightEmblem"><svg class="mode-symbol-svg" viewBox="0 0 72 72" aria-hidden="true"><path class="m-hex" d="M36 5 63 20.5v31L36 67 9 51.5v-31Z"/><path class="m-glow" d="M36 13 56 24.5v23L36 59 16 47.5v-23Z"/><path class="m-fill" d="M36 17 52 54h-9l-3-8H29l-3 8h-8L34 17h2Zm-4 22h6l-3-10-3 10Z"/></svg></div>
+            </div>
+            <div class="bba-mode-spotlight-content">
+              <div class="bba-mode-spotlight-copy">
+                <div class="bba-mode-spotlight-titleline">
+                  <h3 id="modeNameView">Alpha Pick</h3>
+                  <span class="bba-mode-spotlight-badge" id="modePhaseBadge">OPEN</span>
+                </div>
+                <p id="modeSpotlightDesc">Lowest entry barrier · Fastest settlement · Widest protection range</p>
+              </div>
+              <div class="bba-mode-stats-mini bba-mode-spotlight-stats">
+                <div><span>Cases</span><strong id="modeCasesView">10</strong></div>
+                <div><span>Min Odds</span><strong id="modeMinOddsView">2x</strong></div>
+                <div><span>Support</span><strong id="modeSupportView">0.50 SOL</strong></div>
+                <div><span>Gate</span><strong id="modePoolGateView">120 SOL</strong></div>
+              </div>
+              <div class="bba-cta-actions bba-mode-spotlight-actions">
+                <button type="button" class="bba-primary-cta" id="actionChooseBtn">🎯 Play Alpha Pick</button>
+                <button type="button" class="bba-ghost-cta" id="actionHowBtn">ⓘ How It Works</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bba-bottom-left-grid">
+          <article class="bba-panel bba-position-panel">
+            <div class="bba-mini-head">👤 MY ROUND POSITION</div>
+            <div class="bba-position-list">
+              <div><span>Available Tickets</span><strong id="splBalance">0</strong></div>
+              <div><span>Reserved Tickets</span><strong id="participantStatus">0 / 2 참여</strong></div>
+              <div class="bba-clickable-position" role="button" tabindex="0" onclick="navigate('mypicks')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();navigate('mypicks')}"><span>Consumed Tickets</span><strong id="liveTotalLocked">0 SPL</strong></div>
+              <div class="highlight"><span>Estimated Max Payout</span><strong id="comboEstimatedPayout">-</strong></div>
+            </div>
+          </article>
+
+          <article class="bba-panel bba-entry-panel bba-slip-panel" id="entryComposer">
+            <div class="bba-mini-head"><span>🧾 Selection Slip</span><button type="button" onclick="document.getElementById('liveBoard')?.scrollIntoView({behavior:'smooth',block:'start'})">Pick Beast ›</button></div>
+            <div id="selectionPills" class="selection-pills"></div>
+            <input id="stakeInput" type="hidden" value="200">
+            <div class="bba-slip-action-row">
+              <button class="dark" id="clearSelectionBtn">선택 초기화</button>
+              <button class="primary" id="enterRoundBtn">참여 확정</button>
+            </div>
+            <div class="small-note" id="slipGuide">MODE UNLOCK STATUS에서 모드를 선택한 뒤 비스트를 선택하세요.</div>
+          </article>
+        </section>
+
+
+      </main>
+
+      <aside class="bba-right-stack">
+        <section class="bba-panel bba-unlock-panel">
+          <div class="bba-panel-head compact"><div><div class="bba-eyebrow">MODE UNLOCK STATUS</div><h3>Pool Gate 기반 순차 오픈</h3></div><span class="bba-info-dot">i</span></div>
+          <div class="mode-tabs bba-mode-unlock-list" id="roundModeTabs" aria-label="Game mode status tabs"></div>
+          <div class="bba-flowline">
+            <span id="modeFlowBuilding" class="active">BUILDING</span>
+            <span id="modeFlowActivated">ACTIVATED</span>
+            <span id="modeFlowResolve">RESOLVE</span>
+          </div>
+          <div class="bba-reserve-note" id="modeReserveView">Reserve 20 · 차감 20</div>
+        </section>
+
+        <section class="bba-panel bba-beast-board" id="liveBoard">
+          <div class="bba-panel-head compact"><div><div class="bba-eyebrow">LIVE BEAST BOARD</div><h3>선택률 · 환경 우세도 · 빠른 선택</h3></div><small>Updated · Just now</small></div>
+          <div class="animal-grid bba-animal-grid-v3" id="animalGrid"></div>
+          <div class="bba-live-table-source" aria-hidden="true"><table><tbody id="liveAnimalTableBody"></tbody></table></div>
+        </section>
+
+
+      </aside>
     </div>
 
-    <div class="hero-panel hero-right solana-hero-right">
-      <div class="hero-topline">
-        <div class="status-chip">⚡ Solana Slot Engine Ready · 결과 추적 가능</div>
-        <div class="hero-kicker">LIVE FAIRNESS HUD</div>
-      </div>
+    <section class="bba-wide-composer-row bba-live-odds-row">
+      <section class="bba-panel bba-live-odds-board-panel">
+        <div class="bba-panel-head compact">
+          <div><div class="bba-eyebrow" id="liveMarketEyebrow">LIVE MARKET BOARD</div><h3 id="liveMarketTitle">선택 모드 기준 실시간 배당 보드</h3></div>
+          <small id="liveMarketSub">Alpha Pick · Beast 1~10</small>
+        </div>
+        <div class="bba-market-summary" id="liveMarketSummary"></div>
+        <div class="bba-live-odds-split" id="liveOddsBoard"></div>
+      </section>
+    </section>
 
-      <h1>
-        <span class="title-line hero-line-main">BLOCK</span>
-        <span class="title-line hero-line-sub"><span class="r">BEAST</span><span class="b">ARENA</span></span>
-      </h1>
-      <div class="hero-desc-title">랜덤은 숨기지 않고, 결과는 끊기지 않게.</div>
-      <div class="desc">직전 finalized slot이 전장을 먼저 잠그고, 마감 후 첫 finalized Resolve Slot의 <strong>Result Blockhash</strong> · <strong>Successful Transactions</strong> · <strong>Total Compute Units</strong>가 최종 순위를 확정한다. 사용자는 지갑 연결, SPL 교환, 참여 잠금, 결과 검증, 최근 100경기 분석까지 한 화면 리듬 안에서 이어서 확인할 수 있다.</div>
-      <div class="hero-proof-grid">
-        <div class="hero-proof-card"><div class="t">Lock Slot 공개</div><div class="s">환경이 언제 고정됐는지 즉시 확인</div></div>
-        <div class="hero-proof-card"><div class="t">Resolve Slot 판정</div><div class="s">결과 확정 입력값을 명확히 분리</div></div>
-        <div class="hero-proof-card"><div class="t">Result Blockhash</div><div class="s">해시 기반 결과 재현 흐름 유지</div></div>
-        <div class="hero-proof-card"><div class="t">100R Analysis</div><div class="s">최근 흐름과 대중 편향까지 한 번에</div></div>
+    <section class="bba-panel bba-secondary-dashboard">
+      <div class="bba-panel-head compact"><div><div class="bba-eyebrow">OPERATIONAL DETAILS</div><h3>환경 락 · 정산 모니터</h3></div><button class="bba-ghost-cta" type="button" onclick="runSettlementDemo && runSettlementDemo()">Settlement Demo</button></div>
+      <div class="bba-secondary-grid bba-secondary-grid-lean">
+        <div class="bba-env-mini">
+          <div class="bba-subtitle">Environment Lock</div>
+          <div class="env-axis-grid bba-env-axis-grid">
+            <div class="env-axis-card"><div class="axis-k">Biome</div><div class="axis-v" id="envSky">--</div><div class="axis-sub" id="envSkySeed">--</div></div>
+            <div class="env-axis-card"><div class="axis-k">Terrain</div><div class="axis-v" id="envGround">--</div><div class="axis-sub" id="envGroundSeed">--</div></div>
+            <div class="env-axis-card"><div class="axis-k">Combat</div><div class="axis-v" id="envTempo">--</div><div class="axis-sub" id="envTempoSeed">--</div></div>
+          </div>
+          <div class="bba-env-badges"><span>LOCK <b id="lockBlockBadge">#--</b></span><span id="lockTimeBadge">--</span><span id="settleWaitBadge">정산 대기중</span></div>
+        </div>
+        <div class="bba-monitor-mini bba-monitor-wide">
+          <div class="bba-subtitle">Settlement Monitor</div>
+          <div class="monitor-status-pill" id="monitorStatusPill">Solana slot 도착 대기중</div>
+          <div class="bba-monitor-grid-mini bba-monitor-grid-wide">
+            <div><span>NEXT</span><strong id="monitorNextStep">WAITING</strong><small id="monitorNextStepDesc">첫 확정 Solana slot 대기 중입니다.</small></div>
+            <div><span>SLOT</span><strong id="monitorSettleBlock">WAITING</strong><small id="monitorSettleTime"></small><small id="monitorSettleTx"></small><small id="monitorSettleOutput"></small></div>
+            <div><span>RANK</span><strong id="monitorRankResult">WAITING</strong><small id="monitorBestOdds"></small><small id="monitorRankTop1"></small><small id="monitorRankTop2"></small><small id="monitorRankTop3"></small></div>
+            <div><span>PAYOUT</span><strong id="monitorPayoutStatus">WAITING</strong><small id="monitorRolloverAmount"></small><small id="monitorProfitRank1"></small><small id="monitorProfitRank2"></small><small id="monitorProfitRank3"></small></div>
+          </div>
+        </div>
       </div>
-      <div class="hero-summary-strip">
-        <div class="hero-strip-item"><span>Lock Source</span><strong>직전 finalized slot</strong></div>
-        <div class="hero-strip-item"><span>Resolve Source</span><strong>마감 후 첫 finalized slot</strong></div>
-        <div class="hero-strip-item"><span>Visual Promise</span><strong>보는 순간 Solana 기반임이 느껴지게</strong></div>
+      <div class="bba-hidden-compat" aria-hidden="true">
+        <table><tbody id="roundBoardBody"></tbody></table>
+        <div id="eventLog"></div>
       </div>
-      <div class="cta-row">
-        <button class="btn-gold" onclick="document.getElementById('liveBoard').scrollIntoView({behavior:'smooth'})">지금 엔트리 열기</button>
-        <button class="btn-blue" onclick="navigate('blocks')">결과 검증 보기</button>
-      </div>
+    </section>
+
+    <section class="bba-right-bottom-grid bba-wide-results-grid bba-dashboard-footer-results">
+      <article class="bba-panel bba-winners-panel">
+        <div class="bba-mini-head">🏆 RECENT WINNERS</div>
+        <div class="recent-list bba-recent-list" id="recentResults"></div>
+      </article>
+      <article class="bba-panel bba-jackpot-panel">
+        <div class="bba-mini-head">JACKPOT <span>ⓘ</span></div>
+        <div class="bba-jackpot-body">
+          <div class="bba-chest bba-chest-upgraded"><svg class="bba-chest-svg" viewBox="0 0 160 118" aria-hidden="true"><defs><linearGradient id="bbaChestGold" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fff3a3"/><stop offset=".38" stop-color="#f7c948"/><stop offset="1" stop-color="#a55e00"/></linearGradient><linearGradient id="bbaChestDark" x1="0" x2="1"><stop offset="0" stop-color="#7a3e05"/><stop offset="1" stop-color="#2b1300"/></linearGradient></defs><path class="chest-glow" d="M24 48c0-25 19-38 56-38s56 13 56 38v12H24Z"/><path class="chest-lid" d="M23 52c0-27 18-41 57-41s57 14 57 41v14H23Z"/><path class="chest-base" d="M18 54h124v46c0 8-6 12-14 12H32c-8 0-14-4-14-12Z"/><path class="chest-band" d="M18 61h124v15H18zM50 16h12v96H50zM98 16h12v96H98z"/><path class="chest-lock" d="M68 55h24v32H68z"/><circle class="chest-key" cx="80" cy="70" r="5"/><path class="chest-line" d="M28 94h35M97 94h35M31 44c6-12 20-20 49-20s43 8 49 20"/><path class="spark s1" d="M20 23l4 8 8 4-8 4-4 8-4-8-8-4 8-4z"/><path class="spark s2" d="M136 15l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"/><path class="spark s3" d="M145 85l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/></svg></div>
+          <div><span>GRAND BEAST JACKPOT</span><strong>512.88 SOL</strong><small>Next Target: 600 SOL</small></div>
+        </div>
+        <div class="bba-progress jackpot"><i style="width:85%"></i></div>
+      </article>
+    </section>
+
+    <div class="bba-hidden-compat" aria-hidden="true">
+
+      <button id="actionConfirmBtn"></button><button id="actionConnectWalletBtn"></button><button id="actionExchangeBtn"></button><button id="homeLogo"></button><div id="myEntries"></div>
+      <div id="blockDataList"></div><div id="blockHistorySection"></div><div id="smartInsightTitle"></div><div id="smartInsightMeta"></div><div id="smartInsightBody"></div>
+      <span id="heroBlockNumber">382,918,271</span><span id="heroHashValue"></span><span id="metricHashrate"></span><span id="metricDifficulty"></span><span id="metricEta"></span>
+      <span id="livePrizePool">0.000 SOL</span><span id="liveRollover">0 SPL</span><span id="liveParticipants">0명</span>
+      <span id="modeActivationScore"></span><span id="modeStatusDot"></span>
+      <span id="entryGuardBanner"></span>
+      <select id="autoTargetSelect"><option value="current">현재 선택 조합</option><option value="favorite">대표 즐겨찾기 세트</option><option value="last">직전 참여 조합</option></select>
+      <input id="autoStopLossInput" value="3"><input id="autoMinBalanceInput" value="500"><input id="autoMinOddsInput" value="2.8">
+      <button id="autoEntryToggleBtn"></button><button id="loadPinnedFavoriteBtn"></button><button id="saveFavoriteBtn"></button><button id="removeCurrentFavoriteBtn"></button>
+      <span id="autoStatusView"></span><span id="autoStatusSub"></span><span id="autoOddsView"></span><span id="autoOddsSub"></span><span id="autoBalanceView"></span><span id="autoBalanceSub"></span><span id="autoLossView"></span><span id="autoLossSub"></span><span id="autoRunNote"></span><div id="favoriteSetsList"></div>
     </div>
   </section>
-
-  <section class="live-overview">
-    <div class="live-card total"><div class="top"><div class="ico">🪙</div><div><div class="label">총 선택액</div><div class="value" id="liveTotalLocked">0 SPL</div></div></div><div class="sub">현재 라운드에 잠긴 총 참여량</div></div>
-    <div class="live-card pool"><div class="top"><div class="ico">🏆</div><div><div class="label">상금 풀</div><div class="value" id="livePrizePool">0.000 SOL</div></div></div><div class="sub">락 SPL + 이월 금고 기준 개념 정산치</div></div>
-    <div class="live-card vault"><div class="top"><div class="ico">💎</div><div><div class="label">이월 금고</div><div class="value" id="liveRollover">0 SPL</div></div></div><div class="sub">정답자 없을 경우 다음 라운드로 이월</div></div>
-    <div class="live-card users"><div class="top"><div class="ico">👥</div><div><div class="label">참여자 수</div><div class="value" id="liveParticipants">0명</div></div></div><div class="sub">2명 이상이어야 라운드 확정 가능</div></div>
-  </section>
-
-
-  <section class="round-action-panel mode-round-panel compact-current-round" id="roundActionPanel">
-    <div class="mode-round-head">
-      <div class="mode-round-title-wrap">
-        <div class="round-action-status">
-          <span class="status-dot-live" id="modeStatusDot"></span>
-          <div>
-            <div class="eyebrow">CURRENT ROUND</div>
-            <strong id="actionRoundState">Alpha Pick · OPEN · BUILDING</strong>
-          </div>
-        </div>
-        <div class="mode-round-copy" id="modeRoundCopy">Pool Gate OPEN · 조건 충족 전 티켓은 Reserved</div>
-      </div>
-      <div class="mode-round-timer">
-        <span id="modeTimerLabel">대기 기준 마감까지</span>
-        <strong id="actionCountdown">10:00</strong>
-        <small id="modeLateCutoff">종료 60초 전 신규 진입 제외</small>
-      </div>
-    </div>
-
-    <div class="mode-tabs" id="roundModeTabs" aria-label="Game mode status tabs"></div>
-
-    <div class="mode-round-body">
-      <div class="mode-summary-card primary">
-        <div class="mode-card-head">
-          <div>
-            <span class="mode-label">SELECTED MODE</span>
-            <h3 id="modeNameView">Alpha Pick</h3>
-          </div>
-          <div class="mode-status-stack">
-            <span class="mode-status-badge open" id="modeOpenBadge">OPEN</span>
-            <span class="mode-phase-badge" id="modePhaseBadge">BUILDING</span>
-          </div>
-        </div>
-        <div class="mode-main-grid">
-          <div class="mode-main-stat"><span>경우의 수</span><strong id="modeCasesView">10</strong><small>선택지 기준 유동성 분산도</small></div>
-          <div class="mode-main-stat"><span>기본 최소배당</span><strong id="modeMinOddsView">2x</strong><small id="modeShareRuleView">25% 초과 → 1.5x / 35% 초과 제거</small></div>
-          <div class="mode-main-stat"><span>라운드당 Pool 보조</span><strong id="modeSupportView">0.50 SOL</strong><small>최소배당 방어용 보조 한도</small></div>
-          <div class="mode-main-stat"><span>Pool Gate</span><strong id="modePoolGateView">120 SOL</strong><small id="modeReserveView">Reserve 20 SOL 기준</small></div>
-        </div>
-        <div class="mode-policy-note" id="modePolicyNote">조건 미달 시 Status: BUILDING · Tickets: Reserved, not consumed · Settlement: None</div>
-      </div>
-
-      <div class="mode-summary-card condition">
-        <div class="mode-card-head compact">
-          <div>
-            <span class="mode-label">ACTIVATION CONDITIONS</span>
-            <h3>활성화 조건</h3>
-          </div>
-          <div class="mode-activation-score" id="modeActivationScore">0 / 4</div>
-        </div>
-        <div class="mode-condition-list" id="modeConditionList"></div>
-      </div>
-    </div>
-
-    <div class="mode-flow-strip">
-      <div class="mode-flow-step active"><span>1</span><strong>Pool Gate</strong><small>오픈 필요 Pool 충족 시 모드 표시</small></div>
-      <div class="mode-flow-step" id="modeFlowBuilding"><span>2</span><strong>BUILDING</strong><small>티켓·지갑·조합 조건 대기</small></div>
-      <div class="mode-flow-step" id="modeFlowActivated"><span>3</span><strong>ACTIVATED</strong><small>티켓 소모 및 카운트다운 시작</small></div>
-      <div class="mode-flow-step" id="modeFlowResolve"><span>4</span><strong>RESOLVE SOURCE</strong><small>마감 후 첫 finalized slot으로 결과 확정</small></div>
-    </div>
-  </section>
-
-  <div class="section-box" style="margin-top:18px">
-    <div class="section-title"><h3>ROUND ENVIRONMENT LOCK</h3><div class="sub">환경 고정값과 정산 대기 상태를 한 번에 확인</div></div>
-    <div class="env-lock-grid">
-      <div class="info-card env-lock-card">
-        <div>
-          <div class="countdown" id="countdownText">10:00</div>
-          <div class="small-note" id="roundStatusText">환경이 최신 Solana slot 기준으로 잠겨 있습니다.</div>
-          <div class="progress"><span id="roundProgress"></span></div>
-        </div>
-        <div class="env-meta-stack">
-          <div class="env-meta-item"><div class="k">ROUND</div><div class="v" id="participantStatus">#889,614</div></div>
-          <div class="env-meta-item"><div class="k">LOCK TIME</div><div class="v">2026. 4. 14. 0시 27분 55초</div></div>
-        </div>
-      </div>
-      <div class="info-card env-lock-card">
-        <div class="small-note" id="envDesc">ARENA ENVIRONMENT</div>
-        <div class="env-axis-grid">
-          <div class="env-axis-card">
-            <div class="axis-k">Sky Axis</div>
-            <div class="axis-v" id="envSky">Sunfire</div>
-            <div class="axis-sub" id="envSkySeed">Successful Tx 기반</div>
-            <div class="axis-desc">상공 환경과 시야 계열 보정</div>
-          </div>
-          <div class="env-axis-card">
-            <div class="axis-k">Ground Axis</div>
-            <div class="axis-v" id="envGround">Wildfield</div>
-            <div class="axis-sub" id="envGroundSeed">Compute Units 기반</div>
-            <div class="axis-desc">지면 상태와 이동 저항 보정</div>
-          </div>
-          <div class="env-axis-card">
-            <div class="axis-k">Tempo Axis</div>
-            <div class="axis-v" id="envTempo">Skirmish</div>
-            <div class="axis-sub" id="envTempoSeed">Tx+Compute Units 기반</div>
-            <div class="axis-desc">전투 템포와 초반/후반 성향 보정</div>
-          </div>
-        </div>
-      </div>
-      <div class="info-card env-lock-card">
-        <div class="small-note" id="settlementDesc">REALTIME ROUND STATUS</div>
-        <div class="env-meta-stack">
-          <div class="env-meta-item"><div class="k">실시간 참여상금 풀</div><div class="v" id="lockBlockBadge">#--</div></div>
-          <div class="env-meta-item"><div class="k">최고 배당</div><div class="v" id="lockTimeBadge">--</div></div>
-          <div class="env-meta-item"><div class="k">실시간 참여자</div><div class="v" id="settleWaitBadge">정산 대기중</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
-
-  <div class="dashboard-grid top-stage">
-    <aside class="sidebar">
-      <div class="panel">
-        <div class="section-title"><h3>지갑 · 티켓 교환</h3><div class="sub">1 SOL = 1000 가치 기준</div></div>
-        <div class="balance-grid">
-          <div class="balance-item"><div class="k">지갑 SOL</div><div class="n" id="solBalance">3.200</div></div>
-          <div class="balance-item"><div class="k">보유 SPL</div><div class="n" id="splBalance">0</div></div>
-        </div>
-        <div class="input-group">
-          <label>투입 SOL</label>
-          <div style="display:flex;gap:8px"><input id="solInput" type="number" min="0.1" step="0.1" value="1"><button class="secondary" id="exchangeBtn">티켓 교환</button></div>
-          <div class="small-note">발행 800 SPL / 구매 수수료 200 SPL. SPL은 외부 가치교환 불가, 내부 정산 전용 토큰입니다.</div>
-        </div>
-      </div>
-    </aside>
-
-    <div class="content">
-      <div class="settlement-monitor" id="settlementMonitor">
-  <div class="settlement-monitor-head">
-    <div>
-      <h3>SETTLEMENT MONITOR</h3>
-      <div class="sub">마감 이후 첫 확정 Solana slot 도착부터 순위 확정, 배당/이월 처리 상태까지 실시간 추적</div>
-    </div>
-    <div class="monitor-status-pill" id="monitorStatusPill">Solana slot 도착 대기중</div>
-  </div>
-  <div class="demo-seq-bar">
-    <button class="demo-seq-btn" type="button" onclick="runSettlementDemo()">데모 재생</button>
-    <button class="demo-seq-btn alt" type="button" onclick="resetSettlementDemo()">초기화</button>
-    <div class="demo-seq-note">00:00 종료 후 WAITING → 블록도착 → 순위확정 → 정산완료 흐름을 시각화</div>
-  </div>
-
-  <div class="monitor-grid">
-    <div class="monitor-card compact-card" id="monitorCardStep">
-      <div class="k">NEXT STEP</div>
-      <div class="v orbitron" id="monitorNextStep">WAITING</div>
-      <div class="meta compact-meta">
-        <div id="monitorNextStepDesc">첫 확정 Solana slot 대기 중입니다.</div>
-      </div>
-    </div>
-
-    <div class="monitor-card compact-card" id="monitorCardBlock">
-      <div class="k">SETTLE SOLANA SLOT</div>
-      <div class="v orbitron" id="monitorSettleBlock">WAITING</div>
-      <div class="meta compact-meta">
-        <div id="monitorSettleTime"></div>
-        <div id="monitorSettleTx"></div>
-        <div id="monitorSettleOutput"></div>
-      </div>
-    </div>
-
-    <div class="monitor-card compact-card" id="monitorCardRank">
-      <div class="k">RANK RESULT</div>
-      <div class="v orbitron" id="monitorRankResult">WAITING</div>
-      <div class="meta compact-meta">
-        <div id="monitorBestOdds"></div>
-        <div id="monitorRankTop1"></div>
-        <div id="monitorRankTop2"></div>
-        <div id="monitorRankTop3"></div>
-      </div>
-    </div>
-
-    <div class="monitor-card compact-card" id="monitorCardPayout">
-      <div class="k">PAYCU STATUS</div>
-      <div class="v orbitron" id="monitorPayoutStatus">WAITING</div>
-      <div class="meta compact-meta">
-        <div id="monitorRolloverAmount"></div>
-        <div id="monitorProfitRank1"></div>
-        <div id="monitorProfitRank2"></div>
-        <div id="monitorProfitRank3"></div>
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-
-  <div class="panel current-entry-stage">
-    <div class="section-title"><h3>현재 참여 내역</h3><div class="sub">고정 높이 276px · 참여 시 우측 누적 · 화면 초과 시 좌우 스크롤 · 라운드 종료 시 초기화</div></div>
-    <div class="entry-carousel-wrap">
-      <div id="myEntries" class="entry-carousel"></div>
-    </div>
-  </div>
-
-  <div class="dashboard-grid lower-stage">
-    <aside class="sidebar">
-      <div class="panel">
-        <div class="section-title"><h3>참여 방식</h3><div class="sub">기준배당 + 현재예상배당 분리 표기</div></div>
-        <div class="bet-types" id="betTypeList"></div>
-        <div class="selection-pills" id="selectionPills"></div>
-        <div class="combo-preview" id="comboPreview">
-          <div class="row"><div class="label">현재 예상 배당</div><div class="value" id="comboEstimatedOdds">-</div></div>
-          <div class="row"><div class="label">예상 최대 수령</div><div class="value" id="comboEstimatedPayout">-</div></div>
-          <div class="muted" id="comboPreviewNote">선택 조합과 현재 풀/동일 유형 경쟁률을 반영한 예상값입니다.</div>
-        </div>
-        <div class="input-group"><label>참여 SPL</label><input id="stakeInput" type="number" min="50" step="50" value="200"></div>
-        <div class="action-grid"><button class="dark" id="clearSelectionBtn">선택 초기화</button><button class="primary" id="enterRoundBtn">참여 확정</button></div>
-        <div class="small-note" id="slipGuide">선택형별로 필요한 비스트 수가 다릅니다.</div>
-      </div>
-      <div class="panel">
-        <div class="section-title"><h3>반복참여 전략</h3><div class="sub">선택 조합 기준 자동 참여</div></div>
-        <div class="strategy-top-actions">
-          <button class="chip-btn" id="autoEntryToggleBtn">자동참여 OFF</button>
-          <button class="chip-btn" id="loadPinnedFavoriteBtn">대표 세트 즉시 불러오기</button>
-        </div>
-        <div class="strategy-grid">
-          <div class="input-group"><label>대상 조합</label><select id="autoTargetSelect"><option value="current">현재 선택 조합</option><option value="favorite">대표 즐겨찾기 세트</option><option value="last">직전 참여 조합</option></select></div>
-          <div class="input-group"><label>연속 실패 시 중지</label><input id="autoStopLossInput" type="number" min="1" step="1" value="3"></div>
-          <div class="input-group"><label>최소 잔액 이상일 때만</label><input id="autoMinBalanceInput" type="number" min="0" step="50" value="500"></div>
-          <div class="input-group"><label>최소 조정 배당 이상일 때만</label><input id="autoMinOddsInput" type="number" min="1" step="0.1" value="2.8"></div>
-        </div>
-        <div class="strategy-stat-grid">
-          <div class="strategy-stat"><div class="k">현재 상태</div><div class="v" id="autoStatusView">HOLD</div><div class="small-note" id="autoStatusSub">자동참여 OFF</div></div>
-          <div class="strategy-stat"><div class="k">현재 조정 배당</div><div class="v" id="autoOddsView">-</div><div class="small-note" id="autoOddsSub">선택 전</div></div>
-          <div class="strategy-stat"><div class="k">최소 잔액 조건</div><div class="v" id="autoBalanceView">500 SPL</div><div class="small-note" id="autoBalanceSub">현재 0 SPL</div></div>
-          <div class="strategy-stat"><div class="k">연속 실패</div><div class="v" id="autoLossView">0 / 3</div><div class="small-note" id="autoLossSub">현재 선택 조합</div></div>
-        </div>
-        <div class="auto-run-note" id="autoRunNote">현재 선택 조합으로 매 라운드 자동 참여할 수 있습니다. 티켓 부족, 배당 미달, 연속 실패 초과 시 자동으로 HOLD 상태가 됩니다.</div>
-      </div>
-      <div class="panel">
-        <div class="section-title"><h3>즐겨찾기 세트</h3><div class="sub">저장 · 핀고정 · 즉시 불러오기</div></div>
-        <div class="strategy-top-actions">
-          <button class="chip-btn" id="saveFavoriteBtn">현재 선택 저장</button>
-          <button class="chip-btn" id="removeCurrentFavoriteBtn">현재 세트 해제</button>
-        </div>
-        <div id="favoriteSetsList" class="fav-list"></div>
-      </div>
-    </aside>
-
-    <div class="content">
-      <div class="panel" id="liveBoard">
-        <div class="section-title"><h3>실시간 전장 보드</h3><div class="sub">선택액 · 배당률 · 참여자 · 강도 · 빠른 선택</div></div>
-        <div class="table-wrap">
-          <table class="table">
-            <thead><tr><th>번호 / 엔티티</th><th>총 선택액</th><th>기준배당</th><th>현재예상배당</th><th>참여자</th><th>강도</th><th>선택</th></tr></thead>
-            <tbody id="liveAnimalTableBody"></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="panel">
-        <div class="section-title"><h3>비스트 상세 카드</h3><div class="sub">환경 락 기반 우세도 갱신</div></div>
-        <div class="animal-grid" id="animalGrid"></div>
-      </div>
-      <div class="cards-2">
-        <div class="panel"><div class="section-title"><h3>현재 라운드 관전판</h3><div class="sub">총 락 SPL · 이월 · 참여 주소</div></div><table class="table"><thead><tr><th>항목</th><th>수치</th><th>설명</th></tr></thead><tbody id="roundBoardBody"></tbody></table></div>
-        <div class="panel"><div class="section-title"><h3>최근 20경기 승률 분석</h3><div class="sub">환경 고정 후 결과형 데이터 중심</div></div><div id="winrateChart"></div></div>
-      </div>
-      <div class="cards-2">
-        <div class="panel"><div class="section-title"><h3>최근 경기 결과</h3><div class="sub">고객 분석용 리포트</div></div><div class="recent-list" id="recentResults"></div></div>
-        <div class="panel"><div class="section-title"><h3>이벤트 로그</h3><div class="sub">블록 생성 · 환경 락 · 정산 알림</div></div><div class="log-box" id="eventLog"></div></div>
-      </div>
-      <div class="footer-note">이 파일은 실제 오픈용 UX 수준에 맞춘 프론트 프로토타입입니다. 다만 실제 운영을 위해서는 Solana slot/blockhash 인덱서, 지갑 서명, SPL 소각, SOL 자동 정산 백엔드가 별도로 필요합니다.</div>
-    </div>
-  </div>
 </section>
 
 <section class="page" id="page-mypicks">
@@ -3919,9 +4979,24 @@ window.__monitorDemoState = {
         <div class="balance-item"><div class="k">보유 SPL</div><div class="n" style="font-size:20px" id="walletSplView">0 SPL</div></div>
       </div>
     </div>
-    <div class="section-box">
-      <div class="section-title"><h3>상금 배분 추적</h3><div class="sub">상금 획득 시 Resolve Slot과 트랜잭션 로그를 함께 표시</div></div>
-      <div class="tx-list" id="payoutList"></div>
+    <div class="section-box wallet-exchange-card" id="walletExchangePanel">
+      <div class="section-title"><h3>티켓 교환</h3><div class="sub">Wallet 메뉴에서 SOL을 참여용 SPL 티켓으로 전환</div></div>
+      <div class="wallet-exchange-grid">
+        <div class="input-group" style="margin-top:0">
+          <label>교환할 SOL</label>
+          <input id="solInput" type="number" min="0" step="0.001" value="0.500" placeholder="0.000">
+        </div>
+        <div class="wallet-exchange-actions">
+          <button class="dark" type="button" id="walletMaxSolBtn">MAX</button>
+          <button class="primary" type="button" id="exchangeBtn">SOL → SPL 교환</button>
+        </div>
+      </div>
+      <div class="wallet-rate-box">
+        <div class="wallet-rate-item"><span>보유 SOL</span><strong id="walletExchangeSolView">0 SOL</strong></div>
+        <div class="wallet-rate-item highlight"><span>예상 발행</span><strong id="walletIssuePreview">0 SPL</strong></div>
+        <div class="wallet-rate-item"><span>운영 수수료</span><strong id="walletFeePreview">0 SPL</strong></div>
+      </div>
+      <div class="wallet-exchange-note"><b>교환 기준:</b> 1 SOL → 800 SPL 발행 / 200 SPL 수수료. 교환된 SPL은 라운드 참여 확정 시 잠금 처리됩니다.</div>
     </div>
   </div>
 
@@ -3949,6 +5024,11 @@ window.__monitorDemoState = {
       </div>
       <div class="section-anchor-note">한도를 넘는 참여는 차단되며, 세션 종료 임박 시 토스트 알림으로 휴식을 권장합니다.</div>
     </div>
+  </div>
+
+  <div class="section-box" style="margin-top:18px">
+    <div class="section-title"><h3>상금 배분 추적</h3><div class="sub">상금 획득 시 Resolve Slot과 트랜잭션 로그를 함께 표시</div></div>
+    <div class="tx-list" id="payoutList"></div>
   </div>
 
   <div class="section-box" style="margin-top:18px">
@@ -4026,13 +5106,13 @@ function bindNavigation(){document.querySelectorAll('.nav-item').forEach(el=>el.
 function pushLog(text){state.eventLog.unshift({text,time:timeNow()}); state.eventLog=state.eventLog.slice(0,80); renderLogs()}
 function toast(title, desc, pills=[]){const wrap=document.getElementById('toastStack'); const el=document.createElement('div'); el.className='toast'; el.innerHTML=`<div class="title">${title}</div><div class="desc">${desc}</div><div class="meta">${pills.map(p=>`<span>${p}</span>`).join('')}</div>`; wrap.appendChild(el); setTimeout(()=>el.remove(),5100)}
 function updateHashTicker(){document.getElementById('hashStreamInner').textContent=state.blockFeed.slice(0,10).map(b=>`slot:${b.number} ${b.hash.slice(0,16)}… successTx:${b.txCount} CU:${formatNum(b.output)}`).join('   •   ')}
-function renderHeaderBits(){const myLocked=state.walletConnected?state.entries.filter(e=>e.owner===state.walletAddress).reduce((s,e)=>s+e.stake,0):0; document.getElementById('currentRoundText').textContent=`#${state.currentRound}`; document.getElementById('walletMini').textContent=state.walletConnected?`${shortAddr(state.walletAddress)} · ${formatNum(state.splBalance)} SPL`:'지갑 미연결'; document.getElementById('headerSolMini').textContent=state.walletConnected?formatNum(state.solBalance,3):'-'; document.getElementById('headerTicketMini').textContent=state.walletConnected?`${formatNum(state.splBalance)} SPL`:'-'; document.getElementById('headerLockMini').textContent=state.walletConnected?`${formatNum(myLocked)} SPL`:'Ø SPL'; document.getElementById('walletAddressView').textContent=state.walletConnected?state.walletAddress:'미연결'; document.getElementById('walletFeeView').textContent=`${formatNum(state.feeSplAccum)} SPL`; document.getElementById('walletSolView').textContent=`${formatNum(state.solBalance,3)} SOL`; document.getElementById('walletSplView').textContent=`${formatNum(state.splBalance)} SPL`; document.getElementById('solBalance').textContent=formatNum(state.solBalance,3); document.getElementById('splBalance').textContent=formatNum(state.splBalance); document.getElementById('heroBlockNumber').textContent=formatNum((state.blockFeed[0]||state.lockedEnvironmentBlock).number); document.getElementById('heroHashValue').textContent=`${((state.blockFeed[0]||state.lockedEnvironmentBlock).hash).slice(0,26)}…`; document.getElementById('metricHashrate').textContent=`${formatNum(rand(2400,5200))} TPS`; document.getElementById('metricDifficulty').textContent=`${formatNum(rand(180,920))}M CU`; document.getElementById('metricEta').textContent=state.waitingSettlementBlock?'NEXT SLOT':`${Math.max(0,Math.ceil((state.roundDeadline-Date.now())/1000))}s`}
+function renderHeaderBits(){const myLocked=state.walletConnected?state.entries.filter(e=>e.owner===state.walletAddress).reduce((s,e)=>s+e.stake,0):0; document.getElementById('currentRoundText').textContent=`#${state.currentRound}`; document.getElementById('walletMini').textContent=state.walletConnected?`${shortAddr(state.walletAddress)} · ${formatNum(state.splBalance)} SPL`:'지갑 미연결'; document.getElementById('headerSolMini').textContent=state.walletConnected?formatNum(state.solBalance,3):'-'; document.getElementById('headerTicketMini').textContent=state.walletConnected?`${formatNum(state.splBalance)} SPL`:'-'; document.getElementById('headerLockMini').textContent=state.walletConnected?`${formatNum(myLocked)} SPL`:'Ø SPL'; document.getElementById('walletAddressView').textContent=state.walletConnected?state.walletAddress:'미연결'; document.getElementById('walletFeeView').textContent=`${formatNum(state.feeSplAccum)} SPL`; document.getElementById('walletSolView').textContent=`${formatNum(state.solBalance,3)} SOL`; document.getElementById('walletSplView').textContent=`${formatNum(state.splBalance)} SPL`; const solBalanceEl=document.getElementById('solBalance'); if(solBalanceEl) solBalanceEl.textContent=formatNum(state.solBalance,3); document.getElementById('splBalance').textContent=formatNum(state.splBalance); document.getElementById('heroBlockNumber').textContent=formatNum((state.blockFeed[0]||state.lockedEnvironmentBlock).number); document.getElementById('heroHashValue').textContent=`${((state.blockFeed[0]||state.lockedEnvironmentBlock).hash).slice(0,26)}…`; document.getElementById('metricHashrate').textContent=`${formatNum(rand(2400,5200))} TPS`; document.getElementById('metricDifficulty').textContent=`${formatNum(rand(180,920))}M CU`; document.getElementById('metricEta').textContent=state.waitingSettlementBlock?'NEXT SLOT':`${Math.max(0,Math.ceil((state.roundDeadline-Date.now())/1000))}s`}
 function updateEnvUI(){const env=state.lockedEnvironment; const lock=state.lockedEnvironmentBlock; document.getElementById('envSky').textContent=`${env.sky}`; document.getElementById('envGround').textContent=`${env.ground}`; document.getElementById('envTempo').textContent=`${env.tempo}`; document.getElementById('envSkySeed').textContent=`Successful Tx ${formatNum(lock.txCount)} 기준`; document.getElementById('envGroundSeed').textContent=`Compute Units ${formatNum(lock.output)} 기준`; document.getElementById('envTempoSeed').textContent=`Tx+Compute Units ${formatNum(lock.txCount+lock.output)} 기준`; document.getElementById('lockBlockBadge').textContent=`#${formatNum(lock.number)}`; document.getElementById('lockTimeBadge').textContent=formatDateTime(lock.time);}
 function updateCountdown(){const diff=Math.max(0,state.roundDeadline-Date.now()); document.getElementById('countdownText').textContent=`${String(Math.floor(diff/60000)).padStart(2,'0')}:${String(Math.floor((diff%60000)/1000)).padStart(2,'0')}`; document.getElementById('roundProgress').style.width=`${Math.min(100,Math.max(0,((ROUND_SECONDS*1000-diff)/(ROUND_SECONDS*1000))*100))}%`; document.getElementById('participantStatus').textContent=`${state.participants.size} / ${state.participantMin} 참여`; if(diff>0){document.getElementById('roundStatusText').textContent=`환경은 slot #${formatNum(state.lockedEnvironmentBlock.number)} 기준으로 확정됨 · ${Math.ceil(diff/1000)}초 후 마감`; document.getElementById('settleWaitBadge').textContent='정산 대기중'} else if(state.participants.size<state.participantMin){document.getElementById('roundStatusText').textContent=''; document.getElementById('settleWaitBadge').textContent='2명'} else {state.waitingSettlementBlock=true; document.getElementById('roundStatusText').textContent='10분이 경과했습니다. 지금부터 도착하는 첫 확정 Solana slot으로 결과를 확정합니다.'; document.getElementById('settleWaitBadge').textContent='첫 확정 slot 대기'}}
 function renderOverview(){const totalLocked=state.entries.reduce((s,e)=>s+e.stake,0), prizeSol=totalLocked/1000+state.rolloverVault/1000; document.getElementById('liveTotalLocked').textContent=`${formatNum(totalLocked)} SPL`; document.getElementById('livePrizePool').textContent=`${formatNum(prizeSol,3)} SOL`; document.getElementById('liveRollover').textContent=`${formatNum(state.rolloverVault)} SPL`; document.getElementById('liveParticipants').textContent=`${state.participants.size}명`}
 function getBetTypeLiveOdds(betId, picks=[]){const bet=BET_TYPES.find(t=>t.id===betId)||BET_TYPES[0]; const totalPool=state.entries.reduce((s,e)=>s+e.stake,0)+state.rolloverVault+1200; const sameTypeEntries=state.entries.filter(e=>e.betId===bet.id); const sameTypeStake=sameTypeEntries.reduce((s,e)=>s+e.stake,0); const competitionFactor=1+sameTypeEntries.length*0.08+sameTypeStake/4000; let pickFactor=1; if(picks.length){const ranking=computeProjectedRanking(); const ids=(picks||[]).filter(Boolean); const rankSum=ids.reduce((s,id)=>s+Math.max(1, ranking.findIndex(r=>r.id===id)+1 || 10),0); const qualityBase=bet.id==='alpha'?11:bet.id==='twin'?13:bet.id==='chain'?15:bet.id==='podium'?17:20; pickFactor=Math.max(0.72, Math.min(1.45, qualityBase/Math.max(rankSum,1))); }
  const poolFactor=Math.max(0.82, Math.min(1.35, totalPool/Math.max(2400, sameTypeStake+1800))); const live=bet.baseMultiplier*pickFactor*poolFactor/competitionFactor*1.22; return Number(Math.max(Math.max(1.1, bet.baseMultiplier*0.6), live).toFixed(2))}
-function renderBetTypes(){const box=document.getElementById('betTypeList'); const activeBetId=selection.activeBetId||(document.querySelector('.bet-type.active')?.dataset.bet)||BET_TYPES[0].id; box.innerHTML=BET_TYPES.map((t)=>{const liveOdds=getBetTypeLiveOdds(t.id); return `<div class="bet-type ${t.id===activeBetId?'active':''}" data-bet="${t.id}"><div class="bet-meta"><div><div class="name">${t.name}</div><div class="desc">${t.desc}</div></div><div class="mult-wrap"><div class="mult-label">현재예상</div><div class="mult">${liveOdds.toFixed(2)}x</div><div class="mult-sub">기준 ${t.baseMultiplier.toFixed(1)}x</div></div></div></div>`}).join(''); document.querySelectorAll('.bet-type').forEach(el=>el.addEventListener('click',()=>{selection.activeBetId=el.dataset.bet; document.querySelectorAll('.bet-type').forEach(x=>x.classList.remove('active')); el.classList.add('active'); selection.picks=[]; updateSlipGuide(); renderSelectionPills(); renderAnimals(); renderBetTypes(); renderComboPreview()}))}
+function renderBetTypes(){const box=document.getElementById('betTypeList'); const activeBetId=selection.activeBetId||(document.querySelector('.bet-type.active')?.dataset.bet)||BET_TYPES[0].id; if(!box){selection.activeBetId=activeBetId; return} box.innerHTML=BET_TYPES.map((t)=>{const liveOdds=getBetTypeLiveOdds(t.id); return `<div class="bet-type ${t.id===activeBetId?'active':''}" data-bet="${t.id}"><div class="bet-meta"><div><div class="name">${t.name}</div><div class="desc">${t.desc}</div></div><div class="mult-wrap"><div class="mult-label">현재예상</div><div class="mult">${liveOdds.toFixed(2)}x</div><div class="mult-sub">기준 ${t.baseMultiplier.toFixed(1)}x</div></div></div></div>`}).join(''); document.querySelectorAll('.bet-type').forEach(el=>el.addEventListener('click',()=>{selection.activeBetId=el.dataset.bet; activeRoundModeId=el.dataset.bet; document.querySelectorAll('.bet-type').forEach(x=>x.classList.remove('active')); el.classList.add('active'); selection.picks=[]; updateSlipGuide(); renderSelectionPills(); renderAnimals(); renderBetTypes(); renderComboPreview(); renderLiveOddsBoard()}))}
 function getActiveBet(){const el=document.querySelector('.bet-type.active'); const betId=el?.dataset.bet||selection.activeBetId||BET_TYPES[0].id; selection.activeBetId=betId; return BET_TYPES.find(t=>t.id===betId)||BET_TYPES[0]}
 function getSelectionSlotLabels(bet){if(bet.id==='chain') return ['1위 예측','2위 예측']; if(bet.id==='trinity') return ['1위 예측','2위 예측','3위 예측']; return Array.from({length:bet.picks},(_,i)=>`선택 슬롯 ${i+1}`)}
 function getPickNames(){return selection.picks.map(id=>ANIMALS.find(a=>a.id===id)).filter(Boolean)}
@@ -4047,14 +5127,153 @@ function renderSelectionPills(){
   const bet=getActiveBet(); const labels=getSelectionSlotLabels(bet); const filled=selection.picks.length; const ready=filled===bet.picks;
   const selectedAnimals=getPickNames(); const lead=selectedAnimals[0]; const liveOdds=getBetTypeLiveOdds(bet.id,selection.picks); const stake=Number(document.getElementById('stakeInput')?.value||0); const estPayout=stake?Number((stake*liveOdds/1000).toFixed(4)):0;
   const slotHtml=labels.map((label,idx)=>{const animal=ANIMALS.find(a=>a.id===selection.picks[idx]); return animal?`<div class="selection-slot filled"><div class="selection-slot-label">${label}</div><div class="selection-slot-main"><div class="selection-slot-emoji">${animal.emoji}</div><div><div class="selection-slot-name">${animal.name}</div><div class="selection-slot-role">${animal.role}</div></div><div class="selection-slot-status">PICK ${idx+1}</div></div></div>`:`<div class="selection-slot pending"><div class="selection-slot-label">${label}</div><div class="selection-slot-empty">비스트를 선택해 슬롯을 채우세요</div></div>`}).join('');
-  const pickLine=selectedAnimals.length?selectedAnimals.map((a,i)=>`<span>${i+1}. ${a.emoji} ${a.name}</span>`).join(''):'<span>아직 선택 없음</span>';
-  document.getElementById('selectionPills').innerHTML=`<div class="selection-summary customer-selection-summary"><div class="selection-summary-top"><div><div class="selection-summary-label">ENTRY READINESS</div><div class="selection-summary-title">${bet.name} · ${filled} / ${bet.picks} 선택</div><div class="selection-summary-sub">${ready?'선택 완료 · 참여 전 예상 수령을 확인하세요':`아직 ${bet.picks-filled}마리 더 선택해야 합니다`}</div></div><div class="selection-summary-badge ${ready?'ready':'pending'}">${ready?'참여 가능':'선택 진행중'}</div></div><div class="selection-slot-grid cols-${Math.min(Math.max(bet.picks,1),3)}">${slotHtml}</div><div class="customer-pick-strip">${pickLine}</div><div class="selection-summary-stats"><div class="selection-summary-stat"><div class="k">예측 조건</div><div class="v">${bet.desc}</div></div><div class="selection-summary-stat"><div class="k">예상 수령</div><div class="v highlight">${stake?`${formatNum(estPayout,4)} SOL`: '-'}</div></div></div><div class="customer-risk-row"><div><span>현재예상 배당</span><strong>${liveOdds.toFixed(2)}x</strong></div><div><span>참여 SPL</span><strong>${formatNum(stake)} SPL</strong></div><div><span>선택 상태</span><strong>${ready?'READY':'PENDING'}</strong></div></div></div>`;
+  const statusText=ready?'선택 완료':'선택 진행중';
+  document.getElementById('selectionPills').innerHTML=`<div class="selection-summary customer-selection-summary"><div class="selection-summary-top"><div><div class="selection-summary-title">${bet.name} · ${filled} / ${bet.picks} 선택</div></div></div><div class="selection-slot-grid cols-${Math.min(Math.max(bet.picks,1),3)}">${slotHtml}</div><div class="selection-summary-stats"><div class="selection-summary-stat"><div class="k">현재예상 배당</div><div class="v highlight">${liveOdds.toFixed(2)}x</div></div><div class="selection-summary-stat"><div class="k">참여 SPL</div><div class="v">${formatNum(stake)} SPL</div></div><div class="selection-summary-stat"><div class="k">선택상태</div><div class="v">${statusText}</div></div><div class="selection-summary-stat"><div class="k">예상 수령</div><div class="v highlight">${stake?`${formatNum(estPayout,4)} SOL`: '-'}</div></div></div></div>`;
 }
-function updateSlipGuide(){const bet=getActiveBet(); if(selection.picks.length>bet.picks) selection.picks=selection.picks.slice(0,bet.picks); const liveOdds=getBetTypeLiveOdds(bet.id,selection.picks); const remaining=Math.max(0,bet.picks-selection.picks.length); const stake=Number(document.getElementById('stakeInput')?.value||0); const enterBtn=document.getElementById('enterRoundBtn'); if(enterBtn){enterBtn.textContent=stake>0?`${formatNum(stake)} SPL로 참여 확정`:'참여 확정'} document.getElementById('slipGuide').textContent=remaining===0?`${bet.name} · 선택 완료 · 현재예상 ${liveOdds.toFixed(2)}x · 참여 전 예상 수령과 잔액을 확인하세요.`:`${bet.name} · ${bet.desc} · ${remaining}마리 더 선택 필요 · 현재예상 ${liveOdds.toFixed(2)}x`; updateActionPanel()}
+function updateSlipGuide(){const bet=getActiveBet(); if(selection.picks.length>bet.picks) selection.picks=selection.picks.slice(0,bet.picks); const liveOdds=getBetTypeLiveOdds(bet.id,selection.picks); const remaining=Math.max(0,bet.picks-selection.picks.length); const stake=Number(document.getElementById('stakeInput')?.value||0); const enterBtn=document.getElementById('enterRoundBtn'); if(enterBtn){enterBtn.textContent='참여 확정'} const slipGuideEl=document.getElementById('slipGuide'); if(slipGuideEl) slipGuideEl.textContent=''; updateActionPanel()}
 function togglePick(id){const req=getActiveBet().picks; const idx=selection.picks.indexOf(id); if(idx>=0) selection.picks.splice(idx,1); else {if(selection.picks.length>=req) selection.picks.shift(); selection.picks.push(id)} renderSelectionPills(); renderAnimals(); updateSlipGuide(); renderComboPreview(); updateActionPanel()}
 function quickPick(id){selection.picks=[]; togglePick(id); renderComboPreview(); document.getElementById('selectionPills')?.scrollIntoView({behavior:'smooth',block:'center'})}
 function renderLiveAnimalTable(){refreshMarketSnapshot(); const body=document.getElementById('liveAnimalTableBody'); const ranking=computeProjectedRanking(); body.innerHTML=ranking.map((a,idx)=>{const m=state.marketSnapshot[a.id]; const fit=idx<3?'HOT':idx<6?'GOOD':'RISK'; const crowd=m.totalStake>900?'HIGH':m.totalStake>450?'MID':'LOW'; return `<tr><td><div class="entity-cell"><div class="rank-badge">${idx+1}</div><div class="entity-meta"><div class="name">${a.emoji} ${a.name}</div><div class="desc">${a.role} · ${fit} 환경 · Crowd ${crowd}</div></div></div></td><td><strong>${formatNum(m.totalStake)} SPL</strong></td><td class="odds-base">${m.baseOdds.toFixed(2)}x</td><td class="odds-adj">${m.adjOdds.toFixed(2)}x</td><td>${formatNum(m.participants)}명</td><td><div class="strength-wrap"><div class="strength-bar"><span style="width:${m.strength}%"></span></div><span>${m.strength}%</span></div></td><td><button class="table-pick" data-pick="${a.id}">+ 선택</button></td></tr>`}).join(''); body.querySelectorAll('button[data-pick]').forEach(btn=>btn.addEventListener('click',()=>quickPick(btn.dataset.pick)))}
-function renderComboPreview(){const bet=getActiveBet(); const liveOdds=getBetTypeLiveOdds(bet.id,selection.picks); const stake=Number(document.getElementById('stakeInput')?.value||0); const estPayout=stake?Number((stake*liveOdds/1000).toFixed(4)):0; document.getElementById('comboEstimatedOdds').textContent=`${liveOdds.toFixed(2)}x`; document.getElementById('comboEstimatedPayout').textContent=stake?`${formatNum(estPayout,4)} SOL`:'-'; const pickText=selection.picks.length?selection.picks.map(id=>ANIMALS.find(a=>a.id===id)?.name).join(' / '):'선택 전'; const remain=Math.max(0,bet.picks-selection.picks.length); document.getElementById('comboPreviewNote').textContent=remain===0?`${pickText} · 현재 풀/동일 유형 경쟁률 반영 예상값입니다. 최종 확정배당은 Resolve Slot 결과 시점 기준입니다.`:`${pickText} · ${remain}마리 더 선택하면 예상 배당과 최대 수령을 기준으로 바로 참여를 확정할 수 있습니다.`; const enterBtn=document.getElementById('enterRoundBtn'); if(enterBtn){enterBtn.textContent=stake>0?`${formatNum(stake)} SPL로 참여 확정`:'참여 확정'} updateActionPanel()}
+function renderComboPreview(){const bet=getActiveBet(); const liveOdds=getBetTypeLiveOdds(bet.id,selection.picks); const stake=Number(document.getElementById('stakeInput')?.value||0); const estPayout=stake?Number((stake*liveOdds/1000).toFixed(4)):0; const comboOddsEl=document.getElementById('comboEstimatedOdds'); if(comboOddsEl) comboOddsEl.textContent=`${liveOdds.toFixed(2)}x`; const comboPayoutEl=document.getElementById('comboEstimatedPayout'); if(comboPayoutEl) comboPayoutEl.textContent=stake?`${formatNum(estPayout,4)} SOL`:'-'; const pickText=selection.picks.length?selection.picks.map(id=>ANIMALS.find(a=>a.id===id)?.name).join(' / '):'선택 전'; const remain=Math.max(0,bet.picks-selection.picks.length); const comboNoteEl=document.getElementById('comboPreviewNote'); if(comboNoteEl) comboNoteEl.textContent=remain===0?`${pickText} · 현재 풀/동일 유형 경쟁률 반영 예상값입니다. 최종 확정배당은 Resolve Slot 결과 시점 기준입니다.`:`${pickText} · ${remain}마리 더 선택하면 예상 배당과 최대 수령을 기준으로 바로 참여를 확정할 수 있습니다.`; const enterBtn=document.getElementById('enterRoundBtn'); if(enterBtn){enterBtn.textContent='참여 확정'} updateActionPanel()}
+function setMarketHeader(eyebrow,title,sub){
+  const e=document.getElementById('liveMarketEyebrow'); if(e) e.textContent=eyebrow;
+  const t=document.getElementById('liveMarketTitle'); if(t) t.textContent=title;
+  const s=document.getElementById('liveMarketSub'); if(s) s.textContent=sub;
+}
+function getMarketComboConfig(betId){
+  if(betId==='twin') return {label:'Twin Pick',title:'LIVE TWIN PAIR BOARD',desc:'2마리 조합 선택률 · 예상배당',size:2,ordered:false,caseText:'45 cases'};
+  if(betId==='chain') return {label:'Chain Order',title:'LIVE CHAIN ORDER BOARD',desc:'1위→2위 순서 조합 선택률 · 예상배당',size:2,ordered:true,caseText:'90 cases'};
+  if(betId==='podium') return {label:'Podium Mesh',title:'LIVE PODIUM MESH BOARD',desc:'1~3위 진입 3마리 조합 선택률 · 예상배당',size:3,ordered:false,caseText:'120 cases'};
+  if(betId==='trinity') return {label:'Trinity Order',title:'TRINITY MARKET SCANNER',desc:'정확한 1→2→3 순서 조합 스캐너',size:3,ordered:true,caseText:'720 cases'};
+  return null;
+}
+function stableHash(str){let h=2166136261; for(let i=0;i<str.length;i++){h^=str.charCodeAt(i); h=Math.imul(h,16777619)} return Math.abs(h>>>0)}
+function getComboLabels(ids,ordered){
+  return ids.map(id=>ANIMALS.find(a=>a.id===id)).filter(Boolean).map(a=>a.emoji+' '+a.name).join(ordered?' → ':' / ');
+}
+function generateCombosByMode(betId){
+  const cfg=getMarketComboConfig(betId); if(!cfg) return [];
+  const ids=ANIMALS.map(a=>a.id), combos=[];
+  const addCombo=(arr)=>{const key=arr.join('>'); const h=stableHash(betId+'|'+key+'|'+state.currentRound); combos.push({ids:arr,key,hash:h,label:getComboLabels(arr,cfg.ordered)});};
+  if(cfg.size===2 && cfg.ordered){ids.forEach(a=>ids.forEach(b=>{if(a!==b) addCombo([a,b])}))}
+  if(cfg.size===2 && !cfg.ordered){for(let i=0;i<ids.length;i++) for(let j=i+1;j<ids.length;j++) addCombo([ids[i],ids[j]])}
+  if(cfg.size===3 && cfg.ordered){ids.forEach(a=>ids.forEach(b=>ids.forEach(c=>{if(a!==b&&a!==c&&b!==c) addCombo([a,b,c])})))}
+  if(cfg.size===3 && !cfg.ordered){for(let i=0;i<ids.length;i++) for(let j=i+1;j<ids.length;j++) for(let k=j+1;k<ids.length;k++) addCombo([ids[i],ids[j],ids[k]])}
+  return combos;
+}
+function scoreMarketCombo(combo,betId){
+  const cfg=getMarketComboConfig(betId);
+  const poolBase=betId==='trinity'?260:betId==='podium'?210:betId==='chain'?185:150;
+  const seed=combo.hash%997;
+  const animalStats=combo.ids.map(id=>state.marketSnapshot[id]||{totalStake:0,adjOdds:4,strength:50});
+  const stakeRaw=animalStats.reduce((sum,m)=>sum+(m.totalStake||0),0)/combo.ids.length;
+  const comboNoise=(seed%47)+1;
+  const stake=Math.max(0,Math.round((stakeRaw*(cfg.ordered?.026:.038))+comboNoise));
+  const active=stake>=18 || seed%7===0;
+  const share=Number(((stake/(poolBase*10))*100).toFixed(2));
+  const strength=animalStats.reduce((sum,m)=>sum+(m.strength||50),0)/animalStats.length;
+  const orderPenalty=cfg.ordered?1.35:1;
+  const scarcity=Math.max(.18,1/(Math.max(share,.12)/100+0.01));
+  const odds=Number(Math.min(betId==='trinity'?980:betId==='podium'?260:betId==='chain'?180:90, Math.max(2.1,(cfg.size*cfg.size*orderPenalty*scarcity)*(100/Math.max(52,strength)))) .toFixed(2));
+  const valueScore=Number(((strength+35)/(Math.max(share,.12)+0.7)).toFixed(1));
+  let stateLabel='Normal', stateClass='normal';
+  if(share>=(betId==='trinity'?3:betId==='podium'?8:betId==='chain'?10:14)){stateLabel='Crowded'; stateClass='crowded'}
+  else if(odds>=(betId==='trinity'?450:betId==='podium'?120:betId==='chain'?80:45)){stateLabel='High Risk'; stateClass='risk'}
+  else if(valueScore>60){stateLabel='Value'; stateClass='value'}
+  return {...combo,stake,share,odds,valueScore,active,stateLabel,stateClass,caseNo:seed%1000};
+}
+function comboMatchesSelection(combo,betId){
+  if(!selection.picks.length) return true;
+  const cfg=getMarketComboConfig(betId);
+  if(cfg?.ordered) return selection.picks.every((id,idx)=>combo.ids[idx]===id);
+  return selection.picks.every(id=>combo.ids.includes(id));
+}
+function applyComboPick(ids,betId){
+  selection.activeBetId=betId;
+  activeRoundModeId=betId;
+  selection.picks=[...ids];
+  renderModeRoundPanel();
+  renderBetTypes();
+  renderSelectionPills();
+  renderAnimals();
+  renderComboPreview();
+  updateSlipGuide();
+  renderLiveOddsBoard();
+}
+function renderMarketSummary(items,totalCases,activeCount,modeId){
+  const summary=document.getElementById('liveMarketSummary'); if(!summary) return;
+  const topExposure=items.length?Math.max(...items.map(x=>x.share)):0;
+  const avgOdds=items.length?items.reduce((sum,x)=>sum+x.odds,0)/items.length:0;
+  const minApplied=items.filter(x=>x.stateLabel==='Crowded').length;
+  summary.innerHTML=[
+    ['Total Cases',formatNum(totalCases)],
+    ['Active Cases',formatNum(activeCount)],
+    ['Empty Cases',formatNum(Math.max(0,totalCases-activeCount))],
+    ['Top Exposure',topExposure.toFixed(1)+'%'],
+    [modeId==='trinity'?'Avg Est. Return':'Avg Odds',avgOdds.toFixed(1)+'x']
+  ].map(([k,v])=>'<div class="bba-market-metric"><span>'+k+'</span><strong>'+v+'</strong></div>').join('')+
+  '<div class="bba-market-metric"><span>Crowded</span><strong>'+formatNum(minApplied)+'</strong></div>';
+}
+function renderComboMarketBoard(betId){
+  refreshMarketSnapshot();
+  const board=document.getElementById('liveOddsBoard'); if(!board) return;
+  const cfg=getMarketComboConfig(betId);
+  setMarketHeader('LIVE MARKET BOARD',cfg.title,cfg.caseText+' · '+cfg.desc);
+  board.classList.add('combo-mode');
+  const all=generateCombosByMode(betId).map(c=>scoreMarketCombo(c,betId));
+  const activeCount=all.filter(x=>x.active).length;
+  renderMarketSummary(all,all.length,activeCount,betId);
+  state.marketBoardTab=state.marketBoardTab||'popular';
+  const tab=state.marketBoardTab;
+  const search=(state.marketBoardSearch||'').toLowerCase().trim();
+  let source=all.filter(x=>x.active);
+  if(tab==='value') source=[...source].sort((a,b)=>b.valueScore-a.valueScore).slice(0,10);
+  else if(tab==='longshot') source=[...source].filter(x=>x.stake>=2).sort((a,b)=>b.odds-a.odds).slice(0,10);
+  else if(tab==='mine') source=[...all].filter(x=>comboMatchesSelection(x,betId)).sort((a,b)=>b.valueScore-a.valueScore).slice(0,10);
+  else if(tab==='search' && search) source=[...all].filter(x=>x.label.toLowerCase().includes(search)||x.ids.join(' ').toLowerCase().includes(search)).slice(0,10);
+  else source=[...source].sort((a,b)=>b.share-a.share).slice(0,10);
+  const tabs=[['popular','Popular'],['value','Value'],['longshot','Longshot'],['mine','My Related'],['search','Search']];
+  const toolbar='<div class="bba-market-toolbar">'+tabs.map(([id,label])=>'<button class="bba-market-tab '+(tab===id?'active':'')+'" type="button" data-market-tab="'+id+'">'+label+'</button>').join('')+'<input class="bba-market-search" id="marketSearchInput" placeholder="Lion Bear Fox 검색" value="'+(state.marketBoardSearch||'')+'"></div>';
+  const rowHtml=(x,idx)=>'<div class="bba-combo-row-card" data-combo="'+x.ids.join(',')+'"><div class="bba-combo-no">'+(idx+1)+'</div><div class="bba-combo-entity"><div class="bba-combo-name">'+x.label+'</div><div class="bba-combo-meta">'+cfg.label+' · Value '+x.valueScore+' · Case #'+x.caseNo+'</div></div><div class="bba-combo-stat share"><span>선택률</span><strong>'+x.share.toFixed(2)+'%</strong></div><div class="bba-combo-stat stake"><span>참여</span><strong>'+formatNum(x.stake)+' SPL</strong></div><div class="bba-combo-stat odds"><span>예상</span><strong>'+x.odds.toFixed(1)+'x</strong></div><div class="bba-combo-stat case"><span>상태</span><strong><em class="bba-combo-state '+x.stateClass+'">'+x.stateLabel+'</em></strong></div></div>';
+  if(source.length){
+    const left=source.slice(0,5).map((x,idx)=>rowHtml(x,idx)).join('');
+    const right=source.slice(5,10).map((x,idx)=>rowHtml(x,idx+5)).join('');
+    board.innerHTML=toolbar+'<div class="bba-combo-board">'+left+'</div><div class="bba-combo-board">'+right+'</div>';
+  }else{
+    board.innerHTML=toolbar+'<div class="bba-market-empty">표시할 조합이 없습니다. Search 탭에서는 비스트 이름 또는 ID를 입력해 조합을 직접 조회할 수 있습니다.</div>';
+  }
+  board.querySelectorAll('[data-market-tab]').forEach(btn=>btn.addEventListener('click',()=>{state.marketBoardTab=btn.dataset.marketTab; renderLiveOddsBoard()}));
+  const input=board.querySelector('#marketSearchInput');
+  if(input){input.addEventListener('input',()=>{state.marketBoardSearch=input.value; state.marketBoardTab='search'; renderLiveOddsBoard()})}
+  board.querySelectorAll('[data-combo]').forEach(row=>row.addEventListener('click',()=>applyComboPick(row.dataset.combo.split(','),betId)));
+}
+function renderAlphaMarketBoard(){
+  refreshMarketSnapshot();
+  const board=document.getElementById('liveOddsBoard'); if(!board) return;
+  board.classList.remove('combo-mode');
+  setMarketHeader('LIVE MARKET BOARD','LIVE ALPHA ODDS','Alpha Pick · Beast 1~10 단승형 선택률 · 예상배당');
+  const summary=document.getElementById('liveMarketSummary');
+  if(summary){const values=Object.values(state.marketSnapshot); const totalStake=values.reduce((s,m)=>s+(m.totalStake||0),0); const topStake=values.length?Math.max(...values.map(m=>m.totalStake||0)):0; const crowded=values.filter(m=>(m.totalStake||0)>900).length; summary.innerHTML=[['Total Cases','10'],['Active Beasts','10'],['Total SPL',formatNum(totalStake)],['Top Share',totalStake?(topStake/totalStake*100).toFixed(1)+'%':'0.0%'],['Avg Odds',(values.reduce((s,m)=>s+(m.adjOdds||0),0)/Math.max(1,values.length)).toFixed(2)+'x'],['Crowded',formatNum(crowded)]].map(([k,v])=>'<div class="bba-market-metric"><span>'+k+'</span><strong>'+v+'</strong></div>').join('')}
+  const ranking=computeProjectedRanking();
+  const rankMap={};
+  ranking.forEach((a,idx)=>rankMap[a.id]=idx+1);
+  const columns=[ANIMALS.slice(0,5),ANIMALS.slice(5,10)];
+  board.innerHTML=columns.map(col=>'<div class="bba-live-odds-col">'+col.map(a=>{
+    const m=state.marketSnapshot[a.id] || {totalStake:0,baseOdds:0,adjOdds:0,participants:0,strength:0};
+    const rank=rankMap[a.id] || '-';
+    const crowd=m.totalStake>900?'HIGH':m.totalStake>450?'MID':'LOW';
+    return '<div class="bba-live-odds-row-card" data-id="'+a.id+'"><div class="bba-live-odds-no">'+(ANIMALS.findIndex(x=>x.id===a.id)+1)+'</div><div class="bba-live-odds-entity"><div class="bba-live-odds-name">'+a.emoji+' '+a.name+'</div><div class="bba-live-odds-meta">'+a.role+' · 예상 '+rank+'위 · Crowd '+crowd+'</div></div><div class="bba-live-odds-stat stake"><span>선택액</span><strong>'+formatNum(m.totalStake)+' SPL</strong></div><div class="bba-live-odds-stat base"><span>기준</span><strong>'+m.baseOdds.toFixed(2)+'x</strong></div><div class="bba-live-odds-stat odds"><span>예상</span><strong>'+m.adjOdds.toFixed(2)+'x</strong></div><button class="bba-live-odds-pick" type="button" data-pick="'+a.id+'">선택</button></div>';
+  }).join('')+'</div>').join('');
+  board.querySelectorAll('button[data-pick]').forEach(btn=>btn.addEventListener('click',(e)=>{e.stopPropagation();quickPick(btn.dataset.pick)}));
+  board.querySelectorAll('.bba-live-odds-row-card').forEach(card=>card.addEventListener('click',()=>togglePick(card.dataset.id)));
+}
+function renderLiveOddsBoard(){
+  const betId=selection.activeBetId||activeRoundModeId||'alpha';
+  if(betId==='alpha') return renderAlphaMarketBoard();
+  return renderComboMarketBoard(betId);
+}
+
+
 function renderAnimals(){const ranking=computeProjectedRanking(), oddsMap={}; ranking.forEach((r,idx)=>oddsMap[r.id]={rank:idx+1,pct:Math.max(3,Math.min(18,17-idx*1.35+r.envBonus*.15))}); const grid=document.getElementById('animalGrid'); grid.innerHTML=ANIMALS.map(a=>{const o=oddsMap[a.id]||{rank:'-',pct:8}; const insight=getAnimalMarketInsight(a,o.rank); const pickIdx=selection.picks.indexOf(a.id); const selected=pickIdx>=0; return `<div class="animal-card customer-animal-card ${selected?'selected':''}" data-id="${a.id}">${selected?`<div class="pick-order-badge">PICK ${pickIdx+1}</div>`:''}<div class="animal-topline"><div class="animal-emoji">${a.emoji}</div><div class="animal-chip ${insight.envFit.toLowerCase()}">${insight.envFit}</div></div><div class="animal-name">${a.name}</div><div class="animal-role">${a.role}</div><div class="animal-meta"><span>기본 ${a.base}</span><span>예상 ${o.rank}위권</span></div><div class="customer-insight-grid"><div><span>환경</span><strong>${insight.envFit}</strong></div><div><span>Crowd</span><strong>${insight.crowdRisk}</strong></div><div><span>Reward</span><strong>${insight.reward}</strong></div></div><div class="statline">${a.tags.map(t=>`<span>${t}</span>`).join('')}</div><div class="small-note">${a.flair}</div><div class="trend"><span style="width:${Math.max(18,Math.min(95,o.pct*5))}%"></span></div></div>`}).join(''); grid.querySelectorAll('.animal-card').forEach(card=>card.addEventListener('click',()=>togglePick(card.dataset.id)))}
 
 const ROUND_MODE_STATUS = [
@@ -4066,15 +5285,55 @@ const ROUND_MODE_STATUS = [
 ];
 let activeRoundModeId='alpha';
 function getActiveRoundMode(){return ROUND_MODE_STATUS.find(m=>m.id===activeRoundModeId)||ROUND_MODE_STATUS[0]}
-function bindRoundModeTabs(){const tabs=document.getElementById('roundModeTabs'); if(!tabs||tabs.dataset.bound) return; tabs.dataset.bound='1'; tabs.addEventListener('click',e=>{const btn=e.target.closest('[data-mode-id]'); if(!btn) return; activeRoundModeId=btn.dataset.modeId; renderModeRoundPanel()})}
+function bindRoundModeTabs(){const tabs=document.getElementById('roundModeTabs'); if(!tabs||tabs.dataset.bound) return; tabs.dataset.bound='1'; tabs.addEventListener('click',e=>{const btn=e.target.closest('[data-mode-id]'); if(!btn) return; e.preventDefault(); const scrollX=window.scrollX; const scrollY=window.scrollY; activeRoundModeId=btn.dataset.modeId; selection.activeBetId=btn.dataset.modeId; selection.picks=[]; renderModeRoundPanel(); renderBetTypes(); renderSelectionPills(); renderAnimals(); renderComboPreview(); updateSlipGuide(); renderLiveOddsBoard(); requestAnimationFrame(()=>window.scrollTo(scrollX,scrollY));})}
 function conditionRow(label,current,need,suffix=''){
   const met=Number(current)>=Number(need); const pct=need?Math.max(0,Math.min(100,(Number(current)/Number(need))*100)):0;
   return `<div class="mode-condition-row ${met?'met':''}"><div><div class="k">${label}</div><div class="v">${formatNum(current)} / ${formatNum(need)}${suffix}</div></div><div class="tag">${met?'충족':'대기'}</div><div class="mode-progress"><span style="width:${pct.toFixed(1)}%"></span></div></div>`
 }
+
+const BBA_MODE_SYMBOLS = {
+  alpha: `<svg class="mode-symbol-svg" viewBox="0 0 72 72" aria-hidden="true"><path class="m-hex" d="M36 5 63 20.5v31L36 67 9 51.5v-31Z"/><path class="m-glow" d="M36 13 56 24.5v23L36 59 16 47.5v-23Z"/><path class="m-fill" d="M36 17 52 54h-9l-3-8H29l-3 8h-8L34 17h2Zm-4 22h6l-3-10-3 10Z"/></svg>`,
+  twin: `<svg class="mode-symbol-svg" viewBox="0 0 72 72" aria-hidden="true"><path class="m-hex" d="M36 5 63 20.5v31L36 67 9 51.5v-31Z"/><circle class="m-node" cx="36" cy="36" r="7"/><circle class="m-node" cx="22" cy="22" r="5"/><circle class="m-node" cx="50" cy="22" r="5"/><circle class="m-node" cx="22" cy="50" r="5"/><circle class="m-node" cx="50" cy="50" r="5"/><path class="m-line" d="M27 27 31 31M45 27l-4 4M27 45l4-4M45 45l-4-4M36 20v8M36 44v8M20 36h8M44 36h8"/></svg>`,
+  chain: `<svg class="mode-symbol-svg" viewBox="0 0 72 72" aria-hidden="true"><path class="m-hex" d="M36 5 63 20.5v31L36 67 9 51.5v-31Z"/><path class="m-line thick" d="M28 43 20 35c-4-4-4-10 0-14s10-4 14 0l6 6"/><path class="m-line thick" d="M44 29 52 37c4 4 4 10 0 14s-10 4-14 0l-6-6"/><path class="m-line" d="M28 36h16"/></svg>`,
+  podium: `<svg class="mode-symbol-svg" viewBox="0 0 72 72" aria-hidden="true"><path class="m-hex" d="M36 5 63 20.5v31L36 67 9 51.5v-31Z"/><path class="m-fill" d="M29 26h14v28H29zM14 36h13v18H14zM45 31h13v23H45z"/><path class="m-line thin" d="M36 19v7M22 30v6M52 25v6"/></svg>`,
+  trinity: `<svg class="mode-symbol-svg" viewBox="0 0 72 72" aria-hidden="true"><path class="m-hex" d="M36 5 63 20.5v31L36 67 9 51.5v-31Z"/><path class="m-line thick" d="M36 15 57 53H15Z"/><path class="m-line" d="M36 28 28 43h16Z"/><circle class="m-node" cx="36" cy="15" r="3.5"/><circle class="m-node" cx="57" cy="53" r="3.5"/><circle class="m-node" cx="15" cy="53" r="3.5"/></svg>`
+};
+function getModeSymbolSvg(modeId){return BBA_MODE_SYMBOLS[modeId]||BBA_MODE_SYMBOLS.alpha}
+function getModeSideMarkSvg(modeId){return modeId==='alpha'
+  ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v6c0 5-3.1 8.2-8 10-4.9-1.8-8-5-8-10V6l8-3Z"/><path d="m8 12 2.4 2.4L16 9"/></svg>'
+  : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>'}
 function renderModeRoundPanel(){
   const tabs=document.getElementById('roundModeTabs'); if(!tabs) return;
   const m=getActiveRoundMode();
-  tabs.innerHTML=ROUND_MODE_STATUS.map(x=>`<button class="mode-tab ${x.status==='CLOSED'?'closed':''} ${x.id===m.id?'active':''}" type="button" data-mode-id="${x.id}"><div class="mode-tab-name">${x.name}</div><div class="mode-tab-meta"><span class="mode-tab-cases">${x.cases} cases</span><span class="mode-tab-status ${x.status.toLowerCase()}">${x.status}</span></div></button>`).join('');
+  const spotlight=(window.getModeSpotlightContent?window.getModeSpotlightContent(m.id):{badge:(m.status==='OPEN'?'OPEN':'LOCKED'),tagline:'Lowest entry barrier · Fastest settlement · Widest protection range'});
+  const modeSpotlightPanel=document.getElementById('modeSpotlightPanel');
+  const modeSpotlightEmblem=document.getElementById('modeSpotlightEmblem');
+  if(modeSpotlightPanel){
+    modeSpotlightPanel.className=`bba-mode-spotlight-card bba-symbol-${m.id} mode-${m.id}`;
+  }
+  if(modeSpotlightEmblem){
+    modeSpotlightEmblem.className=`bba-mode-spotlight-symbol bba-symbol-${m.id}`;
+    modeSpotlightEmblem.innerHTML=getModeSymbolSvg(m.id);
+  }
+  tabs.innerHTML=ROUND_MODE_STATUS.map(x=>{
+    const pct=x.reserveNeed?Math.max(0,Math.min(100,(Number(x.reserveNow)/Number(x.reserveNeed))*100)):0;
+    const label=x.status==='OPEN'?(x.id==='alpha'?'OPEN':'BUILDING'):(x.id==='trinity'?'WEEKEND / LOCKED':'LOCKED');
+    const statusClass=x.status==='OPEN'?(x.id==='alpha'?'open':'building'):'closed';
+    return `<button class="mode-tab mode-${x.id} ${x.status==='CLOSED'?'closed':''} ${x.id===m.id?'active':''}" type="button" data-mode-id="${x.id}">
+      <span class="bba-mode-icon bba-symbol-${x.id}" aria-hidden="true">${getModeSymbolSvg(x.id)}</span>
+      <div class="mode-tab-main">
+        <div class="mode-tab-name">${x.en}</div>
+        <div class="mode-tab-meta"><span>${x.id==='alpha'?'Lowest barrier':'Custom rules'}</span><span>${x.cases} cases</span><span>${x.minOdds} min</span></div>
+      </div>
+      <div class="mode-tab-side">
+        <span class="mode-tab-status ${statusClass}">${label}</span>
+        <strong>${formatNum(x.reserveNow)} / ${formatNum(x.reserveNeed)} SOL</strong>
+        <div class="mode-tab-progress"><i style="width:${pct.toFixed(1)}%"></i></div>
+        <em>${Math.round(pct)}%</em>
+        <span class="mode-side-mark" aria-hidden="true">${getModeSideMarkSvg(x.id)}</span>
+      </div>
+    </button>`
+  }).join('');
   const diff=Math.max(0,state.roundDeadline-Date.now()); const mm=String(Math.floor(diff/60000)).padStart(2,'0'); const ss=String(Math.floor((diff%60000)/1000)).padStart(2,'0');
   const metCount=[m.ticketsNow>=m.ticketsNeed,m.walletsNow>=m.walletsNeed,m.combosNow>=m.combosNeed,m.reserveNow>=m.reserveNeed].filter(Boolean).length;
   const activated=m.status==='OPEN'&&metCount===4;
@@ -4085,9 +5344,10 @@ function renderModeRoundPanel(){
   set('modeTimerLabel',m.status==='OPEN'?'대기 기준 마감까지':'Pool Gate 닫힘');
   set('modeLateCutoff',`종료 ${m.lateCut}초 전 신규 진입 제외`);
   set('modeRoundCopy',m.status==='OPEN'?'OPEN · 조건 충족 전 Reserved · 충족 시 ACTIVATED':'CLOSED · Pool Gate 미충족 · 접수 대기');
-  set('modeNameView',`${m.name} · ${m.en}`);
+  set('modeNameView',m.en);
+  set('modeSpotlightDesc',spotlight.tagline);
   set('modeOpenBadge',m.status);
-  set('modePhaseBadge',displayPhase);
+  set('modePhaseBadge',spotlight.badge || displayPhase);
   set('modeCasesView',formatNum(m.cases));
   set('modeMinOddsView',m.minOdds);
   set('modeShareRuleView',`${m.share1} / ${m.share2}`);
@@ -4096,6 +5356,8 @@ function renderModeRoundPanel(){
   set('modeReserveView',`Reserve ${m.reserveNeed} · 차감 ${m.deduction}`);
   set('modePolicyNote',activated?'ACTIVATED · Tickets Consumed · Resolve Source 대기':'BUILDING · Tickets Reserved · Settlement 없음');
   set('modeActivationScore',`${metCount} / 4`);
+  const actionChooseBtn=document.getElementById('actionChooseBtn'); if(actionChooseBtn){ actionChooseBtn.textContent=`🎯 Play ${m.en}`; actionChooseBtn.onclick=()=>window.__bbaPlayMode && window.__bbaPlayMode(m.id); }
+  const actionHowBtn=document.getElementById('actionHowBtn'); if(actionHowBtn){ actionHowBtn.onclick=()=>window.__bbaHowItWorks && window.__bbaHowItWorks(m.id); }
   const badge=document.getElementById('modeOpenBadge'); if(badge){badge.className=`mode-status-badge ${m.status.toLowerCase()}`}
   const panel=document.getElementById('roundActionPanel'); if(panel){panel.classList.toggle('closed-mode',m.status==='CLOSED')}
   const list=document.getElementById('modeConditionList'); if(list){list.innerHTML=[
@@ -4565,7 +5827,34 @@ function renderBlockData(){
     }));
   }
 }
-function renderWalletPage(){const txBox=document.getElementById('txList'); const items=state.txHistory.length?state.txHistory:[{kind:'대기',desc:'아직 지갑 활동이 없습니다.',amount:'-',time:''}]; txBox.innerHTML=items.map(t=>`<div class="tx-item"><div class="top"><div><strong>${t.kind}</strong><div class="small-note">${t.desc}</div></div><div>${t.amount}</div></div><div class="small-note">${t.time||''}</div></div>`).join(''); const payoutBox=document.getElementById('payoutList'); const payouts=state.payoutHistory.length?state.payoutHistory:[{round:'-',block:'-',tx:'-',amount:'수령 기록 없음'}]; payoutBox.innerHTML=payouts.map(p=>`<div class="tx-item"><div class="top"><div><strong>ROUND #${p.round}</strong><div class="small-note">SETTLE SLOT #${p.block}</div></div><div>${p.amount}</div></div><div class="small-note">${p.tx?`지갑 반영 TX: ${p.tx}`:'적중 시 결과 Slot과 함께 지갑 반영 내역이 생성됩니다.'}</div></div>`).join('')}
+function renderWalletPage(){
+  const txBox=document.getElementById('txList');
+  const items=state.txHistory.length?state.txHistory:[{kind:'대기',desc:'아직 지갑 활동이 없습니다.',amount:'-',time:''}];
+  if(txBox) txBox.innerHTML=items.map(t=>`<div class="tx-item"><div class="top"><div><strong>${t.kind}</strong><div class="small-note">${t.desc}</div></div><div>${t.amount}</div></div><div class="small-note">${t.time||''}</div></div>`).join('');
+
+  const payoutBox=document.getElementById('payoutList');
+  const payouts=state.payoutHistory.length?state.payoutHistory:[{round:'-',block:'-',tx:'-',amount:'수령 기록 없음'}];
+  if(payoutBox) payoutBox.innerHTML=payouts.map(p=>`<div class="tx-item"><div class="top"><div><strong>ROUND #${p.round}</strong><div class="small-note">SETTLE SLOT #${p.block}</div></div><div>${p.amount}</div></div><div class="small-note">${p.tx?`지갑 반영 TX: ${p.tx}`:'적중 시 결과 Slot과 함께 지갑 반영 내역이 생성됩니다.'}</div></div>`).join('');
+
+  const solInput=document.getElementById('solInput');
+  const sol=Number(solInput?.value||0);
+  const validSol=Number.isFinite(sol)&&sol>0?sol:0;
+  const issued=Math.floor(validSol*800);
+  const fee=Math.floor(validSol*200);
+  const solView=document.getElementById('walletExchangeSolView');
+  const issueView=document.getElementById('walletIssuePreview');
+  const feeView=document.getElementById('walletFeePreview');
+  if(solView) solView.textContent=state.walletConnected?`${formatNum(state.solBalance,3)} SOL`:'미연결';
+  if(issueView) issueView.textContent=`${formatNum(issued)} SPL`;
+  if(feeView) feeView.textContent=`${formatNum(fee)} SPL`;
+  const exchangeBtn=document.getElementById('exchangeBtn');
+  if(exchangeBtn){
+    exchangeBtn.textContent=state.walletConnected?'SOL → SPL 교환':'지갑 연결 필요';
+    exchangeBtn.disabled=!state.walletConnected;
+    exchangeBtn.style.opacity=state.walletConnected?'1':'.55';
+    exchangeBtn.style.cursor=state.walletConnected?'pointer':'not-allowed';
+  }
+}
 function renderSimulationPage(){const hist=state.results.slice(0,100), winMap={}, betStat={alpha:{win:0,total:0,name:'Alpha'},twin:{win:0,total:0,name:'Twin'},chain:{win:0,total:0,name:'Chain'},podium:{win:0,total:0,name:'Podium'},trinity:{win:0,total:0,name:'Trinity'}}; ANIMALS.forEach(a=>winMap[a.id]=0); hist.forEach(r=>winMap[r.ranking[0].id]+=1); state.entryHistory.forEach(e=>{const rr=hist.find(r=>r.round===e.round); if(rr){betStat[e.betId].total+=1; if(isWinningEntry(e,rr.ranking)) betStat[e.betId].win+=1}}); const sortedAnimals=Object.entries(winMap).map(([id,v])=>({id,v,animal:ANIMALS.find(a=>a.id===id)})).sort((a,b)=>b.v-a.v||a.animal.name.localeCompare(b.animal.name,'ko')).slice(0,10); const noWinnerRate=hist.length?(hist.filter(r=>r.winnerCount===0).length/hist.length*100):0; const crowdBias=Object.values(state.marketSnapshot).length?(Object.values(state.marketSnapshot).reduce((s,v)=>s+v.strength,0)/Object.values(state.marketSnapshot).length).toFixed(0):'-'; document.getElementById('simRounds').textContent=hist.length||0; document.getElementById('simTopAnimal').textContent=sortedAnimals[0]?.animal?.name||'-'; document.getElementById('simNoWinnerRate').textContent=`${noWinnerRate.toFixed(1)}%`; document.getElementById('simCrowdBias').textContent=crowdBias==='-'?'-':`${crowdBias}점`; document.getElementById('simWinChart').innerHTML=sortedAnimals.map(r=>`<div class="bar-row"><div>${r.animal.emoji} ${r.animal.name}</div><div class="bar"><span style="width:${hist.length?(r.v/hist.length*100):0}%"></span></div><div class="val">${hist.length?(r.v/hist.length*100).toFixed(1):0}%</div></div>`).join('')||`<div class="small-note">데이터 없음</div>`; document.getElementById('simBetChart').innerHTML=Object.values(betStat).map(r=>{const rate=r.total?(r.win/r.total*100):0; return `<div class="bar-row"><div>${r.name}</div><div class="bar"><span style="width:${rate}%"></span></div><div class="val">${rate.toFixed(1)}%</div></div>`}).join(''); document.getElementById('simHistoryBody').innerHTML=hist.map(r=>`<tr><td>#${r.round}</td><td>${r.ranking[0].name}</td><td>${r.ranking[1].name}</td><td>${r.ranking[2].name}</td><td>#${r.lockBlock}</td><td>#${r.settleBlock}</td><td>${r.winnerCount===0?'Y':'-'}</td></tr>`).join('')||`<tr><td colspan="7">아직 결과 없음</td></tr>`}
 
 function getFavoriteKey(betId,picks){return `${betId}:${(picks||[]).join(',')}`}
@@ -4584,7 +5873,7 @@ function resolveAutoTargetCombo(){if(state.autoEntry.target==='favorite'){const 
 function renderAutoEntryPanel(){const enabled=state.autoEntry.enabled; syncAutoEntryInputs(); const combo=resolveAutoTargetCombo(); const odds=combo?getBetTypeLiveOdds(combo.betId,combo.picks):0; const status=!enabled?'HOLD':!combo?'SETUP':state.splBalance<state.autoEntry.minBalance?'LOW BAL':state.autoEntry.currentLosses>=state.autoEntry.maxLosses?'STOP':odds<state.autoEntry.minOdds?'WAIT':'ARMED'; document.getElementById('autoEntryToggleBtn').textContent=`자동참여 ${enabled?'ON':'OFF'}`; document.getElementById('autoEntryToggleBtn').classList.toggle('active',enabled); document.getElementById('autoStatusView').textContent=status; document.getElementById('autoStatusSub').textContent=enabled?`${combo?combo.label:'대상 조합 미설정'}`:'자동참여 OFF'; document.getElementById('autoOddsView').textContent=combo?`${odds.toFixed(2)}x`:'-'; document.getElementById('autoOddsSub').textContent=`최소 ${state.autoEntry.minOdds.toFixed(1)}x`; document.getElementById('autoBalanceView').textContent=`${formatNum(state.autoEntry.minBalance)} SPL`; document.getElementById('autoBalanceSub').textContent=`현재 ${formatNum(state.splBalance)} SPL`; document.getElementById('autoLossView').textContent=`${state.autoEntry.currentLosses} / ${state.autoEntry.maxLosses}`; document.getElementById('autoLossSub').textContent=combo?combo.label:'현재 선택 조합'; document.getElementById('autoRunNote').textContent=combo?`${combo.label} 기준으로 조건 충족 시 자동 참여합니다. 현재 예상배당 ${odds.toFixed(2)}x.`:'자동참여 대상 조합을 먼저 지정하세요.';}
 function tryAutoEntry(){syncAutoEntryInputs(); if(!state.autoEntry.enabled||!state.walletConnected) return; if(state.entries.some(e=>e.owner===state.walletAddress&&e.round===state.currentRound)) return; const combo=resolveAutoTargetCombo(); if(!combo) return; const odds=getBetTypeLiveOdds(combo.betId,combo.picks); if(state.splBalance<state.autoEntry.minBalance||state.splBalance<state.autoEntry.stake||odds<state.autoEntry.minOdds||state.autoEntry.currentLosses>=state.autoEntry.maxLosses) return; const prevBet=selection.activeBetId, prevPicks=[...selection.picks]; selection.activeBetId=combo.betId; selection.picks=[...combo.picks]; enterRound(true); selection.activeBetId=prevBet; selection.picks=prevPicks;}
 
-function renderAll(){updateHashTicker(); refreshMarketSnapshot(); renderHeaderBits(); renderOverview(); updateCountdown(); updateEnvUI(); renderSelectionPills(); renderBetTypes(); renderLiveAnimalTable(); renderAnimals(); renderRoundBoard(); renderMyEntries(); renderFavorites(); renderAutoEntryPanel(); renderRecentResults(); renderLogs(); renderWinrateChart(); renderMyPickHistory(); renderBlockData(); renderWinnerHistory(); renderWalletPage(); renderSimulationPage(); renderComboPreview(); updateActionPanel()}
+function renderAll(){updateHashTicker(); refreshMarketSnapshot(); renderHeaderBits(); renderOverview(); updateCountdown(); updateEnvUI(); renderSelectionPills(); renderBetTypes(); renderLiveAnimalTable(); renderLiveOddsBoard(); renderAnimals(); renderRoundBoard(); renderMyEntries(); renderFavorites(); renderAutoEntryPanel(); renderRecentResults(); renderLogs(); renderWinrateChart(); renderMyPickHistory(); renderBlockData(); renderWinnerHistory(); renderWalletPage(); renderSimulationPage(); renderComboPreview(); updateActionPanel()}
 
 function openAppModal({eyebrow='SYSTEM',title='확인',desc='',meta=[],actions=[]}={}){
   const modal=document.getElementById('appModal');
@@ -4684,7 +5973,7 @@ function performWalletConnect(walletType='phantom'){if(state.walletConnected){st
 })()}
 function connectWallet(){ if(state.walletConnected){ performWalletConnect(); return; } openWalletPicker() }
 
-function exchangeTickets(){const sol=Number(document.getElementById('solInput').value||0); if(!state.walletConnected) return showErrorModal('지갑 연결 필요','티켓 교환 전에 지갑을 먼저 연결하세요.',['Wallet Required']); if(sol<=0||sol>state.solBalance) return showErrorModal('입력값 확인','보유 SOL 범위를 확인하세요.',['입력 SOL 검증']); const issued=Math.floor(sol*800), fee=Math.floor(sol*200); state.solBalance=Number((state.solBalance-sol).toFixed(3)); state.splBalance+=issued; state.feeSplAccum+=fee; state.txHistory.unshift({kind:'티켓 교환',desc:`${formatNum(sol,3)} SOL → ${formatNum(issued)} SPL`,amount:`+${formatNum(issued)} SPL`,time:timeNow()}); toast('티켓 교환 완료',`${formatNum(sol,3)} SOL → ${formatNum(issued)} SPL 발행`,[`수수료 ${formatNum(fee)} SPL`,`잔액 ${formatNum(state.splBalance)} SPL`]); showActionModal('티켓 교환 완료',`${formatNum(sol,3)} SOL을 투입해 ${formatNum(issued)} SPL이 발행되었습니다.`,[`수수료 ${formatNum(fee)} SPL`,`잔액 ${formatNum(state.splBalance)} SPL`]); pushLog(`티켓 교환 · ${formatNum(sol,3)} SOL 투입 → ${formatNum(issued)} SPL 발행`); renderAll()}
+function exchangeTickets(){const solInputEl=document.getElementById('solInput'); if(!solInputEl) return showErrorModal('티켓 교환 위치 변경','티켓 교환은 Wallet 메뉴에서 진행하도록 분리되었습니다.',['Wallet']); const sol=Number(solInputEl.value||0); if(!state.walletConnected) return showErrorModal('지갑 연결 필요','티켓 교환 전에 지갑을 먼저 연결하세요.',['Wallet Required']); if(sol<=0||sol>state.solBalance) return showErrorModal('입력값 확인','보유 SOL 범위를 확인하세요.',['입력 SOL 검증']); const issued=Math.floor(sol*800), fee=Math.floor(sol*200); state.solBalance=Number((state.solBalance-sol).toFixed(3)); state.splBalance+=issued; state.feeSplAccum+=fee; state.txHistory.unshift({kind:'티켓 교환',desc:`${formatNum(sol,3)} SOL → ${formatNum(issued)} SPL`,amount:`+${formatNum(issued)} SPL`,time:timeNow()}); toast('티켓 교환 완료',`${formatNum(sol,3)} SOL → ${formatNum(issued)} SPL 발행`,[`수수료 ${formatNum(fee)} SPL`,`잔액 ${formatNum(state.splBalance)} SPL`]); showActionModal('티켓 교환 완료',`${formatNum(sol,3)} SOL을 투입해 ${formatNum(issued)} SPL이 발행되었습니다.`,[`수수료 ${formatNum(fee)} SPL`,`잔액 ${formatNum(state.splBalance)} SPL`]); pushLog(`티켓 교환 · ${formatNum(sol,3)} SOL 투입 → ${formatNum(issued)} SPL 발행`); renderAll()}
 function enterRound(isAuto=false){
   if(isAuto) return commitRoundEntry(true);
   const bet=getActiveBet(), stake=Number(document.getElementById('stakeInput').value||0), liveOdds=getBetTypeLiveOdds(bet.id,selection.picks);
@@ -4704,7 +5993,7 @@ function enterRound(isAuto=false){
     ]
   });
 }
-function commitRoundEntry(isAuto=false){const bet=getActiveBet(), stake=Number(document.getElementById('stakeInput').value||0); if(!state.walletConnected) return showErrorModal('지갑 연결 필요','참여확정 전에 지갑 연결이 필요합니다.',['Round Entry']); if(selection.picks.length!==bet.picks) return showErrorModal('선택 수량 확인',`${bet.picks}마리를 선택하세요.`,['Pick Validation']); if(stake<50) return showErrorModal('최소 참여 수량','최소 50 SPL 이상 참여하세요.',['Min 50 SPL']); if(stake>state.splBalance) return showErrorModal('잔액 부족','보유 SPL이 부족합니다.',['Balance Check']); state.splBalance-=stake; const entry={round:state.currentRound,owner:state.walletAddress,betId:bet.id,betName:bet.name,picks:[...selection.picks],multiplier:getBetTypeLiveOdds(bet.id,selection.picks),stake,createdAt:timeNow(),createdTs:Date.now(),auto:isAuto}; state.entries.push(entry); state.entryHistory.push(entry); state.myEntries.unshift(entry); state.myEntries=state.myEntries.slice(0,6); state.participants.add(state.walletAddress); if(state.participants.size<2&&Math.random()>.35) state.participants.add('0xAI'+rand(1000,9999)); state.txHistory.unshift({kind:'참여 락',desc:`${bet.name} · ${entry.picks.map(id=>ANIMALS.find(a=>a.id===id).name).join('/')}`,amount:`-${formatNum(stake)} SPL`,time:timeNow()}); toast(isAuto?'자동 참여 실행':'참여 잠금 완료',`${bet.name} · ${formatNum(stake)} SPL 락`,[entry.picks.map(id=>ANIMALS.find(a=>a.id===id).name).join(' / ')]); pushLog(`${isAuto?'자동 ':' '}라운드 참여 · ${bet.name} · ${formatNum(stake)} SPL 락`); state.lastPlayedCombo={betId:bet.id,picks:[...selection.picks]}; renderAll()}
+function commitRoundEntry(isAuto=false){const bet=getActiveBet(), stake=Number(document.getElementById('stakeInput')?.value||200); if(!state.walletConnected) return showErrorModal('지갑 연결 필요','참여확정 전에 지갑 연결이 필요합니다.',['Round Entry']); if(selection.picks.length!==bet.picks) return showErrorModal('선택 수량 확인',`${bet.picks}마리를 선택하세요.`,['Pick Validation']); if(stake<50) return showErrorModal('최소 참여 수량','최소 50 SPL 이상 참여하세요.',['Min 50 SPL']); if(stake>state.splBalance) return showErrorModal('잔액 부족','보유 SPL이 부족합니다.',['Balance Check']); state.splBalance-=stake; const entry={round:state.currentRound,owner:state.walletAddress,betId:bet.id,betName:bet.name,picks:[...selection.picks],multiplier:getBetTypeLiveOdds(bet.id,selection.picks),stake,createdAt:timeNow(),createdTs:Date.now(),auto:isAuto}; state.entries.push(entry); state.entryHistory.push(entry); state.myEntries.unshift(entry); state.myEntries=state.myEntries.slice(0,6); state.participants.add(state.walletAddress); if(state.participants.size<2&&Math.random()>.35) state.participants.add('0xAI'+rand(1000,9999)); state.txHistory.unshift({kind:'참여 락',desc:`${bet.name} · ${entry.picks.map(id=>ANIMALS.find(a=>a.id===id).name).join('/')}`,amount:`-${formatNum(stake)} SPL`,time:timeNow()}); toast(isAuto?'자동 참여 실행':'참여 잠금 완료',`${bet.name} · ${formatNum(stake)} SPL 락`,[entry.picks.map(id=>ANIMALS.find(a=>a.id===id).name).join(' / ')]); pushLog(`${isAuto?'자동 ':' '}라운드 참여 · ${bet.name} · ${formatNum(stake)} SPL 락`); state.lastPlayedCombo={betId:bet.id,picks:[...selection.picks]}; renderAll()}
 function isWinningEntry(entry, ranking){const ids=entry.picks, top3=ranking.slice(0,3).map(r=>r.id); if(entry.betId==='alpha') return ranking[0].id===ids[0]; if(entry.betId==='twin') return ids.every(id=>ranking.slice(0,2).some(r=>r.id===id)); if(entry.betId==='chain') return ranking[0].id===ids[0]&&ranking[1].id===ids[1]; if(entry.betId==='podium') return ids.every(id=>top3.includes(id)); if(entry.betId==='trinity') return ranking[0].id===ids[0]&&ranking[1].id===ids[1]&&ranking[2].id===ids[2]; return false}
 function makeMockTx(round, block){return `SOL-${round}-${block}-${rand(100000,999999)}`}
 function settleRound(block){const ranking=computeSettlementRanking(block); const totalPrizeSpl=state.entries.reduce((s,e)=>s+e.stake,0)+state.rolloverVault; const winners=state.entries.filter(entry=>isWinningEntry(entry,ranking)); const myRoundEntries=state.entries.filter(e=>e.owner===state.walletAddress); if(winners.length){const totalWeight=winners.reduce((s,w)=>s+w.stake*w.multiplier,0); winners.forEach(w=>{const share=(w.stake*w.multiplier)/totalWeight; const solPrize=Number(((totalPrizeSpl/1000)*share).toFixed(4)); if(w.owner===state.walletAddress){state.solBalance=Number((state.solBalance+solPrize).toFixed(4)); const tx=makeMockTx(state.currentRound,block.number); state.txHistory.unshift({kind:'정산 수령',desc:`ROUND #${state.currentRound} 적중 · SETTLE SLOT #${block.number}`,amount:`+${formatNum(solPrize,4)} SOL`,time:timeNow()}); state.payoutHistory.unshift({round:state.currentRound,block:block.number,tx,amount:`+${formatNum(solPrize,4)} SOL`})}}); state.rolloverVault=0} else state.rolloverVault+=state.entries.reduce((s,e)=>s+e.stake,0); myRoundEntries.forEach(e=>{const win=isWinningEntry(e,ranking); e.result=win?'win':'lose'; e.resolvedRound=state.currentRound; e.settleBlock=block.number; e.settleTime=block.time; e.pulse=new Date(block.time).getSeconds()}); if(myRoundEntries.length){state.autoEntry.currentLosses=myRoundEntries.some(e=>e.result==='win')?0:state.autoEntry.currentLosses+1; state.lastPlayedCombo={betId:myRoundEntries[0].betId,picks:[...myRoundEntries[0].picks]}} state.results.unshift({round:state.currentRound,env:{...state.lockedEnvironment},lockBlock:state.lockedEnvironmentBlock.number,lockTime:state.lockedEnvironmentBlock.time,lockTxCount:state.lockedEnvironmentBlock.txCount,settleBlock:block.number,settleTime:block.time,settleOutput:block.output,pulse:new Date(block.time).getSeconds(),ranking,winnerCount:winners.length,prizeSpl:totalPrizeSpl}); state.results=state.results.slice(0,120); toast(`ROUND #${state.currentRound} 결과 확정`,winners.length?`${ranking[0].name} 우승 · 적중 ${winners.length}건`:`정답자 없음 · ${formatNum(totalPrizeSpl)} SPL 이월`,[`정산 slot #${block.number}`,`${state.lockedEnvironment.sky} · ${state.lockedEnvironment.ground} · ${state.lockedEnvironment.tempo}`]); pushLog(`ROUND #${state.currentRound} 결과 확정 · 1위 ${ranking[0].name} · 정산 slot #${block.number}`); state.currentRound+=1; state.roundStart=Date.now(); state.roundDeadline=Date.now()+ROUND_SECONDS*1000; state.waitingSettlementBlock=false; state.entries=[]; state.myEntries=[]; state.participants=new Set(); state.lockedEnvironmentBlock=block; state.lockedEnvironment=deriveEnvironment(block); renderAll(); setTimeout(tryAutoEntry,250)}
@@ -4713,14 +6002,16 @@ function scheduleNextBlock(){const delay=rand(BLOCK_MIN_MS,BLOCK_MAX_MS); clearT
 function seedHistory(){let prev=createMockBlock(); let round=state.currentRound-100; for(let i=0;i<100;i++){const lock=prev, env=deriveEnvironment(lock), settle=createMockBlock(lock), ranking=ANIMALS.map(a=>{const r=animalScore(a,env,settle); return {...a,finalScore:r.score}}).sort((x,y)=>y.finalScore-x.finalScore), prizeSpl=rand(600,2500)*100, winnerCount=rand(0,5); state.results.push({round:round+i,env,lockBlock:lock.number,lockTime:lock.time,lockTxCount:lock.txCount,settleBlock:settle.number,settleTime:settle.time,settleOutput:settle.output,pulse:new Date(settle.time).getSeconds(),ranking,winnerCount,prizeSpl}); prev=createMockBlock(settle)}}
 function bindActions(){
   document.getElementById('walletConnectBtn').addEventListener('click',connectWallet);
-  document.getElementById('exchangeBtn').addEventListener('click',exchangeTickets);
+  document.getElementById('exchangeBtn')?.addEventListener('click',exchangeTickets);
+  document.getElementById('solInput')?.addEventListener('input',renderWalletPage);
+  document.getElementById('walletMaxSolBtn')?.addEventListener('click',()=>{const input=document.getElementById('solInput'); if(input){input.value=Math.max(0,state.solBalance).toFixed(3); renderWalletPage();}});
   document.getElementById('enterRoundBtn').addEventListener('click',()=>enterRound(false));
   document.getElementById('actionConnectWalletBtn')?.addEventListener('click',connectWallet);
-  document.getElementById('actionExchangeBtn')?.addEventListener('click',()=>document.querySelector('.sidebar .panel')?.scrollIntoView({behavior:'smooth',block:'center'}));
+  document.getElementById('actionExchangeBtn')?.addEventListener('click',()=>{navigate('wallet'); requestAnimationFrame(()=>document.getElementById('walletExchangePanel')?.scrollIntoView({behavior:'smooth',block:'center'}));});
   document.getElementById('actionChooseBtn')?.addEventListener('click',()=>document.getElementById('liveBoard')?.scrollIntoView({behavior:'smooth',block:'start'}));
   document.getElementById('actionConfirmBtn')?.addEventListener('click',()=>enterRound(false));
-  document.getElementById('clearSelectionBtn').addEventListener('click',()=>{selection.picks=[]; renderSelectionPills(); renderAnimals(); renderComboPreview(); updateSlipGuide(); renderAll()});
-  document.getElementById('stakeInput').addEventListener('input',()=>{renderComboPreview(); renderSelectionPills(); renderAutoEntryPanel(); updateActionPanel()});
+  document.getElementById('clearSelectionBtn')?.addEventListener('click',()=>{selection.picks=[]; renderSelectionPills(); renderAnimals(); renderComboPreview(); updateSlipGuide(); renderAll()});
+  document.getElementById('stakeInput')?.addEventListener('input',()=>{renderComboPreview(); renderSelectionPills(); renderAutoEntryPanel(); updateActionPanel()});
   document.getElementById('connectVerifyBtn').addEventListener('click',connectVerifyContract); document.getElementById('runVerifyBtn').addEventListener('click',runContractVerification);
   document.getElementById('loadLatestBlockVerifyBtn').addEventListener('click',()=>{
     const b=state.blockFeed[0];
@@ -5591,7 +6882,7 @@ async function runSettlementDemo(){
       btn.addEventListener('click', ()=>{
         const action = btn.dataset.dockAction;
         if(action==='connect') return connectWallet();
-        if(action==='exchange') return document.getElementById('exchangeBtn')?.scrollIntoView({behavior:'smooth',block:'center'});
+        if(action==='exchange'){ navigate('wallet'); return requestAnimationFrame(()=>document.getElementById('walletExchangePanel')?.scrollIntoView({behavior:'smooth',block:'center'})); }
         if(action==='play') return document.getElementById('liveBoard')?.scrollIntoView({behavior:'smooth',block:'start'});
         if(action==='verify') return navigate('blocks');
         if(action==='wallet') return navigate('wallet');
@@ -5900,5 +7191,48 @@ async function runSettlementDemo(){
 })();
 </script>
 
+
+<script>
+(function(){
+  function getModeSpotlightContent(modeId){
+    const map={
+      alpha:{badge:'OPEN',tagline:'Lowest entry barrier · Fastest settlement · Widest protection range',modalTitle:'Alpha Pick 참여 흐름',modalDesc:'비스트 1마리를 선택하고 SPL을 잠그면 라운드 조건 충족 전까지 Reserved 상태로 유지됩니다. 조건 충족 시 Tickets Consumed 상태가 되며, 마감 후 확정 블록으로 결과와 정산이 완료됩니다.',modalMeta:['1 beast selection','Reserved → Activated','Minimum odds protection','Fastest settlement window']},
+      twin:{badge:'BUILDING',tagline:'Dual selection strategy · Higher odds potential · Balanced protection logic',modalTitle:'Twin Pick 참여 흐름',modalDesc:'비스트 2마리를 조합해 진입하며, 조합 수와 Pool Gate가 동시에 충족되면 Activated 단계로 전환됩니다. 알파픽보다 높은 배당 잠재력을 가지며 조합 선택이 핵심입니다.',modalMeta:['2 beast combo','Pool Gate based unlock','Higher odds potential','Balanced risk / reward']},
+      chain:{badge:'LOCKED',tagline:'Sequence prediction challenge · Precision combo play · High multiplier structure',modalTitle:'Chain Order 참여 흐름',modalDesc:'순서가 중요한 연계 예측 모드입니다. 선택 난도가 높아지는 대신 배당 레벨이 커지며, 모드 오픈 전까지는 조합 누적과 Reserve 확보가 우선됩니다.',modalMeta:['Ordered combo prediction','High multiplier mode','Reserve threshold required','Late entry restriction']},
+      podium:{badge:'LOCKED',tagline:'Top 3 order focus · Premium odds depth · Competitive placement strategy',modalTitle:'Podium Mesh 참여 흐름',modalDesc:'상위 3위 구간의 배치와 순서를 겨루는 프리미엄 모드입니다. 조합 난도가 높지만 보호구간과 분산 참여가 설계 핵심입니다.',modalMeta:['Top 3 focused mode','Premium odds depth','Crowding-aware payout','Order-sensitive prediction']},
+      trinity:{badge:'WEEKEND / LOCKED',tagline:'Exact top 3 order · Ultimate multiplier range · Highest precision challenge',modalTitle:'Trinity Order 참여 흐름',modalDesc:'정확한 1·2·3위 순서를 맞추는 최고 난도 모드입니다. Reserve Pool과 조합 수가 충분히 확보되어야 오픈되며, 가장 높은 배당 잠재력을 가집니다.',modalMeta:['Exact 1-2-3 order','Ultimate multiplier mode','Highest precision challenge','Strict gate requirements']}
+    };
+    return map[modeId] || map.alpha;
+  }
+  window.getModeSpotlightContent = getModeSpotlightContent;
+  window.__bbaPlayMode = function(modeId){
+    try{ const target=(modeId||activeRoundModeId||'alpha'); const m=ROUND_MODE_STATUS.find(x=>x.id===target)||ROUND_MODE_STATUS[0]; const scrollX=window.scrollX; const scrollY=window.scrollY; activeRoundModeId=target; selection.activeBetId=target; selection.picks=[]; renderModeRoundPanel(); renderBetTypes(); renderSelectionPills(); renderAnimals(); renderComboPreview(); requestAnimationFrame(()=>window.scrollTo(scrollX,scrollY)); toast?.(`${m.en} 준비 완료`,`${m.en} 모드로 전환했습니다. 선택 조합을 구성한 뒤 참여 SPL을 확정하세요.`,[m.en,m.status]); }catch(e){ console.warn(e); }
+  };
+  window.__bbaPlayAlpha = function(){ window.__bbaPlayMode('alpha'); };
+  window.__bbaHowItWorks = function(modeId){
+    const target=(modeId||activeRoundModeId||'alpha'); const m=ROUND_MODE_STATUS.find(x=>x.id===target)||ROUND_MODE_STATUS[0]; const info=getModeSpotlightContent(target);
+    if(typeof openAppModal==='function'){
+      openAppModal({eyebrow:'HOW IT WORKS',title:info.modalTitle,desc:info.modalDesc,meta:[`Cases: ${m.cases}`,`Min Odds: ${m.minOdds}`,`Support: ${m.support}`,`Gate: ${m.openPool} SOL`,...info.modalMeta],actions:[{label:'확인',variant:'primary'}]});
+    }else{ alert(`${m.en}: ${info.tagline}`); }
+  };
+  const _oldRenderMode = window.renderModeRoundPanel;
+  if(typeof _oldRenderMode === 'function'){
+    window.renderModeRoundPanel = function(){
+      _oldRenderMode();
+      try{
+        const m = getActiveRoundMode();
+        const inline=document.getElementById('modeLateCutoffInline'); if(inline) inline.textContent=`${m.lateCut}s`;
+        document.querySelectorAll('#roundModeTabs [data-mode-id]').forEach(el=>{
+          const id=el.dataset.modeId; const item=ROUND_MODE_STATUS.find(x=>x.id===id); if(!item) return;
+          const pct=item.reserveNeed?Math.max(0,Math.min(100,item.reserveNow/item.reserveNeed*100)):0;
+          
+          const bar=el.querySelector('.bba-mode-inline-progress span'); const label=el.querySelector('.bba-mode-inline-progress b');
+          if(bar) bar.style.width=pct.toFixed(0)+'%'; if(label) label.textContent=`${item.reserveNow} / ${item.reserveNeed} SOL · ${pct.toFixed(0)}%`;
+        });
+      }catch(e){console.warn(e)}
+    };
+  }
+})();
+</script>
 </body>
 </html>
