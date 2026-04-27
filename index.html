@@ -3473,7 +3473,7 @@ html,body{
 }
 #page-dashboard .bba-live-odds-row-card{
   display:grid;
-  grid-template-columns:42px minmax(170px,1fr) 82px 86px 92px 70px;
+  grid-template-columns:42px minmax(150px,1fr) 84px 74px 82px 74px 118px;
   gap:8px;
   align-items:center;
   min-height:48px;
@@ -3528,6 +3528,37 @@ html,body{
 }
 #page-dashboard .bba-live-odds-stat.odds strong{color:#69ffae}
 #page-dashboard .bba-live-odds-stat.base strong{color:#ff6f91}
+#page-dashboard .bba-live-odds-stat.share strong{color:#7de8ff}
+#page-dashboard .bba-live-odds-policy{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  min-width:0;
+}
+#page-dashboard .bba-live-odds-policy strong{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:24px;
+  padding:0 8px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.05);
+  font-size:11px;
+  font-weight:900;
+  white-space:nowrap;
+}
+#page-dashboard .bba-live-odds-policy small{
+  font-size:10px;
+  color:#8ea1bd;
+  line-height:1.25;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#page-dashboard .bba-live-odds-policy.ok strong{color:#8ff7c3;border-color:rgba(80,230,166,.35);background:rgba(80,230,166,.12)}
+#page-dashboard .bba-live-odds-policy.warn strong{color:#ffd27c;border-color:rgba(255,210,124,.34);background:rgba(255,210,124,.12)}
+#page-dashboard .bba-live-odds-policy.off strong{color:#ff92ae;border-color:rgba(255,146,174,.35);background:rgba(255,146,174,.12)}
 #page-dashboard .bba-live-odds-strength{
   display:flex;
   align-items:center;
@@ -3554,17 +3585,6 @@ html,body{
   min-width:28px;
   text-align:right;
 }
-#page-dashboard .bba-live-odds-pick{
-  height:30px;
-  padding:0 10px;
-  border-radius:999px;
-  border:1px solid rgba(247,201,72,.34);
-  background:rgba(247,201,72,.08);
-  color:#f7c948;
-  font-size:11px;
-  font-weight:900;
-  cursor:pointer;
-}
 #page-dashboard .bba-dashboard-footer-results{
 }
 @media(max-width:1420px){
@@ -3572,10 +3592,11 @@ html,body{
 }
 @media(max-width:900px){
   #page-dashboard .bba-live-odds-row-card{
-    grid-template-columns:34px minmax(0,1fr) 72px 72px;
+    grid-template-columns:34px minmax(0,1fr) 72px 74px;
   }
   #page-dashboard .bba-live-odds-row-card .stake,
-  #page-dashboard .bba-live-odds-row-card .base{
+  #page-dashboard .bba-live-odds-row-card .base,
+  #page-dashboard .bba-live-odds-row-card .policy{
     display:none;
   }
 }
@@ -5252,8 +5273,10 @@ function renderAlphaMarketBoard(){
   const board=document.getElementById('liveOddsBoard'); if(!board) return;
   board.classList.remove('combo-mode');
   setMarketHeader('LIVE MARKET BOARD','LIVE ALPHA ODDS','Alpha Pick · Beast 1~10 단승형 선택률 · 예상배당');
+  const values=Object.values(state.marketSnapshot);
+  const totalStake=values.reduce((s,m)=>s+(m.totalStake||0),0);
   const summary=document.getElementById('liveMarketSummary');
-  if(summary){const values=Object.values(state.marketSnapshot); const totalStake=values.reduce((s,m)=>s+(m.totalStake||0),0); const topStake=values.length?Math.max(...values.map(m=>m.totalStake||0)):0; const crowded=values.filter(m=>(m.totalStake||0)>900).length; summary.innerHTML=[['Total Cases','10'],['Active Beasts','10'],['Total SPL',formatNum(totalStake)],['Top Share',totalStake?(topStake/totalStake*100).toFixed(1)+'%':'0.0%'],['Avg Odds',(values.reduce((s,m)=>s+(m.adjOdds||0),0)/Math.max(1,values.length)).toFixed(2)+'x'],['Crowded',formatNum(crowded)]].map(([k,v])=>'<div class="bba-market-metric"><span>'+k+'</span><strong>'+v+'</strong></div>').join('')}
+  if(summary){const topStake=values.length?Math.max(...values.map(m=>m.totalStake||0)):0; const crowded=values.filter(m=>(m.totalStake||0)>900).length; summary.innerHTML=[['Total Cases','10'],['Active Beasts','10'],['Total SPL',formatNum(totalStake)],['Top Share',totalStake?(topStake/totalStake*100).toFixed(1)+'%':'0.0%'],['Avg Odds',(values.reduce((s,m)=>s+(m.adjOdds||0),0)/Math.max(1,values.length)).toFixed(2)+'x'],['Crowded',formatNum(crowded)]].map(([k,v])=>'<div class="bba-market-metric"><span>'+k+'</span><strong>'+v+'</strong></div>').join('')}
   const ranking=computeProjectedRanking();
   const rankMap={};
   ranking.forEach((a,idx)=>rankMap[a.id]=idx+1);
@@ -5262,9 +5285,11 @@ function renderAlphaMarketBoard(){
     const m=state.marketSnapshot[a.id] || {totalStake:0,baseOdds:0,adjOdds:0,participants:0,strength:0};
     const rank=rankMap[a.id] || '-';
     const crowd=m.totalStake>900?'HIGH':m.totalStake>450?'MID':'LOW';
-    return '<div class="bba-live-odds-row-card" data-id="'+a.id+'"><div class="bba-live-odds-no">'+(ANIMALS.findIndex(x=>x.id===a.id)+1)+'</div><div class="bba-live-odds-entity"><div class="bba-live-odds-name">'+a.emoji+' '+a.name+'</div><div class="bba-live-odds-meta">'+a.role+' · 예상 '+rank+'위 · Crowd '+crowd+'</div></div><div class="bba-live-odds-stat stake"><span>선택액</span><strong>'+formatNum(m.totalStake)+' SPL</strong></div><div class="bba-live-odds-stat base"><span>기준</span><strong>'+m.baseOdds.toFixed(2)+'x</strong></div><div class="bba-live-odds-stat odds"><span>예상</span><strong>'+m.adjOdds.toFixed(2)+'x</strong></div><button class="bba-live-odds-pick" type="button" data-pick="'+a.id+'">선택</button></div>';
+    const sharePct=totalStake?((m.totalStake||0)/totalStake*100):0;
+    const policyClass=sharePct>35?'off':sharePct>25?'warn':'ok';
+    const policyLabel=sharePct>35?'최소배당 OFF':sharePct>25?'1.5x 적용':'최소배당 ON';
+    return '<div class="bba-live-odds-row-card" data-id="'+a.id+'"><div class="bba-live-odds-no">'+(ANIMALS.findIndex(x=>x.id===a.id)+1)+'</div><div class="bba-live-odds-entity"><div class="bba-live-odds-name">'+a.emoji+' '+a.name+'</div><div class="bba-live-odds-meta">'+a.role+' · 예상 '+rank+'위 · Crowd '+crowd+'</div></div><div class="bba-live-odds-stat stake"><span>선택액</span><strong>'+formatNum(m.totalStake)+' SPL</strong></div><div class="bba-live-odds-stat base"><span>기준</span><strong>'+m.baseOdds.toFixed(2)+'x</strong></div><div class="bba-live-odds-stat odds"><span>예상</span><strong>'+m.adjOdds.toFixed(2)+'x</strong></div><div class="bba-live-odds-stat share"><span>선택율</span><strong>'+sharePct.toFixed(1)+'%</strong></div><div class="bba-live-odds-policy '+policyClass+' policy"><strong>'+policyLabel+'</strong><small>25%↑ 1.5x · 35%↑ 제거</small></div></div>';
   }).join('')+'</div>').join('');
-  board.querySelectorAll('button[data-pick]').forEach(btn=>btn.addEventListener('click',(e)=>{e.stopPropagation();quickPick(btn.dataset.pick)}));
   board.querySelectorAll('.bba-live-odds-row-card').forEach(card=>card.addEventListener('click',()=>togglePick(card.dataset.id)));
 }
 function renderLiveOddsBoard(){
