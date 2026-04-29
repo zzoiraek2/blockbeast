@@ -5460,7 +5460,7 @@ function bindMyPickHistoryControls(){
 function renderMyPickHistory(){
   bindMyPickHistoryControls();
   const box=document.getElementById('myPickHistory');
-  const owned=state.entryHistory.filter(e=>e.owner===state.walletAddress).map(buildMyPickRecord);
+  const owned=state.entryHistory.filter(e=>!state.walletAddress||e.owner===state.walletAddress).map(buildMyPickRecord);
   const filters=getMyPickFilters();
   const now=Date.now();
   const periodLimit=filters.period==='7d'?now-7*24*60*60*1000:filters.period==='30d'?now-30*24*60*60*1000:0;
@@ -6018,7 +6018,29 @@ function enterRound(isAuto=false){
     ]
   });
 }
-function commitRoundEntry(isAuto=false){const bet=getActiveBet(), stake=Number(document.getElementById('stakeInput')?.value||200); if(!state.walletConnected) return showErrorModal('지갑 연결 필요','참여확정 전에 지갑 연결이 필요합니다.',['Round Entry']); if(selection.picks.length!==bet.picks) return showErrorModal('선택 수량 확인',`${bet.picks}마리를 선택하세요.`,['Pick Validation']); if(stake<50) return showErrorModal('최소 참여 수량','최소 50 SPL 이상 참여하세요.',['Min 50 SPL']); if(stake>state.splBalance) return showErrorModal('잔액 부족','보유 SPL이 부족합니다.',['Balance Check']); state.splBalance-=stake; const entry={round:state.currentRound,owner:state.walletAddress,betId:bet.id,betName:bet.name,picks:[...selection.picks],multiplier:getBetTypeLiveOdds(bet.id,selection.picks),stake,createdAt:timeNow(),createdTs:Date.now(),auto:isAuto}; state.entries.push(entry); state.entryHistory.push(entry); state.myEntries.unshift(entry); state.myEntries=state.myEntries.slice(0,6); state.participants.add(state.walletAddress); if(state.participants.size<2&&Math.random()>.35) state.participants.add('0xAI'+rand(1000,9999)); state.txHistory.unshift({kind:'참여 락',desc:`${bet.name} · ${entry.picks.map(id=>ANIMALS.find(a=>a.id===id).name).join('/')}`,amount:`-${formatNum(stake)} SPL`,time:timeNow()}); toast(isAuto?'자동 참여 실행':'참여 잠금 완료',`${bet.name} · ${formatNum(stake)} SPL 락`,[entry.picks.map(id=>ANIMALS.find(a=>a.id===id).name).join(' / ')]); pushLog(`${isAuto?'자동 ':' '}라운드 참여 · ${bet.name} · ${formatNum(stake)} SPL 락`); state.lastPlayedCombo={betId:bet.id,picks:[...selection.picks]}; renderAll()}
+function commitRoundEntry(isAuto=false){
+  const bet=getActiveBet(), stake=Number(document.getElementById('stakeInput')?.value||200);
+  if(!state.walletConnected) return showErrorModal('지갑 연결 필요','참여확정 전에 지갑 연결이 필요합니다.',['Round Entry']);
+  if(selection.picks.length!==bet.picks) return showErrorModal('선택 수량 확인',`${bet.picks}마리를 선택하세요.`,['Pick Validation']);
+  if(stake<50) return showErrorModal('최소 참여 수량','최소 50 SPL 이상 참여하세요.',['Min 50 SPL']);
+  if(stake>state.splBalance) return showErrorModal('잔액 부족','보유 SPL이 부족합니다.',['Balance Check']);
+
+  const pickNames=selection.picks.map(id=>ANIMALS.find(a=>String(a.id)===String(id))?.name||`#${id}`);
+  state.splBalance-=stake;
+  const entry={round:state.currentRound,owner:state.walletAddress,betId:bet.id,betName:bet.name,picks:[...selection.picks],multiplier:getBetTypeLiveOdds(bet.id,selection.picks),stake,createdAt:timeNow(),createdTs:Date.now(),auto:isAuto};
+  state.entries.push(entry);
+  state.entryHistory.push(entry);
+  state.myEntries.unshift(entry);
+  state.myEntries=state.myEntries.slice(0,6);
+  state.participants.add(state.walletAddress);
+  if(state.participants.size<2&&Math.random()>.35) state.participants.add('0xAI'+rand(1000,9999));
+
+  state.txHistory.unshift({kind:'참여 락',desc:`${bet.name} · ${pickNames.join('/')}`,amount:`-${formatNum(stake)} SPL`,time:timeNow()});
+  toast(isAuto?'자동 참여 실행':'참여 잠금 완료',`${bet.name} · ${formatNum(stake)} SPL 락`,[pickNames.join(' / ')]);
+  pushLog(`${isAuto?'자동 ':' '}라운드 참여 · ${bet.name} · ${formatNum(stake)} SPL 락`);
+  state.lastPlayedCombo={betId:bet.id,picks:[...selection.picks]};
+  renderAll();
+}
 function isWinningEntry(entry, ranking){const ids=entry.picks, top3=ranking.slice(0,3).map(r=>r.id); if(entry.betId==='alpha') return ranking[0].id===ids[0]; if(entry.betId==='twin') return ids.every(id=>ranking.slice(0,2).some(r=>r.id===id)); if(entry.betId==='chain') return ranking[0].id===ids[0]&&ranking[1].id===ids[1]; if(entry.betId==='podium') return ids.every(id=>top3.includes(id)); if(entry.betId==='trinity') return ranking[0].id===ids[0]&&ranking[1].id===ids[1]&&ranking[2].id===ids[2]; return false}
 function makeMockTx(round, block){return `SOL-${round}-${block}-${rand(100000,999999)}`}
 function settleRound(block){const ranking=computeSettlementRanking(block); const totalPrizeSpl=state.entries.reduce((s,e)=>s+e.stake,0)+state.rolloverVault; const winners=state.entries.filter(entry=>isWinningEntry(entry,ranking)); const myRoundEntries=state.entries.filter(e=>e.owner===state.walletAddress); if(winners.length){const totalWeight=winners.reduce((s,w)=>s+w.stake*w.multiplier,0); winners.forEach(w=>{const share=(w.stake*w.multiplier)/totalWeight; const solPrize=Number(((totalPrizeSpl/1000)*share).toFixed(4)); if(w.owner===state.walletAddress){state.solBalance=Number((state.solBalance+solPrize).toFixed(4)); const tx=makeMockTx(state.currentRound,block.number); state.txHistory.unshift({kind:'정산 수령',desc:`ROUND #${state.currentRound} 적중 · SETTLE SLOT #${block.number}`,amount:`+${formatNum(solPrize,4)} SOL`,time:timeNow()}); state.payoutHistory.unshift({round:state.currentRound,block:block.number,tx,amount:`+${formatNum(solPrize,4)} SOL`})}}); state.rolloverVault=0} else state.rolloverVault+=state.entries.reduce((s,e)=>s+e.stake,0); myRoundEntries.forEach(e=>{const win=isWinningEntry(e,ranking); e.result=win?'win':'lose'; e.resolvedRound=state.currentRound; e.settleBlock=block.number; e.settleTime=block.time; e.pulse=new Date(block.time).getSeconds()}); if(myRoundEntries.length){state.autoEntry.currentLosses=myRoundEntries.some(e=>e.result==='win')?0:state.autoEntry.currentLosses+1; state.lastPlayedCombo={betId:myRoundEntries[0].betId,picks:[...myRoundEntries[0].picks]}} state.results.unshift({round:state.currentRound,env:{...state.lockedEnvironment},lockBlock:state.lockedEnvironmentBlock.number,lockTime:state.lockedEnvironmentBlock.time,lockTxCount:state.lockedEnvironmentBlock.txCount,settleBlock:block.number,settleTime:block.time,settleOutput:block.output,pulse:new Date(block.time).getSeconds(),ranking,winnerCount:winners.length,prizeSpl:totalPrizeSpl}); state.results=state.results.slice(0,120); toast(`ROUND #${state.currentRound} 결과 확정`,winners.length?`${ranking[0].name} 우승 · 적중 ${winners.length}건`:`정답자 없음 · ${formatNum(totalPrizeSpl)} SPL 이월`,[`정산 slot #${block.number}`,`${state.lockedEnvironment.sky} · ${state.lockedEnvironment.ground} · ${state.lockedEnvironment.tempo}`]); pushLog(`ROUND #${state.currentRound} 결과 확정 · 1위 ${ranking[0].name} · 정산 slot #${block.number}`); state.currentRound+=1; state.roundStart=Date.now(); state.roundDeadline=Date.now()+ROUND_SECONDS*1000; state.waitingSettlementBlock=false; state.entries=[]; state.myEntries=[]; state.participants=new Set(); state.lockedEnvironmentBlock=block; state.lockedEnvironment=deriveEnvironment(block); renderAll(); setTimeout(tryAutoEntry,250)}
